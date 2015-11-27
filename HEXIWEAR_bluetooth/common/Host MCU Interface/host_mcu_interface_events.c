@@ -1,0 +1,221 @@
+/************************************************************************************
+*************************************************************************************
+* Include
+*************************************************************************************
+************************************************************************************/
+#include <stdint.h>
+#include <stddef.h>
+#include "EmbeddedTypes.h"
+#include "fsl_osa_ext.h"
+#include "board.h"
+#include "fsl_lpuart_dma_driver.h"
+#include "fsl_lpuart_driver.h"
+#include "fsl_dma_driver.h"
+#include "panic.h"
+#include "debug.h"
+#include "host_mcu_interface.h"
+#include "fsl_interrupt_manager.h"
+
+const event_flags_t gHostInterface_eventSendOkPacketMask     = 0x2;
+const event_flags_t gHostInterface_eventConfirmPacketMask    = 0x4;
+const event_flags_t gHostInterface_eventConfirmAttPacketMask = 0x8;
+
+/************************************************************************************
+*************************************************************************************
+* Private memory declarations
+*************************************************************************************
+************************************************************************************/
+
+static event_t hostInterface_okConfirmEvent;
+
+/*! *********************************************************************************
+*************************************************************************************
+* Private prototypes
+*************************************************************************************
+********************************************************************************** */
+
+/*! *********************************************************************************
+*************************************************************************************
+* Functions definitions
+*************************************************************************************
+********************************************************************************** */
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    This function creates event object which will be used to wait for confirmation 
+ *    (OK packet) for previously sent pakcet.
+ *
+ *    @return  status of OSA's functions
+ */
+
+osaStatus_t HostInterface_EventsInit(void)
+{
+    osa_status_t status;
+    status = OSA_EventCreate(&hostInterface_okConfirmEvent, kEventAutoClear);
+    
+    return (osaStatus_t) status;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventWait(event_flags_t flagsToWait, uint32_t timeout, event_flags_t *setFlags)
+{
+    osa_status_t status;
+    
+    status = OSA_EventWait(&hostInterface_okConfirmEvent, flagsToWait, false, timeout, setFlags);
+    
+    return (osaStatus_t) status;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventClear(event_flags_t flagsToClear)
+{
+    osa_status_t status;
+    
+    status = OSA_EventClear(&hostInterface_okConfirmEvent, flagsToClear);
+    
+    return (osaStatus_t) status;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventSet(event_flags_t flagsToSet)
+{
+    osa_status_t status;
+    status = OSA_EventSet(&hostInterface_okConfirmEvent, flagsToSet);
+    
+    return (osaStatus_t) status;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventConfirmPacketSet(void)
+{
+    return HostInterface_EventSet(gHostInterface_eventConfirmPacketMask);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventConfirmPacketWait(void)
+{
+    event_flags_t setFlags;
+    return HostInterface_EventWait(gHostInterface_eventConfirmPacketMask, gHostInterface_retransmitTimeout, &setFlags);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventConfirmPacketClear(void)
+{
+    return HostInterface_EventClear(gHostInterface_eventConfirmPacketMask);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventConfirmAttPacketSet(void)
+{
+    return HostInterface_EventSet(gHostInterface_eventConfirmAttPacketMask);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventConfirmAttPacketWait(void)
+{
+    event_flags_t setFlags;
+    return HostInterface_EventWait(gHostInterface_eventConfirmAttPacketMask, 
+                                   gHostInterface_retransmitCount * gHostInterface_retransmitTimeout, &setFlags);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventConfirmAttPacketClear(void)
+{
+    return HostInterface_EventClear(gHostInterface_eventConfirmAttPacketMask);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventSendOkPacketSet(void)
+{
+    return HostInterface_EventSet(gHostInterface_eventSendOkPacketMask);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    
+ *
+ */
+
+osaStatus_t HostInterface_EventSendOkPacketWait(void)
+{
+    event_flags_t setFlags;
+    return HostInterface_EventWait(gHostInterface_eventSendOkPacketMask, OSA_WAIT_FOREVER, &setFlags);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////

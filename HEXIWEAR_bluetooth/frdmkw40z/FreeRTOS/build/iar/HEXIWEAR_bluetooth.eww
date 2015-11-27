@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<workspace>
+<batchBuild><batchDefinition><name>all</name><member><project>HEXIWEAR_bluetooth</project><configuration>Debug</configuration></member><member><project>HEXIWEAR_bluetooth</project><configuration>Release</configuration></member></batchDefinition><batchDefinition><name>Debug</name><member><project>HEXIWEAR_bluetooth</project><configuration>Debug</configuration></member></batchDefinition><batchDefinition><name>Release</name><member><project>HEXIWEAR_bluetooth</project><configuration>Release</configuration></member></batchDefinition></batchBuild>
+<project><path>$_KSDK_PATH_$\lib\ksdk_freertos_lib\iar\KW40Z4\ksdk_freertos_lib.ewp</path></project><project><path>$WS_DIR$/HEXIWEAR_bluetooth.ewp</path></project></workspace>
