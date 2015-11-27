@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom_progress_vertical="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Accelerometer"
+        android:id="@+id/textView"
+        android:textColor="@color/color_gray"
+        android:typeface="sans"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="@dimen/text_size_4" />
+
+    <com.mikroe.hexiwear_android.CustomProgress_Vertical
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/accelProgressX"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="7dp"
+
+        custom_progress_vertical:label_axis="X"
+        custom_progress_vertical:label_max="+1.5g"
+        custom_progress_vertical:label_value="wait"
+        custom_progress_vertical:max_progress_vertical="300"
+        custom_progress_vertical:progress_vertical="150"
+        custom_progress_vertical:label_min="-1.5g"
+        />
+
+    <com.mikroe.hexiwear_android.CustomProgress_Vertical
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/accelProgressY"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        custom_progress_vertical:label_axis="Y"
+        custom_progress_vertical:label_max="+1.5g"
+        custom_progress_vertical:label_value="wait"
+        custom_progress_vertical:max_progress_vertical="300"
+        custom_progress_vertical:progress_vertical="150"
+        custom_progress_vertical:label_min="-1.5g"
+        />
+
+    <com.mikroe.hexiwear_android.CustomProgress_Vertical
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/accelProgressZ"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="7dp"
+
+        custom_progress_vertical:label_axis="Z"
+        custom_progress_vertical:label_max="+1.5g"
+        custom_progress_vertical:label_value="wait"
+        custom_progress_vertical:max_progress_vertical="300"
+        custom_progress_vertical:progress_vertical="150"
+        custom_progress_vertical:label_min="-1.5g"
+        />
+</RelativeLayout>

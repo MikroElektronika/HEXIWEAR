@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="X"
+        android:id="@+id/textView_axis"
+        android:textColor="@color/color_gray"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_size_2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="+4g"
+        android:id="@+id/textView_max"
+        android:textColor="@color/color_gray"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_size_2"/>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="115dp"
+        android:layout_height="300dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0g"
+            android:id="@+id/textView_value"
+            android:layout_toStartOf="@+id/relativeLayout_1"
+            android:paddingRight="3dp"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_4"
+            android:layout_centerVertical="true"/>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/relativeLayout_1"
+            android:orientation="vertical" android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true">
+
+
+
+            <com.mikroe.hexiwear_android.VerticalSeekBar
+                android:id="@+id/verticalProgressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:indeterminate="false"
+                android:progress="500"
+                android:max="1000"
+                android:secondaryProgress="1000"
+                android:progressDrawable="@drawable/custom_progress_vertical_drw"
+                android:layout_marginTop="3dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:thumb="@drawable/thumb"
+                android:maxHeight="5dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/verticalProgressbar"
+                android:layout_alignBottom="@+id/verticalProgressbar"
+                android:layout_alignLeft="@+id/verticalProgressbar"
+                android:layout_alignRight="@+id/verticalProgressbar"
+                android:layout_alignTop="@+id/verticalProgressbar"
+                android:gravity="center"
+                android:id="@+id/linearLayout_verticalProgress">
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="1dp"
+                    android:background="@color/color_white"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="-4g"
+        android:id="@+id/textView_min"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/text_size_2"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="184dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/textView_StartValue"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/color_gray"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_size_1"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="7dp"
+        android:id="@+id/view_StartValue"
+        android:layout_below="@+id/textView_StartValue"
+        android:layout_centerHorizontal="true"
+        android:background="@color/color_white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="-126"
+        android:id="@+id/textView_ThirdQuarter"
+        android:layout_toStartOf="@+id/view_ThirdQuarter"
+        android:textColor="@color/color_gray"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="2dp"
+        android:textSize="@dimen/text_size_1"/>
+
+    <View
+        android:layout_width="7dp"
+        android:layout_height="1dp"
+        android:id="@+id/view_ThirdQuarter"
+        android:layout_toStartOf="@+id/circularProgressbar"
+        android:layout_marginRight="3dp"
+        android:layout_centerVertical="true"
+        android:background="@color/color_white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="+126"
+        android:id="@+id/textview_FirstQuarter"
+        android:layout_toEndOf="@+id/view_FirstQuarter"
+        android:textColor="@color/color_gray"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="2dp"
+        android:textSize="@dimen/text_size_1"/>
+
+    <View
+        android:layout_width="7dp"
+        android:layout_height="1dp"
+        android:id="@+id/view_FirstQuarter"
+        android:layout_toEndOf="@+id/circularProgressbar"
+        android:layout_marginLeft="3dp"
+        android:layout_centerVertical="true"
+        android:background="@color/color_white"/>
+
+    <ProgressBar
+        android:id="@+id/circularProgressbar"
+        android:layout_width="@dimen/progress_bar_size"
+        android:layout_height="@dimen/progress_bar_size"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="false"
+        android:progress="0"
+        android:max="512"
+        android:secondaryProgress="512"
+        android:progressDrawable="@drawable/custom_progress_circular_drw"
+        android:layout_below="@+id/view_StartValue"
+        android:layout_marginTop="3dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/circularProgressbar"
+        android:layout_alignRight="@+id/circularProgressbar"
+        android:layout_alignLeft="@+id/circularProgressbar"
+        android:layout_alignBottom="@+id/circularProgressbar"
+        android:layout_alignTop="@+id/circularProgressbar"
+        android:gravity="center"
+        android:id="@+id/linearLayout6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="X"
+            android:id="@+id/textView_Label1"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/text_size_2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="wait"
+            android:id="@+id/textView_Label2"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/text_size_3"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="deg/s"
+            android:id="@+id/textView_Label3"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/text_size_2"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="7dp"
+        android:id="@+id/view_Half"
+        android:layout_below="@+id/circularProgressbar"
+        android:layout_marginTop="3dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/color_white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="-256+"
+        android:id="@+id/textView_Half"
+        android:layout_below="@+id/view_Half"
+        android:textColor="@color/color_gray"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_size_1"/>
+
+</RelativeLayout>

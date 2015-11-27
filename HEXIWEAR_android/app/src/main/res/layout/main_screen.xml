@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_background"
+    style="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+    android:alpha="255"
+    android:weightSum="1"
+    android:clickable="true">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_temp"
+        android:src="@drawable/icon_temp"
+        android:layout_above="@+id/imageView_accel"
+        android:layout_marginBottom="2dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="startTempScreen" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_accel"
+        android:src="@drawable/icon_accel"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/imageView_temp"
+        android:onClick="startAccelScreen" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_gyro"
+        android:src="@drawable/icon_gyro"
+        android:layout_below="@+id/imageView_accel"
+        android:layout_marginTop="2dp"
+        android:layout_alignStart="@+id/imageView_accel"
+        android:onClick="startGyroScreen" />
+
+</RelativeLayout>

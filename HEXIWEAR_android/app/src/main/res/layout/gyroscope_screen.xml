@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    xmlns:custom_progress_circular="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Gyroscope"
+        android:id="@+id/textView4"
+        android:textColor="@color/color_gray"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:typeface="sans"
+        android:textSize="@dimen/text_size_4" />
+
+    <com.mikroe.hexiwear_android.CustomProgress_Circular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gyroProgressX"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+
+        custom_progress_circular:label_1="X"
+        custom_progress_circular:label_2="wait"
+        custom_progress_circular:label_3="deg/s"
+
+        custom_progress_circular:start_value="0"
+        custom_progress_circular:first_quarter_value="+128"
+        custom_progress_circular:half_value="-256+"
+        custom_progress_circular:third_quarter_value="-128"
+
+        custom_progress_circular:progress_circular="0"
+        custom_progress_circular:max_progress_circular="512"/>
+
+    <com.mikroe.hexiwear_android.CustomProgress_Circular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gyroProgressY"
+
+        custom_progress_circular:label_1="Y"
+        custom_progress_circular:label_2="wait"
+        custom_progress_circular:label_3="deg/s"
+
+        custom_progress_circular:start_value="0"
+        custom_progress_circular:first_quarter_value="+128"
+        custom_progress_circular:half_value="-256+"
+        custom_progress_circular:third_quarter_value="-128"
+
+        custom_progress_circular:progress_circular="0"
+        custom_progress_circular:max_progress_circular="512"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <com.mikroe.hexiwear_android.CustomProgress_Circular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gyroProgressZ"
+
+        custom_progress_circular:label_1="Z"
+        custom_progress_circular:label_2="wait"
+        custom_progress_circular:label_3="deg/s"
+
+        custom_progress_circular:start_value="0"
+        custom_progress_circular:first_quarter_value="+128"
+        custom_progress_circular:half_value="-256+"
+        custom_progress_circular:third_quarter_value="-128"
+
+        custom_progress_circular:progress_circular="0"
+        custom_progress_circular:max_progress_circular="512"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"/>
+</RelativeLayout>

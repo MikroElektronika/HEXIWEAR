@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="CustomProgress_Circular">
+    <attr name="label_1" format="string" />
+    <attr name="label_2" format="string" />
+    <attr name="label_3" format="string" />
+
+    <attr name="label_1_size" format="integer" />
+    <attr name="label_2_size" format="integer" />
+    <attr name="label_3_size" format="integer" />
+
+    <attr name="start_value" format="string" />
+    <attr name="first_quarter_value" format="string" />
+    <attr name="half_value" format="string" />
+    <attr name="third_quarter_value" format="string" />
+
+    <attr name="progress_circular" format="integer" />
+    <attr name="max_progress_circular" format="integer" />
+
+    <attr name="size" format="integer" />
+</declare-styleable>
+</resources>

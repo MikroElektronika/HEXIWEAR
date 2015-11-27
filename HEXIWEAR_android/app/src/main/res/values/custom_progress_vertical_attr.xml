@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomProgress_Vertical">
+        <attr name="label_axis" format="string" />
+        <attr name="label_max" format="string" />
+        <attr name="label_min" format="string" />
+
+        <attr name="label_value" format="string" />
+
+        <attr name="progress_vertical" format="integer" />
+        <attr name="max_progress_vertical" format="integer" />
+
+        <attr name="size1" format="integer" />
+    </declare-styleable>
+</resources>
