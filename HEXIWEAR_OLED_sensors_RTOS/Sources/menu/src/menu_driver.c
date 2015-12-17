@@ -3,11 +3,11 @@
 
 #include "sensor_defs.h"
 
+#include "apps_resources.h"
+
 #include "menu_driver.h"
 #include "menu_types.h"
-
 #include "menu_info.h"
-#include "menu_resources.h"
 #include "menu_types.h"
 
 #include "string.h"
@@ -26,17 +26,6 @@
 #include <stdio.h>
 
 #include "apps.h"
-
-//OSA_TASK_DEFINE( MenuDriver_App_Clock, HEXIWEAR_MENU_TASK_APP_RTC_STACK_SIZE );
-
-/**
- * task handlers
- */
-
-//task_handler_t
-//  hexiwear_app_WATCH_handler,
-//  hexiwear_app_SENSORS_handler,
-//  hexiwear_app_FITNESS_handler;
 
 MSG_QUEUE_DECLARE( MenuDriver_queue, QUEUE_MENU_LENGTH, sizeof(hostInterface_packet_t) );
 
@@ -132,38 +121,6 @@ menuStatus_t MenuDriver_Init()
     return MENU_STATUS_ERROR;
   }
 
-  oled_dynamic_area_t dynamic_area =
-  {
-      .xCrd = 0,
-      .yCrd = 0,
-      .width = 96,
-      .height = 96,
-  };
-
-  OLED_SetDynamicArea(&dynamic_area);
-  OLED_DrawImage(menuScreen_welcome_bmp);
-  OSA_TimeDelay( 500 );
-
-  uint8_t
-    width,
-    height;
-
-  OLED_GetImageDimensions( &width, &height, battery_3_bmp );
-
-//  while (1)
-//  {
-//    OLED_DrawScreen( MenuDriver_SkipHeader( battery_3_bmp ), 20, 20, width, height, OLED_TRANSITION_NONE );
-//    OSA_TimeDelay( 500 );
-//    OLED_DrawScreen( MenuDriver_SkipHeader( battery_3_bmp ), 20, 20, width, height, OLED_TRANSITION_TOP_DOWN );
-//    OSA_TimeDelay( 500 );
-//    OLED_DrawScreen( MenuDriver_SkipHeader( battery_3_bmp ), 20, 20, width, height, OLED_TRANSITION_DOWN_TOP );
-//    OSA_TimeDelay( 500 );
-//    OLED_DrawScreen( MenuDriver_SkipHeader( battery_3_bmp ), 20, 20, width, height, OLED_TRANSITION_RIGHT_LEFT );
-//    OSA_TimeDelay( 500 );
-//    OLED_DrawScreen( MenuDriver_SkipHeader( battery_3_bmp ), 20, 20, width, height, OLED_TRANSITION_LEFT_RIGHT );
-//    OSA_TimeDelay( 500 );
-//  }
-
   MenuDriver_LoadScreen( MENU_NAVIGATION_WATCH, NULL );
 
   return MENU_STATUS_SUCCESS;
@@ -236,9 +193,9 @@ menuStatus_t MenuDriver_LoadScreen(menuNavigationDir_t navigationDir, void *para
   }
 
   // finishing action for the current screen
-  if ( NULL != menuDriver_screen.menuItem->destroyFunction )
+  if ( NULL != menuDriver_screen.menuItem->destroyTaskFunction )
   {
-    menuDriver_screen.menuItem->destroyFunction( param );
+    menuDriver_screen.menuItem->destroyTaskFunction( param );
   }
 
   // Update current menu item
@@ -265,9 +222,9 @@ menuStatus_t MenuDriver_LoadScreen(menuNavigationDir_t navigationDir, void *para
   if( OLED_STATUS_SUCCESS == statusOLED )
   {
     // post-load action for the new screen
-    if( NULL != ptrNewItem->callbackFunction )
+    if( NULL != ptrNewItem->createTaskFunction )
     {
-      ptrNewItem->callbackFunction( param );
+      ptrNewItem->createTaskFunction( param );
     }
     return  MENU_STATUS_SUCCESS;
   }

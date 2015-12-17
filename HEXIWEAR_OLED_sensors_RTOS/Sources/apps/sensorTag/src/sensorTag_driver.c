@@ -32,8 +32,8 @@ const menuItem_t
 
                       .image = sensorTag_bmp,
 
-                      .initFunction     = sensorTag_Init,
-                      .callbackFunction = sensorTag_Callback,
+                      .initFunction       = sensorTag_Init,
+                      .createTaskFunction = sensorTag_Callback,
                     };
 
 task_handler_t

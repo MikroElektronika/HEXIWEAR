@@ -90,7 +90,6 @@ static void packetHandler (
     // buttons
     case packetType_pressUp:    {
                                   VIBRO_HAPTIC();
-                                  OSA_TaskDestroy( sensorTag_handler );
                                   MenuDriver_LoadScreen( MENU_NAVIGATION_BACK, NULL );
                                   break;
                                 }
@@ -103,7 +102,6 @@ static void packetHandler (
 
     case packetType_pressLeft:  {
                                   VIBRO_HAPTIC();
-                                  OSA_TaskDestroy( watch_handler );
                                   MenuDriver_LoadScreen( MENU_NAVIGATION_LEFT, NULL );
                                   break;
                                 }

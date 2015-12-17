@@ -25,8 +25,8 @@ typedef struct MenuItem
     menuNavigation_t    navigation;
     const uint8_t       *image;
         void            (*initFunction)(void *param);
-        void            (*callbackFunction)(void *param);
-        void            (*destroyFunction)(void *param);
+        void            (*createTaskFunction)(void *param);
+        void            (*destroyTaskFunction)(void *param);
 
 } menuItem_t;
 

@@ -359,7 +359,7 @@ void sensor_FormatData(
 
     case DATA_TYPE_AMBI:  {
                             registerFormatters(ambi);
-                            dataLen = TypeMember_SCALAR;
+                            dataLen = TypeMember_NumEl( weatherData_t, ambiData );
                             break;
                           }
 
@@ -692,7 +692,26 @@ static void sensor_GetData(
 
       // skip these
       case packetType_ambiLight:    {
-                                      isReadyToSend = SEND_SKIP;
+#if defined( SENSOR_TSL)
+                                      statusTSL_t
+                                        tslStatus = TSL_ReadRawData( TSL_CHANNEL_FULL, &(weatherData.ambiData[0]) );
+
+                                      if  ( STATUS_TSL_SUCCESS == tslStatus )
+                                      {
+                                        dataStart           = (void*)&( weatherData.ambiData[0] );
+                                        sensorPacket.length = TypeMember_NumEl( weatherData_t , ambiData );
+                                        pushTargets         = sensor_settings[ SENSOR_PACKET_LUX ].targets;
+                                        isReadyToSend       = SEND_YES;
+                                      }
+
+                                      else
+                                      {
+                                        catch( CATCH_WEATHER );
+#endif
+                                        isReadyToSend = SEND_SKIP;
+#if defined( SENSOR_TSL )
+                                      }
+#endif
                                       break;
                                     }
 

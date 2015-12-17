@@ -18,6 +18,9 @@
 
 #define QUEUE_MENU_LENGTH ( 3 )
 
+#define BMP_HEADER_BYTE_SIZE (6)
+#define MenuDriver_SkipHeader( imgPtr ) ( (const uint8_t*)(imgPtr) + BMP_HEADER_BYTE_SIZE )
+
 #define MENU_IMAGE_SIZE ( OLED_SCREEN_WIDTH * OLED_SCREEN_HEIGHT * OLED_BYTES_PER_PIXEL )
 
 #endif

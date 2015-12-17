@@ -6,7 +6,7 @@
 
 #include "HEXIWEAR_types.h"
 #include "menu_types.h"
-#include "menu_resources.h"
+#include "apps_resources.h"
 
 #include "OLED_driver.h"
 #include "error.h"
@@ -35,5 +35,10 @@ typedef struct
 	oled_text_properties_t textProperties;
 	uint8_t               *caption;
 } apps_label_t;
+
+void apps_InitLabel(apps_label_t *label);
+void apps_DrawLabel(apps_label_t *label);
+void apps_InitImage(apps_image_t *image);
+void apps_DrawImage(apps_image_t *image);
 
 #endif

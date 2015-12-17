@@ -20,27 +20,14 @@
 #include "OLED_Defs.h"
 #include "OLED_Info.h"
 
-#include "menu_resources.h"
+#include "apps_resources.h"
+
 #include "menu_driver.h"
 #include "menu_defs.h"
 
 /**
  * pen's info
  */
-
-//static uint16_t
-//  penColor;
-//static uint8_t
-//  penWidth;
-
-/**
- * font-related constants
- */
-
-//const uint8_t
-//  FO_HORIZONTAL      = 0,
-//  FO_VERTICAL        = 1,
-//  FO_VERTICAL_COLUMN = 2;
 
 static uint8_t
   fontInitialized = 0;
@@ -54,8 +41,6 @@ static uint16_t
   selectedFont_lastChar,  // last character in the font table
   selectedFont_height;
 
-static uint8_t
-  finalImage = 0;
 
 static oled_dynamic_area_t
   oled_dynamic_area;
@@ -66,20 +51,7 @@ static oled_text_properties_t
 		  .background = NULL
   };
 
-//static oled_pixel_t
-//	currentTextAreaImage;
 
-//extern uint16_t
-//  caption_length,
-//  caption_height,
-//  min_x_coord,
-//  min_y_coord,
-//  max_x_coord,
-//  max_y_coord;
-
-static uint16_t
-  selectedPos_x,
-  selectedPos_y;
 
 static uint8_t
   screenBuf[ OLED_SCREEN_WIDTH * OLED_SCREEN_HEIGHT * OLED_BYTES_PER_PIXEL ];
@@ -118,7 +90,6 @@ extern void * g_dspiStatePtr[SPI_INSTANCE_COUNT];
  * intern functions' declarations
  */
 // static void WriteChar ( uint16_t charToWrite );
-static void MoveCursor( uint16_t xPos, uint16_t yPos );
 static void Transpose ( oled_pixel_t transImage, const oled_pixel_t image, uint8_t width, uint8_t height );
 
 static oled_status_t RightLeft ( const uint8_t* image, uint8_t xCrd, uint8_t yCrd, uint8_t width, uint8_t height );
@@ -816,7 +787,7 @@ static void WriteCharToBuf(
   if ( 0 == fontInitialized )
   {
     // default font
-    OLED_SetFont( menuFont_Tahoma11x13_Regular, 0xFFFF );
+    OLED_SetFont( appsFont_Tahoma11x13_Regular, 0xFFFF );
   }
 
   // allocate space for char image
@@ -1004,7 +975,7 @@ oled_status_t OLED_AddText(
 			|| ( ( currentChar_y + currentChar_height ) > oled_dynamic_area.height )
 		  )
 	  {
-		return OLED_STATUS_ERROR;
+            return OLED_STATUS_ERROR;
 	  }
 
 	  // copy data
@@ -1021,6 +992,7 @@ oled_status_t OLED_AddText(
 	}
 
 	MenuDriver_UpdateScreen( oled_dynamic_area.xCrd, oled_dynamic_area.yCrd, oled_dynamic_area.width, oled_dynamic_area.height, (const uint8_t*)oled_dynamic_area.areaBuffer );
+	return OLED_STATUS_SUCCESS;
 }
 
 /**

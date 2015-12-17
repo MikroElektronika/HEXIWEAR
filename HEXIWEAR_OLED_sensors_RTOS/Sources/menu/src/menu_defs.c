@@ -12,10 +12,3 @@ menuScreen_t
 
 msg_queue_handler_t
   MenuDriver_queueHnd;
-
-// apps
-task_handler_t
-//  hexiwear_app_WATCH_handler = watch_handler,
-  hexiwear_app_WATCH_handler,
-  hexiwear_app_SENSORS_handler,
-  hexiwear_app_FITNESS_handler;
