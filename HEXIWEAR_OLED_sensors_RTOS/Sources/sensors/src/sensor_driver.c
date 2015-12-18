@@ -16,30 +16,6 @@
 #include "sensor_info.h"
 #include "sensor_defs.h"
 
-#include "FXOS_info.h"
-#include "FXOS_defs.h"
-#include "FXOS_driver.h"
-
-#include "FXAS_info.h"
-#include "FXAS_defs.h"
-#include "FXAS_driver.h"
-
-#include "MPL_info.h"
-#include "MPL_defs.h"
-#include "MPL_driver.h"
-
-#include "TSL_info.h"
-#include "TSL_defs.h"
-#include "TSL_driver.h"
-
-#include "HTU_info.h"
-#include "HTU_defs.h"
-#include "HTU_driver.h"
-
-#include "MAXIM_info.h"
-#include "MAXIM_defs.h"
-#include "MAXIM_driver.h"
-
 #include "OLED_info.h"
 #include "OLED_driver.h"
 
@@ -49,6 +25,18 @@
 #include "fsl_uart_driver.h"
 #include "DEBUG_UART.h"
 #endif
+
+/**
+ * intern types
+ */
+
+typedef enum
+{
+  SEND_YES,
+  SEND_TRY_AGAIN,
+  SEND_SKIP
+
+} send_t;
 
 /**
  * intern variables
@@ -117,9 +105,6 @@ static sensor_settings_t
 #define START_PACKET ( packetType_batteryLevel )
 #define END_PACKET   ( packetType_steps )
 #define nextSensor(sensPkt) sensPkt = ( (++sensPkt) % END_PACKET ) + START_PACKET * ( sensPkt / END_PACKET )
-
-// OSA_TASK_DEFINE( sensor_GetData,    HEXIWEAR_SENSOR_TASK_GET_DATA_STACK_SIZE );
-// OSA_TASK_DEFINE( sensor_GetFitData, HEXIWEAR_SENSOR_TASK_GET_FITDATA_STACK_SIZE );
 
 /**
  * declarations
@@ -476,8 +461,8 @@ static void sensor_GetData(
     sensorPacket;
 
   // use this to designate if the packet is ready to be sent
-  hexiwear_send_t
-    isReadyToSend = SEND_NO;
+  send_t
+    isReadyToSend = SEND_SKIP;
 
   // packet type
   hostInterface_packetType_t
@@ -513,7 +498,7 @@ static void sensor_GetData(
     sensorPacket.start1 = gHostInterface_startByte1;
     sensorPacket.start2 = gHostInterface_startByte2;
     sensorPacket.type   = sensorToSend;
-    isReadyToSend       = SEND_NO;
+    isReadyToSend       = SEND_SKIP;
 
     /**
      * read, format and insert data into the packet
@@ -527,14 +512,17 @@ static void sensor_GetData(
        */
 
       case packetType_batteryLevel: {
-                                      ADC16_DRV_ConfigConvChn( FSL_BATTERY_ADC, 0, &BATTERY_ADC_ChnConfig);
-                                      ADC16_DRV_WaitConvDone ( FSL_BATTERY_ADC, 0 );
-                                      adcData = ADC16_DRV_GetConvValueSigned( FSL_BATTERY_ADC, 0 );
+                                      if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_ACC ].targets )
+                                      {
+                                        ADC16_DRV_ConfigConvChn( FSL_BATTERY_ADC, 0, &BATTERY_ADC_ChnConfig);
+                                        ADC16_DRV_WaitConvDone ( FSL_BATTERY_ADC, 0 );
+                                        adcData = ADC16_DRV_GetConvValueSigned( FSL_BATTERY_ADC, 0 );
 
-                                      dataStart           = (void*)&( adcData );
-                                      sensorPacket.length = TypeMember_SCALAR;
-                                      pushTargets         = sensor_settings[ SENSOR_PACKET_BAT ].targets;
-                                      isReadyToSend       = SEND_YES;
+                                        dataStart           = (void*)&( adcData );
+                                        sensorPacket.length = TypeMember_SCALAR;
+                                        pushTargets         = sensor_settings[ SENSOR_PACKET_BAT ].targets;
+                                        isReadyToSend       = SEND_YES;
+                                      }
                                       break;
                                     }
 
@@ -544,23 +532,22 @@ static void sensor_GetData(
 
       case packetType_accel:  {
 #if defined( SENSOR_FXOS )
-                                statusFXOS_t
-                                  fxosStatus =  FXOS_ReadRawData( (int16_t*)&motionData );
-
-                                if  ( STATUS_FXOS_SUCCESS == fxosStatus )
+                                if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_ACC ].targets )
                                 {
-                                  dataStart           = (void*)&( motionData.accData[0] );
-                                  sensorPacket.length = TypeMember_NumEl( motionData_t , accData );
-                                  pushTargets         = sensor_settings[ SENSOR_PACKET_ACC ].targets;
-                                  isReadyToSend       = SEND_YES;
-                                }
+                                  statusFXOS_t
+                                    fxosStatus =  FXOS_ReadRawData( (int16_t*)&motionData );
 
-                                else
-                                {
-                                  catch( CATCH_MOTION );
-#endif
-                                  isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_FXOS )
+                                  if  ( STATUS_FXOS_SUCCESS == fxosStatus )
+                                  {
+                                    dataStart           = (void*)&( motionData.accData[0] );
+                                    sensorPacket.length = TypeMember_NumEl( motionData_t , accData );
+                                    pushTargets         = sensor_settings[ SENSOR_PACKET_ACC ].targets;
+                                    isReadyToSend       = SEND_YES;
+                                  }
+                                  else
+                                  {
+                                    catch( CATCH_MOTION );
+                                  }
                                 }
 #endif
                                 break;
@@ -568,23 +555,23 @@ static void sensor_GetData(
 
       case packetType_magnet:  {
 #if defined( SENSOR_FXOS )
-                                statusFXOS_t
-                                  fxosStatus = FXOS_ReadRawData( (int16_t*)&motionData );
-
-                                if  ( STATUS_FXOS_SUCCESS == fxosStatus )
+                                if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_MAG ].targets )
                                 {
-                                  dataStart           = (void*)&( motionData.magData[0] );
-                                  sensorPacket.length = TypeMember_NumEl( motionData_t , magData );
-                                  pushTargets         = sensor_settings[ SENSOR_PACKET_MAG ].targets;
-                                  isReadyToSend       = SEND_YES;
-                                }
+                                  statusFXOS_t
+                                    fxosStatus = FXOS_ReadRawData( (int16_t*)&motionData );
 
-                                else
-                                {
-                                  catch( CATCH_MOTION );
-#endif
-                                  isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_FXOS )
+                                  if  ( STATUS_FXOS_SUCCESS == fxosStatus )
+                                  {
+                                    dataStart           = (void*)&( motionData.magData[0] );
+                                    sensorPacket.length = TypeMember_NumEl( motionData_t , magData );
+                                    pushTargets         = sensor_settings[ SENSOR_PACKET_MAG ].targets;
+                                    isReadyToSend       = SEND_YES;
+                                  }
+
+                                  else
+                                  {
+                                    catch( CATCH_MOTION );
+                                  }
                                 }
 #endif
                                 break;
@@ -592,23 +579,23 @@ static void sensor_GetData(
 
       case packetType_gyro:   {
 #if defined( SENSOR_FXAS )
-                                statusFXAS_t
-                                  fxasStatus = FXAS_ReadRawData( (int16_t*)&(motionData.gyroData[0]) );
-
-                                if  ( STATUS_FXAS_SUCCESS == fxasStatus )
+                                if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_GYRO ].targets )
                                 {
-                                  dataStart           = (void*)&( motionData.gyroData[0] );
-                                  sensorPacket.length = TypeMember_NumEl( motionData_t , gyroData );
-                                  pushTargets         = sensor_settings[ SENSOR_PACKET_GYRO ].targets;
-                                  isReadyToSend       = SEND_YES;
-                                }
+                                  statusFXAS_t
+                                    fxasStatus = FXAS_ReadRawData( (int16_t*)&(motionData.gyroData[0]) );
 
-                                else
-                                {
-                                  catch( CATCH_MOTION );
-#endif
-                                  isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_FXAS )
+                                  if  ( STATUS_FXAS_SUCCESS == fxasStatus )
+                                  {
+                                    dataStart           = (void*)&( motionData.gyroData[0] );
+                                    sensorPacket.length = TypeMember_NumEl( motionData_t , gyroData );
+                                    pushTargets         = sensor_settings[ SENSOR_PACKET_GYRO ].targets;
+                                    isReadyToSend       = SEND_YES;
+                                  }
+
+                                  else
+                                  {
+                                    catch( CATCH_MOTION );
+                                  }
                                 }
 #endif
                                 break;
@@ -620,23 +607,23 @@ static void sensor_GetData(
 
       case packetType_temperature:  {
 #if defined( SENSOR_MPL )
-                                      statusMPL_t
-                                        mplStatus = MPL_ReadRawData( MPL_MODE_TEMPERATURE, (int16_t*)&(weatherData.tempData) );
-
-                                      if ( STATUS_MPL_SUCCESS == mplStatus )
+                                      if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_TEMP ].targets )
                                       {
-                                        dataStart           = (void*)&( weatherData.tempData );
-                                        sensorPacket.length = TypeMember_SCALAR;
-                                        pushTargets         = sensor_settings[ SENSOR_PACKET_TEMP ].targets;
-                                        isReadyToSend       = SEND_YES;
-                                      }
+                                        statusMPL_t
+                                          mplStatus = MPL_ReadRawData( MPL_MODE_TEMPERATURE, (int16_t*)&(weatherData.tempData) );
 
-                                      else
-                                      {
-                                        catch( CATCH_WEATHER );
-#endif
-                                        isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_MPL )
+                                        if ( STATUS_MPL_SUCCESS == mplStatus )
+                                        {
+                                          dataStart           = (void*)&( weatherData.tempData );
+                                          sensorPacket.length = TypeMember_SCALAR;
+                                          pushTargets         = sensor_settings[ SENSOR_PACKET_TEMP ].targets;
+                                          isReadyToSend       = SEND_YES;
+                                        }
+
+                                        else
+                                        {
+                                          catch( CATCH_WEATHER );
+                                        }
                                       }
 #endif
                                       break;
@@ -644,23 +631,23 @@ static void sensor_GetData(
 
       case packetType_humidity:     {
 #if defined( SENSOR_HTU )
-                                      statusHTU_t
-                                        htuStatus = HTU_GetHum( (int16_t*)&(weatherData.humidData) );
-
-                                      if  ( STATUS_HTU_SUCCESS == htuStatus )
+                                      if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_HUM ].targets )
                                       {
-                                        dataStart           = (void*)&( weatherData.humidData );
-                                        sensorPacket.length = TypeMember_SCALAR;
-                                        pushTargets         = sensor_settings[ SENSOR_PACKET_HUM ].targets;
-                                        isReadyToSend       = SEND_YES;
-                                      }
+                                        statusHTU_t
+                                          htuStatus = HTU_GetHum( (int16_t*)&(weatherData.humidData) );
 
-                                      else
-                                      {
-                                        catch( CATCH_WEATHER );
-#endif
-                                        isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_HTU )
+                                        if  ( STATUS_HTU_SUCCESS == htuStatus )
+                                        {
+                                          dataStart           = (void*)&( weatherData.humidData );
+                                          sensorPacket.length = TypeMember_SCALAR;
+                                          pushTargets         = sensor_settings[ SENSOR_PACKET_HUM ].targets;
+                                          isReadyToSend       = SEND_YES;
+                                        }
+
+                                        else
+                                        {
+                                          catch( CATCH_WEATHER );
+                                        }
                                       }
 #endif
                                       break;
@@ -668,55 +655,55 @@ static void sensor_GetData(
 
       case packetType_pressure:     {
 #if defined( SENSOR_MPL )
-                                      statusMPL_t
-                                        mplStatus = MPL_ReadRawData( MPL_MODE_PRESSURE, (int16_t*)&(weatherData.presAltData) );
-
-                                      if  ( STATUS_MPL_SUCCESS == mplStatus )
+                                      if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_PRES ].targets )
                                       {
-                                        dataStart           = (void*)&( weatherData.presAltData );
-                                        sensorPacket.length = TypeMember_SCALAR;
-                                        pushTargets         = sensor_settings[ SENSOR_PACKET_PRES ].targets;
-                                        isReadyToSend       = SEND_YES;
+                                        statusMPL_t
+                                          mplStatus = MPL_ReadRawData( MPL_MODE_PRESSURE, (int16_t*)&(weatherData.presAltData) );
+
+                                        if  ( STATUS_MPL_SUCCESS == mplStatus )
+                                        {
+                                          dataStart           = (void*)&( weatherData.presAltData );
+                                          sensorPacket.length = TypeMember_SCALAR;
+                                          pushTargets         = sensor_settings[ SENSOR_PACKET_PRES ].targets;
+                                          isReadyToSend       = SEND_YES;
+                                        }
+
+                                        else
+                                        {
+                                          catch( CATCH_WEATHER );
+                                        }
                                       }
-
-                                      else
-                                      {
-                                        catch( CATCH_WEATHER );
 #endif
-                                        isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_MPL )
+                                      break;
+                                    }
+
+
+      case packetType_ambiLight:    {
+#if defined( SENSOR_TSL)
+                                      if ( SENSOR_PUSH_NONE != sensor_settings[ SENSOR_PACKET_LUX ].targets )
+                                      {
+                                        statusTSL_t
+                                          tslStatus = TSL_ReadRawData( TSL_CHANNEL_FULL, &(weatherData.ambiData[0]) );
+
+                                        if  ( STATUS_TSL_SUCCESS == tslStatus )
+                                        {
+                                          dataStart           = (void*)&( weatherData.ambiData[0] );
+                                          sensorPacket.length = TypeMember_NumEl( weatherData_t , ambiData );
+                                          pushTargets         = sensor_settings[ SENSOR_PACKET_LUX ].targets;
+                                          isReadyToSend       = SEND_YES;
+                                        }
+
+                                        else
+                                        {
+                                          catch( CATCH_WEATHER );
+                                        }
                                       }
 #endif
                                       break;
                                     }
 
       // skip these
-      case packetType_ambiLight:    {
-#if defined( SENSOR_TSL)
-                                      statusTSL_t
-                                        tslStatus = TSL_ReadRawData( TSL_CHANNEL_FULL, &(weatherData.ambiData[0]) );
-
-                                      if  ( STATUS_TSL_SUCCESS == tslStatus )
-                                      {
-                                        dataStart           = (void*)&( weatherData.ambiData[0] );
-                                        sensorPacket.length = TypeMember_NumEl( weatherData_t , ambiData );
-                                        pushTargets         = sensor_settings[ SENSOR_PACKET_LUX ].targets;
-                                        isReadyToSend       = SEND_YES;
-                                      }
-
-                                      else
-                                      {
-                                        catch( CATCH_WEATHER );
-#endif
-                                        isReadyToSend = SEND_SKIP;
-#if defined( SENSOR_TSL )
-                                      }
-#endif
-                                      break;
-                                    }
-
       case packetType_heartRate:    {
-                                      isReadyToSend = SEND_SKIP;
                                       break;
                                     }
       default: {}
@@ -879,6 +866,9 @@ void bat_fmtDef2Float(
   output[idx] = (float)input[idx] * (3.3 / 65536.0);
 }
 
+// testing
+static uint8_t foo = 0;
+
 /**
  * format raw to mE format
  * @param src original data array
@@ -902,32 +892,38 @@ void bat_fmtDef2Me (
   uint16_t
     mvolts;
 
+  output[idx] = foo;
+  foo += 16;
+  if(foo > 100) foo = 0;
+
+  return;
+
   // convert data
   mvolts = ( (float)input[idx] * (3.3 / 65535.0) ) / 1.4 * 3300;
 
   if (mvolts >= 3000)
   {
-	  output[idx] = 100;
+          output[idx] = 100;
   }
   else if (mvolts > 2900)
   {
-	  output[idx] = 100 - ((3000 - mvolts) * 58) / 100;
+          output[idx] = 100 - ((3000 - mvolts) * 58) / 100;
   }
   else if (mvolts > 2740)
   {
-	  output[idx] = 42 - ((2900 - mvolts) * 24) / 160;
+          output[idx] = 42 - ((2900 - mvolts) * 24) / 160;
   }
   else if (mvolts > 2440)
   {
-	  output[idx] = 18 - ((2740 - mvolts) * 12) / 300;
+          output[idx] = 18 - ((2740 - mvolts) * 12) / 300;
   }
   else if (mvolts > 2100)
   {
-	  output[idx] = 6 - ((2440 - mvolts) * 6) / 340;
+          output[idx] = 6 - ((2440 - mvolts) * 6) / 340;
   }
   else
   {
-	  output[idx] = 0;
+          output[idx] = 0;
   }
 
 }

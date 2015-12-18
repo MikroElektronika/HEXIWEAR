@@ -3,14 +3,15 @@
  * Project HEXIWEAR, 2015
  */
 
+#include "HEXIWEAR_info.h"
+
 #include "FLASH_Driver.h"
-#include "FLASH_Defs.h"
 #include "generic_spi_driver.h"
-#include "generic_spi_types.h"
-#include "generic_spi_info.h"
+
 #include "error.h"
 #include "fsl_gpio_driver.h"
 #include "string.h"
+
 #include "FLASH_Info.h"
 
 /**
@@ -236,7 +237,20 @@ statusFLASH_t FLASH_Init(
     memcpy( (void*)&self,     (void*)flashHandle,   sizeof(self) );
     memcpy( (void*)&settings, (void*)flashSettings, sizeof(settings) );
 
+    /**
+     * set IRQ priority
+     */
+
+    NVIC_SetPriority( HEXIWEAR_FLASH_SPI_IRQn,    HEXIWEAR_FLASH_SPI_IRQ_PRIO );
+    NVIC_SetPriority( HEXIWEAR_FLASH_DMA_RX_IRQn, HEXIWEAR_FLASH_DMA_RX_IRQ_PRIO );
+    NVIC_SetPriority( HEXIWEAR_FLASH_DMA_TX_IRQn, HEXIWEAR_FLASH_DMA_TX_IRQ_PRIO );
+
+    /**
+     * set pins
+     */
+
     GPIO_DRV_SetPinOutput( settings.CSpin );
+
     status = STATUS_FLASH_SUCCESS;
   }
 

@@ -6,8 +6,14 @@
 #ifndef HG_SENSOR_DEFS
 #define HG_SENSOR_DEFS
 
-#include <stdint.h>
 #include "sensor_types.h"
+
+#include "FXOS_defs.h"
+#include "FXAS_defs.h"
+#include "HTU_defs.h"
+#include "MPL_defs.h"
+#include "TSL_defs.h"
+#include "MAXIM_defs.h"
 
 extern sensor_pins_t
   sensor_powerPins;

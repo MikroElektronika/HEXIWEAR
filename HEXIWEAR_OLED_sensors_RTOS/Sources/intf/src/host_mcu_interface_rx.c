@@ -146,7 +146,7 @@ osa_status_t HostInterface_RxInit()
   }
 
 #if defined( HEXIWEAR_DEBUG )
-  vQueueAddToRegistry( hostInterface_rxQueueHnd, (signed char*)"RxQueue" );
+  vQueueAddToRegistry( hostInterface_rxQueueHnd, (const char*)"RxQueue" );
 #endif
 
   // Create Rx Task

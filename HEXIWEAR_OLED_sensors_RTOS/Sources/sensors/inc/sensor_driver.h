@@ -11,7 +11,12 @@
 #include "sensor_types.h"
 #include "HEXIWEAR_types.h"
 
+#include "FXAS_driver.h"
+#include "FXOS_driver.h"
+#include "HTU_driver.h"
+#include "MPL_driver.h"
 #include "TSL_driver.h"
+#include "MAXIM_driver.h"
 
 #define registerFormatters( sensType )\
 sensor_fmtDef2Float = sensType##_fmtDef2Float;\

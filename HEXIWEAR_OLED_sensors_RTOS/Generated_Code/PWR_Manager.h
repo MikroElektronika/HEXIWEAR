@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : KSDK 1.2.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2015-12-15, 16:53, # CodeGen: 25
+**     Date/Time   : 2015-12-18, 15:42, # CodeGen: 32
 **     Contents    :
 **         POWER_SYS_Init                           - power_manager_error_code_t POWER_SYS_Init(power_manager_user_config_t const...
 **         POWER_SYS_Deinit                         - power_manager_error_code_t POWER_SYS_Deinit(void);

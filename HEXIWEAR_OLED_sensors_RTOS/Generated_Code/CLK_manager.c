@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : KSDK 1.2.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2015-12-15, 16:53, # CodeGen: 25
+**     Date/Time   : 2015-12-18, 15:42, # CodeGen: 32
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -53,6 +53,24 @@
 
 #include "CLK_manager.h"
 
+/*! @brief OSC Initialization Configuration Structure */  
+osc_user_config_t CLK_manager_osc0_Config = {
+    .freq = 12000000U,
+    .enableCapacitor2p = false,
+    .enableCapacitor4p = false,
+    .enableCapacitor8p = false,
+    .enableCapacitor16p = false,
+    .hgo = kOscGainLow,
+    .range = kOscRangeVeryHigh,
+    .erefs = kOscSrcOsc,
+
+    /*! @brief Configuration for OSCERCLK */
+    .oscerConfig = 
+    {
+        .enable = true,
+        .enableInStop = false,
+    },
+}; 
 
 /* ************************************************************************* 
  * Configuration structure for Clock Configuration 0
@@ -62,7 +80,7 @@ clock_manager_user_config_t CLK_manager_InitConfig0 = {
     /*! @brief Configuration of MCG */
     .mcgConfig =
     {
-        .mcg_mode = kMcgModeFEI, /*!< FEI mode */
+        .mcg_mode = kMcgModePEE, /*!< PEE mode */
         /* ------------------ MCGIRCCLK settings ---------------------- */
         .irclkEnable = true, /*!< MCGIRCLK enable */
         .irclkEnableInStop = false, /*!< MCGIRCLK enable in stop mode */
@@ -76,10 +94,10 @@ clock_manager_user_config_t CLK_manager_InitConfig0 = {
         .oscsel = kMcgOscselOsc, /*!< Selects System Oscillator (OSCCLK) */
             
         /* -------------------- MCG PLL settings ---------------------- */
-        .pll0EnableInFllMode = false, /*!< PLL0 enable in FLL mode */
+        .pll0EnableInFllMode = true, /*!< PLL0 enable in FLL mode */
         .pll0EnableInStop = false, /*!< PLL0 enable in stop mode */
-        .prdiv0 = 0U, /*!< PRDIV0 */
-        .vdiv0 = 0U, /*!< VDIV0 */
+        .prdiv0 = 2U, /*!< PRDIV0 */
+        .vdiv0 = 6U, /*!< VDIV0 */
     },       
      
     /*! @brief Configuration of OSCERCLK */
@@ -92,12 +110,12 @@ clock_manager_user_config_t CLK_manager_InitConfig0 = {
     /*! @brief Configuration of SIM module */  
     .simConfig = 
     {
-        .pllFllSel = kClockPllFllSelFll, /*!< Fll clock  */
-        .er32kSrc = kClockEr32kSrcLpo, /*!< ERCLK32K source selection */
+        .pllFllSel = kClockPllFllSelPll, /*!< Pll0 clock  */
+        .er32kSrc = kClockEr32kSrcRtc, /*!< ERCLK32K source selection */
         .outdiv1 = 0U, /*!< OUTDIV1 setting */
-        .outdiv2 = 0U, /*!< OUTDIV2 setting */
-        .outdiv3 = 1U, /*!< OUTDIV3 setting */
-        .outdiv4 = 1U, /*!< OUTDIV4 setting */
+        .outdiv2 = 1U, /*!< OUTDIV2 setting */
+        .outdiv3 = 4U, /*!< OUTDIV3 setting */
+        .outdiv4 = 4U, /*!< OUTDIV4 setting */
     }
 };     
 

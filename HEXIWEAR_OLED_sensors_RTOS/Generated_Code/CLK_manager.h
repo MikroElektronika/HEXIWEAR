@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : KSDK 1.2.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2015-12-15, 16:53, # CodeGen: 25
+**     Date/Time   : 2015-12-18, 15:42, # CodeGen: 32
 **     Contents    :
 **         CLOCK_SYS_SetOutDiv1                  - static inline void CLOCK_SYS_SetOutDiv1(uint8_t outdiv1);
 **         CLOCK_SYS_GetOutDiv1                  - static inline uint8_t CLOCK_SYS_GetOutDiv1(void);
@@ -230,6 +230,11 @@
 #include "HEXI_OS.h"
 #include "Cpu.h"
 
+/*! @brief OSC instance number */
+#define FSL_OSC0_INSTANCE 0U
+        
+/*! @brief OSC Initialization Configuration Structure */  
+extern osc_user_config_t CLK_manager_osc0_Config;
 /*! @brief User configuration structure 0 */
 extern clock_manager_user_config_t CLK_manager_InitConfig0;
 

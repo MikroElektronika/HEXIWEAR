@@ -55,7 +55,6 @@ Sources/cmsis_dsp/src/ComplexMathFunctions \
 Sources/cmsis_dsp/src/CommonTables \
 Sources/cmsis_dsp/src/BasicMathFunctions \
 Sources/apps/watch/src \
-Sources/apps/sensorTag/src \
 Sources/apps/common/src \
 Sources/HEXIWEAR/src \
 SDK/rtos/FreeRTOS/src \

@@ -62,14 +62,15 @@ int main(void)
   /*** End of Processor Expert internal initialization.                    ***/
 
   /* Write your code here */
-  HEXIWEAR_Init();
 
-   /**
-   * disable write buffering end enable exceptions,
-   * for debugging purposes
-   */
+  /**
+  * disable write buffering end enable exceptions,
+  * for debugging purposes
+  */
   SCB->SHCSR |= 0x00070000;
   SCnSCB->ACTLR |= SCnSCB_ACTLR_DISDEFWBUF_Msk;
+
+  HEXIWEAR_Init();
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

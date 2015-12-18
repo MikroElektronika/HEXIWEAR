@@ -11,8 +11,8 @@
 
 void apps_InitLabel(apps_label_t *label)
 {
-	OLED_SetTextProperties(&label->textProperties);
-	OLED_SetDynamicArea(&label->dynamicArea);
+  OLED_SetTextProperties(&label->textProperties);
+  OLED_SetDynamicArea(&label->dynamicArea);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,8 +25,8 @@ void apps_InitLabel(apps_label_t *label)
 
 void apps_DrawLabel(apps_label_t *label)
 {
-	apps_InitLabel(label);
-	OLED_DrawText(label->caption);
+  apps_InitLabel(label);
+  OLED_DrawText(label->caption);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,8 +39,8 @@ void apps_DrawLabel(apps_label_t *label)
 
 void apps_InitImage(apps_image_t *image)
 {
-	OLED_GetImageDimensions(&image->dynamicArea.width, &image->dynamicArea.height, image->img);
-	OLED_SetDynamicArea(&image->dynamicArea);
+  OLED_GetImageDimensions(&image->dynamicArea.width, &image->dynamicArea.height, image->img);
+  OLED_SetDynamicArea(&image->dynamicArea);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,8 +53,26 @@ void apps_InitImage(apps_image_t *image)
 
 void apps_DrawImage(apps_image_t *image)
 {
-	apps_InitImage(image);
-	OLED_DrawImage(image->img);
+  apps_InitImage(image);
+  OLED_DrawImage(image->img);
+}
+
+/**
+ * [apps_Register description]
+ * @param packetToReceive [description]
+ */
+void apps_Register( sensor_packet_t packetToReceive )
+{
+  sensor_SetPushTargets( packetToReceive, sensor_GetPushTargets( packetToReceive ) | SENSOR_PUSH_OLED );
+}
+
+/**
+ * [apps_Unregister description]
+ * @param packetToReceive [description]
+ */
+void apps_Unregister( sensor_packet_t packetToReceive )
+{
+  sensor_SetPushTargets( packetToReceive, sensor_GetPushTargets( packetToReceive ) & ~SENSOR_PUSH_OLED );
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

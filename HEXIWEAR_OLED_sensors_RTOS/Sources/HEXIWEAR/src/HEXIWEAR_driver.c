@@ -13,6 +13,8 @@
 #include "host_mcu_interface.h"
 #include "menu_driver.h"
 
+#include "FLASH_driver.h"
+
 #include "CLOCK.h"
 
 #include "error.h"
@@ -33,11 +35,11 @@ void HEXIWEAR_startup( task_param_t param )
 #endif
 
   RTC_DRV_Init( FSL_CLOCK );
+  status |= FLASH_Init( &flashModule, &flashSettings );
 
   /**
    * create basic tasks
    */
-
   status |= HostInterface_Init();
   status |= MenuDriver_Init();
   status |= sensor_Init();

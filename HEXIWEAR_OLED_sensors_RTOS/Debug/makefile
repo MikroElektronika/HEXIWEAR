@@ -35,7 +35,6 @@ RM := rm -rf
 -include Sources/cmsis_dsp/src/CommonTables/subdir.mk
 -include Sources/cmsis_dsp/src/BasicMathFunctions/subdir.mk
 -include Sources/apps/watch/src/subdir.mk
--include Sources/apps/sensorTag/src/subdir.mk
 -include Sources/apps/common/src/subdir.mk
 -include Sources/HEXIWEAR/src/subdir.mk
 -include Sources/subdir.mk
@@ -120,7 +119,7 @@ all: HEXIWEAR_OLED_sensors_RTOS.elf secondary-outputs
 HEXIWEAR_OLED_sensors_RTOS.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "D:/Marko/tasks/freescale/github/HEXIWEAR/HEXIWEAR_OLED_sensors_RTOS/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/Marko/tasks/freescale/github/HEXIWEAR/HEXIWEAR_OLED_sensors_RTOS/Project_Settings/Linker_Files" -Wl,-Map,"HEXIWEAR_OLED_sensors_RTOS.map" -specs=nosys.specs -specs=nano.specs -o "HEXIWEAR_OLED_sensors_RTOS.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "D:/Marko/tasks/freescale/work/HEXIWEAR_OLED_sensors_RTOS/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/Marko/tasks/freescale/work/HEXIWEAR_OLED_sensors_RTOS/Project_Settings/Linker_Files" -Wl,-Map,"HEXIWEAR_OLED_sensors_RTOS.map" -specs=nosys.specs -specs=nano.specs -o "HEXIWEAR_OLED_sensors_RTOS.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

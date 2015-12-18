@@ -9,7 +9,12 @@
 #include "host_mcu_interface.h"
 #include "HEXIWEAR_info.h"
 
+#include "FXOS_types.h"
+#include "FXAS_types.h"
+#include "HTU_types.h"
+#include "MPL_types.h"
 #include "TSL_types.h"
+#include "MAXIM_types.h"
 
 /**
  * list of particular sensors
@@ -46,14 +51,6 @@ typedef enum
   SENSOR_PACKET_ALL
 
 } sensor_packet_t;
-
-typedef enum
-{
-  SEND_YES,
-  SEND_NO,
-  SEND_SKIP
-
-} hexiwear_send_t;
 
 typedef struct
 {

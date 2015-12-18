@@ -6,7 +6,7 @@
 #ifndef HG_FLASH_DRIVER
 #define HG_FLASH_DRIVER
 
-#include "FLASH_types.h"
+#include "FLASH_defs.h"
 
 /**
  * initialize FLASH

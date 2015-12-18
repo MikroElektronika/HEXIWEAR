@@ -2,7 +2,7 @@
 <GenerationInfo_G_C>
   <Options>
     <ProjectName>HEXIWEAR_OLED_sensors_RTOS</ProjectName>
-    <ProjectDirectory>D:\Marko\tasks\freescale\svn\Hexiwear\MK64\Code\HEXIWEAR_OLED_sensors_RTOS\</ProjectDirectory>
+    <ProjectDirectory>D:\Marko\tasks\freescale\work\HEXIWEAR_OLED_sensors_RTOS\</ProjectDirectory>
     <ProjectMainModuleName>main</ProjectMainModuleName>
     <DestEventsDirectory>Sources\</DestEventsDirectory>
     <DestDriversSubDirectory>..\Generated_Code\</DestDriversSubDirectory>
@@ -27,11 +27,11 @@
         <Line>Documentation\doxygen\pex.css</Line>
       </GenExtraFiles>
       <GenExtraFileSrcDir9>Repositories\lib\doxygen\</GenExtraFileSrcDir9>
-      <XtraAge0>1200705184</XtraAge0>
-      <XtraAge1>1200705184</XtraAge1>
-      <XtraAge2>1200705184</XtraAge2>
-      <XtraAge3>1200705184</XtraAge3>
-      <XtraAge4>1200705184</XtraAge4>
+      <XtraAge0>1200783213</XtraAge0>
+      <XtraAge1>1200783213</XtraAge1>
+      <XtraAge2>1200783213</XtraAge2>
+      <XtraAge3>1200783213</XtraAge3>
+      <XtraAge4>1200783213</XtraAge4>
       <GenExtraFileType9>5</GenExtraFileType9>
       <GenExtraFileType8>4</GenExtraFileType8>
       <GenExtraFileType7>4</GenExtraFileType7>
@@ -1176,7 +1176,7 @@
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>11</ProjectModificationStamp>
+    <ProjectModificationStamp>12</ProjectModificationStamp>
   </Options>
   <CpuID_20>
     <Generated>true</Generated>
@@ -1184,8 +1184,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>2</GenNumMethods>
     <SystemInit>true</SystemInit>
@@ -1228,8 +1228,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>173</GenNumMethods>
     <CLOCK_SYS_SetOutDiv1>true</CLOCK_SYS_SetOutDiv1>
@@ -1719,8 +1719,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>18</GenNumMethods>
     <EDMA_DRV_Init>true</EDMA_DRV_Init>
@@ -1963,8 +1963,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>1.4</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>59</GenNumMethods>
     <hardware_init>true</hardware_init>
@@ -2270,8 +2270,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>34</GenNumMethods>
     <DSPI_DRV_IRQHandler>false</DSPI_DRV_IRQHandler>
@@ -2388,8 +2388,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>34</GenNumMethods>
     <DSPI_DRV_IRQHandler>false</DSPI_DRV_IRQHandler>
@@ -2506,8 +2506,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <GPIO_DRV_Init>true</GPIO_DRV_Init>
@@ -2627,8 +2627,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>12</GenNumMethods>
     <UART_DRV_Init>true</UART_DRV_Init>
@@ -2786,8 +2786,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>12</GenNumMethods>
     <UART_DRV_Init>true</UART_DRV_Init>
@@ -2945,8 +2945,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>29</GenNumMethods>
     <I2C_DRV_IRQHandler>true</I2C_DRV_IRQHandler>
@@ -3070,8 +3070,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>29</GenNumMethods>
     <I2C_DRV_IRQHandler>true</I2C_DRV_IRQHandler>
@@ -3195,8 +3195,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>17</GenNumMethods>
     <POWER_SYS_Init>true</POWER_SYS_Init>
@@ -3389,8 +3389,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>34</GenNumMethods>
     <OSA_SemaCreate>true</OSA_SemaCreate>
@@ -3470,8 +3470,8 @@
       <GenComponentVersion>1.0.0</GenComponentVersion>
       <GenDriverVersion>01.00</GenDriverVersion>
       <GenEventModule />
-      <HeaderAge>1200705184</HeaderAge>
-      <CodeAge>1200705184</CodeAge>
+      <HeaderAge>1200783213</HeaderAge>
+      <CodeAge>1200783213</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>108</GenNumMethods>
       <xCoRoutineCreate>true</xCoRoutineCreate>
@@ -3623,8 +3623,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>20</GenNumMethods>
     <RTC_DRV_Init>true</RTC_DRV_Init>
@@ -3739,8 +3739,8 @@
     <GenComponentVersion>1.2.0</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1200705184</HeaderAge>
-    <CodeAge>1200705184</CodeAge>
+    <HeaderAge>1200783213</HeaderAge>
+    <CodeAge>1200783213</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>15</GenNumMethods>
     <ADC16_DRV_GetAutoCalibrationParam>true</ADC16_DRV_GetAutoCalibrationParam>

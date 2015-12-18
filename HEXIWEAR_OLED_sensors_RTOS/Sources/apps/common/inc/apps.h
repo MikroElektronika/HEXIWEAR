@@ -3,18 +3,19 @@
 
 #include <stdio.h>
 #include "fsl_os_abstraction.h"
-
+#include "host_mcu_interface.h"
 #include "HEXIWEAR_types.h"
 #include "menu_types.h"
-#include "apps_resources.h"
-
+#include "menu_driver.h"
+#include "sensor_driver.h"
 #include "OLED_driver.h"
+
+#include "apps_resources.h"
 #include "error.h"
 
 #define SCREEN_BYTE_SIZE ( OLED_SCREEN_WIDTH * OLED_SCREEN_HEIGHT * OLED_BYTES_PER_PIXEL )
 
 #include "watch.h"
-#include "sensorTag.h"
 
 typedef enum name
 {
@@ -40,5 +41,8 @@ void apps_InitLabel(apps_label_t *label);
 void apps_DrawLabel(apps_label_t *label);
 void apps_InitImage(apps_image_t *image);
 void apps_DrawImage(apps_image_t *image);
+
+void apps_Register( sensor_packet_t packetToReceive );
+void apps_Unregister( sensor_packet_t packetToReceive );
 
 #endif

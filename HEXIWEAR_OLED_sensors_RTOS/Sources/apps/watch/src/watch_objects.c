@@ -24,15 +24,15 @@ apps_label_t watch_labelTime =
 {
 	.dynamicArea =
 	{
-		.xCrd = 19,
-		.yCrd = 41,
-		.width = 60,
+		.xCrd   = 19,
+		.yCrd   = 41,
+		.width  = 60,
 		.height = 30
 	},
 	.textProperties =
 	{
-		.font = appsFont_Tahoma21x25_Regular,
-		.fontColor = MENU_COLOR_WHITE,
+		.font       = appsFont_Tahoma21x25_Regular,
+		.fontColor  = MENU_COLOR_WHITE,
 		.alignParam = OLED_TEXT_ALIGN_CENTER,
 	},
 	.caption = watch_labelTime_caption
@@ -46,15 +46,15 @@ apps_label_t watch_labelDate =
 {
 	.dynamicArea =
 	{
-		.xCrd = 21,
-		.yCrd = 26,
-		.width = 51,
+		.xCrd   = 24,
+		.yCrd   = 26,
+		.width  = 51,
 		.height = 15
 	},
 	.textProperties =
 	{
-		.font = appsFont_Tahoma11x13_Regular,
-		.fontColor = MENU_COLOR_WHITE,
+		.font       = appsFont_Tahoma11x13_Regular,
+		.fontColor  = MENU_COLOR_WHITE,
 		.alignParam = OLED_TEXT_ALIGN_CENTER,
 	},
 	.caption = watch_labelDate_caption
@@ -63,20 +63,20 @@ apps_label_t watch_labelDate =
 /////////////////////////////////////////////////////////////////////////////////////
 // Temperature Label
 
-static uint8_t watch_labelTemp_caption[5];
+static uint8_t watch_labelTemp_caption[6] = "18 C";
 apps_label_t watch_labelTemp =
 {
 	.dynamicArea =
 	{
-		.xCrd = 19,
-		.yCrd = 80,
-		.width = 51,
+		.xCrd   = 19,
+		.yCrd   = 80,
+		.width  = 23,
 		.height = 15
 	},
 	.textProperties =
 	{
-		.font = appsFont_Tahoma11x13_Regular,
-		.fontColor = MENU_COLOR_WHITE,
+		.font       = appsFont_Tahoma11x13_Regular,
+		.fontColor  = MENU_COLOR_WHITE,
 		.alignParam = OLED_TEXT_ALIGN_CENTER,
 	},
 	.caption = watch_labelTemp_caption

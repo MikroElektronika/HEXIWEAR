@@ -76,15 +76,21 @@ GPIO_DRV_ClearPinOutput( VIBRO );\
  */
 
 #define HEXIWEAR_KW40_UART_IRQn   ( UART4_RX_TX_IRQn )
+
 #if defined( HEXIWEAR_DEBUG )
 #define HEXIWEAR_DEBUG_UART_IRQn  ( UART3_RX_TX_IRQn )
 #endif
-#define HEXIWEAR_FS_I2C_IRQn      ( I2C1_IRQn )
-#define HEXIWEAR_NFS_I2C_IRQn     ( I2C0_IRQn )
-#define HEXIWEAR_OLED_SPI_IRQn    ( SPI2_IRQn )
-#define HEXIWEAR_OLED_DMA_RX_IRQn ( DMA0_IRQn )
-#define HEXIWEAR_OLED_DMA_TX_IRQn ( DMA1_IRQn )
-#define HEXIWEAR_FLASH_SPI_IRQn   ( SPI1_IRQn )
+
+#define HEXIWEAR_FS_I2C_IRQn       ( I2C1_IRQn )
+#define HEXIWEAR_NFS_I2C_IRQn      ( I2C0_IRQn )
+
+#define HEXIWEAR_OLED_SPI_IRQn     ( SPI2_IRQn )
+#define HEXIWEAR_OLED_DMA_RX_IRQn  ( DMA0_IRQn )
+#define HEXIWEAR_OLED_DMA_TX_IRQn  ( DMA1_IRQn )
+
+#define HEXIWEAR_FLASH_SPI_IRQn    ( SPI1_IRQn )
+#define HEXIWEAR_FLASH_DMA_RX_IRQn ( DMA3_IRQn )
+#define HEXIWEAR_FLASH_DMA_TX_IRQn ( DMA4_IRQn )
 
 /**
  * interrupts' priorities
@@ -100,6 +106,8 @@ GPIO_DRV_ClearPinOutput( VIBRO );\
 #define HEXIWEAR_OLED_DMA_TX_IRQ_PRIO ( 9 )
 #define HEXIWEAR_OLED_DMA_RX_IRQ_PRIO ( 9 )
 #define HEXIWEAR_FLASH_SPI_IRQ_PRIO   ( 11 )
+#define HEXIWEAR_FLASH_DMA_TX_IRQ_PRIO ( 12 )
+#define HEXIWEAR_FLASH_DMA_RX_IRQ_PRIO ( 12 )
 
 #define TypeMember_Size( type, member )  ( sizeof( ( (type*)0 )->member ) )
 #define TypeMember_NumEl( type, member ) ( sizeof( ( (type*)0 )->member ) / sizeof( ( (type*)0 )->member[0] ) )

@@ -1019,8 +1019,8 @@ oled_status_t OLED_DrawText (
 
 void OLED_GetImageDimensions(uint8_t *width, uint8_t *height, const uint8_t* image)
 {
-	*height = image[2] + (image[3] << 8);
-	*width  = image[4] + (image[5] << 8);
+  *height = image[2] + (image[3] << 8);
+  *width  = image[4] + (image[5] << 8);
 }
 
 
@@ -1040,12 +1040,6 @@ oled_status_t OLED_AddImage (
 {
   oled_status_t
     status = OLED_STATUS_SUCCESS;
-//  uint8_t
-//    width,
-//    height;
-
-//  height = image[2] + (image[3] << 8);
-//  width  = image[4] + (image[5] << 8);
 
   // check the bounds
   if AreCoordsNotValid( oled_dynamic_area.xCrd, oled_dynamic_area.yCrd, oled_dynamic_area.width, oled_dynamic_area.height )

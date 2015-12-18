@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : KSDK 1.2.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2015-12-15, 16:53, # CodeGen: 25
+**     Date/Time   : 2015-12-18, 15:42, # CodeGen: 32
 **     Contents    :
 **         I2C_DRV_IRQHandler                - void I2C_DRV_IRQHandler(uint32_t instance);
 **         I2C_DRV_MasterInit                - i2c_status_t I2C_DRV_MasterInit(uint32_t instance,i2c_master_state_t * master);
