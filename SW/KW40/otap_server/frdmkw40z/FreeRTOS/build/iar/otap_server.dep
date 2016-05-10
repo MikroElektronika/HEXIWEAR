@@ -1,0 +1,3268 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>68350002</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\debug\obj\FsciMain.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\debug\list\hardware_init.lst</file>
+      <file>$PROJ_DIR$\debug\obj\MemManager.o</file>
+      <file>$PROJ_DIR$\debug\obj\FsciCommunication.o</file>
+      <file>$PROJ_DIR$\debug\obj\PWR.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashGetSecurityState.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseSector.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_ltc_driver_aes.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_ltc_driver_hash.h</file>
+      <file>$PROJ_DIR$\debug\list\DCDC.lst</file>
+      <file>$PROJ_DIR$\debug\obj\LED.o</file>
+      <file>$PROJ_DIR$\debug\obj\SetEEEEnable.o</file>
+      <file>$PROJ_DIR$\debug\obj\Reset.o</file>
+      <file>$PROJ_DIR$\debug\list\FlashVerifyBlock.lst</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSetProtection.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifySection.o</file>
+      <file>$PROJ_DIR$\debug\obj\RNG.o</file>
+      <file>$PROJ_DIR$\debug\obj\SecLib.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifyAllBlock.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_ltc_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashGetProtection.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_ltc_driver.h</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSwapCtl.o</file>
+      <file>$PROJ_DIR$\debug\list\FlashReadResource.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FlashSecurityBypass.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\SPI_Adapter.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramCheck.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FsciLogging.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashCommandSequence.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\OtaSupport.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifyBlock.o</file>
+      <file>$PROJ_DIR$\debug\obj\Messaging.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseResume.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\GPIO_IrqAdapter.o</file>
+      <file>$PROJ_DIR$\debug\obj\PWRLib.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashInit.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashCheckSum.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\GenericList.o</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSwap.o</file>
+      <file>$PROJ_DIR$\debug\obj\PWR_BLE.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramSection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FsciCommands.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_osa_ext_freertos.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashReadOnce.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseAllBlock.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramOnce.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifyBlock.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\SerialManager.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgram.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseSuspend.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashReadResource.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\utilities\inc\fsl_debug_console.h</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT45DB161E.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\queue.lst</file>
+      <file>$PROJ_DIR$\debug\list\EEEWrite.lst</file>
+      <file>$PROJ_DIR$\debug\list\device_info_service.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\src\sim\MKW40Z4\fsl_sim_hal_MKW40Z4.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\system\inc\fsl_clock_manager.h</file>
+      <file>$PROJ_DIR$\debug\obj\Reset.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\FlashProgramCheck.lst</file>
+      <file>$PROJ_DIR$\debug\obj\SerialManager.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$PROJ_DIR$\debug\list\LED.lst</file>
+      <file>$PROJ_DIR$\debug\list\battery_service.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_pmc_hal.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_sim_hal.h</file>
+      <file>$PROJ_DIR$\debug\list\board.lst</file>
+      <file>$PROJ_DIR$\debug\obj\PWR_BLE.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\TMR_Adapter.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\system\src\clock\MKW40Z4\fsl_clock_MKW40Z4.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_adc16_hal.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_adc16_driver.h</file>
+      <file>$PROJ_DIR$\debug\list\FlashGetSecurityState.lst</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_osa_ext_freertos.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_mcg_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\TimersManager.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_mcg_hal_modes.h</file>
+      <file>$PROJ_DIR$\debug\obj\GenericList.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\Flash_Adapter.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\debug\list\event_groups.lst</file>
+      <file>$PROJ_DIR$\debug\list\SecLib.lst</file>
+      <file>$PROJ_DIR$\debug\obj\Keyboard.o</file>
+      <file>$PROJ_DIR$\debug\list\FlashCheckSum.lst</file>
+      <file>$PROJ_DIR$\debug\list\ble_host_tasks.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FunctionLib.o</file>
+      <file>$PROJ_DIR$\debug\obj\Panic.o</file>
+      <file>$PROJ_DIR$\debug\list\PFlashSwapCtl.lst</file>
+      <file>$PROJ_DIR$\debug\list\timers.lst</file>
+      <file>$PROJ_DIR$\debug\list\startup.lst</file>
+      <file>$PROJ_DIR$\debug\list\OtaSupport.lst</file>
+      <file>$PROJ_DIR$\debug\list\FsciLogging.lst</file>
+      <file>$PROJ_DIR$\debug\obj\MemManager.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\system\inc\fsl_interrupt_manager.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_smc_hal.h</file>
+      <file>$PROJ_DIR$\debug\list\ble_globals.lst</file>
+      <file>$PROJ_DIR$\debug\list\fsl_osa_ext_freertos.lst</file>
+      <file>$PROJ_DIR$\debug\obj\EEEWrite.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FsciMain.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifyAllBlock.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\croutine.lst</file>
+      <file>$PROJ_DIR$\debug\obj\startup.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\hardware_init.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\fsci_ble_otap.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+      <file>$PROJ_DIR$\debug\obj\heap_1.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\list.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\PFlashGetProtection.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_dspi_hal.h</file>
+      <file>$PROJ_DIR$\debug\list\MemManager.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FlashGetSecurityState.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FsciCommunication.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\tsm_ll_timing.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseResume.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\SPI_Adapter.lst</file>
+      <file>$PROJ_DIR$\debug\obj\pin_mux.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\queue.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSwapCtl.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashSecurityBypass.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_trng_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\Keyboard.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifyBlock.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FsciCommands.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSetProtection.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_ftm_driver.h</file>
+      <file>$PROJ_DIR$\debug\obj\GPIO_IrqAdapter.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgram.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\CopyToRam.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\DFlashSetProtection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramSection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifySection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramOnce.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\SetEEEEnable.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FunctionLib.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\FlashProgramOnce.lst</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashGetProtection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\LED.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\EERAMGetProtection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSwap.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\KW4xXcvrDrv.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\ifr_mkw40z4_radio.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashReadOnce.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\lib\ksdk_freertos_lib\iar\KW40Z4\debug\libksdk_platform_freertos.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_lptmr_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\FsciLogging.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\DEFlashPartition.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\heap_1.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FlashReadResource.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseSector.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT45DB021E.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\SecLib.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\DCDC.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashCheckSum.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\PWR.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\otap_service.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseAllBlock.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT26DF081A.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashCommandSequence.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashInit.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramCheck.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\SPI_Adapter.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\DFlashGetProtection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\EERAMSetProtection.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\OtaSupport.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\Panic.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\RNG.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\queue.o</file>
+      <file>$PROJ_DIR$\debug\list\Panic.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashReadOnce.lst</file>
+      <file>$PROJ_DIR$\debug\obj\EERAMGetProtection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseSuspend.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_InternalFlash.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsci_ble_otap.pbi</file>
+      <file>$PROJ_DIR$\debug\list\gatt_database.lst</file>
+      <file>$PROJ_DIR$\debug\obj\device_info_service.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\hcit_serial_interface.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FwkInit.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\ble_globals.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\EERAMSetProtection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\app.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\CopyToRam.pbi</file>
+      <file>$PROJ_DIR$\debug\list\FsciMain.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseResume.o</file>
+      <file>$PROJ_DIR$\debug\obj\EEEWrite.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\DFlashGetProtection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\DEFlashPartition.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT45DB161E.o</file>
+      <file>$PROJ_DIR$\debug\list\EERAMGetProtection.lst</file>
+      <file>$PROJ_DIR$\debug\list\port.lst</file>
+      <file>$PROJ_DIR$\debug\list\PWRLib.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseSector.o</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT45DB021E.o</file>
+      <file>$PROJ_DIR$\debug\list\list.lst</file>
+      <file>$PROJ_DIR$\debug\obj\battery_service.pbi</file>
+      <file>$PROJ_DIR$\debug\list\FlashEraseSector.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseSuspend.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashInit.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashEraseAllBlock.o</file>
+      <file>$PROJ_DIR$\debug\obj\DFlashSetProtection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_InternalFlash.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramCheck.o</file>
+      <file>$PROJ_DIR$\debug\obj\otap_service.pbi</file>
+      <file>$PROJ_DIR$\debug\list\heap_2.lst</file>
+      <file>$PROJ_DIR$\debug\list\system_MKW40Z4.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\setjmp.h</file>
+      <file>$PROJ_DIR$\debug\obj\app_config.pbi</file>
+      <file>$PROJ_DIR$\debug\otap_server_FreeRTOS.out</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgram.o</file>
+      <file>$PROJ_DIR$\debug\obj\DEFlashPartition.o</file>
+      <file>$PROJ_DIR$\debug\obj\Flash_Adapter.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT45DB161E.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\EEEWrite.o</file>
+      <file>$PROJ_DIR$\debug\obj\DCDC.o</file>
+      <file>$PROJ_DIR$\debug\obj\tasks.o</file>
+      <file>$PROJ_DIR$\debug\obj\hcit_serial_interface.o</file>
+      <file>$PROJ_DIR$\debug\obj\ble_init.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\startup.o</file>
+      <file>$PROJ_DIR$\debug\obj\Flash_Adapter.o</file>
+      <file>$PROJ_DIR$\debug\obj\app.o</file>
+      <file>$PROJ_DIR$\debug\obj\ApplMain.o</file>
+      <file>$PROJ_DIR$\debug\obj\FwkInit.o</file>
+      <file>$PROJ_DIR$\debug\obj\PWRLib.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\DCDC.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\EERAMGetProtection.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramSection.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashReadResource.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashGetSecurityState.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashCheckSum.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashReadOnce.o</file>
+      <file>$PROJ_DIR$\debug\obj\CopyToRam.o</file>
+      <file>$PROJ_DIR$\debug\obj\FlashProgramOnce.o</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT26DF081A.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashCommandSequence.o</file>
+      <file>$PROJ_DIR$\debug\obj\DFlashGetProtection.o</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT26DF081A.o</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_AT45DB021E.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\board.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashSecurityBypass.o</file>
+      <file>$PROJ_DIR$\debug\obj\Eeprom_InternalFlash.o</file>
+      <file>$PROJ_DIR$\debug\obj\system_MKW40Z4.o</file>
+      <file>$PROJ_DIR$\debug\list\GenericList.lst</file>
+      <file>$PROJ_DIR$\debug\obj\fsci_ble_otap.o</file>
+      <file>$PROJ_DIR$\debug\list\tasks.lst</file>
+      <file>$PROJ_DIR$\debug\obj\MemManager.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\pin_mux.o</file>
+      <file>$PROJ_DIR$\debug\obj\heap_3.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifyAllBlock.o</file>
+      <file>$PROJ_DIR$\debug\obj\ble_init.o</file>
+      <file>$PROJ_DIR$\debug\obj\event_groups.o</file>
+      <file>$PROJ_DIR$\debug\obj\system_MKW40Z4.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\DFlashSetProtection.o</file>
+      <file>$PROJ_DIR$\debug\obj\ble_globals.o</file>
+      <file>$PROJ_DIR$\debug\obj\gatt_database.o</file>
+      <file>$PROJ_DIR$\debug\obj\EERAMSetProtection.o</file>
+      <file>$PROJ_DIR$\debug\obj\heap_2.o</file>
+      <file>$PROJ_DIR$\debug\obj\ble_controller_task.o</file>
+      <file>$PROJ_DIR$\debug\obj\heap_4.o</file>
+      <file>$PROJ_DIR$\debug\obj\tsm_ll_timing.o</file>
+      <file>$PROJ_DIR$\debug\obj\ble_host_tasks.o</file>
+      <file>$PROJ_DIR$\debug\obj\hardware_init.o</file>
+      <file>$PROJ_DIR$\debug\obj\croutine.o</file>
+      <file>$PROJ_DIR$\debug\obj\KW4xXcvrDrv.o</file>
+      <file>$PROJ_DIR$\debug\obj\heap_1.o</file>
+      <file>$PROJ_DIR$\debug\obj\battery_service.o</file>
+      <file>$PROJ_DIR$\debug\obj\startup_MKW40Z4.o</file>
+      <file>$PROJ_DIR$\debug\obj\device_info_service.o</file>
+      <file>$PROJ_DIR$\debug\obj\app_config.o</file>
+      <file>$PROJ_DIR$\debug\obj\otap_service.o</file>
+      <file>$PROJ_DIR$\debug\list\app_config.lst</file>
+      <file>$PROJ_DIR$\debug\obj\event_groups.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\port.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\heap_2.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\gpio_pins.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\Eeprom_InternalFlash.lst</file>
+      <file>$PROJ_DIR$\debug\obj\heap_4.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\timers.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\FlashEraseAllBlock.lst</file>
+      <file>$PROJ_DIR$\debug\list\RNG.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_trng_driver.h</file>
+      <file>$PROJ_DIR$\debug\obj\croutine.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\tasks.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\Messaging.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\Eeprom_AT26DF081A.lst</file>
+      <file>$PROJ_DIR$\debug\list\PFlashSetProtection.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\osa\inc\fsl_os_abstraction.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\include\fsl_bitaccess.h</file>
+      <file>$PROJ_DIR$\debug\list\TMR_Adapter.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\fsl_device_registers.h</file>
+      <file>$PROJ_DIR$\debug\obj\otap_server.pbd</file>
+      <file>$PROJ_DIR$\debug\otap_server.bin</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\include\MKW40Z4.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_gpio_driver.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\CMSIS\Include\core_cm0plus.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\att_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\include\MKW40Z4_features.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\include\MKW40Z4_extension.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_ftm_hal.h</file>
+      <file>$PROJ_DIR$\debug\list\pin_mux.lst</file>
+      <file>$PROJ_DIR$\debug\list\FwkInit.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\osa\inc\fsl_os_abstraction_free_rtos.h</file>
+      <file>$PROJ_DIR$\debug\list\FlashProgramSection.lst</file>
+      <file>$PROJ_DIR$\debug\obj\timers.pbi</file>
+      <file>$PROJ_DIR$\debug\list\Flash_Adapter.lst</file>
+      <file>$PROJ_DIR$\debug\list\DFlashSetProtection.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\debug\list\app.lst</file>
+      <file>$PROJ_DIR$\debug\list\ble_init.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\ymath.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\debug\list\SetEEEEnable.lst</file>
+      <file>$PROJ_DIR$\debug\list\GPIO_IrqAdapter.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_pit_driver.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_pit_hal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_rtc_driver.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+      <file>$PROJ_DIR$\debug\list\heap_4.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\deprecated_definitions.h</file>
+      <file>$PROJ_DIR$\debug\list\FsciCommunication.lst</file>
+      <file>$PROJ_DIR$\debug\list\TimersManager.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashVerifyAllBlock.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashSecurityBypass.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\include\SSD_FTFx.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashGetSecurityState.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashReadResource.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashVerifyBlock.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgramCheck.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashInit.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\include\FTFx_KX_flash_config.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\include\SSD_FTFx_Internal.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\include\SSD_Types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\include\SSD_FTFx_Common.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashSwap.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseSuspend.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Interface\FsciInterface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciCommands.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgramOnce.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashSetProtection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashReadOnce.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciCommunication.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseSector.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashGetProtection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgramSection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseResume.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashCommandSequence.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgram.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashSwapCtl.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\SetEEEEnable.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciCommands.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashVerifySection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciCommunication.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseAllBlock.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FunctionLib\FunctionLib.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Keyboard\Interface\Keyboard.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LED\Source\LED.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Interface\MKW4xZ\PWR_Interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWRLib.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\GPIOIrq\GPIO_IrqAdapter.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FunctionLib\FunctionLib.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Lists\GenericList.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\MemManager\Source\MemManager.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Messaging\Interface\Messaging.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\ModuleInfo\ModuleInfo.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciLogging.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LED\Interface\LED.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWR_BLE.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Lists\GenericList.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\MemManager\Interface\MemManager.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWR.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Messaging\Source\Messaging.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Interface\MKW4xZ\PWR_Configuration.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWRLib.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OSAbstraction\Interface\fsl_osa_ext.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\GPIOIrq\GPIO_IrqAdapter.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWR_BLE.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OSAbstraction\Interface\fsl_osa_ext_config.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciMain.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Keyboard\Source\Keyboard.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Reset\Reset.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OtaSupport\Interface\OtaSupport.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\RNG\Source\RNG.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OSAbstraction\Source\fsl_osa_ext_freertos.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SerialManager\Source\SerialManager.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Source\TimersManagerInternal.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SecLib\SecLib.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SerialManager\Source\SPI_Adapter\SPI_Adapter.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Source\TMR_Adapter.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\ifr_mkw40z4_radio.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SerialManager\Source\SPI_Adapter\SPI_Adapter.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Source\TMR_Adapter.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\ifr_mkw40z4_radio.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Interface\TimersManager.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SerialManager\Interface\SerialManager.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\RNG\Interface\RNG_Interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SecLib\SecLib.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Panic\Interface\Panic.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Source\TimersManager.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\BLEDefaults.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\KW4xXcvrDrv.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OtaSupport\Source\OtaSupport.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Panic\Source\Panic.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\tsm_timing_ble.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\hardware_init.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\startup\iar\startup_MKW40Z4.s</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\board.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\ZigbeeDefaults.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\event_groups.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\startup\system_MKW40Z4.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\KW4xXcvrDrv.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\tsm_timing_zigbee.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\tsm_ll_timing.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\startup.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\gpio_pins.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\croutine.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\startup\system_MKW40Z4.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\FreeRTOS.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\tsm_ll_timing.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\config\KW40Z4\iar\FreeRTOSConfig.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\gpio_pins.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_1.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_2.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\event_groups.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\pin_mux.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_3.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\startup.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_4.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\list.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\list.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\board.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\croutine.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\pin_mux.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\port\iar\port.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\tasks.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\timers.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\port\iar\portTicks.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\portable.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\projdefs.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\port\iar\portmacro.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\StackMacros.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\queue.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\port\iar\portasm.s</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\semphr.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\mpu_wrappers.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\task.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\timers.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\include\queue.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_db_macros.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_alloc_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_db_x_macros.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_enum_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_init_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\app_config.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ApplMain.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ble_controller_task_config.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ble_init.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\app.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\fsci_ble_otap.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ble_host_task_config.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\controller\interface\controller_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_uuid_decl_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_decl_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ble_controller_task.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ble_host_tasks.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\gatt_db_handles.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ApplMain.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\app.h</file>
+      <file>$PROJ_DIR$\..\..\app_preinclude.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_size_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\fsci_ble_otap.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\gatt_db.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\common\gatt_uuid128.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\hci_transport\interface\hci_transport.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\hci_transport\source\hcit_serial_interface.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\att_errors.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\gatt_database.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\macros\gatt_uuid_def_x.def</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\ble_constants.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\common\ble_init.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\l2ca_cb_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\device_info\device_info_service.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\device_info\device_info_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\DCDC\Interface\DCDC.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Interface\Eeprom.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\ble_host_tasks.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gatt_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\DCDC\Source\DCDC.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\ble_utils.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\ble_sig_defines.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\l2ca_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\battery\battery_service.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\battery\battery_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\otap\otap_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\otap\otap_service.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gatt_server_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gatt_db_app_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\source\ble_globals.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Common\EmbeddedTypes.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Common\FwkInit.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\ble_general.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gatt_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gap_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gap_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gatt_client_interface.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\gatt_database.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\l2ca_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\vendor_debug_commands.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\interface\hci_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\Internal\Flash_Adapter.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashCheckSum.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\DEFlashPartition.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\DFlashGetProtection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\CopyToRam.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\DFlashSetProtection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_AT45DB161E.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_AT45DB021E.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_InternalFlash.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\Internal\Flash_Adapter.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_AT26DF081A.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\EEEWrite.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\EERAMGetProtection.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\EERAMSetProtection.c</file>
+      <file>$PROJ_DIR$\debug\list\FsciCommands.lst</file>
+      <file>$PROJ_DIR$\debug\list\ifr_mkw40z4_radio.lst</file>
+      <file>$PROJ_DIR$\debug\obj\GPIO_IrqAdapter.pbi</file>
+      <file>$PROJ_DIR$\debug\list\PWR.lst</file>
+      <file>$PROJ_DIR$\debug\obj\PWR_BLE.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\SetEEEEnable.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSwapCtl.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\PWRLib.pbi</file>
+      <file>$PROJ_DIR$\debug\list\gpio_pins.lst</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSwap.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FsciCommunication.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashGetProtection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\GenericList.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FwkInit.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_tpm_driver.h</file>
+      <file>$PROJ_DIR$\debug\list\EERAMSetProtection.lst</file>
+      <file>$PROJ_DIR$\debug\list\otap_service.lst</file>
+      <file>$PROJ_DIR$\debug\obj\FsciLogging.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FlashVerifySection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\FunctionLib.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\tsm_ll_timing.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\platform\devices\MKW40Z4\linker\iar\MKW40Z160xxx4_connectivity.icf</file>
+      <file>$PROJ_DIR$\debug\obj\app_config.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FsciMain.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Messaging.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\ble_controller_task.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\gatt_database.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\list\ble_controller_task.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\lib\ble_host_central_lib.a</file>
+      <file>$PROJ_DIR$\debug\list\Eeprom_AT45DB021E.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashSecurityBypass.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_tpm_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\PWR.pbi</file>
+      <file>$PROJ_DIR$\debug\list\FlashEraseSuspend.lst</file>
+      <file>$PROJ_DIR$\debug\obj\battery_service.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\hcit_serial_interface.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\PFlashSetProtection.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\ble_init.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsci_ble_otap.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\ApplMain.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\FsciCommands.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Keyboard.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\LED.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\ble_host_tasks.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\app.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\device_info_service.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\ble_globals.__cstat.et</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_lptmr_driver.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\controller\lib\ble_controller_lib.a</file>
+      <file>$PROJ_DIR$\debug\obj\ble_controller_task.pbi</file>
+      <file>$PROJ_DIR$\debug\list\PWR_BLE.lst</file>
+      <file>$PROJ_DIR$\debug\list\heap_3.lst</file>
+      <file>$PROJ_DIR$\debug\list\PFlashSwap.lst</file>
+      <file>$PROJ_DIR$\debug\obj\gatt_database.pbi</file>
+      <file>$PROJ_DIR$\debug\list\CopyToRam.lst</file>
+      <file>$PROJ_DIR$\debug\obj\timers.o</file>
+      <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+      <file>$PROJ_DIR$\debug\obj\list.o</file>
+      <file>$PROJ_DIR$\debug\obj\gpio_pins.o</file>
+      <file>$PROJ_DIR$\debug\list\tsm_ll_timing.lst</file>
+      <file>$PROJ_DIR$\debug\list\KW4xXcvrDrv.lst</file>
+      <file>$PROJ_DIR$\debug\list\Eeprom_AT45DB161E.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\inc\fsl_lpuart_driver.h</file>
+      <file>$PROJ_DIR$\debug\list\FunctionLib.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_gpio_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\TMR_Adapter.o</file>
+      <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+      <file>$PROJ_DIR$\debug\list\SerialManager.lst</file>
+      <file>$PROJ_DIR$\debug\obj\board.o</file>
+      <file>$PROJ_DIR$\debug\obj\portasm.o</file>
+      <file>$PROJ_DIR$\debug\list\otap_server_FreeRTOS.map</file>
+      <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SecLib\lib_crypto_IAR_M0.a</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_lpuart_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\port.o</file>
+      <file>$PROJ_DIR$\debug\list\Messaging.lst</file>
+      <file>$PROJ_DIR$\debug\obj\TimersManager.o</file>
+      <file>$PROJ_DIR$\debug\obj\heap_3.o</file>
+      <file>$PROJ_DIR$\debug\obj\ifr_mkw40z4_radio.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\ApplMain.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\heap_2.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\ifr_mkw40z4_radio.o</file>
+      <file>$PROJ_DIR$\debug\obj\TMR_Adapter.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\tasks.pbi</file>
+      <file>$PROJ_DIR$\debug\list\FlashInit.lst</file>
+      <file>$PROJ_DIR$\debug\obj\ble_host_tasks.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\queue.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_osa_ext_freertos.pbi</file>
+      <file>$PROJ_DIR$\debug\list\Keyboard.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashVerifySection.lst</file>
+      <file>$PROJ_DIR$\debug\list\hcit_serial_interface.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashCommandSequence.lst</file>
+      <file>$PROJ_DIR$\debug\list\ApplMain.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashEraseResume.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashProgram.lst</file>
+      <file>$PROJ_DIR$\debug\list\FlashVerifyAllBlock.lst</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_rtc_hal.h</file>
+      <file>$PROJ_DIR$\debug\list\DEFlashPartition.lst</file>
+      <file>$PROJ_DIR$\debug\obj\SPI_Adapter.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\hardware_init.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\system_MKW40Z4.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\startup.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\debug\obj\board.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Panic.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\hal\inc\fsl_port_hal.h</file>
+      <file>$PROJ_DIR$\debug\obj\heap_3.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\heap_4.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\event_groups.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\pin_mux.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\port.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\gpio_pins.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\RNG.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\list.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\SerialManager.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\TimersManager.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\heap_1.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\Reset.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\SecLib.pbi</file>
+      <file>$PROJ_DIR$\debug\list\DFlashGetProtection.lst</file>
+      <file>$PROJ_DIR$\debug\obj\croutine.pbi</file>
+      <file>$PROJ_DIR$\debug\list\Reset.lst</file>
+      <file>$PROJ_DIR$\debug\obj\OtaSupport.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\KW4xXcvrDrv.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\debug\otap_server_FreeRTOS.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 293</file>
+        </tool>
+        <tool>
+          <name>ILINK</name>
+          <file> 606</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 557 221 269 222 266 258 254 261 250 604 232 263 215 211 268 236 253 214 237 194 189 241 226 256 251 220 230 235 200 185 193 198 229 199 210 203 233 227 231 228 240 249 32 17 244 43 5 29 0 44 87 223 255 39 35 594 262 217 265 257 613 259 617 84 264 12 593 4 33 270 31 88 22 16 40 24 247 610 605 6 41 36 169 14 18 19 49 13 27 219 267 242 216 591 612 601 260 564 145 608 584 2 607 602 592</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashVerifyAllBlock.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 631 249</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 102</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 306 639 310 291 429 337 346 345 300 344 307 298 301 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashSecurityBypass.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 566 240</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 121</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 304 639 337 343 308 300 294 296 346 295 302 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashGetSecurityState.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 74 229</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 113</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashReadResource.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 228</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 150</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashVerifyBlock.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 32</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 639 294 346 302 337 300 307 296 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgramCheck.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61 203</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 162</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 429 310 291 639 306 337 346 345 300 344 307 298 301 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashInit.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 620 199</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 161</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashSwap.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 545</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 588 40</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 141</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 345 639 346 337 310 291 306 429 300 344 307 298 301 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseSuspend.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 569 198</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 173</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgramOnce.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 137 233</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 134</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 639 294 346 302 337 300 307 296 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashSetProtection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 572</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 286 16</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 126</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashReadOnce.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 171 231</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 144</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciCommunication.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 546</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 333 5</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 114</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 382 300 511 421 307 296 432 365 407 350 406 374 294 297 460 349 373 410 287 308 430 290 639 450 332 442 448 458 310 298 301 328 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 365 511 639 307 300 310 296 308 298 301 407 406 349 350 373 382 374 410 287 294 328 297 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseSector.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 197 193</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 151</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 304 639 337 343 308 300 294 296 346 295 302 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashGetProtection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 547</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 110 22</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 138</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 639 294 346 302 337 300 307 296 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgramSection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 315 227</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 132</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseResume.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 629 185</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 116</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 343 308 337 307 304 300 294 296 346 295 302 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashCommandSequence.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 627 235</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 160</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 639 294 346 302 337 300 307 296 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashProgram.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 630 210</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 129</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 344 298 639 307 301 300 337 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\PFlashSwapCtl.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 542</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 89 24</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 120</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 345 639 346 337 310 291 306 429 300 344 307 298 301 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\SetEEEEnable.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 541</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 324 13</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 135</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciCommands.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 576</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 536 43</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 125</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 373 307 301 300 511 407 639 298 306 429 309 288 350 377 310 349 365 382 291 296 308 406 374 295 304 302 319 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 349 407 350 365 406 373 382 374 377 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashVerifySection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 554</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 625 17</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 133</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashEraseAllBlock.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 279 200</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 158</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 301 300 639 344 298 337 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FunctionLib\FunctionLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 555</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 599 87</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 136</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 373 310 298 301 308 511 639 300 296</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 373 511 639 307 300 310 296 308 298 301</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LED\Source\LED.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 578</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 64 12</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 139</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 437 379 307 298 301 300 511 600 295 302 419 310 299 294 291 304 305 406 296 308 427 328 642 297 638 306 429 323 309 319 288</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 379 511 639 307 300 310 296 308 298 301 406 419 437 427 299 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\GPIOIrq\GPIO_IrqAdapter.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 538</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 325 35</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 128</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 298 307 639 299 300 430 442 328 301 294 458 388 642 310 638 306 429 309 319 314 290 450 332 448 419 437 287 373 600 296 308 297 291 295 304 302 288 421 432 460 323 305 456 451 452 457 511 427</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 299 639 307 300 310 296 308 298 301 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 388 511 419 437 427 373</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\MemManager\Source\MemManager.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 112 4</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 246</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 432 421 511 307 410 639 308 297 460 287 382 300 296 294 430 290 450 332 442 448 458 310 298 301 328 314 456 451 452 457 374</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 287 294 328 297 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 410 382 374</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciLogging.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 553</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 93 29</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 147</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 350 511 374 300 1 639 307 296 407 349 382 95 308 81 365 373 310 298 301 406 297 63</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 349 407 365 406 350 373 382 374 1 297 81 95 63</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Lists\GenericList.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 548</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 243 39</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 300 294 307 511 296 421 432 374 308 297 460 287 639 310 298 301 328 314 430 290 450 332 442 448 458 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 374 511 639 307 300 310 296 308 298 301 287 294 328 297 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWR.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 568</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 539 6</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 156</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 406 308 421 432 511 307 323 298 371 287 300 296 306 429 305 314 297 460 385 370 291 310 301 295 304 302 328 430 290 450 332 442 448 458 309 319 288 294 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 385 406 371 370 291 295 302 323 305 319 309 429 306 288 328 297 304 287 294 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Messaging\Source\Messaging.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 560</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 611 33</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 284</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 382 421 310 432 511 376 639 307 298 301 300 297 460 287 296 308 374 294 430 290 450 332 442 448 458 328 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 382 374 376 287 294 328 297 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWRLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 543</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 192 36</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 224</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 296 406 307 300 639 511 305 328 371 368 308 306 429 295 294 451 291 385 287 310 298 301 304 302 323 370 456 432 458 452 457 309 319 288 297 314 430 421 290 450 332 442 460 448</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 291 295 302 323 305 319 309 429 306 288 328 297 304 371 370 385 406 287 294 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 368</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\LowPower\Source\MKW4xZ\PWR_BLE.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 540</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 586 41</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 511 385 406 300 639 307 301 310 298 296 308 380</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 385 406 511 639 307 300 310 296 308 298 301 380</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\FSCI\Source\FsciMain.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 559</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 184 0</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 101</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 382 374 511 308 350 639 300 307 349 365 376 296 407 406 310 298 301</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 349 407 350 365 406 382 374 376</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Keyboard\Source\Keyboard.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 577</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 624 84</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 323 299 427 638 639 511 300 307 296 294 421 432 406 388 308 600 298 306 429 305 297 460 368 419 287 310 301 437 328 642 291 295 304 302 430 290 450 332 442 448 458 309 319 288 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 368 406 419 437 427 299 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 388</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Reset\Reset.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 654</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 658 14</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 305 302 323 639 291 307 298 301 300 304 310 306 429 296 308 309 319 288 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 291 295 639 307 300 310 296 308 298 301 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\RNG\Source\RNG.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 649</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 280 18</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 168</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 300 307 296 294 421 319 122 432 408 385 639 309 409 281 308 306 429 291 638 297 460 373 96 370 511 310 298 301 295 304 302 288 58 78 430 290 450 332 442 448 458 323 305 328 67 71 76 406 287 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 408 511 639 307 300 310 296 308 298 301 373 409 291 295 302 323 305 319 309 429 306 288 328 297 304 59 294 638 67 58 71 76 78 96 370 385 406 281 122 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OSAbstraction\Source\fsl_osa_ext_freertos.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 623</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 44</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 75</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95 291 511 306 300 307 296 639 430 460 429 328 290 450 432 295 287 308 297 314 421 332 442 448 458 294 305 387 96 374 310 298 301 390 456 451 452 457 638 304 302 323 309 319 288 63</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 387 390 290 297 287 294 328 314 430 432 451 450 332 452 457 458 442 456 460 421 448 96 638 291 295 302 323 305 319 309 429 306 288 304 95 63 374</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SerialManager\Source\SerialManager.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 651</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 603 49</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 450 373 642 314 511 297 309 307 448 300 294 638 407 299 609 296 374 639 295 302 319 290 332 71 382 291 95 59 308 437 328 304 430 442 458 287 76 410 376 388 598 310 298 301 419 427 600 306 429 288 421 432 460 67 323 305 456 451 452 457 63 58 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 407 511 639 307 300 310 296 308 298 301 410 382 374 376 373 388 419 437 427 299 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 95 63 598 609 59 67 58 71 76 78</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SecLib\SecLib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 655</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83 19</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 153</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 638 308 294 291 639 328 452 429 305 432 78 419 23 307 306 374 511 458 300 457 9 58 373 427 296 600 298 295 456 287 76 382 409 437 310 301 323 451 21 299 642 297 304 302 309 319 288 314 430 421 290 450 332 442 460 448 10 59 67 71</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 419 639 307 300 310 296 308 298 301 437 427 299 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 382 511 374 373 409 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 23 21 9 10 59 67 58 71 76 78</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\ifr_mkw40z4_radio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 614</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 537 617</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 143</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 410 298 295 421 307 301 300 429 432 511 305 328 287 310 297 460 405 423 291 296 308 302 323 304 294 430 290 450 332 442 448 458 309 319 306 288 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 405 295 302 323 305 319 309 429 423 291 306 288 328 297 304 410 287 294 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\SerialManager\Source\SPI_Adapter\SPI_Adapter.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 634</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117 27</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 163</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 291 287 294 304 639 300 400 307 298 301 305 328 71 456 410 111 511 310 295 302 638 76 432 458 452 457 437 59 296 308 306 429 323 67 451 309 319 288 297 58 78 314 430 421 290 450 332 442 460 448</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 400 511 639 307 300 310 296 308 298 301 291 295 302 323 305 319 309 429 306 288 328 297 304 437 410 59 294 638 67 58 71 76 78 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 111</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Source\TMR_Adapter.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 618</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 289 601</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 294 59 291 511 310 639 401 295 302 638 451 311 146 550 307 298 301 300 304 305 328 67 76 583 287 437 127 567 296 308 306 429 323 58 456 432 458 452 457 71 309 319 288 297 96 314 430 421 290 450 332 442 460 448 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 401 511 639 307 300 310 296 308 298 301 291 295 302 323 305 319 309 429 306 288 328 297 304 550 567 294 638 96 583 146 67 58 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 59 71 76 78 437 127 311</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\TimersManager\Source\TimersManager.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 652</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 334 612</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 308 401 294 639 456 567 511 59 307 288 406 329 300 296 291 306 429 297 638 432 458 452 457 96 58 398 410 287 326 437 310 298 301 550 295 304 302 309 319 451 76 323 305 328 314 430 421 290 450 332 442 460 448 632 327 67 71 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 398 406 410 401 291 295 302 323 305 319 309 429 306 288 328 297 304 550 567 294 638 96 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 329 632 326 327 59 67 58 71 76 78 437</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\KW4xXcvrDrv.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 660</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 596 264</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 142</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 291 294 332 511 319 307 290 58 300 412 431 310 309 450 448 638 423 600 295 302 639 430 442 458 416 420 287 67 642 405 330 298 301 304 288 297 421 432 460 296 308 306 429 323 305 328 314 456 451 452 457 424 322</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 412 420 423 511 639 307 300 310 296 308 298 301 291 295 302 323 305 319 309 429 306 288 328 297 304 287 294 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 67 638 58 600 642 431 416 424 405 330 322 107</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\OtaSupport\Source\OtaSupport.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 659</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 92 31</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 166</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 373 308 421 374 511 304 288 432 307 346 345 497 287 300 296 344 639 295 302 297 460 394 382 522 310 298 301 337 343 294 291 306 429 309 319 430 290 450 332 442 448 458 323 305 328 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 394 497 382 374 373 522 337 344 346 345 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Panic\Source\Panic.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 641</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 170 88</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 167</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 298 421 307 301 300 432 410 314 310 328 297 460 287 511 296 308 294 430 290 450 332 442 448 458 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 410 511 639 307 300 310 296 308 298 301 287 294 328 297 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\hardware_init.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 635</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 3 262</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 294 23 639 430 442 300 638 419 310 76 458 59 344 437 307 298 301 600 306 429 288 71 291 314 290 450 332 448 53 522 427 296 308 299 328 642 297 295 304 302 309 319 67 421 432 460 10 511 346 345 323 305 58 78 287 456 451 452 457 21 9 337 343</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 419 639 307 300 310 296 308 298 301 437 427 299 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 59 67 58 71 76 78 53 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 23 21 9 10 522 511 337 344 346 345 343</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\startup\iar\startup_MKW40Z4.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 267</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\MKW40Z4\startup\system_MKW40Z4.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 636</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 206 242</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 252</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 308 306 429 639 307 305 300 296 323 295 298 291 310 301 304 302 309 319 288 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 639 307 300 310 296 308 298 301 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\XCVR\MKW40Z4\tsm_ll_timing.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 556</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 595 260</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 115</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 412 302 639 310 309 288 291 307 298 301 300 416 304 431 296 308 424 306 429 319 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 639 307 300 310 296 308 298 301 431 416 412 424 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\devices\startup.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 637</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 91 219</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 104</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 302 323 295 305 439 307 298 301 300 304 310 291 306 429 296 308 309 319 288 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 439 291 295 639 307 300 310 296 308 298 301 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\croutine.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 657</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 263</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 282</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 442 430 310 444 451 458 432 300 298 301 307 452 457 639 290 450 297 296 308 332</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 430 290 307 300 310 296 308 298 301 297 432 639 451 450 332 452 457 458 442 444</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\gpio_pins.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 648</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 544 594</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 275</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295 305 639 302 300 307 296 294 427 308 297 600 291 304 323 328 310 298 301 299 642 638 306 429 309 319 288</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 639 307 300 310 296 308 298 301 328 297 427 299 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_1.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 653</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 149 265</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 108</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 430 432 296 458 307 298 332 328 297 310 308 300 451 301 290 639 450 442 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 432 328 307 300 310 296 308 298 301 297 430 290 639 451 450 332 452 457 458 442</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_2.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 616</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 205 257</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 274</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 432</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 432</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\event_groups.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 645</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 82 251</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 272</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 301 448 432 307 328 300 430 298 297 332 458 421 310 296 308 290 639 450 442 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 328 307 300 310 296 308 298 301 297 430 290 432 639 451 450 332 452 457 458 442 448 421</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_3.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 643</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 587 613</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 248</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 432</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 432</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\heap_4.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 644</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 331 259</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 277</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 432</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 432</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\list.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 650</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 195 593</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 109</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 298 432 328 301 300 297 442 310 290 639 450 307 332 430 296 308 451 458 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 328 307 300 310 296 308 298 301 297 430 290 432 639 451 450 332 452 457 458 442</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\board.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 640</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68 604</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 239</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 290 53 642 307 639 297 58 332 511 308 295 302 323 291 294 78 314 450 448 59 73 300 296 437 299 328 304 305 76 430 442 458 419 97 66 310 298 301 427 600 638 306 429 421 432 460 309 319 288 67 71 287 456 451 452 457 72</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 419 437 427 299 328 297 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 59 67 58 71 76 78 97 53 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 73 72 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\boards\frdmkw40z\pin_mux.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 646</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 312 247</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 118</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 319 300 639 307 291 308 419 306 429 296 309 638 642 437 295 304 302 310 298 301 323 305 288 297 294 427 328 299 600</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 291 295 639 307 300 310 296 308 298 301 302 323 305 319 309 429 306 288 328 297 304 642 638 294 419 437 427 299 600</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\port\iar\port.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 647</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 191 610</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 273</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 290 301 207 452 307 450 458 639 300 332 430 449 432 310 298 296 308 297 451 457 442</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 452 432 639 307 300 310 296 308 298 301 430 290 297 451 450 332 457 458 442 449 207</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\tasks.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 619</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 245 216</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 283</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 458 297 328 307 300 453 310 308 432 95 430 448 298 296 451 452 457 639 301 63 290 450 332 442</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 328 307 300 310 296 308 298 301 297 95 63 430 290 432 639 451 450 332 452 457 458 442 448 453</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\queue.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 622</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55 169</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 119</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 458 298 307 452 328 457 639 296 300 451 95 430 460 297 310 308 432 301 63 290 450 332 442</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 328 307 300 310 296 308 298 301 297 95 63 430 290 432 639 451 450 332 452 457 458 442 460</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\port\iar\portasm.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 605</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>AARM</name>
+          <file> 432</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\rtos\FreeRTOS\src\timers.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 316</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90 591</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 278</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 460 307 300 432 328 301 458 430 298 448 297 310 296 308 451 452 457 639 290 450 332 442</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 328 307 300 310 296 308 298 301 297 430 290 432 639 451 450 332 452 457 458 442 460 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\common\app_config.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 208</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 271 269</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 558</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 514 307 308 515 387 290 461 478 513 511 501 297 303 491 516 639 373 502 300 296 390 488 474 484 310 298 301 518 463 464 485</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 515 513 639 307 300 310 296 308 298 301 511 373 387 390 290 297 491 501 502 516 514 488 303 518 478 461 463 474 485 464 484</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\common\ApplMain.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 615</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 628 222</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 575</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 379 511 639 307 300 310 296 308 298 301 368 423 291 295 302 323 305 319 309 429 306 288 328 297 304 382 374 406 408 376 522 337 344 346 345 294 343 409 410 349 407 350 419 437 427 299 642 638 600 499 513 373 387 390 290 491 501 502 514 488 303 518 516 508 517 515 469 493 519 503 432 479 287 314 430 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\common\app.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 182</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 320 221</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 580</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 511 502 373 514 483 639 518 516 303 408 382 493 310 407 499 464 451 379 410 508 509 479 297 300 513 461 314 298 452 457 368 406 387 349 517 515 478 506 480 307 301 374 491 488 474 485 519 328 456 432 458 296 308 390 290 501 463 484 287 294 430 421 450 332 442 460 448</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 408 511 639 307 300 310 296 308 298 301 368 379 406 373 387 390 290 297 410 349 407 382 374 499 513 491 501 502 514 488 303 518 516 508 517 515 509 478 461 463 474 485 464 484 493 519 506 479 287 294 328 314 430 432 451 450 332 452 457 458 442 456 460 421 448 480 483</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\common\fsci_ble_otap.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 175</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 106 244</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 574</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 483 511 410 310 374 382 307 298 301 300 349 373 639 296 308 407</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 410 511 639 307 300 310 296 308 298 301 349 407 382 374 373 483</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\common\ble_controller_task.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 585</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 563 258</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 561</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 296 291 307 432 300 374 450 328 290 639 511 430 460 306 429 305 387 410 308 297 314 421 332 442 448 458 295 376 287 468 473 310 298 301 382 390 294 456 451 452 457 304 302 323 501 309 319 288 513 373 491 502</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 376 374 382 387 390 290 297 287 294 328 314 430 432 451 450 332 452 457 458 442 456 460 421 448 291 295 302 323 305 319 309 429 306 288 304 468 410 473 513 373 491 501 502</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\common\ble_host_tasks.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 621</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86 261</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 579</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 290 448 287 310 374 294 297 332 376 300 307 387 421 432 442 458 472 639 298 301 511 513 390 501 430 450 460 498 410 382 296 308 373 491 502 328 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 376 511 639 307 300 310 296 308 298 301 374 382 498 387 390 290 297 513 373 491 501 502 472 287 294 328 314 430 432 451 450 332 452 457 458 442 456 460 421 448 410</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\hci_transport\source\hcit_serial_interface.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 178</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 626 217</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 571</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 501 382 639 307 298 301 300 511 297 513 486 310 387 290 407 374 296 308 373 491 502 390 521 520</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 382 511 639 307 300 310 296 308 298 301 374 513 373 387 390 290 297 491 501 502 486 521 520 407</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\common\gatt_db\gatt_database.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 589</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 176 255</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 562</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 310 461 300 437 307 639 638 328 501 463 484 518 462 513 511 488 600 516 478 482 387 298 301 299 294 306 429 323 305 295 291 485 514 419 490 475 465 373 491 502 296 308 390 290 297 303 427 642 304 302 464 309 319 288 474</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 518 513 639 307 300 310 296 308 298 301 511 373 387 390 290 297 491 501 502 514 488 303 516 419 437 427 299 328 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600 461 463 478 474 485 464 484 490 462 475 482 465</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\common\ble_init.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 218</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 321 250</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 573</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 429 473 298 491 299 307 387 511 306 469 639 300 296 390 513 294 472 419 373 502 308 290 297 521 437 600 638 305 468 486 501 310 301 407 520 427 328 642 291 295 304 302 323 309 319 288</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 469 513 639 307 300 310 296 308 298 301 511 373 387 390 290 297 491 501 502 472 468 473 486 521 520 407 419 437 427 299 328 294 642 638 291 295 302 323 305 319 309 429 306 288 304 600</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\device_info\device_info_service.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57 268</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 581</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 495 501 513 511 488 508 387 307 298 301 300 639 516 509 515 373 491 502 310 499 514 303 296 308 390 290 297 518</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 513 639 307 300 310 296 308 298 301 511 373 387 390 290 297 491 501 502 509 508 499 514 488 303 518 516 515 495</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\DCDC\Source\DCDC.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 225</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 215</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 154</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 406 639 291 294 421 300 307 296 638 432 511 67 295 302 305 59 308 71 304 323 298 76 297 460 496 73 287 310 301 306 429 328 430 290 450 332 442 448 458 309 319 288 58 78 72 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 496 59 294 638 291 295 302 323 305 319 309 429 306 288 328 297 304 67 58 71 76 78 73 72 406 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\battery\battery_service.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 196</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 266</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 570</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 505 511 488 513 501 310 508 387 307 298 301 300 639 516 509 515 373 491 502 499 514 303 296 308 390 290 297 518</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 513 639 307 300 310 296 308 298 301 511 373 387 390 290 297 491 501 502 509 508 499 514 488 303 518 516 515 505</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\profiles\otap\otap_service.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 204</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 552 270</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 157</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 297 508 300 491 373 484 303 509 506 298 301 639 290 463 499 514 513 478 515 511 307 310 502 390 488 516 296 308 387 501 461 474 464 485 518</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 373 511 639 307 300 310 296 308 298 301 513 387 390 290 297 491 501 502 509 478 461 463 474 485 464 484 508 499 514 488 303 518 516 515 506</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\bluetooth\host\source\ble_globals.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 180</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 98 254</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 582</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 501 513 511 639 387 310 300 488 373 491 502 307 298 301 296 308 390 290 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 513 639 307 300 310 296 308 298 301 511 373 387 390 290 297 491 501 502 488</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Common\FwkInit.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 313 223</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 549</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 410 458 300 307 296 294 511 430 639 442 406 308 290 450 332 448 287 407 310 298 301 328 314 297 421 432 460 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 287 294 328 297 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448 406 407 410</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\FlashCheckSum.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 85 230</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 155</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 337 344 307 298 301 300 346 345 310 291 306 429 309 319 343 294 296 308 295 304 302 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\DEFlashPartition.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 188</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 633 211</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 148</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\DFlashGetProtection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 187</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 656 236</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 164</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\CopyToRam.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 183</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 590 232</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 130</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 296 300 639 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\DFlashSetProtection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 318 253</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 131</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_AT45DB161E.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 213</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 597 189</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 511 308 497 639 300 296 310 298 301</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 497</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_AT45DB021E.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 238</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 565 194</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 152</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 307 511 308 497 639 300 296 310 298 301</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 511 639 307 300 310 296 308 298 301 497</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_InternalFlash.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 276 241</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 202</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 497 307 310 511 298 300 301 296 308</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 497 511 639 307 300 310 296 308 298 301</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\Internal\Flash_Adapter.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 317 220</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 511 639 421 432 522 307 298 301 300 344 346 295 302 287 310 345 304 309 319 297 460 373 337 296 308 343 294 291 306 429 288 430 290 450 332 442 448 458 323 305 328 314 456 451 452 457</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 522 511 639 307 300 310 296 308 298 301 337 344 346 345 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304 373 287 314 430 290 432 451 450 332 452 457 458 442 456 460 421 448</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\framework\Flash\External\Source\Eeprom_AT26DF081A.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 234</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 285 237</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 159</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 497 307 310 511 298 300 301 296 308</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 497 511 639 307 300 310 296 308 298 301</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\EEEWrite.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 186</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56 214</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 100</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\EERAMGetProtection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 190 226</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 140</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\KSDK_1.3.0\platform\drivers\src\flash\C90TFS\drvsrc\source\EERAMSetProtection.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 181</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 551 256</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 165</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 639 300 307 296 337 294 346 295 302 343 308 304 309 319 344 345 310 298 301 291 306 429 288 323 305 328 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 481 337 344 346 345 639 307 300 310 296 308 298 301 294 343 291 295 302 323 305 319 309 429 306 288 328 297 304</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 606 209</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

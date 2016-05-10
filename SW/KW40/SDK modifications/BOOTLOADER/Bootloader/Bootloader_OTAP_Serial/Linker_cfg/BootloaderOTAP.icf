@@ -1,0 +1,54 @@
+/**** Kinetis Linker Configuration File ****/
+
+/******************* Map of Kinetis FLASH ***********************************
+
+  +---------------+
+  |               |
+  |               |
+  |  Application  |
+  |               |
+  |               |
+  +---------------+ - __region_BOOT_ROM_end__
+  | Bootloader    |
+  +---------------+ - __region_BOOT_ROM_start__
+
+*****************************************************************************/
+
+/*- Defining Symbols -*/
+define exported symbol __region_BOOT_ROM_start__   = 0x00000000;
+define exported symbol __region_BOOT_ROM_end__     = (gRomSize_c / 32) - 1;
+define symbol __region_RAM_start__   = 0x20000000;
+define symbol __region_RAM_end__     = 0x20001fff; // limit to  8K
+
+/*-Sizes-*/
+define symbol __size_cstack__ = 0x1000;
+define symbol __IntVectTable_start__ = __region_BOOT_ROM_start__;
+define symbol __IntVectTable_end__   = __region_BOOT_ROM_start__ + 0x3F;
+define exported symbol __BOOT_STACK_ADDRESS = __region_RAM_end__ - 7;	//0x20007FF8;
+define symbol __code_start__          = __IntVectTable_end__+1;
+
+define symbol __FlashConfig_start__   = 0x00000400;
+define symbol __FlashConfig_end__     = 0x0000040f;
+
+define block CSTACK    with alignment = 8, size = __size_cstack__   { };
+
+/*** Memory Regions ***/
+define memory mem with size = 4G;
+define region ROM_region   = mem:[from (__IntVectTable_end__ + 1) to (__FlashConfig_start__ - 1)] | [from (__FlashConfig_end__+1)  to __region_BOOT_ROM_end__];
+define region RAM_region   = mem:[from __region_RAM_start__   to __region_RAM_end__];
+define region IntVectTable_region = mem:[from __IntVectTable_start__ to __IntVectTable_end__];
+define region FlashConfig_region  = mem:[from __FlashConfig_start__ to __FlashConfig_end__];
+
+/*** Initialization ***/
+do not initialize   { readwrite };
+do not initialize   { section .noinit };
+initialize manually { section .data};
+initialize manually { section .textrw };
+initialize by copy  { section .IntVectTable };
+
+/*** Memory placements ***/
+place at address mem:__code_start__ { readonly section .noinit };
+place in ROM_region          { readonly };
+place in RAM_region          { readwrite,  block CSTACK};
+place in IntVectTable_region {section IntVectTable};
+place in FlashConfig_region  { section FlashConfig };

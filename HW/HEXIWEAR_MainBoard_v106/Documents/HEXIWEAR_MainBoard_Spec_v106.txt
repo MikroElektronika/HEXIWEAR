@@ -1,0 +1,11 @@
+Specification:
+FR-4, 0.8mm, 6-layer, Immersion Gold, 1oz finished copper, Black SolderMask, White Legend.
+NOTES:
+- Layer sequence: GTL-GP1-G1-G2_GP2-GBL
+- We need this board panelized (3x3up) with 9mm FR4 material between the boards vertically and 5mm FR4 material between the boards horizontaly
+- Panel Border should be 7mm wide with fiducial marks and tooling holes (3mm) distanced 2.5mm from the inner edge
+- Panel Border should be present on all 4 sides of panel
+- V-cut depth should be 1/4 of PCB thickness from each side
+- NOTE: Panel already done
+- The size of the board is 44 mm (W) x 40 mm (H)
+- The size of the panel should be 138.462 mm (W) x 158.74 mm (H)

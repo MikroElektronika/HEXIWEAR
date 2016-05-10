@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3662033279</fileChecksum>
+  <configuration>
+    <name>BootloaderOTAP_K64FN1M</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>BootloaderOTAP_KL46Z256</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>BootloaderOTAP_KW21D256</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>BootloaderOTAP_KW24D512</name>
+    <outputs>
+      <file>$PROJ_DIR$\src\flash\flash_boot_kinetis.h</file>
+      <file>$PROJ_DIR$\src\flash\flash_boot_kinetis.c</file>
+      <file>$PROJ_DIR$\src\include\cfg\MK21D512_cfg.h</file>
+      <file>$PROJ_DIR$\src\include\EmbeddedTypes.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\OtapBootloader.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\UartBootloade.c</file>
+      <file>$PROJ_DIR$\src\include\MK21D5.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\UartBootloader.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\OtapBootloader.c</file>
+      <file>$PROJ_DIR$\src\spi\SPI.c</file>
+      <file>$PROJ_DIR$\src\spi\SPI.h</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot.h</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT45DB161E.c</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\SPI.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\SPI.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\UartBootloade.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\OtapBootloader.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\flash_boot_kinetis.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\Eeprom_Boot_AT45DB161E.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\flash_boot_kinetis.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\UartBootloade.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Exe\OtapBootloader.bin</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\SPI.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\Eeprom_Boot_AT45DB161E.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\OtapBootloader.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\Eeprom_Boot_AT45DB161E.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Exe\BootloaderOTAP_KW24D512.out</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\flash_boot_kinetis.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\OtapBootloader.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\SPI.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\Eeprom_Boot_AT45DB161E.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\List\OtapBootloader.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\flash_boot_kinetis.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW24D512\Obj\UartBootloade.o</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\flash\flash_boot_kinetis.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27 19</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 11 2 6 4 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 3 4 11 6 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\OtapSerialBootloader\UartBootloade.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 6 0 11 2 7 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\OtapSerialBootloader\OtapBootloader.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31 28</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 11 0 7 6 2 4</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4 3 11 6 2 0 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\spi\SPI.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14 13</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3 6 10</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 3 10 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT45DB161E.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 30 23</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 3 6 11</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 3 10 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\BootloaderOTAP_KW24D512\Exe\BootloaderOTAP_KW24D512.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>BootloaderOTAP_KW40Z4</name>
+    <outputs>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_M25P80.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_M25P80.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_M25P80.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\flash_boot_kinetis.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\flash_boot_kinetis.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT45DB161E.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\flash_boot_kinetis.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT45DB161E.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT45DB161E.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\SPI.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\SPI.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\UartBootloade.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\UartBootloade.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\UartBootloade.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\SPI.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT26DF081A.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT26DF081A.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT26DF081A.i</file>
+      <file>$PROJ_DIR$\src\flash\flash_boot_kinetis.h</file>
+      <file>$PROJ_DIR$\src\flash\flash_boot_kinetis.c</file>
+      <file>$PROJ_DIR$\src\include\EmbeddedTypes.h</file>
+      <file>$PROJ_DIR$\src\include\MKL46Z4.h</file>
+      <file>$PROJ_DIR$\src\include\cfg\MKW40Z160_cfg.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\OtapBootloader.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\UartBootloade.c</file>
+      <file>$PROJ_DIR$\src\include\MK21D5.h</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\UartBootloader.h</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot_M25P80.c</file>
+      <file>$PROJ_DIR$\src\OtapSerialBootloader\OtapBootloader.c</file>
+      <file>$PROJ_DIR$\src\spi\SPI.c</file>
+      <file>$PROJ_DIR$\src\spi\SPI.h</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot.h</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT45DB021E.c</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT26DF081A.c</file>
+      <file>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT45DB161E.c</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\UartBootloade.pbi</file>
+      <file>$PROJ_DIR$\src\include\MKW40Z4.h</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB021E.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\flash_boot_kinetis.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Exe\BootloaderOTAP_KW40Z4.out</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\UartBootloade.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT26DF081A.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\SPI.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_M25P80.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Exe\BootloaderOTAP_KW40Z4.bin</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT26DF081A.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\OtapBootloader.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB021E.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\OtapBootloader.pbd</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_M25P80.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\flash_boot_kinetis.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB161E.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\OtapBootloader.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB161E.pbi</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\SPI.o</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT45DB021E.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT45DB021E.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\Eeprom_Boot_AT45DB021E.lst</file>
+      <file>$PROJ_DIR$\Linker_cfg\BootloaderOTAP.icf</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\BootloaderOTAP_KW40Z4.map</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\OtapBootloader.i</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\OtapBootloader.s</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\List\OtapBootloader.lst</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\SPI.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB161E.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\UartBootloade.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\OtapBootloader.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT26DF081A.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_M25P80.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB021E.__cstat.et</file>
+      <file>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Obj\flash_boot_kinetis.__cstat.et</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 39 59</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\flash\flash_boot_kinetis.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4 6 3 50</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 31 22 36 23 18</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 18 20 23 31 36 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\OtapSerialBootloader\UartBootloade.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13 12 11 40</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 18 31 22 20 26 23</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23 20 31 36 22 26 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\eeprom\Eeprom_Boot_M25P80.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 0 2 43</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 68</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 30 36 31</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31 20 30 36</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\OtapSerialBootloader\OtapBootloader.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60 61 62 46</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 20 18 26 36 22 23</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23 20 31 36 22 18 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\spi\SPI.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9 10 14 54</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 36 30</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 30 36</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT45DB021E.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56 55 57 47</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 20</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31 20</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT26DF081A.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17 15 16 45</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 20</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31 20</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\eeprom\Eeprom_Boot_AT45DB161E.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5 8 7 51</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 20</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31 20</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\BootloaderOTAP_KW40Z4\Exe\BootloaderOTAP_KW40Z4.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 58 45 47 51 43 50 46 54 40</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>BootloaderOTAP_Serial_KW24D512</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

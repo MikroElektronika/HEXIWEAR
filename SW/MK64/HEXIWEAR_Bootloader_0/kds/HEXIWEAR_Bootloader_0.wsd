@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="workingsets.xsd">
+	<projects>
+		<project>
+			<name>HEXIWEAR_Bootloader_0_MK64FN1M0VLL12</name>
+			<path>.</path>
+			<open>true</open>
+			<activeconfig>debug</activeconfig>
+			<buildreferences config="debug">false</buildreferences>
+			<activeconfig>release</activeconfig>
+			<buildreferences config="release">false</buildreferences>
+		</project>
+		<project>
+			<name>ksdk_platform_lib_K64F12</name>
+			<path>D:/Marko/Freescale/KSDK_1.2.0/lib/ksdk_platform_lib/kds/K64F12</path>
+			<open>true</open>
+			<activeconfig>debug</activeconfig>
+			<buildreferences config="debug">false</buildreferences>
+			<activeconfig>release</activeconfig>
+			<buildreferences config="release">false</buildreferences>
+		</project>
+	</projects>
+	<workingsets>
+		<workingSet editPageId="org.eclipse.cdt.ui.CElementWorkingSetPage" id="1323268527287_1" label="HEXIWEAR_Bootloader_0" name="HEXIWEAR_Bootloader_0">
+			<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/ksdk_platform_lib_K64F12" type="4" />
+			<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/HEXIWEAR_Bootloader_0_MK64FN1M0VLL12" type="4" />
+		</workingSet>
+	</workingsets>
+	<cdtconfigurations>
+		<workingSet name="HEXIWEAR_Bootloader_0">
+			<config name="debug">
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="debug" name="ksdk_platform_lib_K64F12" />
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="debug" name="HEXIWEAR_Bootloader_0_MK64FN1M0VLL12" />
+			</config>
+			<config name="release">
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="release" name="ksdk_platform_lib_K64F12" />
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="release" name="HEXIWEAR_Bootloader_0_MK64FN1M0VLL12" />
+			</config>
+		</workingSet>
+	</cdtconfigurations>
+</workspace>

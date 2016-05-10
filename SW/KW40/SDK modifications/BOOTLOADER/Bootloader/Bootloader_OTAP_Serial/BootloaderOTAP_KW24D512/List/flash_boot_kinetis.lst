@@ -1,0 +1,480 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        11/Jan/2016  15:10:25
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\flash\flash_boot_kinetis.c
+#    Command line =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\flash\flash_boot_kinetis.c
+#        -D MCU_MK21DN512 -D gEepromType_d=gEepromDevice_AT45DB161E_c
+#        --preprocess=cl
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW24D512\List\
+#        -lC
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW24D512\List\
+#        -lA
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW24D512\List\
+#        --diag_suppress Pa039 -o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW24D512\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4 -e --fpu=None -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\OtapSerialBootloader\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\eeprom\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\spi\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\flash\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\include\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\include\cfg\
+#        -I
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\
+#        -On --c89
+#    List file    =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW24D512\List\flash_boot_kinetis.lst
+#    Object file  =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW24D512\Obj\flash_boot_kinetis.o
+#
+###############################################################################
+
+C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\src\flash\flash_boot_kinetis.c
+      1          /*!
+      2          * Copyright (c) 2015, Freescale Semiconductor, Inc.
+      3          * All rights reserved.
+      4          *
+      5          * \file filename.h
+      6          * This file brief description
+      7          *
+      8          * Redistribution and use in source and binary forms, with or without modification,
+      9          * are permitted provided that the following conditions are met:
+     10          *
+     11          * o Redistributions of source code must retain the above copyright notice, this list
+     12          *   of conditions and the following disclaimer.
+     13          *
+     14          * o Redistributions in binary form must reproduce the above copyright notice, this
+     15          *   list of conditions and the following disclaimer in the documentation and/or
+     16          *   other materials provided with the distribution.
+     17          *
+     18          * o Neither the name of Freescale Semiconductor, Inc. nor the names of its
+     19          *   contributors may be used to endorse or promote products derived from this
+     20          *   software without specific prior written permission.
+     21          *
+     22          * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+     23          * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+     24          * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     25          * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+     26          * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+     27          * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+     28          * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+     29          * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+     30          * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+     31          * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     32          */
+     33          
+     34          
+     35          /*! *********************************************************************************
+     36          *************************************************************************************
+     37          * Include
+     38          *************************************************************************************
+     39          ********************************************************************************** */
+     40          #include "flash_boot_kinetis.h"
+     41          #include "OtapBootloader.h"
+     42          
+     43          
+     44          /*! *********************************************************************************
+     45          *************************************************************************************
+     46          * Private macros
+     47          *************************************************************************************
+     48          ********************************************************************************** */
+     49          
+     50          #if (gEepromParams_WriteAlignment_c > 4) 
+     51              #define FLASH_PGM_SIZE (gEepromParams_WriteAlignment_c)
+     52          #else
+     53              #define FLASH_PGM_SIZE (4)
+     54          #endif
+     55          
+     56          #define NoOfElements(x) (sizeof(x)/sizeof(x[0]))
+     57          
+     58          
+     59          /*! *********************************************************************************
+     60          *************************************************************************************
+     61          * Private Memory Declarations
+     62          *************************************************************************************
+     63          ********************************************************************************** */
+     64          uint8_t pCommandArray[FCCOB_REGS];
+     65          static FCC0B_STR CommandObj;
+     66          void (*ExecuteOnStack)(void) = NULL;
+     67          uint8_t buffer[128];
+     68          
+     69          #if defined(__IAR_SYSTEMS_ICC__)
+     70          __no_init uint32_t programbuffer[512] @0x14000000;
+     71          #elif defined(__GNUC__)
+     72          uint32_t programbuffer[512] __attribute__ ((section(".progBuffer")));
+     73          #endif
+     74          
+     75          /*! *********************************************************************************
+     76          *************************************************************************************
+     77          * Private prototypes
+     78          *************************************************************************************
+     79          ********************************************************************************** */
+     80          //  internal driver function
+     81          static uint8_t FLASH_FlashCommandSequence(uint8_t index);
+     82          static void ExecuteOnStackStart();
+     83          
+     84          
+     85          /*! *********************************************************************************
+     86          *************************************************************************************
+     87          * Public Functions
+     88          *************************************************************************************
+     89          ********************************************************************************** */
+     90          
+     91          /********************************************************
+     92          * Init Function
+     93          *
+     94          ********************************************************/
+     95          void FlashInitialization(void)
+     96          {
+     97              uint16_t i, size;
+     98              
+     99              //  RAM function should have the same alignment as one from ROM
+    100              if( ((uint32_t)ExecuteOnStackStart - 1) & 0x03 )
+    101                  i = 2;
+    102              else
+    103                  i = 0;
+    104              
+    105              size = sizeof(buffer) - i;
+    106              
+    107              //  initialize pointer to ram function
+    108              ExecuteOnStack = (void(*)(void))&buffer[i+1];
+    109              
+    110              //  copy function from ROM to RAM
+    111              for( ; i<size; i++ )
+    112                  buffer[i] = ((uint8_t*)ExecuteOnStackStart)[i-1];
+    113              
+    114              //  inititalization of flash clock module
+    115              FLASH_INIT_FLASH_CLOCK;
+    116          }
+    117          
+    118          /********************************************************
+    119          * Generic FLASH programing function
+    120          *
+    121          ********************************************************/
+    122          uint8_t FLASH_Program(uint32_t dest, uint32_t source, uint32_t size)
+    123          {
+    124              uint32_t i;
+    125              uint8_t* pSource = (uint8_t*)source;
+    126              uint8_t temp[FLASH_PGM_SIZE];
+    127          
+    128              /* Check for unaligned destination address */
+    129              if (dest & (FLASH_PGM_SIZE - 0x01U))
+    130              {
+    131                 return FLASH_FAIL;
+    132              }
+    133              
+    134              while( size )
+    135              {
+    136                  /* data must be multiple of FLASH_PGM_SIZE */
+    137                  if( size > 0 && size < FLASH_PGM_SIZE  )
+    138                  {
+    139                      for( i=0; i<size; i++ )
+    140                      {
+    141                          temp[i] = *pSource++;
+    142                      }
+    143                          
+    144                      for( i=size; i<FLASH_PGM_SIZE; i++ )
+    145                      {
+    146                          temp[i] = 0xFF;
+    147                      }
+    148                          
+    149                      pSource = temp;
+    150                      size = FLASH_PGM_SIZE;
+    151                  }
+    152                      
+    153                  /* preparing passing parameter to program the flash block */
+    154                  CommandObj.regsLong.fccob3210 = dest;
+    155          #if (FLASH_PGM_SIZE==8)
+    156                  CommandObj.regs.fccob0 = FLASH_PROGRAM_PHRASE;
+    157                  
+    158          #else
+    159                  CommandObj.regs.fccob0 = FLASH_PROGRAM_LONGWORD;
+    160          #endif
+    161                  for( i=4; i<FLASH_PGM_SIZE+4; i++ )
+    162                  {
+    163                      CommandObj.all[i] = *pSource++;
+    164                  }
+    165          
+    166                  /* calling flash command sequence function to execute the command */
+    167                  if( FLASH_OK != FLASH_FlashCommandSequence(i) )
+    168                      return FLASH_FAIL;
+    169              
+    170                  /* update destination address for next iteration */
+    171                  dest += FLASH_PGM_SIZE;
+    172                  /* update size for next iteration */
+    173                  size -= FLASH_PGM_SIZE;
+    174              }
+    175          
+    176              return FLASH_OK;
+    177          }
+    178          
+    179          /********************************************************
+    180          * Function for Programming multiple Long Word
+    181          *
+    182          ********************************************************/
+    183          uint8_t FLASH_ProgramLongWords(uint32_t destination, uint32_t source, uint32_t size)
+    184          {
+    185              uint8_t ret = FLASH_OK;
+    186              uint8_t bytes;
+    187              uint32_t alignedWord;
+    188              uint8_t* pbSource = (uint8_t*)source;
+    189              
+    190              bytes = destination & 0x03;
+    191              destination &= ~((uint32_t)0x03);
+    192              if( bytes )
+    193              {
+    194                  /* Go to previous aligned address */
+    195                  alignedWord = *((uint32_t*)destination);
+    196                  
+    197              }
+    198              while(size)
+    199              {
+    200                  ((uint8_t*)&alignedWord)[bytes] = *pbSource++;
+    201                  size--;
+    202                  if((bytes == 3)||(size == 0))
+    203                  {
+    204                      ret = FLASH_ProgramLongWord(destination, alignedWord);
+    205                      if(FLASH_OK != ret )
+    206                      {
+    207                          return ret;
+    208                      }
+    209                      if(size)
+    210                      {
+    211                          destination += 4;
+    212                          if(size < 4)
+    213                          {
+    214                              alignedWord = *((uint32_t*)destination);
+    215                          }
+    216                      }
+    217                  }  
+    218                  bytes = (bytes+1) & 0x3;
+    219              }
+    220              
+    221              
+    222              return FLASH_OK;
+    223          }
+    224          /********************************************************
+    225          * Function for Programming of one Long Word
+    226          *
+    227          ********************************************************/
+    228          uint8_t FLASH_ProgramLongWord(uint32_t destination, uint32_t data32b)
+    229          {
+    230              /* preparing passing parameter to program the flash block */
+    231              
+    232              CommandObj.regsLong.fccob3210 = destination;
+    233              CommandObj.regs.fccob0 = FLASH_PROGRAM_LONGWORD;
+    234              CommandObj.regsLong.fccob7654 = data32b;
+    235              
+    236              return FLASH_FlashCommandSequence(PROGRAM_LONGWORD_INDEX);
+    237          }
+    238          
+    239          /********************************************************
+    240          * Function for Programming of one section (maximum is 2048 Bytes)
+    241          *
+    242          ********************************************************/
+    243          uint8_t FLASH_ProgramSection(uint32_t destination, uint32_t* pSource, uint32_t size)
+    244          {
+    245              uint8_t* pProgBuff = (uint8_t*)&programbuffer[0];
+    246              uint8_t* pSrc = (uint8_t*)pSource;
+    247              uint32_t phases = size / FLASH_PHASE_SEZE;
+    248              uint8_t  r = size % FLASH_PHASE_SEZE;
+    249              
+    250              // check the size of memory
+    251              if((size > sizeof(programbuffer)) || (size == 0))
+    252                  return FLASH_FAIL;
+    253              
+    254              if(destination & 0x00000003)
+    255                  return FLASH_FAIL;
+    256              
+    257              if (r > 0)
+    258              {
+    259                  phases++;
+    260                  r = FLASH_PHASE_SEZE - r;
+    261              }
+    262              
+    263              /* preparing passing parameter to program the flash block */
+    264              CommandObj.regsLong.fccob3210 = destination;
+    265              CommandObj.regs.fccob0 = FLASH_PROGRAM_SECTION;
+    266              CommandObj.regs.fccob4 = (uint8_t)(phases >> 8);
+    267              CommandObj.regs.fccob5 = (uint8_t)(phases & 0xff);
+    268              
+    269              //  copy source data to program buffer
+    270              while(size--)
+    271                  *pProgBuff++ = *pSrc++;
+    272              
+    273              while(r--)
+    274                  *pProgBuff++ = 0xFF;
+    275              
+    276              //  call flash sequence
+    277              return FLASH_FlashCommandSequence(PROGRAM_SECTION_INDEX);
+    278          }
+    279          
+    280          
+    281          /********************************************************
+    282          * Function for Programming of one section (maximum is 2048 Bytes)
+    283          *
+    284          ********************************************************/
+    285          uint8_t FLASH_ProgramSectionPhrases(uint32_t destination, uint32_t* pSource, uint32_t size)
+    286          {
+    287              uint8_t* pProgBuff = (uint8_t*)&programbuffer[0];
+    288              uint8_t* pSrc = (uint8_t*)pSource;
+    289              uint32_t phases = size / FLASH_PHASE_SEZE;
+    290              uint8_t r = size % FLASH_PHASE_SEZE;
+    291              
+    292              // check the size of memory
+    293              if(size >= sizeof(programbuffer) || (size == 0))
+    294                  return FLASH_FAIL;
+    295              
+    296              if(destination & 0x00000003)
+    297              {
+    298                  if(size & 0x00000001)
+    299                      if(!FLASH_ProgramLongWord(destination, *pSource))
+    300                          return FLASH_FAIL;
+    301              }
+    302              
+    303              if(destination & 0x00000004)
+    304              {
+    305                  if(!FLASH_ProgramLongWord(destination, *pSource++))
+    306                      return FLASH_FAIL;
+    307                  size-=4;
+    308                  destination += 4;
+    309              }
+    310              
+    311              if (r)
+    312              {
+    313                  phases++;
+    314                  r = FLASH_PHASE_SEZE - r;
+    315              }
+    316              
+    317              /* preparing passing parameter to program the flash block */
+    318              CommandObj.regsLong.fccob3210 = destination;
+    319              CommandObj.regs.fccob0 = FLASH_PROGRAM_SECTION;
+    320              CommandObj.regs.fccob4 = (uint8_t)(phases >> 8);
+    321              CommandObj.regs.fccob5 = (uint8_t)(phases & 0xff);
+    322              
+    323              //  copy source data to program buffer
+    324              while(size--)
+    325                  *pProgBuff++ = *pSrc++;
+    326              
+    327              while(r--)
+    328                  *pProgBuff++ = 0xFF;
+    329              
+    330              //  call flash sequence
+    331              return FLASH_FlashCommandSequence(PROGRAM_SECTION_INDEX);
+    332          }
+    333          
+    334          /********************************************************
+    335          *
+    336          *
+    337          ********************************************************/
+    338          uint8_t FLASH_ProgramByte(uint32_t destination, uint8_t data8b)
+    339          {
+    340              CommandObj.regsLong.fccob3210 = destination;
+    341              CommandObj.regs.fccob0 = FLASH_PROGRAM_BYTE;
+    342              CommandObj.regs.fccob4 = data8b;
+    343              
+    344              return FLASH_FlashCommandSequence(PROGRAM_BYTE_INDEX);
+    345          }
+    346          
+    347          /********************************************************
+    348          * Function for erasing of flash memory sector (0x800)
+    349          *
+    350          ********************************************************/
+    351          uint8_t FLASH_EraseSector(uint32_t destination)
+    352          {
+    353              CommandObj.regsLong.fccob3210 = destination;
+    354              CommandObj.regs.fccob0 = FLASH_ERASE_SECTOR;
+    355              
+    356              return FLASH_FlashCommandSequence(ERASE_BLOCK_INDEX);
+    357          }
+    358          
+    359          
+    360          /********************************************************
+    361          * Function for erasing of all block of memory
+    362          *
+    363          ********************************************************/
+    364          uint8_t FLASH_MassErase(void)
+    365          {
+    366              CommandObj.regs.fccob0 = FLASH_ERASE_ALL_BLOCK;
+    367              return FLASH_FlashCommandSequence(ERASE_MASS_INDEX);
+    368          }
+    369          
+    370          /********************************************************
+    371          * Function for enabling the EERAM
+    372          *
+    373          ********************************************************/
+    374          uint8_t FLASH_SetEEEEnable(uint8_t ctrl_code)
+    375          {
+    376              CommandObj.regs.fccob0 = FLASH_SET_EERAM;
+    377              CommandObj.regs.fccob1 = ctrl_code;
+    378              return FLASH_FlashCommandSequence(SET_EERAM_INDEX);
+    379          }
+    380          
+    381          
+    382          /*! *********************************************************************************
+    383          *************************************************************************************
+    384          * Private Functions
+    385          *************************************************************************************
+    386          ********************************************************************************** */
+    387          
+    388          /********************************************************
+    389          * Function for executing of the flash command
+    390          *
+    391          ********************************************************/
+    392          static uint8_t FLASH_FlashCommandSequence(uint8_t index)
+    393          {
+    394              uint8_t* ptrFccobReg = (uint8_t*)&FLASH_BASE_PTR->FCCOB3;
+    395              uint8_t* ptrCommandObj = (uint8_t*)&CommandObj;
+    396              
+    397              
+    398              /* wait till CCIF bit is set */
+    399              while((FLASH_FSTAT&FLASH_FSTAT_CCIF_MASK) != FLASH_FSTAT_CCIF_MASK){};
+    400              
+    401              /* clear RDCOLERR & ACCERR & FPVIOL flag in flash status register */
+    402              FLASH_FSTAT = FLASH_FSTAT_ACCERR_MASK|FLASH_FSTAT_FPVIOL_MASK|FLASH_FSTAT_RDCOLERR_MASK;
+    403              
+    404              /* load FCCOB registers */
+    405              while(index--)
+    406                  *ptrFccobReg++ = *ptrCommandObj++;
+    407              
+    408              //  jump to RAM function
+    409              ExecuteOnStack();
+    410              
+    411              /* Check error bits */
+    412              /* Get flash status register value */
+    413              if(FLASH_FSTAT & (FLASH_FSTAT_ACCERR_MASK|FLASH_FSTAT_FPVIOL_MASK|FLASH_FSTAT_MGSTAT0_MASK))
+    414                  return FLASH_FAIL;
+    415              
+    416              return FLASH_OK;
+    417          }
+    418          
+    419          /********************************************************
+    420          * Function for lounching a FLASH command: will run from RAM
+    421          *
+    422          ********************************************************/
+    423          static void ExecuteOnStackStart(void)
+    424          {
+    425              //  launch a command
+    426              FLASH_FSTAT |= FLASH_FSTAT_CCIF_MASK;
+    427              
+    428              //  waiting for the finishing of the command
+    429              while((FLASH_FSTAT&FLASH_FSTAT_CCIF_MASK) != FLASH_FSTAT_CCIF_MASK){};
+    430          }
+
+Errors: 1
+Warnings: none

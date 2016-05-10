@@ -1,0 +1,8 @@
+Specification:
+FR-4, 0.8mm, 2-layer, Lead-free HAL, 1oz finished copper, Green SolderMask, White Legend.
+NOTES:
+- We need this board panelized ( 4x4 up) with 2mm routing between the boards vertically and 3mm space (FR4 material) between the boards horizontally
+- Panel Border should be 7mm wide with fiducial marks and tooling holes (3mm) distanced 2.5mm from the inner edge
+- NOTE: Panel already done
+- The size of the board is  44.009mm (W) x 39.575mm (H)
+- The size of the panel is 202mm (W) x 218.575mm (H)

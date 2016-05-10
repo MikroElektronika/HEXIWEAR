@@ -1,0 +1,155 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 12/Jan/2016  08:59:56
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Exe\BootloaderOTAP_KW40Z4.out.tmp
+#    Map file     =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\List\BootloaderOTAP_KW40Z4.map
+#    Command line =  
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT26DF081A.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB021E.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_AT45DB161E.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\Eeprom_Boot_M25P80.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\flash_boot_kinetis.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\OtapBootloader.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\SPI.o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj\UartBootloade.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Exe\BootloaderOTAP_KW40Z4.out.tmp
+#        --config_def gRomSize_c=0x28000 --map
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\List\BootloaderOTAP_KW40Z4.map
+#        --config
+#        C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\Linker_cfg\BootloaderOTAP.icf
+#        --no_library_search --entry main --no_exceptions --no_vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"P1":  place in [from 0x00000040 to 0x000003ff] |
+                [from 0x00000410 to 0x000013ff] { ro };
+"P2":  place in [from 0x20000000 to 0x20001fff] { rw, block CSTACK };
+"P3":  place in [from 0x00000000 to 0x0000003f] { section IntVectTable };
+"P4":  place in [from 0x00000400 to 0x0000040f] { section FlashConfig };
+
+  Section       Kind        Address   Size  Object
+  -------       ----        -------   ----  ------
+"P3":                                 0x40
+  IntVectTable  const    0x00000000   0x40  OtapBootloader.o [1]
+                       - 0x00000040   0x40
+
+"P4":                                 0x10
+  FlashConfig   const    0x00000400   0x10  OtapBootloader.o [1]
+                       - 0x00000410   0x10
+
+"P1":                                0x7b0
+  .text         ro code  0x00000410  0x26c  OtapBootloader.o [1]
+  .text         ro code  0x0000067c  0x236  Eeprom_Boot_M25P80.o [1]
+  .text         ro code  0x000008b4  0x170  flash_boot_kinetis.o [1]
+  .text         ro code  0x00000a24  0x19c  SPI.o [1]
+                       - 0x00000bc0  0x7b0
+
+"P2":                                 0xf9
+  .bss          uninit   0x20000000   0x80  flash_boot_kinetis.o [1]
+  .bss          uninit   0x20000080   0x40  Eeprom_Boot_M25P80.o [1]
+  .bss          uninit   0x200000c0   0x20  OtapBootloader.o [1]
+  .bss          uninit   0x200000e0    0xc  flash_boot_kinetis.o [1]
+  .bss          uninit   0x200000ec    0x4  flash_boot_kinetis.o [1]
+  .bss          uninit   0x200000f0    0x4  OtapBootloader.o [1]
+  .bss          uninit   0x200000f4    0x4  OtapBootloader.o [1]
+  .bss          uninit   0x200000f8    0x1  Eeprom_Boot_M25P80.o [1]
+                       - 0x200000f9   0xf9
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj: [1]
+    Eeprom_Boot_M25P80.o      566                65
+    OtapBootloader.o          620       80       40
+    SPI.o                     412
+    flash_boot_kinetis.o      368               144
+    -----------------------------------------------
+    Total:                  1 966       80      249
+
+    Gaps                        2
+---------------------------------------------------
+    Grand Total:            1 968       80      249
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+Boot_GetInternalStorageStartAddr
+                      0x00000411    0x6  Code  Gb  OtapBootloader.o [1]
+Boot_InitExternalStorage
+                      0x00000435   0x18  Code  Gb  OtapBootloader.o [1]
+Boot_LoadImage        0x0000048d  0x15e  Code  Gb  OtapBootloader.o [1]
+Boot_ReadExternalStorage
+                      0x0000044d   0x40  Code  Gb  OtapBootloader.o [1]
+Boot_ResetMCU         0x00000417    0xa  Code  Gb  OtapBootloader.o [1]
+CommandObj            0x200000e0    0xc  Data  Lc  flash_boot_kinetis.o [1]
+EEPROM_GetWriteReady  0x000007e9   0x6c  Code  Lc  Eeprom_Boot_M25P80.o [1]
+EEPROM_Init           0x0000067d   0x4c  Code  Gb  Eeprom_Boot_M25P80.o [1]
+EEPROM_ReadData       0x000006c9   0x72  Code  Gb  Eeprom_Boot_M25P80.o [1]
+EEPROM_ReadStatus     0x0000073b   0x58  Code  Gb  Eeprom_Boot_M25P80.o [1]
+EEPROM_SendAddress    0x00000861   0x52  Code  Lc  Eeprom_Boot_M25P80.o [1]
+EEPROM_SendCmd        0x0000079d   0x4c  Code  Lc  Eeprom_Boot_M25P80.o [1]
+ExecuteOnStack        0x200000ec    0x4  Data  Gb  flash_boot_kinetis.o [1]
+ExecuteOnStackStart   0x000009f9   0x1a  Code  Lc  flash_boot_kinetis.o [1]
+FLASH_EraseSector     0x0000098d   0x16  Code  Gb  flash_boot_kinetis.o [1]
+FLASH_FlashCommandSequence
+                      0x000009b5   0x44  Code  Lc  flash_boot_kinetis.o [1]
+FLASH_Program         0x00000903   0x86  Code  Gb  flash_boot_kinetis.o [1]
+FlashInitialization   0x000008b5   0x4e  Code  Gb  flash_boot_kinetis.o [1]
+JumpToApplication     0x00000421   0x14  Code  Lc  OtapBootloader.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                      0x20001ff8          --   Gb  command line/config [2]
+__region_BOOT_ROM_end__ {Abs}
+                      0x000013ff          --   Gb  command line/config [2]
+__region_BOOT_ROM_start__ {Abs}
+                      0x00000000          --   Gb  command line/config [2]
+__thumb_startup       0x000005eb    0xc  Code  Gb  OtapBootloader.o [1]
+__vector_table        0x00000000   0x40  Data  Gb  OtapBootloader.o [1]
+buffer                0x20000000   0x80  Data  Gb  flash_boot_kinetis.o [1]
+currentStatus         0x200000f8    0x1  Data  Lc  Eeprom_Boot_M25P80.o [1]
+defaultISR            0x00000675    0x8  Code  Gb  OtapBootloader.o [1]
+gBootStorageStartAddress
+                      0x200000f4    0x4  Data  Gb  OtapBootloader.o [1]
+gFlashConfig          0x00000400   0x10  Data  Gb  OtapBootloader.o [1]
+gpBootInfo            0x200000f0    0x4  Data  Gb  OtapBootloader.o [1]
+mEepromEraseBitmap    0x20000080   0x40  Data  Lc  Eeprom_Boot_M25P80.o [1]
+main                  0x000005f9   0x44  Code  Gb  OtapBootloader.o [1]
+spi_master_configure_bus
+                      0x00000acd    0x8  Code  Gb  SPI.o [1]
+spi_master_init       0x00000a25   0xa8  Code  Gb  SPI.o [1]
+spi_master_transfer   0x00000ad5   0xa8  Code  Gb  SPI.o [1]
+
+
+[1] = C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\framework\Bootloader\Bootloader_OTAP_Serial\BootloaderOTAP_KW40Z4\Obj
+[2] = command line
+
+  1 968 bytes of readonly  code memory
+     80 bytes of readonly  data memory
+    249 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

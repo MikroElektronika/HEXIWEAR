@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PE_PROJECT_SETTINGS_DOCUMENTATION>
+  <PE_product_version v="version 10.5 for Freescale Microcontrollers" />
+  <PE_core_version v="Processor Expert Version 0521" />
+  <CPU_Bean name="Cpu" type="MK64FN1M0DC12_4SDK">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Cpu" />
+      <CPU_type v="MK64FN1M0VDC12" />
+      <fsl_clock_manager v="CLK_manager" />
+      <group name="Low power mode settings">
+        <EmptySection_DummyValue />
+      </group>
+      <group name="Watchdog settings">
+        <Watchdog_disable v="yes" />
+      </group>
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+    </Events>
+    <Compiler v="GNU C Compiler" />
+    <CompilerProperties>
+      <Compiler v="GNU C Compiler" />
+      <boolgroup name="Generate linker file" v="no" />
+    </CompilerProperties>
+  </CPU_Bean>
+  <Bean name="CLK_manager" type="fsl_clock_manager">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="CLK_manager" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="DMA_controller" type="fsl_edma">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="DMA_controller" />
+      <Device v="DMA" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="pin_mux" type="PinSettings">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="pin_mux" />
+      <PinSettings_IP_Block v="PinSettings" />
+      <Processor v="MK64FN1M0DC12_4SDK" />
+      <group name="Settings">
+        <enumgroup name="Clock gates initialization mode" v="SIM HAL (fsl_sim_hal component)">
+          <EmptySection_DummyValue />
+        </enumgroup>
+        <group name="Inherited HAL components">
+          <inhrbean type="fsl_port_hal">
+            <Enabled v="Y" />
+            <Properties>
+              <Component_name v="fsl_port_hal1" />
+              <Device v="PORTA" />
+              <Component_version v="1.2.0" />
+            </Properties>
+            <Methods>
+              <EmptySection_DummyValue />
+            </Methods>
+            <Events>
+              <EmptySection_DummyValue />
+            </Events>
+          </inhrbean>
+          <inhrbean type="fsl_sim_hal">
+            <Enabled v="Y" />
+            <Properties>
+              <Component_name v="fsl_sim_hal1" />
+              <Device v="SIM" />
+              <Component_version v="1.2.0" />
+            </Properties>
+            <Methods>
+              <EmptySection_DummyValue />
+            </Methods>
+            <Events>
+              <EmptySection_DummyValue />
+            </Events>
+          </inhrbean>
+          <inhrbean type="fsl_mcg_hal">
+            <Enabled v="Y" />
+            <Properties>
+              <Component_name v="fsl_mcg_hal1" />
+              <Device v="MCG" />
+              <Component_version v="1.2.0" />
+            </Properties>
+            <Methods>
+              <EmptySection_DummyValue />
+            </Methods>
+            <Events>
+              <EmptySection_DummyValue />
+            </Events>
+          </inhrbean>
+        </group>
+      </group>
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="OLED_SPI" type="fsl_dspi">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="OLED_SPI" />
+      <Device v="SPI2" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="FLASH_SPI" type="fsl_dspi">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FLASH_SPI" />
+      <Device v="SPI1" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="GPIO" type="fsl_gpio">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="GPIO" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="KW40_UART" type="fsl_uart">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="KW40_UART" />
+      <Device v="UART4" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="DEBUG_UART" type="fsl_uart">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="DEBUG_UART" />
+      <Device v="UART3" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="FS_I2C" type="fsl_i2c">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FS_I2C" />
+      <Device v="I2C1" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="NFS_I2C" type="fsl_i2c">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="NFS_I2C" />
+      <Device v="I2C0" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="PWR_Manager" type="fsl_power_manager">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="PWR_Manager" />
+      <Device v="SMC" />
+      <Device v="LLWU" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="INT_manager" type="fsl_interrupt_manager">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="INT_manager" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="HEXI_OS" type="fsl_os_abstraction">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="HEXI_OS" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="CLOCK" type="fsl_rtc">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="CLOCK" />
+      <Device v="RTC" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="BATTERY_ADC" type="fsl_adc16">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="BATTERY_ADC" />
+      <Device v="ADC0" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="sensor_timer" type="fsl_lptmr">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="sensor_timer" />
+      <Device v="LPTMR0" />
+      <Counter_register v="LPTMR0_CNR" />
+      <Compare_register v="LPTMR0_CMR" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="pit_sensor_timer" type="fsl_pit">
+    <Enabled v="N" />
+    <Properties>
+      <Component_name v="pit_sensor_timer" />
+      <Device v="PIT" />
+      <Counter v="PIT_CVAL0" />
+      <Counter_type v="Down counter" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="test_uart" type="fsl_uart">
+    <Enabled v="N" />
+    <Properties>
+      <Component_name v="test_uart" />
+      <Device v="UART0" />
+      <Component_version v="1.2.0" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+</PE_PROJECT_SETTINGS_DOCUMENTATION>
+

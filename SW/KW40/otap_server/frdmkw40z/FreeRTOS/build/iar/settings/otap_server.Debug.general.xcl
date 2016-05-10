@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armJET.dll" 
+
+"C:\Freescale\KW40Z_Connectivity_Software_1.0.1\ConnSw\examples\bluetooth\otap_server\frdmkw40z\FreeRTOS\build\iar\debug\otap_server_FreeRTOS.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armbat.dll" 
+
+--flash_loader "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\config\flashloader\Freescale\FlashKWx0xx160K.board" 
+
+
+
+

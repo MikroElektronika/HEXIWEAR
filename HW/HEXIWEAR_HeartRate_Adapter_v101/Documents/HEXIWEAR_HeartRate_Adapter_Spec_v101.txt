@@ -1,0 +1,10 @@
+Specification:
+FR-4, 1.6mm, 2-layer, Imersion gold, 1oz finished copper, Green SolderMask, White Legend.
+NOTES:
+- Edge plating requiered
+- We need this board panelized ( 5x9 up) with 2mm routing between the boards vertically and 3mm space (FR4 material) between the boards horizontally
+- Panel Border should be 7mm wide with fiducial marks and tooling holes (3mm) distanced 2.5mm from the inner edge
+- v-cut depth one third (1/3) of board thickness from both size
+- NOTE: Panel already done
+- The size of the board is 3.826 mm (W) x 6.724 mm (H)
+- The size of the panel is 65.11 mm (W) x 50.438 mm (H)
