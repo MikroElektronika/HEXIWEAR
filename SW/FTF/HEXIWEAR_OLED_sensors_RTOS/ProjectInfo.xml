@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright : 2012 Freescale, Inc. All Rights Reserved.
+
+  This configuration file is a standard interchange file that's format is maintained
+  by Freescale, Inc. The configuration file is a derivative work
+  of the Processor Expert Software technology licensed for use by customers
+  as defined as SOFTWARE in the product's End User License Agreement. This file
+  and format are free to use and distribute for read-only purposes. You do not have
+  the right to create these files or modify this format or use for any purposes other
+  than interchange with the Processor Expert Software technology.
+
+  THIS SOFTWARE IS PROVIDED "AS IS".
+
+  NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT
+  LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE APPLY TO THIS SOFTWARE. IN NO EVENT WILL FREESCALE BE LIABLE, WHETHER
+  IN CONTRACT, TORT, OR OTHERWISE, FOR ANY INCIDENTAL, SPECIAL, INDIRECT,
+  CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR
+  ANY LOSS OF USE, LOSS OF TIME, INCONVENIENCE, COMMERCIAL LOSS, OR LOST PROFITS,
+  SAVINGS, OR REVENUES TO THE FULL EXTENT SUCH MAY BE DISCLAIMED BY LAW.
+
+-->
+<export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ProjectInfoDescription.xsd">
+  <PROCESSOR>
+    <DeviceID>MK64FN1M0xxx12</DeviceID>
+    <CoreNum>1</CoreNum>
+    <Cores>
+      <Core>
+        <CoreSet>Cortex-M4</CoreSet>
+      </Core>
+    </Cores>
+    <SRAMsize>256k</SRAMsize>
+    <FLASHsize>1M</FLASHsize>
+  </PROCESSOR>
+  <PATHS>
+    <IncludePaths>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\inc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\port\gcc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\SDK\rtos\FreeRTOS\config\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\osa\inc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\sim\MK64F12\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\MK64F12\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\utilities\inc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\power\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\include\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\startup\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\SDK\platform\devices\MK64F12\startup\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\</Path>
+    </IncludePaths>
+    <SourceCodePaths>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\startup\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\adc16\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\dspi\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\edma\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\gpio\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\i2c\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\lptmr\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\rtc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\uart\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\adc16\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\dmamux\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\dspi\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\edma\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\gpio\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\i2c\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\llwu\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\lptmr\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\mcg\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\osc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\port\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\rcm\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\rtc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\sim\MK64F12\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\smc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\uart\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\osa\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\MK64F12\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\interrupt\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\power\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\utilities\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\port\gcc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\adapter\sources\sdk\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\bsp\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\audio\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\cdc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\common\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\composite\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\hid\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\msd\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\phdc\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\ehci\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\khci\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\hal\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\CommonTables\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\I2C\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\SPI\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\intern_flash\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\exceptions\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\1. watch\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.1 weatherStation\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.2 motionControl\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\2.3.1 pedometer\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.5 flashlight\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.1 sms\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.2 mail\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.3 call\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\common\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.1 bluetooth\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.2 bootloader\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.3 buttons group\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.4 haptic\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.1 googleApp\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.2 iOSApp\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.6 about\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\5. bond\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\6. sensorTag\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\common\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\rtc\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\timers\src\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\Static_Code\System\</Path>
+      <Path>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\startup\gcc\</Path>
+    </SourceCodePaths>
+  </PATHS>
+  <FILES>
+    <GeneratedCs>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\BATTERY_ADC.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\CLK_manager.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\CLOCK.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\Cpu.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\DEBUG_UART.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\DMA_controller.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\FLASH_SPI.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\FS_I2C.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\GPIO.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\HEXI_OS.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\KW40_UART.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\NFS_I2C.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\OLED_SPI.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\PWR_Manager.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\free_rtos.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\hardware_init.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\pin_mux.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\sensor_timer.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\test_uart.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\startup\system_MK64F12.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\startup.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\adc16\fsl_adc16_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\adc16\fsl_adc16_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\dspi\fsl_dspi_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\dspi\fsl_dspi_edma_master_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\dspi\fsl_dspi_edma_shared_function.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\dspi\fsl_dspi_edma_slave_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\edma\fsl_edma_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\edma\fsl_edma_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\gpio\fsl_gpio_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\gpio\fsl_gpio_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\i2c\fsl_i2c_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\i2c\fsl_i2c_master_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\i2c\fsl_i2c_shared_function.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\i2c\fsl_i2c_slave_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\lptmr\fsl_lptmr_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\lptmr\fsl_lptmr_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\rtc\fsl_rtc_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\rtc\fsl_rtc_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\uart\fsl_uart_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\src\uart\fsl_uart_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\adc16\fsl_adc16_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\dmamux\fsl_dmamux_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\dspi\fsl_dspi_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\edma\fsl_edma_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\gpio\fsl_gpio_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\i2c\fsl_i2c_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\llwu\fsl_llwu_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\lptmr\fsl_lptmr_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\mcg\fsl_mcg_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\mcg\fsl_mcg_hal_modes.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\osc\fsl_osc_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\port\fsl_port_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\rcm\fsl_rcm_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\rtc\fsl_rtc_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\sim\MK64F12\fsl_sim_hal_MK64F12.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\smc\fsl_smc_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\uart\fsl_uart_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\osa\src\fsl_os_abstraction_free_rtos.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\MK64F12\fsl_clock_MK64F12.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\fsl_clock_manager.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\fsl_clock_manager_common.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\interrupt\fsl_interrupt_manager.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\power\fsl_power_manager.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\utilities\src\fsl_misc_utilities.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\port\gcc\port.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\croutine.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\event_groups.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\heap_1.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\heap_2.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\heap_3.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\heap_4.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\list.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\queue.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\tasks.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\src\timers.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\adapter\sources\sdk\adapter_sdk.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\bsp\usb_dev_bsp.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\audio\usb_audio.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\cdc\usb_cdc.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\cdc\usb_cdc_pstn.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\common\usb_class.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\composite\usb_composite.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\hid\usb_hid.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\msd\usb_msc.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\msd\usb_msc_scsi.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\phdc\usb_phdc.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\ehci\device_ehci_interface.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\ehci\ehci_dev_main.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\khci\device_khci_interface.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\khci\khci_dev.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\usb_dev.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\usb_framework.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\hal\fsl_usb_khci_hal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\Events.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\src\HEXIWEAR_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\src\HEXIWEAR_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\src\pedometer_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\src\pedometer_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\src\pedometer_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\src\pedometer_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_abs_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_abs_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_abs_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_abs_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_add_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_add_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_add_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_add_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_dot_prod_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_dot_prod_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_dot_prod_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_dot_prod_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_mult_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_mult_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_mult_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_mult_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_negate_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_negate_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_negate_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_negate_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_offset_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_offset_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_offset_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_offset_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_scale_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_scale_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_scale_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_scale_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_shift_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_shift_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_shift_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_sub_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_sub_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_sub_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\BasicMathFunctions\arm_sub_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\CommonTables\arm_common_tables.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\CommonTables\arm_const_structs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_conj_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_conj_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_conj_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_dot_prod_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_dot_prod_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_dot_prod_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mag_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mag_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mag_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mag_squared_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mag_squared_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mag_squared_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mult_cmplx_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mult_cmplx_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mult_cmplx_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mult_real_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mult_real_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ComplexMathFunctions\arm_cmplx_mult_real_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_pid_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_pid_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_pid_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_pid_reset_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_pid_reset_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_pid_reset_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_sin_cos_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\ControllerFunctions\arm_sin_cos_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_cos_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_cos_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_cos_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_sin_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_sin_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_sin_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_sqrt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FastMathFunctions\arm_sqrt_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_32x64_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_32x64_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df1_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df2T_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df2T_f64.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df2T_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_df2T_init_f64.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_stereo_df2T_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_biquad_cascade_stereo_df2T_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_fast_opt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_opt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_opt_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_fast_opt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_opt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_opt_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_partial_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_conv_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_fast_opt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_opt_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_opt_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_correlate_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_decimate_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_init_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_interpolate_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_interpolate_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_interpolate_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_interpolate_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_interpolate_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_interpolate_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_lattice_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_lattice_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_lattice_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_lattice_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_lattice_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_lattice_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_init_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_fir_sparse_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_iir_lattice_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_iir_lattice_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_iir_lattice_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_iir_lattice_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_iir_lattice_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_iir_lattice_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_norm_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_norm_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_norm_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_norm_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_norm_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_norm_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\FilteringFunctions\arm_lms_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_add_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_add_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_add_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_cmplx_mult_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_cmplx_mult_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_cmplx_mult_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_inverse_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_inverse_f64.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_mult_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_mult_fast_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_mult_fast_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_mult_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_mult_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_scale_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_scale_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_scale_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_sub_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_sub_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_sub_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_trans_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_trans_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\MatrixFunctions\arm_mat_trans_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_max_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_max_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_max_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_max_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_mean_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_mean_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_mean_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_mean_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_min_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_min_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_min_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_min_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_power_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_power_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_power_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_power_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_rms_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_rms_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_rms_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_std_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_std_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_std_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_var_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_var_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\StatisticsFunctions\arm_var_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_copy_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_copy_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_copy_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_copy_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_fill_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_fill_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_fill_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_fill_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_float_to_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_float_to_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_float_to_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q15_to_float.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q15_to_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q15_to_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q31_to_float.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q31_to_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q31_to_q7.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q7_to_float.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q7_to_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\SupportFunctions\arm_q7_to_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_bitreversal.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix2_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix2_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix2_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix2_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix2_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix2_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix4_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix4_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix4_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix4_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix4_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix4_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_cfft_radix8_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_dct4_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_dct4_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_dct4_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_dct4_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_dct4_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_dct4_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_fast_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_fast_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_init_f32.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_init_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_init_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_q15.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_rfft_q31.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\src\FLASH_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\src\FLASH_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\src\FXAS_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\src\FXAS_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\src\FXOS_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\src\FXOS_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\src\HTU_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\src\HTU_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\I2C\src\generic_i2c_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\src\MAXIM_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\src\MAXIM_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\src\MPL_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\src\MPL_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\src\OLED_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\src\OLED_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\SPI\src\generic_spi_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\src\TSL_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\src\TSL_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\intern_flash\src\flash_boot_kinetis.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\src\power_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\src\power_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\exceptions\src\error.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\src\gui_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\src\gui_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\src\gui_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\1. watch\src\watch_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\1. watch\src\watch_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\1. watch\src\watch_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.1 weatherStation\src\gui_weatherStation_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.1 weatherStation\src\gui_weatherStation_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.1 weatherStation\src\gui_weatherStation_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.2 motionControl\src\gui_motionControl_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.2 motionControl\src\gui_motionControl_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.2 motionControl\src\gui_motionControl_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\2.3.1 pedometer\src\gui_pedometer_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\2.3.1 pedometer\src\gui_pedometer_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\2.3.1 pedometer\src\gui_pedometer_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\src\fitness_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\src\fitness_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\src\fitness_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.5 flashlight\src\flashlight_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.5 flashlight\src\flashlight_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.5 flashlight\src\flashlight_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\src\apps_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\src\apps_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.1 sms\src\sms_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.1 sms\src\sms_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.1 sms\src\sms_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.2 mail\src\mail_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.2 mail\src\mail_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.2 mail\src\mail_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.3 call\src\call_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.3 call\src\call_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.3 call\src\call_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\common\src\notif_common_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\common\src\notif_common_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\src\notif_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\src\notif_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.1 bluetooth\src\bluetooth_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.1 bluetooth\src\bluetooth_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.1 bluetooth\src\bluetooth_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.2 bootloader\src\bootloader_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.2 bootloader\src\bootloader_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.2 bootloader\src\bootloader_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.3 buttons group\src\buttons_group_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.3 buttons group\src\buttons_group_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.3 buttons group\src\buttons_group_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.4 haptic\src\haptic_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.4 haptic\src\haptic_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.4 haptic\src\haptic_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.1 googleApp\src\googleApp_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.1 googleApp\src\googleApp_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.2 iOSApp\src\iOSApp_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.2 iOSApp\src\iOSApp_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\src\getApp_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\src\getApp_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\src\getApp_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.6 about\src\about_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.6 about\src\about_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.6 about\src\about_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\src\settings_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\src\settings_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\5. bond\src\bond_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\5. bond\src\bond_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\5. bond\src\bond_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\6. sensorTag\src\gui_sensorTag_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\6. sensorTag\src\gui_sensorTag_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\6. sensorTag\src\gui_sensorTag_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\common\src\screens_common_objects.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\common\src\screens_common_resources.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\src\host_mcu_interface.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\src\host_mcu_interface_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\src\host_mcu_interface_events.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\src\host_mcu_interface_rx.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\src\host_mcu_interface_tx.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\main.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\src\notifications_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\src\notifications_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\src\notifications_events.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\rtc\src\rtc_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\src\sensor_defs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\src\sensor_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\timers\src\timer_driver.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\composite_app.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\disk.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\usb_descriptor.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\vfs.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\virtual_com.c</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Static_Code\System\PE_low_level_init.c</PathName>
+    </GeneratedCs>
+    <GeneratedHs>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\BATTERY_ADC.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\CLK_manager.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\CLOCK.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\Cpu.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\DEBUG_UART.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\DMA_controller.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\FLASH_SPI.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\FS_I2C.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\GPIO.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\HEXI_OS.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\KW40_UART.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\NFS_I2C.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\OLED_SPI.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\PE_low_level_init.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\PWR_Manager.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\SDK\platform\devices\MK64F12\startup\system_MK64F12.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\SDK\rtos\FreeRTOS\config\FreeRTOSConfig.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\board.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\free_rtos.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\pin_mux.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\sensor_timer.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Generated_Code\test_uart.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\arm_common_tables.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\arm_const_structs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\arm_math.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\core_cm4.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\core_cmFunc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\core_cmInstr.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\CMSIS\Include\core_cmSimd.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\include\MK64F12.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\include\MK64F12_extension.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\include\MK64F12_features.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\include\fsl_bitaccess.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\fsl_device_registers.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\startup.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_adc16_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_dspi_edma_master_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_dspi_edma_shared_function.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_dspi_edma_slave_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_edma_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_edma_request.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_gpio_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_i2c_master_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_i2c_shared_function.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_i2c_slave_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_lptmr_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_rtc_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\drivers\inc\fsl_uart_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_adc16_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_dmamux_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_dspi_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_edma_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_gpio_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_i2c_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_llwu_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_lptmr_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_mcg_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_mcg_hal_modes.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_osc_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_pmc_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_port_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_rcm_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_rtc_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_sim_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_smc_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\inc\fsl_uart_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\hal\src\sim\MK64F12\fsl_sim_hal_MK64F12.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\osa\inc\fsl_os_abstraction.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\osa\inc\fsl_os_abstraction_free_rtos.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\inc\fsl_clock_manager.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\inc\fsl_interrupt_manager.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\inc\fsl_power_manager.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\clock\MK64F12\fsl_clock_MK64F12.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\system\src\power\fsl_power_manager_common.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\utilities\inc\fsl_misc_utilities.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\FreeRTOS.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\StackMacros.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\croutine.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\event_groups.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\list.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\mpu_wrappers.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\portable.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\projdefs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\queue.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\semphr.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\task.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\include\timers.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\port\gcc\portTicks.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\port\gcc\portmacro.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\adapter\sources\adapter.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\adapter\sources\adapter_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\adapter\sources\sdk\adapter_cfg.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\adapter\sources\sdk\adapter_sdk.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\include\usb_device_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\include\usb_device_stack_interface.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\audio\usb_audio.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\cdc\usb_cdc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\cdc\usb_cdc_pstn.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\common\usb_class_internal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\composite\usb_composite.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\hid\usb_hid.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\config\usb_audio_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\config\usb_cdc_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\config\usb_composite_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\config\usb_hid_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\config\usb_msc_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\config\usb_phdc_config.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class_audio.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class_cdc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class_composite.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class_hid.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class_msc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\include\usb_class_phdc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\msd\usb_msc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\msd\usb_msc_scsi.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\classes\phdc\usb_phdc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\ehci\ehci_dev_main.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\ehci\ehci_usbprv.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\khci\khci_dev.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\khci\khci_dev_misc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\usb_dev.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\device\sources\controller\usb_framework.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\hal\fsl_usb_ehci_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\hal\fsl_usb_ehci_phy_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\hal\fsl_usb_features.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\hal\fsl_usb_khci_hal.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\compiler.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_desc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_ehci.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_error.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_misc.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_opt.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_pin_detect.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\usb\usb_core\include\usb_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\Events.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\inc\HEXIWEAR_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\inc\HEXIWEAR_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\inc\HEXIWEAR_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\HEXIWEAR\inc\HEXIWEAR_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\Keynetik\inc\Keynetik_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\Keynetik\inc\Keynetik_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\Keynetik\inc\Keynetik_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\Keynetik\inc\Keynetik_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\inc\pedometer_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\inc\pedometer_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\inc\pedometer_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\inc\pedometer_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\apps\pedometer\inc\pedometer_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\inc\FLASH_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\inc\FLASH_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\inc\FLASH_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FLASH\inc\FLASH_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\inc\FXAS_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\inc\FXAS_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\inc\FXAS_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXAS\inc\FXAS_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\inc\FXOS_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\inc\FXOS_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\inc\FXOS_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\FXOS\inc\FXOS_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\inc\HTU_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\inc\HTU_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\inc\HTU_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\HTU\inc\HTU_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\I2C\inc\generic_i2c_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\I2C\inc\generic_i2c_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\I2C\inc\generic_i2c_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\inc\MAXIM_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\inc\MAXIM_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\inc\MAXIM_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MAXIM\inc\MAXIM_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\inc\MPL_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\inc\MPL_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\inc\MPL_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\MPL\inc\MPL_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\inc\OLED_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\inc\OLED_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\inc\OLED_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\OLED\inc\OLED_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\SPI\inc\generic_spi_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\SPI\inc\generic_spi_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\SPI\inc\generic_spi_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\inc\TSL_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\inc\TSL_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\inc\TSL_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\TSL\inc\TSL_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\intern_flash\inc\EmbeddedTypes.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\intern_flash\inc\MK64F12_add.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\intern_flash\inc\MK64F12_cfg.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\intern_flash\inc\flash_boot_kinetis.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\inc\power.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\inc\power_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\inc\power_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\drivers\power\inc\power_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\exceptions\inc\error.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\exceptions\inc\error_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\inc\gui_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\inc\gui_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\inc\gui_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\inc\gui_resources.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\driver\inc\gui_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\1. watch\inc\watch.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\1. watch\inc\watch_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.1 weatherStation\inc\gui_weatherStation.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.1 weatherStation\inc\gui_weatherStation_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.2 motionControl\inc\gui_motionControl.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.2 motionControl\inc\gui_motionControl_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\2.3.1 pedometer\inc\gui_pedometer.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\2.3.1 pedometer\inc\gui_pedometer_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\inc\fitness.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.3 fitness\inc\fitness_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.5 flashlight\inc\flashlight.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\2.5 flashlight\inc\flashlight_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\inc\apps.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\2. apps\inc\apps_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.1 sms\inc\sms.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.1 sms\inc\sms_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.2 mail\inc\mail.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.2 mail\inc\mail_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.3 call\inc\call.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\3.3 call\inc\call_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\common\inc\notif_common.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\inc\notif.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\3. notif\inc\notif_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.1 bluetooth\inc\bluetooth.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.1 bluetooth\inc\bluetooth_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.2 bootloader\inc\bootloader.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.2 bootloader\inc\bootloader_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.3 buttons group\inc\buttons_group.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.3 buttons group\inc\buttons_group_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.4 haptic\inc\haptic.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.4 haptic\inc\haptic_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.1 googleApp\inc\googleApp.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.1 googleApp\inc\googleApp_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.2 iOSApp\inc\iOSApp.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\4.5.2 iOSApp\inc\iOSApp_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\inc\getApp.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.5 getApp\inc\getApp_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.6 about\inc\about.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\4.6 about\inc\about_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\inc\settings.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\4. settings\inc\settings_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\5. bond\inc\bond.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\5. bond\inc\bond_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\6. sensorTag\inc\gui_sensorTag.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\6. sensorTag\inc\gui_sensorTag_private.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\gui\screens\common\inc\screens_common.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\inc\host_mcu_interface.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\inc\host_mcu_interface_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\intf\inc\host_mcu_interface_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\inc\notifications_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\inc\notifications_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\inc\notifications_events.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\inc\notifications_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\notifications\inc\notifications_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\rtc\inc\rtc_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\rtc\inc\rtc_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\inc\sensor_defs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\inc\sensor_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\inc\sensor_info.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\sensors\inc\sensor_types.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\timers\inc\timer_driver.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\composite_app.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\disk.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\usb_descriptor.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\vfs.h</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\usb\virtual_com.h</PathName>
+    </GeneratedHs>
+    <GeneratedASMs>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\platform\devices\MK64F12\startup\gcc\startup_MK64F12.S</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\SDK\rtos\FreeRTOS\port\gcc\portasm.S</PathName>
+      <PathName>D:\work\HEXIWEAR_OLED_sensors_RTOS\Sources\cmsis_dsp\src\TransformFunctions\arm_bitreversal2.S</PathName>
+    </GeneratedASMs>
+  </FILES>
+  <OPTIONS>
+    <BuildOptions>
+      <CCoptList>
+        <Option>-D CPU_MK64FN1M0VDC12</Option>
+        <Option>-D FSL_RTOS_FREE_RTOS</Option>  
+      </CCoptList>
+    </BuildOptions>
+  </OPTIONS>
+</export>

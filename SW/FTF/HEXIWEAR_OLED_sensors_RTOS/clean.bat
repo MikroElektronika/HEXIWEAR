@@ -1,0 +1,9 @@
+del /s *.o
+del /s *.d
+del /s *.mk
+del /s *.elf
+del /s *.bin
+del /s *.srec
+del /s *.map
+del /s *.lst
+del /s makefile
