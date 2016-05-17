@@ -97,14 +97,18 @@ static void flashlight_ToggleTask( task_param_t param )
             {
                 case true:
                 {
-                	RED_LED_OFF();
+                	FLASH_SetOFF();
+                	isFlashlightOn = false;
+                	flashlight_icon.img = (uint8_t*)flashlight_off_bmp;
                     GuiDriver_ImageDraw( &flashlight_icon );
                     break;
                 }
                 case false:
                 {
-                    RED_LED_ON();
+                	FLASH_SetON();
+                	flashlight_icon.img = (uint8_t*)flashlight_on_bmp;
                     GuiDriver_ImageDraw( &flashlight_icon );
+                    isFlashlightOn = true;
                     break;
                 }
             }

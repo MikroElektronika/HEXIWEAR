@@ -315,7 +315,7 @@ _rtc_status_t RTC_AlarmEventWait (uint32_t timeout)
  */
 void RTC_DisableAlarm()
 {
-	RTC_DRV_SetAlarmIntCmd( FSL_CLOCK, false );
+//	RTC_DRV_SetAlarmIntCmd( 	FSL_CLOCK, false );
 }
 
 /**

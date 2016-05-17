@@ -87,7 +87,7 @@ void HEXIWEAR_startup( task_param_t param )
 
   // enable power save by default
   // power_EnablePowerSave();
-  // power_DisablePowerSave();
+   power_DisablePowerSave();
 
   // set to deep sleep by default
   // power_SetSleepMode( POWER_SLEEP_TYPE_DEEP );

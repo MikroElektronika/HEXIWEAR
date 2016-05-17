@@ -689,8 +689,8 @@ void power_EnablePowerSave()
 {
 //	RTC_SetSleepReloadValue( 10 );
 
-    RTC_EnableAlarm();
-    isActive_powerSave = true;
+//    RTC_EnableAlarm();
+//    isActive_powerSave = true;
 }
 
 /**
@@ -703,7 +703,7 @@ void power_DisablePowerSave()
 //	RTC_SetSleepReloadValue( 25 );
 
     isActive_powerSave = false;
-    RTC_DisableAlarm();
+//    RTC_DisableAlarm();
 }
 
 /**
