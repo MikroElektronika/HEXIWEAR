@@ -3,7 +3,8 @@
 2. Upgrade PIP by following instructions here:
 https://pip.pypa.io/en/stable/installing/#upgrading-pip
 
-2a. Make sure your setup has a PATH containing the environment variables for python binaries (e.g. add C:\Python27 to PATH and restart the system)
+2a. Make sure your setup has a PATH containing the environment variables for python binaries.
+E.g. add C:\Python27 and C:\Python27\Scripts to PATH and restart the system
 
 3. Download enum library from the link below:
 https://pypi.python.org/pypi/enum34#downloads
@@ -13,4 +14,10 @@ pip install enum34-1.1.6-py2-none-any.whl
 
 4. Merge given 'Scripts' folder with a 'Scripts' folder in python's root folder (probably 'c:\Python27\Scripts')
 
-5. Add the following configuration parameter into Config options field in a Debugger tab in an (existing or new) OpenOCD debugging configuration: -t k64f
+Now it's necessary to modify the (new or existing) debug configuration for OpenOCD:
+
+5. Open Debug configurations (menu Run -> Debug configurations...)
+
+6. Enter the correct path to pyocd-gdbserver.exe in the Executable field at the Debugger tab
+
+7. Add the following configuration parameter into Config options field at the Debugger tab
