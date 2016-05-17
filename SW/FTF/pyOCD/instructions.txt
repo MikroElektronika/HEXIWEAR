@@ -1,0 +1,5 @@
+1. Install Python 2.7.11
+
+2. Merge given 'Scripts' folder with a 'Scripts' folder in python's root folder (probably 'c:\Python27\Scripts')
+
+3. Add the following configuration parameter into Config options field in a Debugger tab in an (existing or new) OpenOCD debugging configuration: -t k64f
