@@ -20,4 +20,5 @@ Now it's necessary to modify the (new or existing) debug configuration for OpenO
 
 6. Enter the correct path to pyocd-gdbserver.exe in the Executable field at the Debugger tab
 
+<<<<<<< HEAD
 7. Add the following configuration parameter into Config options field at the Debugger tab: -t k64f
