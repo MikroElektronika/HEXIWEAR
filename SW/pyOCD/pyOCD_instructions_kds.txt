@@ -1,0 +1,23 @@
+1)
+- Run python-2.7.11.amd64.msi installer
+- Use default path for the install
+
+2)
+- Launch KDS
+- Go to Help
+- Install New Software
+- Click Add:
+        Name: GNU ARM Eclipse Plug-ins
+        Location: http://gnuarmeclipse.sourceforge.net/updates
+- Finish the installation and restart KDS
+
+3)
+- Copy the executable pyocd-gdbserver.exe into the KDS rooth folder
+- select Debug then "Debug Configurations..."
+
+4)
+- Create now PyOCD instance
+- Under Debugger tab
+- Executable enter the path to the GDB-PyOCD executable (ex C:\nxp\KDS_3.2.0\pyocd-gdbserver.exe)
+- Other options "-dinfo"
+- Press Apply and press Debug
