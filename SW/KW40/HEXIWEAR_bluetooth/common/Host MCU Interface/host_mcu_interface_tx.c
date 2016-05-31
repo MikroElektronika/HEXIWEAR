@@ -1,3 +1,7 @@
+/**
+ *    @file host_mcu_interface_tx.c
+ */
+
 /************************************************************************************
 *************************************************************************************
 * Include
@@ -26,14 +30,18 @@
 *************************************************************************************
 ************************************************************************************/
 
-static hostInterface_packet_t   hostInterface_txPacket;
-static msg_queue_handler_t      hostInterface_txQueueHnd;
-static task_handler_t           gHostInterface_TxTaskId;
-static task_handler_t           gHostInterface_OkTaskId;
+static hostInterface_packet_t   hostInterface_txPacket;           /** Tx host interface packet. */
+static msg_queue_handler_t      hostInterface_txQueueHnd;         /** Tx queue handler. */
+static task_handler_t           gHostInterface_TxTaskId;          /** Tx task ID. */
+static task_handler_t           gHostInterface_OkTaskId;          /** Ok task ID. */
 static mutex_t                  uartTxAccessMutex;
 
 // Declare the message queue
 MSG_QUEUE_DECLARE(hostInterface_txQueue, gHostInterface_msgNum, 0);	
+
+/**
+ *    Definition of confirmation packet.
+ */
 
 static hostInterface_packet_t   hostInterface_okPacket = {
     .start1 = 0x55,
@@ -43,7 +51,7 @@ static hostInterface_packet_t   hostInterface_okPacket = {
     .data[0] = gHostInterface_trailerByte
 };
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Private prototypes
 *************************************************************************************
@@ -55,7 +63,7 @@ static void        HostInterface_TxTask(task_param_t param);
 static void        HostInterface_OkTask(task_param_t param);
 static void        HostInterface_ConfirmWaitHandler(void);
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Functions definitions
 *************************************************************************************
@@ -179,10 +187,12 @@ static void HostInterface_TxTask(task_param_t param)
     osaStatus_t status;
     
     while(1)
-    {    
+    {   
+        // Wait for outgoing packets. 
         status = HostInterface_TxQueueMsgGet(&hostInterface_txPacket);
         if(status == osaStatus_Success)
         {
+            // Send packet.
             HostInterface_FlushPacket(&hostInterface_txPacket);  
             
 #if gHostInterface_RxConfirmationEnable //..........................................
@@ -190,6 +200,7 @@ static void HostInterface_TxTask(task_param_t param)
             {
                 HostInterface_EventConfirmPacketClear();
                 HostInterface_EventConfirmAttPacketClear();
+                // Wait for confirmation.
                 HostInterface_ConfirmWaitHandler();
             }
 #endif //...........................................................................
@@ -216,9 +227,7 @@ static void HostInterface_OkTask(task_param_t param)
         status = HostInterface_EventSendOkPacketWait();
         if(status == osaStatus_Success)
         {
-            //GPIO_DRV_SetPinOutput(gpioPin.pinName);
             HostInterface_FlushPacket(&hostInterface_okPacket);  
-            //GPIO_DRV_ClearPinOutput(gpioPin.pinName);
         }
     }
 }
@@ -253,9 +262,9 @@ static void HostInterface_ConfirmWaitHandler(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    Host MCU Interface Tx task.
+ *    Send packet through UART.
  *
- *    @param   param   initialData
+ *    @param   pHostInterface_packet   Packet to be sent.
  */
 
 static void HostInterface_FlushPacket(hostInterface_packet_t * pHostInterface_packet)

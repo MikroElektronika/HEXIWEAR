@@ -1,12 +1,12 @@
-/*! *********************************************************************************
-* \addtogroup Heart Rate Sensor
-* @{
-********************************************************************************** */
+/**
+ *    @file app.c
+ */
+
 /*!
 * Copyright (c) 2014, Freescale Semiconductor, Inc.
 * All rights reserved.
 * \file app.c
-* This file is the source file for the Heart Rate Sensor application
+* This file is the source file for the Hexiwear application
 *
 * Redistribution and use in source and binary forms, with or without modification,
 * are permitted provided that the following conditions are met:
@@ -74,15 +74,12 @@
 #include "alert_service.h"
 
 #include "client_ancs.h"
-
 #include "ApplMain.h"
 #include "app.h"
 #include "debug.h"
 #include "tsi.h"
 #include "host_mcu_interface.h"
-
 #include "Eeprom.h"
-
 #include "fsl_power_manager.h"
 #include "fsl_llwu_hal.h"
 #include "controller_interface.h"
@@ -107,6 +104,7 @@ extern void ResetMCU(void);
 * Private type definitions
 *************************************************************************************
 ************************************************************************************/
+
 typedef enum
 {
 #if gBondingSupported_d
@@ -114,19 +112,22 @@ typedef enum
 #endif
     fastAdvState_c,
     slowAdvState_c
-}advType_t;
+}
+advType_t;
 
 typedef struct advState_tag{
     bool_t      advOn;
     advType_t   advType;
-}advState_t;
+}
+advState_t;
 
 typedef enum otapClientState_tag
 {
     mOtapClientStateIdle_c                  = 0x00,
     mOtapClientStateDownloadingImage_c      = 0x01,
     mOtapClientStateImageDownloadComplete_c = 0x02,
-} otapClientState_t;
+} 
+otapClientState_t;
 
 /*! Structure containing the OTAP Client functional data. */
 typedef struct otapClientAppData_tag
@@ -153,7 +154,6 @@ typedef struct otapClientAppData_tag
 } otapClientAppData_t;
   
 static deviceState_t deviceState = deviceState_watch;
-//static deviceState_t deviceState = deviceState_otapKW40;
 
 /************************************************************************************
 *************************************************************************************
@@ -187,6 +187,7 @@ typedef enum
 }
 bleApp_pins;
 
+/** Wakeup pin configuration. */
 static gpio_input_pin_t bleApp_wakeUpPin = 
 {
     .isPullEnable = false,
@@ -195,6 +196,7 @@ static gpio_input_pin_t bleApp_wakeUpPin =
     .interrupt = kPortIntEitherEdge,
 };
 
+/** Interrupt pin configuration. */
 static gpio_input_pin_user_config_t bleApp_intPin =
 {
     .pinName = kGpioHostInt,
@@ -205,14 +207,12 @@ static gpio_input_pin_user_config_t bleApp_intPin =
 };
 
 /* Service Data*/
-
-static basConfig_t      basServiceConfig = {service_battery, 100};
-static disConfig_t      disServiceConfig = {service_device_info};
+static basConfig_t      basServiceConfig    = {service_battery, 100};
+static disConfig_t      disServiceConfig    = {service_device_info};
 static otapClientConfig_t otapServiceConfig = {service_otap};
-static uint16_t otapWriteNotifHandles[] = {value_otap_control_point,
-                                           value_otap_data};
 
-static uint16_t writeNotifHandles[]      = {value_alertIn};
+static uint16_t otapWriteNotifHandles[]     = {value_otap_control_point, value_otap_data};
+static uint16_t writeNotifHandles[]         = {value_alertIn};
 
 /* Application specific data*/
 static bool_t mContactStatus = TRUE;
@@ -252,7 +252,7 @@ static otapClientAppData_t     otapClientData =
     .lastCmdSentToOtapServer = gOtapCmdIdNoCommand_c,
 };
 
-static const uint8_t imageIdAll[gOtap_ImageIdFieldSize_c] = {0x00, 0x00};
+static const uint8_t imageIdAll[gOtap_ImageIdFieldSize_c]  = {0x00, 0x00};
 static const uint8_t imageIdKW40[gOtap_ImageIdFieldSize_c] = {0x01, 0x00};
 static const uint8_t imageIdMK64[gOtap_ImageIdFieldSize_c] = {0x02, 0x00};
 
@@ -291,11 +291,7 @@ static void BleApp_HandleValueConfirmation (deviceId_t deviceId);
 static void BatteryMeasurementTimerCallback (void *);
 static void BleApp_AddToWhiteList(void);
 
-/* Timer Callbacks */
-static void TimerMeasurementCallback (void *);
-
 static void BleApp_Advertise(void);
-
 static void Ble_StartServices(void);
 
 /* OTAP Client functions */
@@ -322,8 +318,6 @@ static otapStatus_t OtapClient_IsImageFileHeaderValid (bleOtaImageFileHeader_t* 
 static void OtapClient_Complete(void);
 static void OtapClient_Fail(void);
 
-static void BleApp_L2caControlCallback(l2capControlMessageType_t  messageType, void* pMessage);
-static void BleApp_LowPowerEnterCallback(void);
 static void BleApp_SendConnUpdateReq(deviceId_t peerDeviceId);
 
 /* Timer Callbacks */
@@ -335,58 +329,78 @@ static void BleApp_GoToSleepTimerCallback (void *);
 *************************************************************************************
 ************************************************************************************/
 
-/*! *********************************************************************************
-* \brief    
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Disable advertising.
+ */
 
 void BleApp_AdvDisable(void)
 {
-    // Get device parameters from FLASH.
     NV_ReadHWParameters(&gHardwareParameters);
     gHardwareParameters.advMode = (uint8_t) advMode_disable;
     NV_WriteHWParameters(&gHardwareParameters);
     ResetMCU();
 }
 
-/*! *********************************************************************************
-* \brief    
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Enable advertising.
+ */
 
 void BleApp_AdvEnable(void)
 {   
-    // Get device parameters from FLASH.
     NV_ReadHWParameters(&gHardwareParameters);
     gHardwareParameters.advMode = (uint8_t) advMode_enable;
     NV_WriteHWParameters(&gHardwareParameters);
     ResetMCU();
 }
 
-/*! *********************************************************************************
-* \brief    
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Get advertising mode.
+ *
+ *    @return      Current advertising mode.
+ */
 
 advMode_t BleApp_GetAdvMode(void)
 {
     return advMode;
 }
 
-/*! *********************************************************************************
-* \brief    
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Get state of link
+ *
+ *    @return      Current link state:
+ *                                    linkState_disconnected
+ *                                    linkState_connected
+ */
 
 linkState_t BleApp_GetLinkState(void)
 {
     return ((mPeerDeviceId == gInvalidDeviceId_c) ? linkState_disconnected : linkState_connected);
 }
 
-/*! *********************************************************************************
-* \brief    
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Simple checking of content of data readed from flash.
+ *
+ *    @param    data   Readed data.
+ *    @param    size   Size in bytes.
+ *
+ *    @return          true     Readed data is valid.
+ *                     false    Readed data is not valid.
+ */
 
 static bool BleApp_VerifyFlashRead(uint8_t * data, uint16_t size)
 {
@@ -401,10 +415,12 @@ static bool BleApp_VerifyFlashRead(uint8_t * data, uint16_t size)
     return false;
 }
 
-/*! *********************************************************************************
-* \brief    
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Fill the properties of the firmware images (for both MK64 and KW40 MCUs).
+ */
 
 static void BleApp_ReadFwImagProps(void)
 {
@@ -444,10 +460,12 @@ static void BleApp_ReadFwImagProps(void)
     }
 }
 
-/*! *********************************************************************************
-* \brief    Initializes application specific functionality before the BLE stack init.
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Initializes application specific functionality before the BLE stack init.
+ */
 
 void BleApp_Init(void)
 {
@@ -536,10 +554,12 @@ void BleApp_Init(void)
     asm("nop");
 }
 
-/*! *********************************************************************************
-* \brief    Starts the BLE application.
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Starts the BLE application.
+ */
 
 void BleApp_Start(void)
 {
@@ -563,18 +583,17 @@ void BleApp_Start(void)
     #endif
 
         BleApp_Advertise();
-    #if (cPWR_UsePowerDownMode)    
-//        PWR_ChangeDeepSleepMode(1);
-//        PWR_AllowDeviceToSleep();    
-    #endif           
     }
 }
 
-/*! *********************************************************************************
-* \brief        Handles BLE generic callback.
-*
-* \param[in]    pGenericEvent    Pointer to gapGenericEvent_t.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handles BLE generic callback.
+ *
+ *    @param   pGenericEvent   Pointer to gapGenericEvent_t.
+ */
 
 void BleApp_GenericCallback (gapGenericEvent_t* pGenericEvent)
 {
@@ -653,6 +672,12 @@ void BleApp_GenericCallback (gapGenericEvent_t* pGenericEvent)
 *************************************************************************************
 ************************************************************************************/
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Start bluetooth services.
+ */
 
 static void Ble_StartServices(void)
 {
@@ -672,6 +697,14 @@ static void Ble_StartServices(void)
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Subscribe to services.
+ *
+ *    @param   deviceId   Device ID.
+ */
 
 static void Ble_Subscribe(deviceId_t deviceId)
 {
@@ -689,6 +722,12 @@ static void Ble_Subscribe(deviceId_t deviceId)
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Unsubscribe from services.
+ */
 
 static void Ble_Unsubscribe(void)
 {
@@ -705,6 +744,13 @@ static void Ble_Unsubscribe(void)
         OtapCS_Unsubscribe();
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Add bonded devices do white list.
+ */
 
 static void BleApp_AddToWhiteList(void)
 {
@@ -723,16 +769,18 @@ static void BleApp_AddToWhiteList(void)
 #endif    
 }
 
-/*! *********************************************************************************
-* \brief        Configures BLE Stack after initialization. Usually used for
-*               configuring advertising, scanning, white list, services, et al.
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Configures BLE Stack after initialization. Usually used for
+ *    configuring advertising, scanning, white list, services, et al.
+ */
 
 static void BleApp_Config()
 {  
     uint8_t uniqueID[10];
-    uint8_t fwRevision[12] = "1.0.0/1.0.0";
+    uint8_t fwRevision[12] = "1.0.0/1.0.0";  // NOTE: Each field into firmware revision must be single digits!
     uint16_t gpioPin;
     
     // Read unique ID
@@ -752,8 +800,7 @@ static void BleApp_Config()
     App_RegisterGattClientProcedureCallback(ClientAncs_GattCallback);
     App_RegisterGattClientNotificationCallback(ClientAncs_GattNotificationCallback);
     
-    //App_RegisterL2caControlCallback(BleApp_L2caControlCallback);
-    
+
     if(deviceState == deviceState_watch)
     {
         GattServer_RegisterHandlesForWriteNotifications (sizeof(writeNotifHandles)/sizeof(writeNotifHandles[0]),
@@ -812,14 +859,15 @@ static void BleApp_Config()
     Ble_StartServices();
     
     // Populate values of Device Service Characteristics with proper values.
+    // NOTE: Each field in revision must be single digit.
     fwRevision[0] = currentImageVerMK64[0] + '0';
     fwRevision[2] = currentImageVerMK64[1] + '0';
     fwRevision[4] = currentImageVerMK64[2] + '0';
     fwRevision[6]  = currentImageVerKW40[0] + '0';
     fwRevision[8]  = currentImageVerKW40[1] + '0';
     fwRevision[10] = currentImageVerKW40[2] + '0';
-    GattDb_WriteAttribute(value_fw_rev, 11, fwRevision);
-    GattDb_WriteAttribute(value_serial_num, 10, uniqueID);
+    GattDb_WriteAttribute(value_fw_rev, 11, fwRevision);       // Set firmware revision characteristic.
+    GattDb_WriteAttribute(value_serial_num, 10, uniqueID);     // Set serial number characteristic.
     
     // Write current state to corresponding characteristic.
     GattDb_WriteAttribute(value_otap_state, 1, (uint8_t *)&deviceState);
@@ -829,14 +877,16 @@ static void BleApp_Config()
 #if (cPWR_UsePowerDownMode)    
     if(deviceState == deviceState_watch)
     {
-        // Initializes GPIO pins. 
+        // Initializes interrupt pin. 
         GPIO_DRV_InputPinInit(&bleApp_intPin);
-        
+        // Set deep sleep mode.
         PWR_ChangeDeepSleepMode(1); /* MCU=LLS3, LL=IDLE, wakeup on GPIO/LL */
+        // Set gpio pin as wakeup source.
         POWER_SYS_SetWakeupPin(kPowerManagerWakeupPin8, kLlwuExternalPinChangeDetect, &bleApp_wakeUpPin);
     }
     else
     {
+    	// In OTAP mode device doesn't go to sleep.
         bleApp_intPin.config.interrupt = kPortIntDisabled;
         GPIO_DRV_InputPinInit(&bleApp_intPin);
     }
@@ -847,11 +897,13 @@ static void BleApp_Config()
     
 }
 
-/*! *********************************************************************************
-* \brief        Configures GAP Advertise parameters. Advertise will satrt after
-*               the parameters are set.
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Configures GAP Advertise parameters. Advertise will satrt after
+ *    the parameters are set.
+ */
 
 static void BleApp_Advertise(void)
 {
@@ -861,28 +913,18 @@ static void BleApp_Advertise(void)
     advParams.filterPolicy = gProcessAll_c;
             
     advParams.ownAddressType = gBleAddrTypePublic_c;
-    
-    /* Set advertising parameters */
+   
     Gap_SetAdvertisingParameters(&advParams);
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
-
-static void BleApp_L2caControlCallback(l2capControlMessageType_t  messageType, void* pMessage)
-{
-    if (messageType == gL2ca_ConnectionParameterUpdateComplete_c)
-    {
-        asm("nop");
-    }
-}        
-
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Requests a set of new connection parameters.
+ *
+ *    @param   peerDeviceId   Peer device ID.
+ */
 
 static void BleApp_SendConnUpdateReq(deviceId_t peerDeviceId)
 {
@@ -898,11 +940,14 @@ static void BleApp_SendConnUpdateReq(deviceId_t peerDeviceId)
     }
 }
         
-/*! *********************************************************************************
-* \brief        Handles BLE Advertising callback from host stack.
-*
-* \param[in]    pAdvertisingEvent    Pointer to gapAdvertisingEvent_t.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handles BLE Advertising callback from host stack.
+ *
+ *    @param   pAdvertisingEvent   Pointer to gapAdvertisingEvent_t.
+ */
 
 static void BleApp_AdvertisingCallback (gapAdvertisingEvent_t* pAdvertisingEvent)
 {
@@ -917,12 +962,9 @@ static void BleApp_AdvertisingCallback (gapAdvertisingEvent_t* pAdvertisingEvent
                 if(!mAdvState.advOn)
                 {
                     Led1Off();
-                    //PWR_ChangeDeepSleepMode(1);
-                    //PWR_AllowDeviceToSleep();    
                 }  
                 else
                 {
-                    //PWR_ChangeDeepSleepMode(1);
                     Led1On();
                 }
             #else 
@@ -956,12 +998,15 @@ static void BleApp_AdvertisingCallback (gapAdvertisingEvent_t* pAdvertisingEvent
     }
 }
 
-/*! *********************************************************************************
-* \brief        Handles BLE Connection callback from host stack.
-*
-* \param[in]    peerDeviceId        Peer device ID.
-* \param[in]    pConnectionEvent    Pointer to gapConnectionEvent_t.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handles BLE Connection callback from host stack.
+ *
+ *    @param   peerDeviceId       Peer device ID.
+ *    @param   pConnectionEvent   Pointer to gapConnectionEvent_t.
+ */
 
 static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEvent_t* pConnectionEvent)
 {
@@ -1000,11 +1045,12 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                     if (gBleSuccess_c == Gap_CheckIfBonded(peerDeviceId, &isBonded) &&
                         FALSE == isBonded)
                     {
-                        // Remote device should be bonded before try to do OTAP.
+                        // NOTE: Remote device should be already bonded before try to do OTAP!
                         if(deviceState == deviceState_watch)
                         {
                             Gap_SendSlaveSecurityRequest(peerDeviceId, gBondingSupported_d, gSecurityMode_1_Level_3_c);
                         }
+                        // If device state is some of "OTAP states", and remote device is not bonded, just stop OTAP and reset device.
                         else
                         {
                             OtapClient_Fail();
@@ -1028,6 +1074,7 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                 }
                 else
                 {
+                	// Send link state to host MCU.
                     hostInterface_packet_t hostInterface_packet = 
                     {
                         .type    = packetType_linkStateSend,
@@ -1039,13 +1086,10 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                     {
                         OSA_TimeDelay(10);
                     }
+                    // Update client state machine.
                     ClientAncs_StateMachineHandler(clientAncsPeerInfo.deviceId, mAppEvt_PeerConnected_c);
                 }
             }
-            #if (cPWR_UsePowerDownMode)             
-//            PWR_ChangeDeepSleepMode(1);
-//            PWR_AllowDeviceToSleep();
-            #endif
         }
         break;
         
@@ -1055,6 +1099,8 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
             DebugPrint("ConnEvtDisconnected");
             
         #if gBondingSupported_d
+            // If the number of bonded device is equal to gcGapMaximumBondedDevices_d 
+            // then remove oldest one, to make space for next bond request.
             Gap_GetBondedDevicesCount(&bondedDeviceCnt);
             if(bondedDeviceCnt > (gcGapMaximumBondedDevices_d - 1))
             {
@@ -1065,11 +1111,13 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
             }
         #endif
             
+            // If disconnect event is detected during OTAP, then declare OTAP process as unsuccessful, and reset device.
             if(deviceState != deviceState_watch)
             {
                 OtapClient_Fail();
                 ResetMCU();
             }
+            // Send link state to host MCU.
             else
             {
                 hostInterface_packet_t hostInterface_packet = 
@@ -1085,13 +1133,13 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                 }
             }
             
-            /* Unsubscribe client */
+            // Unsubscribe client.
             Ble_Unsubscribe();
 
             mPeerDeviceId = gInvalidDeviceId_c;
             clientAncsPeerInfo.deviceId = gInvalidDeviceId_c;
             
-            /* Reset Service Discovery to be sure*/
+            // Reset Service Discovery to be sure.
             ClientAncs_ServiceDiscoveryErrorHandler();
             
             if(advMode == advMode_disable)
@@ -1100,12 +1148,12 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
             }
             else if (pConnectionEvent->eventData.disconnectedEvent.reason == gHciConnectionTimeout_c)
             {
-                /* Link loss detected*/
+                // Link loss detected.
                 BleApp_Start();
             }
             else
             {
-                /* Connection was terminated by peer or application */
+                // Connection was terminated by peer or application.
                 BleApp_Start();
             }
         }
@@ -1131,7 +1179,7 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
         {
             DebugPrint("ConnEvtKeysReceived");    
             
-            /* Copy peer device address information when IRK is used */
+            // Copy peer device address information when IRK is used
             if (pConnectionEvent->eventData.keysReceivedEvent.pKeys->aIrk != NULL)
             {
                 mPeerDeviceAddressType = pConnectionEvent->eventData.keysReceivedEvent.pKeys->addressType;
@@ -1149,6 +1197,7 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                 .data[3] = gHostInterface_trailerByte
             };
 
+            // Send passkey to be displayed.
             FLib_MemCpy(hostInterface_packet.data, &smpPasskey, 3);
             while(HostInterface_TxQueueMsgPut((hostInterface_packet_t *)&hostInterface_packet, true) != osaStatus_Success)
             {
@@ -1164,7 +1213,7 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
             if (pConnectionEvent->eventData.pairingCompleteEvent.pairingSuccessful &&
                 pConnectionEvent->eventData.pairingCompleteEvent.pairingCompleteData.withBonding)
             {
-                /* If a bond is created, write device address in controller’s White List */
+                // If a bond is created, write device address in controller’s White List.
                 Gap_AddDeviceToWhiteList(mPeerDeviceAddressType, maPeerDeviceAddress);
                 ClientAncs_StateMachineHandler(clientAncsPeerInfo.deviceId, mAppEvt_PairingComplete_c);
                 BleApp_SendConnUpdateReq(peerDeviceId);
@@ -1178,6 +1227,7 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
 
         case gConnEvtPairingRequest_c:
         {
+        	// Generate and set local passkey.
             if(deviceState == deviceState_watch)
             {
                 DebugPrint("ConnEvtPairingRequest");
@@ -1196,6 +1246,7 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                 gPairingParameters.centralKeys = pConnectionEvent->eventData.pairingEvent.centralKeys;
                 Gap_AcceptPairingRequest(peerDeviceId, &gPairingParameters);
             }
+            // Device must be paired and bonded before start OTAP process.
             else
             {
                 OtapClient_Fail();
@@ -1212,14 +1263,14 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
                     
             if (!(pConnectionEvent->eventData.keyExchangeRequestEvent.requestedKeys & gLtk_c))
             {
+            	// When the LTK is NULL EDIV and Rand are not sent and will be ignored.
                 sentSmpKeys.aLtk = NULL;
-                /* When the LTK is NULL EDIV and Rand are not sent and will be ignored. */
             }
             
             if (!(pConnectionEvent->eventData.keyExchangeRequestEvent.requestedKeys & gIrk_c))
             {
+            	// When the IRK is NULL the Address and Address Type are not sent and will be ignored.
                 sentSmpKeys.aIrk = NULL;
-                /* When the IRK is NULL the Address and Address Type are not sent and will be ignored. */
             }
             
             if (!(pConnectionEvent->eventData.keyExchangeRequestEvent.requestedKeys & gCsrk_c))
@@ -1268,12 +1319,16 @@ static void BleApp_ConnectionCallback (deviceId_t peerDeviceId, gapConnectionEve
     }
 }
 
-/*! *********************************************************************************
-* \brief        Handles GATT server callback from host stack.
-*
-* \param[in]    deviceId        Peer device ID.
-* \param[in]    pServerEvent    Pointer to gattServerEvent_t.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handles GATT server callback from host stack.
+ *
+ *    @param   deviceId       Peer device ID.
+ *    @param   pServerEvent   Pointer to gattServerEvent_t.
+ */
+
 static void BleApp_GattServerCallback (deviceId_t deviceId, gattServerEvent_t* pServerEvent)
 {
     uint16_t handle;
@@ -1289,7 +1344,7 @@ static void BleApp_GattServerCallback (deviceId_t deviceId, gattServerEvent_t* p
             
             BleApp_CccdWritten (deviceId,
                                 pServerEvent->eventData.charCccdWrittenEvent.handle,
-                                pServerEvent->eventData.charCccdWrittenEvent.newCccd) ;
+                                pServerEvent->eventData.charCccdWrittenEvent.newCccd);
         }
         break;
         
@@ -1323,6 +1378,17 @@ static void BleApp_GattServerCallback (deviceId_t deviceId, gattServerEvent_t* p
         
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function called when CCCD was written.
+ *
+ *    @param   deviceId   Device ID.
+ *    @param   handle     Handle of the CCCD attribute.
+ *    @param   cccd       Value of the CCCD.
+ */
 
 static void BleApp_CccdWritten (deviceId_t deviceId, uint16_t handle, gattCccdFlags_t cccd)
 {
@@ -1362,18 +1428,23 @@ static void BleApp_CccdWritten (deviceId_t deviceId, uint16_t handle, gattCccdFl
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function called when an attribute was written.
+ *
+ *    @param   deviceId   Device ID.
+ *    @param   handle     Handle of the attribute.
+ *    @param   length     Length of the attribute value array.
+ *    @param   pValue     Attribute value array attempted to be written.
+ */
+
 static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16_t length, uint8_t* pValue)
 {
     bleResult_t bleResult;
     otapCommand_t otapCommand;
-    
-    
+     
    if(
       (handle == value_alertIn) &&
       (deviceState == deviceState_watch)
@@ -1385,11 +1456,13 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
             uint8_t     attWriteStatus;
             event_flags_t setFlags;
             
+            // Send corresponding data to host MCU.
             Als_HandleInAlert(pValue);
             
         #if gHostInterface_RxConfirmationEnable //..........................................
             HostInterface_EventConfirmAttPacketClear();
             
+            // Wait for confirmation packet from host MCU.
             eventWaitStatus = HostInterface_EventConfirmAttPacketWait();
             
             if(eventWaitStatus != osaStatus_Success)
@@ -1402,6 +1475,7 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
                 attWriteStatus = gAttErrCodeNoError_c;
             }
             
+            // Responds to an intercepted attribute write operation.
             GattServer_SendAttributeWrittenStatus(deviceId, handle, attWriteStatus);
         }
     }
@@ -1410,7 +1484,7 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
              (deviceState != deviceState_watch)
            )
     {
-        /*! Handle all OTAP Server to Client Commands Here. */
+        // Handle all OTAP Server to Client Commands Here.
         switch(((otapCommand_t*)pValue)->cmdId)
         {
         case gOtapCmdIdNewImageNotification_c:
@@ -1425,7 +1499,7 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
             }
             else
             {
-                /*! A BLE error has occurred - Disconnect */
+                // A BLE error has occurred - Disconnect.
                 Gap_Disconnect (deviceId);
                 OtapClient_Fail();
                 ResetMCU();
@@ -1443,7 +1517,7 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
             }
             else
             {
-                /*! A BLE error has occurred - Disconnect */
+                // A BLE error has occurred - Disconnect.
                 Gap_Disconnect (deviceId);
                 OtapClient_Fail();
                 ResetMCU();
@@ -1461,7 +1535,7 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
             }
             else
             {
-                /*! A BLE error has occurred - Disconnect */
+                // A BLE error has occurred - Disconnect.
                 Gap_Disconnect (deviceId);
                 OtapClient_Fail();
                 ResetMCU();
@@ -1482,7 +1556,7 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
             }
             else
             {
-                /*! A BLE error has occurred - Disconnect */
+                // A BLE error has occurred - Disconnect.
                 Gap_Disconnect (deviceId);
                 OtapClient_Fail();
                 ResetMCU();
@@ -1492,20 +1566,26 @@ static void BleApp_AttributeWritten(deviceId_t deviceId, uint16_t handle, uint16
     }
     else
     {
-        /*! A GATT Server is trying to GATT Write an unknown attribute value.
-        *  This should not happen. Disconnect the link. */
+        // A GATT Server is trying to GATT Write an unknown attribute value.
+        //  This should not happen. Disconnect the link.
         Gap_Disconnect (deviceId);
         OtapClient_Fail();
         ResetMCU();
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function called when an attribute was written without response (with ATT Write Command).
+ *
+ *    @param   deviceId   Device ID.
+ *    @param   handle     Handle of the attribute.
+ *    @param   length     Length of the attribute value array.
+ *    @param   pValue     Attribute value array attempted to be written.
+ */
+
 static void BleApp_AttributeWrittenWithoutResponse (deviceId_t deviceId,
                                                     uint16_t handle,
                                                     uint16_t length,
@@ -1515,8 +1595,8 @@ static void BleApp_AttributeWrittenWithoutResponse (deviceId_t deviceId,
     otapStatus_t otapStatus = gOtapStatusSuccess_c;
     bleResult_t bleResult;
     
-    /* Only the OTAP Data attribute is expected to be written using the
-     * ATT Write Without Response Command. */
+    // Only the OTAP Data attribute is expected to be written using the
+    // ATT Write Without Response Command. 
     if (
         (handle == value_otap_data) &&
         (deviceState != deviceState_watch)
@@ -1534,19 +1614,19 @@ static void BleApp_AttributeWrittenWithoutResponse (deviceId_t deviceId,
                 }
                 else
                 {
-                    /* If the OTAP Client received an unexpected command on the data channel send an error to the OTAP Server. */
+                    // If the OTAP Client received an unexpected command on the data channel send an error to the OTAP Server.
                     otapStatus = gOtapStatusUnexpectedCmdOnDataChannel_c;
                 }
             }
             else
             {
-                /* If the OTAP Client is not expecting image file chunks via ATT send an error to the OTAP Server. */
+                // If the OTAP Client is not expecting image file chunks via ATT send an error to the OTAP Server.
                 otapStatus = gOtapStatusUnexpectedTransferMethod_c;
             }
         }
         else
         {
-            /* If the OTAP Client is not expecting image file chunks send an error to the OTAP Server. */
+            // If the OTAP Client is not expecting image file chunks send an error to the OTAP Server.
             otapStatus = gOtapStatusImageDataNotExpected_c;
         }
         
@@ -1565,7 +1645,7 @@ static void BleApp_AttributeWrittenWithoutResponse (deviceId_t deviceId,
             }
             else
             {
-                /*! A BLE error has occurred - Disconnect */
+                // A BLE error has occurred - Disconnect.
                 Gap_Disconnect (deviceId);
                 OtapClient_Fail();
                 ResetMCU();                
@@ -1574,18 +1654,21 @@ static void BleApp_AttributeWrittenWithoutResponse (deviceId_t deviceId,
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function called when receive a Handle Value Confirmation from the Client.
+ *
+ *    @param   deviceId   Device ID.
+ */
+
 static void BleApp_HandleValueConfirmation (deviceId_t deviceId)
 {
     otapCommand_t otapCommand;
     bleResult_t   bleResult;
     
-    /*! Check for which command sent to the OTAP Server the confirmation has been received. */
+    // Check for which command sent to the OTAP Server the confirmation has been received.
     if(deviceState != deviceState_watch)
     {
         switch (otapClientData.lastCmdSentToOtapServer)
@@ -1624,7 +1707,7 @@ static void BleApp_HandleValueConfirmation (deviceId_t deviceId)
                 }
                 else
                 {
-                    /*! A BLE error has occurred - Disconnect */
+                    // A BLE error has occurred - Disconnect.
                     Gap_Disconnect (deviceId);
                     OtapClient_Fail();
                     ResetMCU();
@@ -1635,24 +1718,22 @@ static void BleApp_HandleValueConfirmation (deviceId_t deviceId)
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleDataChunk (deviceId_t deviceId, uint16_t length, uint8_t* pData)
 {
     otapCommand_t otapCommand;
     bleResult_t   bleResult;
     otapStatus_t otapStatus = gOtapStatusSuccess_c;
     
-    otapCmdImgChunkCoc_t* pDataChunk = (otapCmdImgChunkCoc_t*)(&((otapCommand_t*)pData)->cmd); //use the CoC Data Chunk type but observe the length
-    uint16_t dataLen = length - gOtap_CmdIdFieldSize_c - gOtap_ChunkSeqNumberSize_c; // len
+    otapCmdImgChunkCoc_t* pDataChunk = (otapCmdImgChunkCoc_t*)(&((otapCommand_t*)pData)->cmd); // Use the CoC Data Chunk type but observe the length.
+    uint16_t dataLen = length - gOtap_CmdIdFieldSize_c - gOtap_ChunkSeqNumberSize_c;           // Calculate length.
     
-    /* Variables for the local image file parsing state machine. */
-    static uint32_t currentImgElemRcvdLen = 0; /*!< Contains the number of received bytes for th current image element (header or othe sub element).
-                                                         *   This is needed because the */
+    // Variables for the local image file parsing state machine.
+    static uint32_t currentImgElemRcvdLen = 0;      /*!< Contains the number of received bytes for th current image element (header or othe sub element).
+                                                    *   This is needed because the */
     static bleOtaImageFileHeader_t imgFileHeader;   /*!< Saved image file header. */
     static uint32_t elementEnd = 0;                 /*!< Current image file element expected end. */
     static subElementHeader_t subElemHdr;
@@ -2015,12 +2096,10 @@ static void OtapClient_HandleDataChunk (deviceId_t deviceId, uint16_t length, ui
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleNewImageNotification (deviceId_t deviceId, uint16_t length, uint8_t* pValue)
 {
     otapCommand_t otapCommand;
@@ -2139,12 +2218,10 @@ static void OtapClient_HandleNewImageNotification (deviceId_t deviceId, uint16_t
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleNewImageInfoResponse (deviceId_t deviceId, uint16_t length, uint8_t* pValue)
 {
     otapCommand_t otapCommand;
@@ -2166,7 +2243,6 @@ static void OtapClient_HandleNewImageInfoResponse (deviceId_t deviceId, uint16_t
         switch (otapClientData.state)
         {
         case mOtapClientStateIdle_c:
-            //if (OtapClient_IsRemoteImageNewer(pRemoteCmd->cmd.newImgInfoRes.imageId, pRemoteCmd->cmd.newImgInfoRes.imageVersion))
             if(OtapClient_CheckRemoteID(pRemoteCmd->cmd.newImgInfoRes.imageId))
             {
                 /* Set up the Client to receive the image file. */
@@ -2253,12 +2329,10 @@ static void OtapClient_HandleNewImageInfoResponse (deviceId_t deviceId, uint16_t
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleErrorNotification (deviceId_t deviceId, uint16_t length, uint8_t* pValue)
 {
     otapCommand_t otapCommand;
@@ -2310,12 +2384,10 @@ static void OtapClient_HandleErrorNotification (deviceId_t deviceId, uint16_t le
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleNewImageInfoRequestConfirmation (deviceId_t deviceId)
 {
     /* Clear the last command sent to the OTAP Server for which a Confirmation is expected. */
@@ -2325,12 +2397,10 @@ static void OtapClient_HandleNewImageInfoRequestConfirmation (deviceId_t deviceI
      * the OTAP Server then the OTAP Client expects a New Image Info Response */
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleImageBlockRequestConfirmation (deviceId_t deviceId)
 {
     /* Clear the last command sent to the OTAP Server for which a Confirmation is expected. */
@@ -2341,12 +2411,10 @@ static void OtapClient_HandleImageBlockRequestConfirmation (deviceId_t deviceId)
      * or an Error Notification. */
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleImageTransferCompleteConfirmation (deviceId_t deviceId)
 {
     otapCommand_t otapCommand;
@@ -2393,12 +2461,10 @@ static void OtapClient_HandleImageTransferCompleteConfirmation (deviceId_t devic
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleErrorNotificationConfirmation (deviceId_t deviceId)
 {
     /* Clear the last command sent to the OTAP Server for which a Confirmation is expected. */
@@ -2414,12 +2480,10 @@ static void OtapClient_HandleErrorNotificationConfirmation (deviceId_t deviceId)
     OtapClient_ContinueImageDownload (deviceId);
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleStopImageTransferConfirmation (deviceId_t deviceId)
 {
     /* Clear the last command sent to the OTAP Server for which a Confirmation is expected. */
@@ -2435,12 +2499,10 @@ static void OtapClient_HandleStopImageTransferConfirmation (deviceId_t deviceId)
     OtapClient_ContinueImageDownload (deviceId);
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleConnectionEvent (deviceId_t deviceId)
 {
     switch (otapClientData.state)
@@ -2507,12 +2569,10 @@ static void OtapClient_HandleConnectionEvent (deviceId_t deviceId)
     };
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static void OtapClient_HandleDisconnectionEvent(deviceId_t deviceId)
 {
     /* Check if the peer OTAP server was disconnected and if so reset block download
@@ -2526,12 +2586,9 @@ static void OtapClient_HandleDisconnectionEvent(deviceId_t deviceId)
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
 
 static void OtapClient_ContinueImageDownload (deviceId_t deviceId)
 {
@@ -2689,12 +2746,10 @@ static void OtapClient_ContinueImageDownload (deviceId_t deviceId)
     };
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static bool_t OtapClient_CheckRemoteID(uint8_t* pRemoteImgId)
 {
     /* Check the Image Id. */
@@ -2705,22 +2760,14 @@ static bool_t OtapClient_CheckRemoteID(uint8_t* pRemoteImgId)
     return TRUE;
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static bool_t OtapClient_IsRemoteImageNewer (uint8_t* pRemoteImgId, uint8_t* pRemoteImgVer)
 {
     uint32_t    remoteBuildVer;
     uint32_t    localeBuildVer;
-    
-    /* Check the Image Id. */
-//    if (!FLib_MemCmp((void*)(pRemoteImgId), (void*)(&(otapClientData.currentImgId)), 2))
-//    {
-//        return FALSE;
-//    }
     
     /* Check the Manufacturer Id */
     if (pRemoteImgVer[7] != otapClientData.currentImgVer[7])
@@ -2751,12 +2798,10 @@ static bool_t OtapClient_IsRemoteImageNewer (uint8_t* pRemoteImgId, uint8_t* pRe
     return TRUE;
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 static otapStatus_t OtapClient_IsImageFileHeaderValid (bleOtaImageFileHeader_t* imgFileHeader)
 {
     if (imgFileHeader->fileIdentifier != gBleOtaFileHeaderIdentifier_c)
@@ -2802,10 +2847,12 @@ static otapStatus_t OtapClient_IsImageFileHeaderValid (bleOtaImageFileHeader_t* 
     return gOtapStatusSuccess_c;
 }
 
-/*! *********************************************************************************
-* \brief        Set corresponding params when image successfully loaded.
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Set corresponding params when image successfully loaded.
+ */
 
 static void OtapClient_Complete(void)
 {
@@ -2834,32 +2881,21 @@ static void OtapClient_Complete(void)
     OSA_TimeDelay(100u);
 }
         
-/*! *********************************************************************************
-* \brief        Set corresponding params when image loading fail.
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Set corresponding params when image loading fail.
+ */
 
 static void OtapClient_Fail(void)
 {
-    //gHardwareParameters.deviceState = (uint8_t) deviceState_otapFailed;
-    //NV_WriteHWParameters(&gHardwareParameters);
-}
-
-/*! *********************************************************************************
-* \brief        Handles measurement timer callback.
-*
-* \param[in]    pParam        Calback parameters.
-********************************************************************************** */
-static void TimerMeasurementCallback(void * pParam)
-{
-    uint32_t hr = 0;
-    RNG_GetRandomNo(&hr);
     ;
 }
 
-/*! *********************************************************************************
-* @}
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
 
 void NMI_Handler(void)
 {
@@ -2867,23 +2903,22 @@ void NMI_Handler(void)
     ResetMCU();
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 void DefaultISR(void)
 {
     ResetMCU();
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
 void HardFault_Handler(void)
 {
     ResetMCU();
-}
-
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
-static void BleApp_LowPowerEnterCallback(void)
-{
-    ;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -2891,10 +2926,11 @@ static void BleApp_LowPowerEnterCallback(void)
 /////////////////////////////////////////////////////////////////////////////////////
 // Power management functions
 
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
+/**
+ *    Callback for "goToSleepTimerId".
+ *
+ *    @param   pParam   Param.
+ */
 
 static void BleApp_GoToSleepTimerCallback (void *pParam)
 {
@@ -2906,10 +2942,12 @@ static void BleApp_GoToSleepTimerCallback (void *pParam)
 #endif
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function called after exit from Low Power.
+ */
 
 void BleApp_LowPowerExitCallback(void)
 {
@@ -2920,11 +2958,12 @@ void BleApp_LowPowerExitCallback(void)
     PORT_HAL_SetMuxMode(PORTB,0u,kPortMuxAsGpio);
     PORT_HAL_SetMuxMode(PORTB,18u,kPortMuxAsGpio);
     
+    // Check if wakeup by TSI/Push button interrupt?
     if(PWRLib_MCU_WakeupReason.Bits.FromKeyBoard)
     {
         PWR_DisallowDeviceToSleep();
         
-        /* Start timer */
+        // Start timer to go to sleep after 20ms.
         TMR_StartLowPowerTimer(goToSleepTimerId, gTmrLowPowerSingleShotMillisTimer_c,
                  TmrMilliseconds(20), BleApp_GoToSleepTimerCallback, NULL);
     }
@@ -2938,10 +2977,12 @@ void BleApp_LowPowerExitCallback(void)
 #endif    
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Interrupt handler for PORTB and PORTC pins.
+ */
 
 void PORTB_PORTC_IRQHandler(void)
 {
@@ -2949,21 +2990,25 @@ void PORTB_PORTC_IRQHandler(void)
     
     OSA_EnterCritical(kCriticalDisableInt);
     
+    // Check if interrupt from wakeup-pin occurred.
     if(GPIO_DRV_IsPinIntPending(kGpioHostWakeup) != 0)
     {
         PWR_DisallowDeviceToSleep();
         
-        /* Start timer */
+        // Start timer to go to sleep after 20ms.
         TMR_StartLowPowerTimer(goToSleepTimerId, gTmrLowPowerSingleShotMillisTimer_c,
                  TmrMilliseconds(20), BleApp_GoToSleepTimerCallback, NULL);
         
         GPIO_DRV_ClearPinIntFlag(kGpioHostWakeup);
     }
     
+    // Check if interrupt from host-int pin occurred.
     if(GPIO_DRV_IsPinIntPending(kGpioHostInt) != 0)
     {
+    	// Check level on host-int pin.
         if(GPIO_DRV_ReadPinInput(kGpioHostInt) != 0)
         {
+        	// Disallow sleep.
             sleepFalg = false;
             bleApp_intPin.config.interrupt = kPortIntLogicZero;
             GPIO_DRV_InputPinInit(&bleApp_intPin);
@@ -2971,6 +3016,7 @@ void PORTB_PORTC_IRQHandler(void)
         }
         else
         {
+        	// Allow sleep.
             sleepFalg = true;
             bleApp_intPin.config.interrupt = kPortIntLogicOne;
             GPIO_DRV_InputPinInit(&bleApp_intPin);
@@ -2988,16 +3034,20 @@ void PORTB_PORTC_IRQHandler(void)
 #endif
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Return value of sleepFlag.
+ *
+ *    @return      Value of sleepFlag.
+ */
+
 bool_t BleApp_GetSleepFlag(void)
 {
     return sleepFalg;
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////

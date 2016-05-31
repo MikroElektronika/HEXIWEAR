@@ -1,3 +1,7 @@
+/**
+ *    @file host_mcu_interface_rx.c
+ */
+
 /************************************************************************************
 *************************************************************************************
 * Include
@@ -43,7 +47,7 @@
 ************************************************************************************/
 extern void ResetMCU(void);
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Private type definitions
 *************************************************************************************
@@ -55,16 +59,18 @@ extern void ResetMCU(void);
 *************************************************************************************
 ************************************************************************************/
 
-static hostInterface_packet_t   hostInterface_rxPacket;
-static hostInterface_packet_t   hostInterface_txPacket = 
+static hostInterface_packet_t   hostInterface_rxPacket;    /**< Rx host interface packet. */
+static hostInterface_packet_t   hostInterface_txPacket =   /**< Tx host interface packet. */
 {
     .start1 = gHostInterface_startByte1, 
     .start2 = gHostInterface_startByte2,
 };
 
-static task_handler_t           gHostInterface_RxHandlerTaskId;
-static msg_queue_handler_t      hostInterface_rxQueueHnd;
+static msg_queue_handler_t      hostInterface_rxQueueHnd;  /**<  Rx queue handler. */
 
+static task_handler_t           gHostInterface_RxHandlerTaskId; /**< Rx task ID. */
+
+/**Possible states of receive driver. */
 typedef enum
 {
     hostInterface_rxState_idle          = 0,
@@ -79,7 +85,7 @@ static hostInterface_rxState_t  hostInterface_rxState = hostInterface_rxState_id
 // Declare the message queue
 MSG_QUEUE_DECLARE(hostInterface_rxQueue, gHostInterface_msgNum, sizeof(hostInterface_packet_t));
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Private prototypes
 *************************************************************************************
@@ -96,10 +102,12 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState);
 /**
  *    This function handle packet which is arrived through uart.
  *
+ *    @param   pHostInterface_packet   Received packet.
  */
 
 static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterface_packet)
 {
+    // Check packet type.
     switch(pHostInterface_packet->type)
     {
             
@@ -205,7 +213,7 @@ static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterfac
         {
             tsiGroup_select_t tsiGroup; 
             
-            // Read current active slider, and toggle it.
+            // Read current active group of electrodes, and toggle it.
             tsiGroup = TouchSense_GetActiveGroup();
             tsiGroup = (tsiGroup == tsiGroup_select_left) ? tsiGroup_select_right : tsiGroup_select_left;
             
@@ -215,9 +223,10 @@ static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterfac
             gHardwareParameters.tsiGroupActive = (uint8_t) tsiGroup;
             NV_WriteHWParameters(&gHardwareParameters);
             
-            // Init corresponding electrodes.
+            // Set corresponding group to be active.
             TouchSense_SetActiveGroup(tsiGroup);
             
+            // Send packet to host.
             hostInterface_txPacket.type    = packetType_tsiGroupSendActive;
             hostInterface_txPacket.length  = 1;
             hostInterface_txPacket.data[0] = tsiGroup;
@@ -255,6 +264,7 @@ static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterfac
             advMode = BleApp_GetAdvMode();
             advMode = (advMode == advMode_disable) ? advMode_enable : advMode_disable;
             
+            // Send packet to host.
             hostInterface_txPacket.type    = packetType_advModeSend;
             hostInterface_txPacket.length  = 1;
             hostInterface_txPacket.data[0] = advMode;
@@ -266,6 +276,7 @@ static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterfac
             
             OSA_TimeDelay(10);
             
+            // Enable/Disable adverdising.
             if(advMode == advMode_enable)
             {
                 BleApp_AdvEnable();
@@ -295,7 +306,7 @@ static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterfac
         }
         
         /////////////////////////////////////////////////////////////////////////////
-        // Toggle Active slider.
+        // Read image version of MK64 and send image version for KW40.
         case packetType_buildVersion:
         {   
             uint8_t fwRevision[12] = "0.0.0/0.0.0";
@@ -345,10 +356,11 @@ static void HostInterface_RxPacketHandler(hostInterface_packet_t * pHostInterfac
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    This function is called when data is received though UART.
+ *    Initialize Rx path of host interface driver.
  *
- *    @param    param
- *
+ *    @return                osaStatus_Success    Success
+ *    @return                osaStatus_Error      Failed
+ *    @return                osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_RxInit(void)
@@ -380,7 +392,13 @@ osaStatus_t HostInterface_RxInit(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
-int32_t errorCnt = 0;
+/**
+ *    The LPUART receive callback.
+ *
+ *    @param   instance      The LPUART instance number.
+ *    @param   lpuartState   LPUART driver state structure.
+ */
+
 static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
 {
     lpuart_status_t status;
@@ -388,10 +406,12 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
     lpuart_state_t *tmpLpuartState = (lpuart_state_t*)lpuartState;
     static uint8_t  dataBytesCnt;
     
+    // Check current state of receiver.
     switch(hostInterface_rxState)
     {
         case hostInterface_rxState_idle:
         {
+            // Wait for start1 byte.
             if(hostInterface_rxPacket.start1 == gHostInterface_startByte1)
             {
                 hostInterface_rxState++;
@@ -400,19 +420,23 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
         }
         break;
         
+        // Complete header received.
         case hostInterface_rxState_hederReceived:
         {
+            // Check header.
             if(
                 (hostInterface_rxPacket.start1 != gHostInterface_startByte1) ||
                 ((hostInterface_rxPacket.start2 & 0xFE) != gHostInterface_startByte2) ||
                 (hostInterface_rxPacket.length > gHostInterface_dataSize)
                )
             {
+                // Header is incorrect, go to the idle state.
                 hostInterface_rxState = hostInterface_rxState_idle;
                 tmpLpuartState->rxBuff = (uint8_t *) &hostInterface_rxPacket;
             }
             else
             {
+                // Header is correct. If there is data, wait for it.
                 tmpLpuartState->rxBuff++;
                 hostInterface_rxState++;
                 if(hostInterface_rxPacket.length == 0)
@@ -427,6 +451,7 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
         }
         break;
         
+        // Receiving bytes of data.
         case hostInterface_rxState_dataWait:
         {
             dataBytesCnt++;
@@ -438,16 +463,19 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
         }
         break;
         
+        // Wait for trailer byte.
         case hostInterface_rxState_trailerWait:
         {
             if(*(tmpLpuartState->rxBuff) == gHostInterface_trailerByte)
             {
 #if  gHostInterface_RxConfirmationEnable //..........................
+                // If we received confirmation packet, set proper flags.
                 if(hostInterface_rxPacket.type == packetType_OK) 
                 {
                     HostInterface_EventConfirmPacketSet();
                     HostInterface_EventConfirmAttPacketSet();
                 }
+                // Put message to corresponding queue.
                 else
 #endif //............................................................
                 {
@@ -455,6 +483,7 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
                 }
             }
             
+            // Go to idle state.
             hostInterface_rxState = hostInterface_rxState_idle;
             tmpLpuartState->rxBuff = (uint8_t *) &hostInterface_rxPacket;
         }
@@ -472,12 +501,12 @@ static void HostInterface_RxCallback(uint32_t instance, void *lpuartState)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    This function puts a message to the end of the Tx message queue.
+ *    This function puts a message to the end of the Rx message queue.
  *
  *    @param    pHostInterface_packet   Packet that will be placed into Tx message queue.
  *
  *    @return                          osaStatus_Success  Message successfully put into the queue.
- *                                     osaStatus_Error    Process fail.
+ *    @return                          osaStatus_Error    Process fail.
  */
 
 osaStatus_t HostInterface_RxQueueMsgPut(hostInterface_packet_t * pHostInterface_packet)
@@ -497,12 +526,12 @@ osaStatus_t HostInterface_RxQueueMsgPut(hostInterface_packet_t * pHostInterface_
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    This function gets a message from the head of the Tx message queue.
+ *    This function gets a message from the head of the Rx message queue.
  *
  *    @param    pHostInterface_packet   Pointer to a memory to save the packet.
  *
  *    @return                          osaStatus_Success  Message successfully obtained from the queue.
- *                                     osaStatus_Error    Process fail.
+ *    @return                          osaStatus_Error    Process fail.
  */
 
 static osaStatus_t HostInterface_RxQueueMsgGet(hostInterface_packet_t * pHostInterface_packet)
@@ -521,7 +550,7 @@ static osaStatus_t HostInterface_RxQueueMsgGet(hostInterface_packet_t * pHostInt
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    Host MCU Interface Tx task.
+ *    Host MCU Interface Rx task.
  *
  *    @param   param   initialData
  */
@@ -533,11 +562,13 @@ static void HostInterface_RxHandlerTask(task_param_t param)
        
     while(1)
     {
+        // Wait for incoming packets.
         status = HostInterface_RxQueueMsgGet(&tmpHostInterface_packet);
         
         if(status == osaStatus_Success)
         {
 #ifdef gHostInterface_TxConfirmationEnable //.....................
+            // Check if there is need to send confirmation.
             if((tmpHostInterface_packet.start2 & 1) == 1)
             {
                 HostInterface_EventSendOkPacketSet();

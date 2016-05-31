@@ -1,3 +1,7 @@
+/**
+ *    @file host_mcu_interface_events.c
+ */
+
 /************************************************************************************
 *************************************************************************************
 * Include
@@ -16,9 +20,9 @@
 #include "host_mcu_interface.h"
 #include "fsl_interrupt_manager.h"
 
-const event_flags_t gHostInterface_eventSendOkPacketMask     = 0x2;
-const event_flags_t gHostInterface_eventConfirmPacketMask    = 0x4;
-const event_flags_t gHostInterface_eventConfirmAttPacketMask = 0x8;
+const event_flags_t gHostInterface_eventSendOkPacketMask     = 0x2; /**< Flag that trigger sending confirm packet of host.*/
+const event_flags_t gHostInterface_eventConfirmPacketMask    = 0x4; /**< Flag about confirm packet received. */
+const event_flags_t gHostInterface_eventConfirmAttPacketMask = 0x8; /**< Flag about confirm packet received. Used in Attribute Written proceudre. */
 
 /************************************************************************************
 *************************************************************************************
@@ -28,13 +32,13 @@ const event_flags_t gHostInterface_eventConfirmAttPacketMask = 0x8;
 
 static event_t hostInterface_okConfirmEvent;
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Private prototypes
 *************************************************************************************
 ********************************************************************************** */
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Functions definitions
 *************************************************************************************
@@ -62,8 +66,15 @@ osaStatus_t HostInterface_EventsInit(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    This function waits for a combination of flags to be set in an event object.
  *
+ *    @param    flagsToWait   Flags that to wait.
+ *    @param    timeout       The maximum number of milliseconds to wait for the event.
+ *    @param    setFlags      Flags that wakeup the waiting task are obtained by this parameter.
+ *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventWait(event_flags_t flagsToWait, uint32_t timeout, event_flags_t *setFlags)
@@ -79,8 +90,13 @@ osaStatus_t HostInterface_EventWait(event_flags_t flagsToWait, uint32_t timeout,
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Clears specified flags of an event object.
  *
+ *    @param    flagsToClear   Flags to be clear.
+ *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventClear(event_flags_t flagsToClear)
@@ -96,8 +112,13 @@ osaStatus_t HostInterface_EventClear(event_flags_t flagsToClear)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Sets specified flags of an event object.
  *
+ *    @param    flagsToSet   Flags to be set.
+ *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventSet(event_flags_t flagsToSet)
@@ -112,8 +133,11 @@ osaStatus_t HostInterface_EventSet(event_flags_t flagsToSet)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Set flag about confirm packet received.
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventConfirmPacketSet(void)
@@ -125,8 +149,11 @@ osaStatus_t HostInterface_EventConfirmPacketSet(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Wait for confirm packet to be received.
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventConfirmPacketWait(void)
@@ -139,8 +166,11 @@ osaStatus_t HostInterface_EventConfirmPacketWait(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Clear flag about confirm packet received.
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventConfirmPacketClear(void)
@@ -152,8 +182,11 @@ osaStatus_t HostInterface_EventConfirmPacketClear(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Set flag about confirm packet received (used for Attribute Written operation).
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventConfirmAttPacketSet(void)
@@ -165,8 +198,11 @@ osaStatus_t HostInterface_EventConfirmAttPacketSet(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Wait for confirm packet to be received (used for Attribute Written operation).
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventConfirmAttPacketWait(void)
@@ -180,8 +216,11 @@ osaStatus_t HostInterface_EventConfirmAttPacketWait(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Clear flag about confirm packet received (used for Attribute Written operation).
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventConfirmAttPacketClear(void)
@@ -193,8 +232,11 @@ osaStatus_t HostInterface_EventConfirmAttPacketClear(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Trigger event for start sending confirm pakcet.
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventSendOkPacketSet(void)
@@ -206,8 +248,11 @@ osaStatus_t HostInterface_EventSendOkPacketSet(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Wait for start sending confirm pakcet.
  *
+ *    @return                 osaStatus_Success    Success
+ *    @return                 osaStatus_Error      Failed
+ *    @return                 osaStatus_Timeout    Timeout occurs while waiting
  */
 
 osaStatus_t HostInterface_EventSendOkPacketWait(void)

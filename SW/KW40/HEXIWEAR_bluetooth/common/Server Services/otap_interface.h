@@ -1,7 +1,7 @@
- /*! *********************************************************************************
- * \defgroup BLE OTAP Custom Profile
- * @{
- ********************************************************************************** */
+ /**
+ *    @file otap_service.h
+ */
+
 /*!
  * Copyright (c) 2015, Freescale Semiconductor, Inc.
  * All rights reserved.

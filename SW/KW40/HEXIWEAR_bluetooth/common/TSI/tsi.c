@@ -1,3 +1,6 @@
+/**
+ *    @file tsi.c
+ */
 
 
 /************************************************************************************
@@ -38,19 +41,19 @@ static mutex_t tsiMutex;
 static msg_queue_handler_t tsiQueueHnd;
 MSG_QUEUE_DECLARE(tsiQueue, 1, 1);
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Private prototypes
 *************************************************************************************
 ********************************************************************************** */
 
-static void                TouchSense_KeypadCallback(const struct ft_control *control, enum ft_control_keypad_event event, uint32_t index);
-static void                TouchSense_Task(task_param_t param);
+static void            TouchSense_KeypadCallback(const struct ft_control *control, enum ft_control_keypad_event event, uint32_t index);
+static void            TouchSense_Task(task_param_t param);
 static osaStatus_t 	   TouchSense_TaskInit(void);
 extern void 		   TSI_DRV_IRQHandler(uint32_t instance);    
-static void                TsiTimerCallback(void * pParam);
+static void            TsiTimerCallback(void * pParam);
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Public functions
 *************************************************************************************
@@ -60,7 +63,10 @@ static void                TsiTimerCallback(void * pParam);
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Return current active group of electrodes.
+ *
+ *    @return      tsiGroup_select_left
+ *    @return      tsiGroup_select_right
  */
 
 tsiGroup_select_t TouchSense_GetActiveGroup(void) 
@@ -72,7 +78,9 @@ tsiGroup_select_t TouchSense_GetActiveGroup(void)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Enables corresponding electrodes based on given electrodes-group.
+ *
+ *    @param   tsiGroup   Electrodes group to be enabled.
  */
 
 void TouchSense_EnableElectrode(tsiGroup_select_t tsiGroup) 
@@ -82,7 +90,6 @@ void TouchSense_EnableElectrode(tsiGroup_select_t tsiGroup)
     TouchSense_MutexLock(OSA_WAIT_FOREVER);
     
     TSI_DRV_AbortMeasure(0);
-    //while(TSI_DRV_GetStatus(0) == kStatus_TSI_Busy);
     
     if(tsiGroupActive == tsiGroup_select_left) 
     {
@@ -107,7 +114,9 @@ void TouchSense_EnableElectrode(tsiGroup_select_t tsiGroup)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Function called from other tasks to set current active group of electrodes.
+ *
+ *    @param   tsiGroup   Group of electrodes to be set.
  */
 
 void TouchSense_SetActiveGroup(tsiGroup_select_t tsiGroup) 
@@ -122,27 +131,6 @@ void TouchSense_SetActiveGroup(tsiGroup_select_t tsiGroup)
     {
         panic(0,0,0,0);
     }
-}
-
-/////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////
-/**
- *    
- */
-
-static osaStatus_t TouchSense_QueueMsgGet(tsiGroup_select_t * tsiGroup, uint32_t timeout)
-{
-    osa_status_t status;
-    uint32_t tmpTsiGroup;
-    
-    status = OSA_MsgQGet(tsiQueueHnd, (uint32_t *)&tmpTsiGroup, timeout);
-    if(status == kStatus_OSA_Error)
-    {
-        panic(0,0,0,0);
-    }
-    *tsiGroup = (tsiGroup_select_t) tmpTsiGroup;
-    return (osaStatus_t) status;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -184,7 +172,7 @@ void TouchSense_Init(void)
     // Get device parameters from FLASH.
     NV_ReadHWParameters(&gHardwareParameters);
     
-    // Read current active slider from FLASH.
+    // Read current active group of electrodes from FLASH.
     if(gHardwareParameters.tsiGroupActive == 0xFF)       
     {
         // Not written yet to FLASH. Set default.
@@ -195,23 +183,24 @@ void TouchSense_Init(void)
         tsiGroup = (tsiGroup_select_t) gHardwareParameters.tsiGroupActive;
     }
 
+    // Set corresponding group of electrodes.
     TouchSense_EnableElectrode(tsiGroup);
     
+    // Create Touch Sense task.
     TouchSense_TaskInit();
 }
-
-
-/*! *********************************************************************************
-*************************************************************************************
-* Private functions
-*************************************************************************************
-********************************************************************************** */
 
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *   
+ *    Lock tsi driver mutex.
+ *
+ *    @param    timeout   The maximum number of milliseconds to wait for the mutex.
+ *
+ *    @return             kStatus_OSA_Success   The mutex is locked successfully.
+ *    @return             kStatus_OSA_Timeout   Timeout occurred.
+ *    @return             kStatus_OSA_Error     Incorrect parameter was passed.
  */
 
 osa_status_t TouchSense_MutexLock(uint32_t timeout)
@@ -223,7 +212,7 @@ osa_status_t TouchSense_MutexLock(uint32_t timeout)
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *   
+ *    Unlock tsi driver mutex.
  */
 
 void TouchSense_MutexUnlock(void)
@@ -231,22 +220,62 @@ void TouchSense_MutexUnlock(void)
     OSA_MutexUnlock(&tsiMutex);
 }
 
+/*! *********************************************************************************
+*************************************************************************************
+* Private functions
+*************************************************************************************
+********************************************************************************** */
+
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Function waits for message about setting a new active group of electrodes.
+ *
+ *    @param    tsiGroup   Active group of electrodes to be set.
+ *    @param    timeout    The number of milliseconds to wait for a message.
+ *
+ *    @return              osaStatus_Success    Success
+ *    @return              osaStatus_Error      Failed
+ *    @return              osaStatus_Timeout    Timeout occurs while waiting
+ */
+
+static osaStatus_t TouchSense_QueueMsgGet(tsiGroup_select_t * tsiGroup, uint32_t timeout)
+{
+    osa_status_t status;
+    uint32_t tmpTsiGroup;
+    
+    status = OSA_MsgQGet(tsiQueueHnd, (uint32_t *)&tmpTsiGroup, timeout);
+    if(status == kStatus_OSA_Error)
+    {
+        panic(0,0,0,0);
+    }
+    *tsiGroup = (tsiGroup_select_t) tmpTsiGroup;
+    return (osaStatus_t) status;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Keypad event callback function
+ *
+ *    @param   control   The main structure representing the control instance
+ *    @param   event     Keypad event
+ *    @param   index     Index of keypad
  */
 
 static void TouchSense_KeypadCallback(const struct ft_control *control, enum ft_control_keypad_event event, uint32_t index)
 {    
     static enum ft_control_keypad_event oldEvent = FT_KEYPAD_RELEASE;
     
+    // Check if touch event detected.
     if(
        (event == FT_KEYPAD_TOUCH) &&
        (oldEvent == FT_KEYPAD_RELEASE)
        )
     {
+    	// Set corresponding type of packet.
         switch (index) 
         {
             case 0:
@@ -282,7 +311,9 @@ static void TouchSense_KeypadCallback(const struct ft_control *control, enum ft_
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /**
- *    
+ *    Tsi timer callback.
+ *
+ *    @param   pParam   
  */
 
 static void TsiTimerCallback(void * pParam)
@@ -300,7 +331,7 @@ static void TsiTimerCallback(void * pParam)
 /**
  *    Function Creates Touch Sense task.
  *
- *    @return  Status of creating procedure.
+ *    @return      Status of creating procedure.
  */
 
 static osaStatus_t TouchSense_TaskInit(void)
@@ -334,17 +365,18 @@ static void TouchSense_Task(task_param_t param)
     // FT Initialization
     ft_electrode_enable(&electrode_left, 0);
     ft_electrode_enable(&electrode_right, 0);
-    
     ft_control_enable(&keypad_0);
     ft_control_keypad_only_one_key_valid(&keypad_0, 0);
     ft_control_keypad_set_autorepeat_rate(&keypad_0, 0, 0);
     ft_control_keypad_register_callback(&keypad_0, &TouchSense_KeypadCallback);
 
+    // Creating tsi timer.
     tsiTimerId = TMR_AllocateTimer();
     TMR_StartLowPowerTimer(tsiTimerId, gTmrLowPowerIntervalMillisTimer_c, TmrMilliseconds(10), TsiTimerCallback, NULL);
     
     while(1)
     {
+    	// Check if there is message about setting active group of electrodes.
         if(TouchSense_QueueMsgGet(&tmpTsiGroup, 0) == osaStatus_Success)
         {
             TouchSense_EnableElectrode(tmpTsiGroup);
@@ -356,6 +388,7 @@ static void TouchSense_Task(task_param_t param)
             TouchSense_MutexUnlock();
         }
         
+        // Stay in the loop during sleep.
         do
         {
             OSA_TimeDelay(5);

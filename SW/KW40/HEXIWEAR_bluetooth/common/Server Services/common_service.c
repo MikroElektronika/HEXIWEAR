@@ -1,3 +1,7 @@
+/**
+ *    @file common_service.c
+ */
+
 /************************************************************************************
 *************************************************************************************
 * Include
@@ -14,7 +18,7 @@
 
 #include "common_service.h"
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Private type Definitions
 *************************************************************************************
@@ -35,7 +39,7 @@
 
 static void CommonService_SendNotifications(deviceId_t deviceId, uint16_t handle);
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Public Functions definitions
 *************************************************************************************
@@ -44,6 +48,17 @@ static void CommonService_SendNotifications(deviceId_t deviceId, uint16_t handle
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Record characteristic value.
+ *
+ *    @param    deviceId        Device ID.
+ *    @param    serviceHandle   Service handle.
+ *    @param    charUuid16      Characteristics UUID16.
+ *    @param    data            Data to be written.
+ *    @param    size            Size of data.
+ *
+ *    @return                   gBleSuccess_c or error.
+ */
 
 bleResult_t CommonService_RecordCharValue(deviceId_t deviceId, uint16_t serviceHandle, 
                                           uint16_t charUuid16, uint8_t *data, uint8_t size)
@@ -82,6 +97,12 @@ bleResult_t CommonService_RecordCharValue(deviceId_t deviceId, uint16_t serviceH
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Sends a notification to a peer GATT Client using the Characteristic Value from the GATT Database.
+ *
+ *    @param   deviceId   Device ID.
+ *    @param   handle     Handle of the Value of the Characteristic to be notified.
+ */
 
 static void CommonService_SendNotifications(deviceId_t deviceId, uint16_t handle)
 {

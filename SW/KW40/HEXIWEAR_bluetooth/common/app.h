@@ -1,13 +1,13 @@
-/*! *********************************************************************************
- * \defgroup Heart Rate Sensor
- * @{
- ********************************************************************************** */
+/**
+ *    @file app.h
+ */
+
 /*!
  * Copyright (c) 2014, Freescale Semiconductor, Inc.
  * All rights reserved.
  *
  * \file app.h
- * This file is the interface file for the Heart Rate Sensor application
+ * This file is the interface file for the Hexiwear application
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -45,26 +45,29 @@
 * Public type definitions
 *************************************************************************************
 ************************************************************************************/
-     
+												
+/** Device state values. */
 typedef enum
 {
-    deviceState_watch           = 0,
-    deviceState_otapStartedKW40 = 1,
-    deviceState_otapStartedMK64 = 2,
-    deviceState_otapCompleted   = 3,
-    deviceState_otapFailed      = 4,
+    deviceState_watch           = 0,             /*!< Device is in watch state. */
+    deviceState_otapStartedKW40 = 1,             /*!< OTAP for KW40 is started. */
+    deviceState_otapStartedMK64 = 2,             /*!< OTAP for MK64 is started. */
+    deviceState_otapCompleted   = 3,             /*!< OTAP is completed. */
+    deviceState_otapFailed      = 4,             /*!< OTAP is failed. */
 } deviceState_t;
-    
+
+/** Advertising mode values. */
 typedef enum
 {
-    advMode_disable  = 0,
-    advMode_enable   = 1,
+    advMode_disable  = 0,                        /*!< Advertising is disabled. */
+    advMode_enable   = 1,                        /*!< Advertising is enabled. */
 } advMode_t;    
     
+/** Link state values */
 typedef enum
 {
-    linkState_disconnected = 0,
-    linkState_connected    = 1,
+    linkState_disconnected = 0,                  /*!< Device is disconnected. */
+    linkState_connected    = 1,                  /*!< Device is connected. */
 } linkState_t;    
      
 
@@ -73,41 +76,40 @@ typedef enum
 * Public macros
 **************************************************************************************
 *************************************************************************************/
-/* App Configuration */
+
+// App Configuration
 #define gMaxServicesCount_d         1
 #define gMaxServiceCharCount_d      3
 #define gMaxCharDescriptorsCount_d  2
 
-/* Connection Parameters */
-#define gWatchConnMinInterval_c     32 /* 20 ms */
-#define gWatchConnMaxInterval_c     40 /* 25 ms */
-#define gOtapConnMinInterval_c      12 /* 7.5 ms */
-#define gOtapConnMaxInterval_c      40 /* 25 ms */
+// Connection Parameters
+#define gWatchConnMinInterval_c     32          
+#define gWatchConnMaxInterval_c     40          
+#define gOtapConnMinInterval_c      12          
+#define gOtapConnMaxInterval_c      40          
 #define gConnSlaveLatency_c         0
 #define gConnTimeoutMultiplier_c    0x03E8
 
-/*! Enable/disable bonding capability */
+// Enable/disable bonding capability
 #define gBondingSupported_d    TRUE
 
-/*! Enable/disable service security */
+// Enable/disable service security
 #define gUseServiceSecurity_d  TRUE
+    	   
+		    
+// Profile Parameters
+#define gFastConnMinAdvInterval_c       (64)    
+#define gFastConnMaxAdvInterval_c       (80)    
 
+#define gReducedPowerMinAdvInterval_c   1600    
+#define gReducedPowerMaxAdvInterval_c   4000    
 
-/* Profile Parameters */
-
-#define gFastConnMinAdvInterval_c       (64)   /* 40 ms */
-#define gFastConnMaxAdvInterval_c       (80)   /* 50 ms */
-
-#define gReducedPowerMinAdvInterval_c   1600 /* 1 s */
-#define gReducedPowerMaxAdvInterval_c   4000 /* 2.5 s */
-
-
-#define gFastConnAdvTime_c              30 /* 30 s*/
-#define gReducedPowerAdvTime_c          300 /* 300 s*/
+#define gFastConnAdvTime_c              30      
+#define gReducedPowerAdvTime_c          300     
 
 
 #if gBondingSupported_d
-#define gFastConnWhiteListAdvTime_c     10 /* s */
+#define gFastConnWhiteListAdvTime_c     10      
 #else
 #define gFastConnWhiteListAdvTime_c     0
 #endif
@@ -141,14 +143,59 @@ extern gapDeviceSecurityRequirements_t deviceSecurityRequirements;
 extern "C" {
 #endif
 
+/**
+ *    Initializes application specific functionality before the BLE stack init.
+ */
 void BleApp_Init(void);
+
+/**
+ *    Starts the BLE application.
+ */
 void BleApp_Start(void);
+
+/**
+ *    Handles BLE generic callback.
+ *
+ *    @param   pGenericEvent   Pointer to gapGenericEvent_t.
+ */
 void BleApp_GenericCallback (gapGenericEvent_t* pGenericEvent);
+
+/**
+ *    Disable advertising.
+ */
 void BleApp_AdvDisable(void);
+
+/**
+ *    Enable advertising.
+ */
 void BleApp_AdvEnable(void);
+
+/**
+ *    Get advertising mode.
+ *
+ *    @return      Current advertising mode.
+ */
 advMode_t BleApp_GetAdvMode(void);
+
+/**
+ *    Get state of link
+ *
+ *    @return      Current link state:
+ *                                    linkState_disconnected
+ *                                    linkState_connected
+ */
 linkState_t BleApp_GetLinkState(void);
+
+/**
+ *    Function called after exit from Low Power.
+ */
 void BleApp_LowPowerExitCallback(void);
+
+/**
+ *    Return value of sleepFlag.
+ *
+ *    @return      Value of sleepFlag.
+ */
 bool_t BleApp_GetSleepFlag(void);
 
 #ifdef __cplusplus

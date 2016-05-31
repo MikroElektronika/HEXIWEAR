@@ -1,3 +1,7 @@
+/**
+ *    @file client_ancs.c
+ */
+
 /************************************************************************************
 *************************************************************************************
 * Include
@@ -13,12 +17,8 @@
 #include "FunctionLib.h"
 #include "fsl_lpuart_driver.h"
 #include "MemManager.h"
-
-/* BLE Host Stack */
-
 #include "client_ancs.h"
 #include "app.h"
-
 #include "host_mcu_interface.h"
 
 /************************************************************************************
@@ -41,19 +41,19 @@ appPeerInfo_t clientAncsPeerInfo;
 *************************************************************************************
 ************************************************************************************/
 
-/* Buffer used for Service Discovery */
+/** Buffer used for Service Discovery */
 static gattService_t *mpServiceDiscoveryBuffer = NULL;
 static uint8_t  mcPrimaryServices = 0;
 
-/* Buffer used for Characteristic Discovery */
+/** Buffer used for Characteristic Discovery */
 static gattCharacteristic_t *mpCharDiscoveryBuffer = NULL;
 static uint8_t mCurrentServiceInDiscoveryIndex;
 static uint8_t mCurrentCharInDiscoveryIndex;
 
-/* Buffer used for Characteristic Descriptor Discovery */
+/** Buffer used for Characteristic Descriptor Discovery */
 static gattAttribute_t *mpCharDescriptorBuffer = NULL;
 
-/* Buffer used for Characteristic related procedures */
+/** Buffer used for Characteristic related procedures */
 static gattAttribute_t      *mpDescProcBuffer = NULL;
 
 /************************************************************************************
@@ -63,29 +63,28 @@ static gattAttribute_t      *mpDescProcBuffer = NULL;
 ************************************************************************************/
 
 static void ClientAncs_StoreCharHandles(gattCharacteristic_t *pChar);
-
 static void ClientAncs_StartServiceDiscovery(deviceId_t peerDeviceId);
-
 static void ClientAncs_ServiceDiscoveryReset();
-
 static void ClientAncs_ServiceDiscoveryCompleted();
-
 static void ClientAncs_StoreServiceHandles(gattService_t *pService);
 
-/*! *********************************************************************************
+/************************************************************************************
 *************************************************************************************
 * Public Functions definitions
 *************************************************************************************
 ********************************************************************************** */
 
-/*! *********************************************************************************
-* \brief        Handles GATT client callback from host stack.
-*
-* \param[in]    serverDeviceId      GATT Server device ID.
-* \param[in]    procedureType    	Procedure type.
-* \param[in]    procedureResult    	Procedure result.
-* \param[in]    error    			Callback result.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handles GATT client callback from host stack.
+ *
+ *    @param   serverDeviceId    GATT Server device ID.
+ *    @param   procedureType     Procedure type.
+ *    @param   procedureResult   Procedure result.
+ *    @param   error             Callback result.
+ */
 
 void ClientAncs_GattCallback(
     deviceId_t              serverDeviceId,
@@ -150,14 +149,17 @@ void ClientAncs_GattCallback(
     }
 }
 
-/*! *********************************************************************************
-* \brief        Handles GATT client notification callback from host stack.
-*
-* \param[in]    serverDeviceId      		GATT Server device ID.
-* \param[in]    characteristicValueHandle   Handle.
-* \param[in]    aValue    					Pointer to value.
-* \param[in]    valueLength    				Value length.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handles GATT client notification callback from host stack.
+ *
+ *    @param   serverDeviceId               GATT Server device ID.
+ *    @param   characteristicValueHandle    Handle.
+ *    @param   aValue                       Pointer to value.
+ *    @param   valueLength                  Value length.
+ */
 
 void ClientAncs_GattNotificationCallback
 (
@@ -200,12 +202,14 @@ void ClientAncs_GattNotificationCallback
     }
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    deviceId
-* \param[in]    envent
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function starts discovery of primary services.
+ *
+ *    @param   peerDeviceId   Peer device ID.
+ */
 
 static void ClientAncs_StartServiceDiscovery(deviceId_t peerDeviceId)
 {
@@ -232,12 +236,15 @@ static void ClientAncs_StartServiceDiscovery(deviceId_t peerDeviceId)
                                              );
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    deviceId
-* \param[in]    envent
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Handler of client ancs state machine.
+ *
+ *    @param   peerDeviceId               Peer device ID.
+ *    @param   event                      Event.
+ */
 
 void ClientAncs_StateMachineHandler(deviceId_t peerDeviceId, uint8_t event)
 {
@@ -419,6 +426,13 @@ void ClientAncs_StateMachineHandler(deviceId_t peerDeviceId, uint8_t event)
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function reset service discovery procedure.
+ */
+
 static void ClientAncs_ServiceDiscoveryReset()
 {
     if (mpServiceDiscoveryBuffer != NULL)
@@ -440,17 +454,26 @@ static void ClientAncs_ServiceDiscoveryReset()
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Service discovery error handler.
+ */
+
 void ClientAncs_ServiceDiscoveryErrorHandler()
 {
    clientAncsPeerInfo.appState = mAppIdle_c;   
    ClientAncs_ServiceDiscoveryReset();
 }
 
-/*! *********************************************************************************
-* \brief        
-*
-* \param[in]    
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Function called when service discovery procedure is completed.
+ */
+
 static void ClientAncs_ServiceDiscoveryCompleted()
 {
     clientAncsPeerInfo.appState = mAppDescriptorSetup_c;
@@ -462,7 +485,6 @@ static void ClientAncs_ServiceDiscoveryCompleted()
                                         
         if (!mpDescProcBuffer)
         {
-            //panic(0,0,0,0);
             return;
         }
         mpDescProcBuffer->handle = clientAncsPeerInfo.customInfo.ancClientConfig.hNotifSourceCccd;
@@ -471,11 +493,15 @@ static void ClientAncs_ServiceDiscoveryCompleted()
     }
 }
 
-/*! *********************************************************************************
-* \brief        Stores handles for the specified service.
-*
-* \param[in]    pService    Pointer to gattService_t.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Save discovered service  handles.
+ *
+ *    @param   pService   Gatt service.
+ */
+
 static void ClientAncs_StoreServiceHandles
 (
     gattService_t   *pService
@@ -501,11 +527,14 @@ static void ClientAncs_StoreServiceHandles
     }
 }
 
-/*! *********************************************************************************
-* \brief        Stores handles for the specified characteristic.
-*
-* \param[in]    pChar    Pointer to gattCharacteristic_t.
-********************************************************************************** */
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/**
+ *    Stores handles for the specified characteristic.
+ *    @param   pChar    Pointer to gattCharacteristic_t.
+ */
+
 static void ClientAncs_StoreCharHandles
 (
     gattCharacteristic_t   *pChar
@@ -534,3 +563,7 @@ static void ClientAncs_StoreCharHandles
         }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
