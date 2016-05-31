@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['observe',['OBSERVE',['../struct_u_s_b___type.html#aa8cbc53b1ddc255d7be917ba3fc6b1f1',1,'USB_Type']]],
+  ['oc',['OC',['../struct_c_m_t___type.html#a6cde86fd27edc5afb37125c287441749',1,'CMT_Type']]],
+  ['ofs',['OFS',['../struct_a_d_c___type.html#a1081f8facbb93133c09e83ef18b90b10',1,'ADC_Type']]],
+  ['oled_5fcfg',['OLED_cfg',['../group___g_p_i_o__module.html#ga315b288db33c545128a57cdc88e5e62b',1,'OLED_cfg():&#160;GPIO.c'],['../group___g_p_i_o__module.html#ga315b288db33c545128a57cdc88e5e62b',1,'OLED_cfg():&#160;GPIO.c']]],
+  ['oled_5fspi_5fbusconfig',['OLED_SPI_BusConfig',['../group___o_l_e_d___s_p_i__module.html#gab24380ea24053aed1098243c2c8b3064',1,'OLED_SPI_BusConfig():&#160;OLED_SPI.c'],['../group___o_l_e_d___s_p_i__module.html#gab24380ea24053aed1098243c2c8b3064',1,'OLED_SPI_BusConfig():&#160;OLED_SPI.c']]],
+  ['oled_5fspi_5fcalculatedbaudrate',['OLED_SPI_calculatedBaudRate',['../group___o_l_e_d___s_p_i__module.html#ga61233da5204e369bb973af521c296c17',1,'OLED_SPI_calculatedBaudRate():&#160;OLED_SPI.c'],['../group___o_l_e_d___s_p_i__module.html#ga61233da5204e369bb973af521c296c17',1,'OLED_SPI_calculatedBaudRate():&#160;OLED_SPI.c']]],
+  ['oled_5fspi_5fmasterconfig',['OLED_SPI_MasterConfig',['../group___o_l_e_d___s_p_i__module.html#ga87aa64f9c22766b849bb9d85ebcbf36b',1,'OLED_SPI_MasterConfig():&#160;OLED_SPI.c'],['../group___o_l_e_d___s_p_i__module.html#ga87aa64f9c22766b849bb9d85ebcbf36b',1,'OLED_SPI_MasterConfig():&#160;OLED_SPI.c']]],
+  ['oled_5fspi_5fmasterstate',['OLED_SPI_MasterState',['../group___o_l_e_d___s_p_i__module.html#gac497425ffa1418c29cfe6171d73a19ab',1,'OLED_SPI_MasterState():&#160;OLED_SPI.c'],['../group___o_l_e_d___s_p_i__module.html#gac497425ffa1418c29cfe6171d73a19ab',1,'OLED_SPI_MasterState():&#160;OLED_SPI.c']]],
+  ['oledmodule',['oledModule',['../_o_l_e_d__defs_8c.html#a30ed2cb92b9ade85f399b14b77b01b32',1,'OLED_defs.c']]],
+  ['oledsettings',['oledSettings',['../_o_l_e_d__defs_8c.html#a8e0b8c68e897a692744ee0da18fd4009',1,'OLED_defs.c']]],
+  ['onebyfftlen',['onebyfftLen',['../structarm__cfft__radix2__instance__f32.html#a1d3d289d47443e597d88a40effd14b8f',1,'arm_cfft_radix2_instance_f32::onebyfftLen()'],['../structarm__cfft__radix4__instance__f32.html#ab9eed39e40b8d7c16381fbccf84467cd',1,'arm_cfft_radix4_instance_f32::onebyfftLen()']]],
+  ['opd',['OPD',['../struct_e_n_e_t___type.html#a7a0c4ff40dfd2da3f20f28f3f50b991f',1,'ENET_Type']]],
+  ['or',['OR',['../struct_r_n_g___type.html#ad59205cea4b6417e6cae229001ab24d4',1,'RNG_Type']]],
+  ['oscerconfig',['oscerConfig',['../struct_osc_user_config.html#aa3c9374d2d74f207ff6ddd925915afbe',1,'OscUserConfig::oscerConfig()'],['../struct_clock_user_config.html#a96e8fafdcfc35396d8387b6f2eb9109a',1,'ClockUserConfig::oscerConfig()']]],
+  ['otgctl',['OTGCTL',['../struct_u_s_b___type.html#a29fdcad4635573158769b379244874c6',1,'USB_Type']]],
+  ['otgicr',['OTGICR',['../struct_u_s_b___type.html#ac63531ec3a52f634997a5f27a938232e',1,'USB_Type']]],
+  ['otgistat',['OTGISTAT',['../struct_u_s_b___type.html#a33ddb4989093727ebbeaabdcbb30a9be',1,'USB_Type']]],
+  ['otgstat',['OTGSTAT',['../struct_u_s_b___type.html#adb73c0ed8ec05b05499d164fee6a6d9c',1,'USB_Type']]],
+  ['outdiv4',['outdiv4',['../struct_sim_config.html#a560c36d4b94075611ef826a9ebb5c334',1,'SimConfig']]],
+  ['outinit',['OUTINIT',['../struct_f_t_m___type.html#aeed5243aad98ae4a5f0f4eb769ee5da9',1,'FTM_Type']]],
+  ['outmask',['OUTMASK',['../struct_f_t_m___type.html#a624050c92b74b9952d2cde560e5ee41c',1,'FTM_Type']]],
+  ['outputlogic',['outputLogic',['../struct_gpio_output_pin.html#aac62f3a24b714fd0da308eb760565240',1,'GpioOutputPin']]]
+];
