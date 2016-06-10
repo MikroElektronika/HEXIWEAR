@@ -71,6 +71,8 @@
 
 #define SCREEN_BYTE_SIZE ( OLED_SCREEN_WIDTH * OLED_SCREEN_HEIGHT * OLED_BYTES_PER_PIXEL )
 
+#define TEMP_IN_F (1)
+
 extern guiLabel_t screen_labelEnter;
 extern guiLabel_t screen_labelBack;
 
