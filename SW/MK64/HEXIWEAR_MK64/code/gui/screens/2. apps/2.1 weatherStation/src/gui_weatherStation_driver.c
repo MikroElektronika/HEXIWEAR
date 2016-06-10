@@ -43,6 +43,8 @@
 
 #include "fsl_os_abstraction.h"
 
+#include "screens_common.h"
+
 /** private variables */
 
 static task_handler_t
@@ -167,7 +169,15 @@ static void gui_weatherStation_AppTask()
             {
                 case packetType_temperature:
                 {
-                    snprintf( (char*)gui_weatherStation_labelTemp.caption, 10, "%2i.%02i C", sensorValue / 100, sensorValue % 100 );
+                	if (TEMP_IN_F)
+                	{
+                		sensorValue = (sensorValue*1.8)+3200;
+                		snprintf( (char*)gui_weatherStation_labelTemp.caption, 10, "%2i.%02i F", sensorValue / 100, sensorValue % 100 );
+                	}
+                	else
+                	{
+                		snprintf( (char*)gui_weatherStation_labelTemp.caption, 10, "%2i.%02i C", sensorValue / 100, sensorValue % 100 );
+                	}
                     GuiDriver_LabelDraw(&gui_weatherStation_labelTemp);
                     break;
                 }
