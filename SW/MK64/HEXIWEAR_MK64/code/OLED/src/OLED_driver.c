@@ -38,7 +38,7 @@
 
 #include "HEXIWEAR_info.h"
 
-#include "OLED_Driver.h"
+#include "OLED_driver.h"
 #include "string.h"
 #include <stdlib.h>
 #include "error.h"
@@ -50,8 +50,8 @@
 
 #include "fsl_gpio_driver.h"
 
-#include "OLED_Defs.h"
-#include "OLED_Info.h"
+#include "OLED_defs.h"
+#include "OLED_info.h"
 
 #include "gui_resources.h"
 

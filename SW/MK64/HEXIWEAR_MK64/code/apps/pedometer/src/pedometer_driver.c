@@ -37,7 +37,7 @@
 
 #include "pedometer_driver.h"
 
-#include "keynetik_driver.h"
+#include "Keynetik_driver.h"
 #include "error.h"
 #include "sensor_driver.h"
 #include "gui_sensorTag.h"
