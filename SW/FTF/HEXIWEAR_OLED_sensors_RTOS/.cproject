@@ -77,7 +77,6 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MK64F12/startup&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code/SDK/platform/devices/MK64F12/startup&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/apps/common/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/usb&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/rtc/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/apps/pedometer/inc&quot;"/>
@@ -108,12 +107,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.1 weatherStation/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.2 motionControl/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/2.3.2 heart_rate/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/2.3.1 gui_pedometer/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/2.3.2 gui_heartRate/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.4 compass/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.5 flashlight/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.6 light/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/3. gui_notifications/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/4. settings/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/4. settings/4.1 bluetooth/inc&quot;"/>
