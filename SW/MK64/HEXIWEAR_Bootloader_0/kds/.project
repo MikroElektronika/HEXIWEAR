@@ -144,7 +144,7 @@
 	<variableList>
 		<variable>
 			<name>PROJECT_KSDK</name>
-			<value>file:/D:/Marko/Freescale/KSDK_1.2.0</value>
+			<value>file:/c:/Freescale/KSDK_1.2.0</value>
 		</variable>
 	</variableList>
 </projectDescription>
