@@ -37,14 +37,14 @@
 
 #include "HEXIWEAR_info.h"
 
-#include "FLASH_Driver.h"
+#include "FLASH_driver.h"
 #include "generic_spi_driver.h"
 
 #include "error.h"
 #include "fsl_gpio_driver.h"
 #include "string.h"
 
-#include "FLASH_Info.h"
+#include "FLASH_info.h"
 
 /**
  * intern variables

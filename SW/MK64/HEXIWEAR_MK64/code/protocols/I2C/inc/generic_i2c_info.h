@@ -38,7 +38,7 @@
 #pragma once
 
 #include "MK64F12.h"
-#include "hexiwear_info.h"
+#include "HEXIWEAR_info.h"
 
 // interrupt numbers and values
 #define FSL_I2C_IRQn      ( HEXIWEAR_FS_I2C_IRQn )

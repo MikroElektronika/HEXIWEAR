@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "keynetik_types.h"
+#include "Keynetik_types.h"
 
 extern activitylevel_t
   keynetikActivityLevel;
