@@ -44,7 +44,7 @@ guiScreen_t resetScreen =
   .navigation =
   {
           .up     = &aboutScreen,
-          .down   = &bluetoothScreen,
+          .down   = &watchSetScreen,
           .left   = &settingsScreen,
           .right  = NULL
   },

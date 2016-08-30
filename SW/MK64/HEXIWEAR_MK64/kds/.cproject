@@ -98,6 +98,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/4. settings/4.6 about/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/4. settings/4.6 about/4.6.1 info/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/4. settings/4.7 reset/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/4. settings/4.8 watch set/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/5. bond/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/6. sensorTag/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/HEXIWEAR/inc&quot;"/>
