@@ -1,0 +1,25 @@
+var group___f_t_f_e___register___masks =
+[
+    [ "FTFE_FCCOB0_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga7499ddf982938188b06763fed98527fa", null ],
+    [ "FTFE_FCCOB1_CCOBn_MASK", "group___f_t_f_e___register___masks.html#gaa7e9e9a1c18414790702792750daec89", null ],
+    [ "FTFE_FCCOB2_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga87254fe5b3a8f4a9c0251e3fac167128", null ],
+    [ "FTFE_FCCOB3_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga10bc3ec6bba0545905e9cc4c41264b67", null ],
+    [ "FTFE_FCCOB4_CCOBn_MASK", "group___f_t_f_e___register___masks.html#gad17f10cdfff46d245fa4c9511a45e205", null ],
+    [ "FTFE_FCCOB5_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga1fed27b766792ecc82407cbddb36d6f8", null ],
+    [ "FTFE_FCCOB6_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga5143a0f11e338ce6e900d67a58e9ce55", null ],
+    [ "FTFE_FCCOB7_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga6f03287a2909b3e7fa73cc115291fec7", null ],
+    [ "FTFE_FCCOB8_CCOBn_MASK", "group___f_t_f_e___register___masks.html#gab782fa18693d9a3113b2d58a492717b4", null ],
+    [ "FTFE_FCCOB9_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga6dd6be8d6e5ab42f88bc3864ff18988e", null ],
+    [ "FTFE_FCCOBA_CCOBn_MASK", "group___f_t_f_e___register___masks.html#gacec52ac0397aa60e5278a27225d3506b", null ],
+    [ "FTFE_FCCOBB_CCOBn_MASK", "group___f_t_f_e___register___masks.html#ga0c4f10213e785664769dccd3f31c19d9", null ],
+    [ "FTFE_FCNFG_EEERDY_MASK", "group___f_t_f_e___register___masks.html#gabd7f0b0695b1e55349fef4587df62034", null ],
+    [ "FTFE_FDPROT_DPROT_MASK", "group___f_t_f_e___register___masks.html#ga04902a698b747ed3e15ec54795ea38ce", null ],
+    [ "FTFE_FEPROT_EPROT_MASK", "group___f_t_f_e___register___masks.html#ga40c56d65eabafe8b67bf9e28a1ab2856", null ],
+    [ "FTFE_FOPT_OPT_MASK", "group___f_t_f_e___register___masks.html#gafbeb43ee4b3c54b91d39f7ac619c129f", null ],
+    [ "FTFE_FPROT0_PROT_MASK", "group___f_t_f_e___register___masks.html#gadeb846e611d1e77100baf8db858ae32c", null ],
+    [ "FTFE_FPROT1_PROT_MASK", "group___f_t_f_e___register___masks.html#ga1e6a0ea36b9fdb8f847e4a750172e45a", null ],
+    [ "FTFE_FPROT2_PROT_MASK", "group___f_t_f_e___register___masks.html#gabb7b44e7187830da8206888d207d9e87", null ],
+    [ "FTFE_FPROT3_PROT_MASK", "group___f_t_f_e___register___masks.html#gaa08f3df6f890d183bd5864a6d08dc3b9", null ],
+    [ "FTFE_FSEC_SEC_MASK", "group___f_t_f_e___register___masks.html#gad3ce37250b2d1b59816d2771ef828f7d", null ],
+    [ "FTFE_FSTAT_MGSTAT0_MASK", "group___f_t_f_e___register___masks.html#ga8144f9200ceb6565f82fb1a1fa7cc81f", null ]
+];

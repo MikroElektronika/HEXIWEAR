@@ -1,0 +1,56 @@
+var group__os__abstraction =
+[
+    [ "USE_RTOS", "group__os__abstraction.html#gad048ac737242c2c2cb9f4a72953d10ce", null ],
+    [ "osa_critical_section_mode_t", "group__os__abstraction.html#ga01377531397ccdc2fe98ac2c3627d473", null ],
+    [ "osa_event_clear_mode_t", "group__os__abstraction.html#ga3091c212c1f0ea1e721a5c5b94b29cc7", null ],
+    [ "osa_int_handler_t", "group__os__abstraction.html#ga3aa0694eeb8dd42bf318e20e3a219572", null ],
+    [ "osa_status_t", "group__os__abstraction.html#gaa4758ef43e05245e36eb34e005c6adc5", null ],
+    [ "_osa_critical_section_mode_t", "group__os__abstraction.html#gabe9fcf872a04db494926aec6a153db95", [
+      [ "kCriticalLockSched", "group__os__abstraction.html#ggabe9fcf872a04db494926aec6a153db95a814c12858c060d45be6822c9690003c6", null ],
+      [ "kCriticalDisableInt", "group__os__abstraction.html#ggabe9fcf872a04db494926aec6a153db95a7328c765ea4afb3a2ad219095e3b401b", null ]
+    ] ],
+    [ "_osa_event_clear_mode_t", "group__os__abstraction.html#ga4b38940a6403f8c7171dbe2cd05452f2", [
+      [ "kEventAutoClear", "group__os__abstraction.html#gga4b38940a6403f8c7171dbe2cd05452f2a29eaa72359a9dd1cee50f4924aeb6fdc", null ],
+      [ "kEventManualClear", "group__os__abstraction.html#gga4b38940a6403f8c7171dbe2cd05452f2ad349304d44ea999cc73fb4e4639b38a6", null ]
+    ] ],
+    [ "_osa_status_t", "group__os__abstraction.html#gab79f6bb0ba0b1268502d73d0952715f8", [
+      [ "kStatus_OSA_Success", "group__os__abstraction.html#ggab79f6bb0ba0b1268502d73d0952715f8aa4598af8363b288290d945d9853c4b32", null ],
+      [ "kStatus_OSA_Error", "group__os__abstraction.html#ggab79f6bb0ba0b1268502d73d0952715f8afe784ce9a332a9b671d6b372840c60a1", null ],
+      [ "kStatus_OSA_Timeout", "group__os__abstraction.html#ggab79f6bb0ba0b1268502d73d0952715f8a8a3efc503d4b3a9f785d00b6f5a72b53", null ],
+      [ "kStatus_OSA_Idle", "group__os__abstraction.html#ggab79f6bb0ba0b1268502d73d0952715f8a5ff8ef02cb571d5d5f92a7e816719a3d", null ]
+    ] ],
+    [ "OSA_EnterCritical", "group__os__abstraction.html#ga5cd30c1e7ce88303b02c2cde2ca99077", null ],
+    [ "OSA_EventClear", "group__os__abstraction.html#ga64d56b17435ec3ee26f661b0d54dae27", null ],
+    [ "OSA_EventCreate", "group__os__abstraction.html#ga2cf40af1638071815e4b7796c34d2e5b", null ],
+    [ "OSA_EventDestroy", "group__os__abstraction.html#ga059e7a86e372efcbb00861a23677737b", null ],
+    [ "OSA_EventGetFlags", "group__os__abstraction.html#gad5da05d70cd12af0876d67c53f277d2d", null ],
+    [ "OSA_EventSet", "group__os__abstraction.html#gae09dc991034b7353a9ce35fffa6d10fd", null ],
+    [ "OSA_EventWait", "group__os__abstraction.html#ga3b861498a697c65ecf3b1487037bf262", null ],
+    [ "OSA_ExitCritical", "group__os__abstraction.html#ga04f67326cfb8cf071df06c231862e2b6", null ],
+    [ "OSA_Init", "group__os__abstraction.html#gab7bddc0deaf1ef6a2f8d2f2b8b337094", null ],
+    [ "OSA_InstallIntHandler", "group__os__abstraction.html#ga5553839fecc854ac9d3c5deeb71be8d9", null ],
+    [ "OSA_MemAlloc", "group__os__abstraction.html#gaeeb4891e172df34aaaf4ebcfe10d351f", null ],
+    [ "OSA_MemAllocZero", "group__os__abstraction.html#ga20add747df89e84e9cd2b05fb3057ff1", null ],
+    [ "OSA_MemFree", "group__os__abstraction.html#ga6785c4b01427410302b4b6d691d3d4f9", null ],
+    [ "OSA_MsgQCreate", "group__os__abstraction.html#ga223c4575d2cf6f3fd536934784b30636", null ],
+    [ "OSA_MsgQDestroy", "group__os__abstraction.html#ga4e2b41ef53d400c0a9891b7e340fa0ed", null ],
+    [ "OSA_MsgQGet", "group__os__abstraction.html#ga20cdc73f078203dca220bdccc521d858", null ],
+    [ "OSA_MsgQPut", "group__os__abstraction.html#gac00eaf78292a184f9596f1e45146dbed", null ],
+    [ "OSA_MutexCreate", "group__os__abstraction.html#ga0d865115c07131e7befd3fd31a0e265d", null ],
+    [ "OSA_MutexDestroy", "group__os__abstraction.html#ga916edd5e9c032bb3a4b8376960ddfd12", null ],
+    [ "OSA_MutexLock", "group__os__abstraction.html#gabeb2692727d712b989d6a8105dbc12a0", null ],
+    [ "OSA_MutexUnlock", "group__os__abstraction.html#ga1008baddbed6f285e96a945e893c75dd", null ],
+    [ "OSA_SemaCreate", "group__os__abstraction.html#ga38cbf578e5fe68f6b49d54acf5019ec6", null ],
+    [ "OSA_SemaDestroy", "group__os__abstraction.html#ga3883e9e4302574d34a937c6d6eef4a35", null ],
+    [ "OSA_SemaPost", "group__os__abstraction.html#gaa5034a9787f489d989f22a06e509a192", null ],
+    [ "OSA_SemaWait", "group__os__abstraction.html#ga653fc3e87d91a841348be7b0a0166422", null ],
+    [ "OSA_Start", "group__os__abstraction.html#ga805ebf3e25dd40a86175d30cecd86344", null ],
+    [ "OSA_TaskCreate", "group__os__abstraction.html#ga90ea3c0120e83ee5f843dfa0496fd750", null ],
+    [ "OSA_TaskDestroy", "group__os__abstraction.html#ga19d9c8d641c7899c5c8afe66a3efb1fd", null ],
+    [ "OSA_TaskGetHandler", "group__os__abstraction.html#ga1387b66dd2be21d9c14b1f182e8f794c", null ],
+    [ "OSA_TaskGetPriority", "group__os__abstraction.html#ga4e2de53be437a06682659436c5a78d0f", null ],
+    [ "OSA_TaskSetPriority", "group__os__abstraction.html#ga6eab026437bad2ffb87bfd03b4615573", null ],
+    [ "OSA_TaskYield", "group__os__abstraction.html#gad4093b675038067498d0ff38e9b18566", null ],
+    [ "OSA_TimeDelay", "group__os__abstraction.html#ga80ec77b248ae8f3d564727e0cb78eaee", null ],
+    [ "OSA_TimeGetMsec", "group__os__abstraction.html#ga13573345b625c22855e4c1d02fdbb284", null ]
+];

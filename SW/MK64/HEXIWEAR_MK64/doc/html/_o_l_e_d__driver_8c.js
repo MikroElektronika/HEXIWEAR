@@ -1,0 +1,26 @@
+var _o_l_e_d__driver_8c =
+[
+    [ "OLED_REMAP_SETTINGS", "_o_l_e_d__driver_8c.html#ad6fe554dfda2f0e0721e1d0a6776173b", null ],
+    [ "OLED_AddImage", "_o_l_e_d__driver_8c.html#ab5b864e308ceffca782e2793e4a90e39", null ],
+    [ "OLED_AddText", "_o_l_e_d__driver_8c.html#ab43fd1d478da1f334db9d48a10e425b4", null ],
+    [ "OLED_CharCount", "_o_l_e_d__driver_8c.html#a767605f745f4f1708d6951a21f4a0654", null ],
+    [ "OLED_Deinit", "_o_l_e_d__driver_8c.html#a02406b3ec4d1cdaa6a19280c62e63eaa", null ],
+    [ "OLED_DestroyDynamicArea", "_o_l_e_d__driver_8c.html#adf526b6f8a7de3966a7b35a8b12d7102", null ],
+    [ "OLED_DimScreenOFF", "_o_l_e_d__driver_8c.html#aa38256e0b4e9ad20defba50524ffbf85", null ],
+    [ "OLED_DimScreenON", "_o_l_e_d__driver_8c.html#a3891ae722dd9fe475120df5c8339e0e2", null ],
+    [ "OLED_DrawBox", "_o_l_e_d__driver_8c.html#acd8ffa937d6b8e138fb6ad793af90833", null ],
+    [ "OLED_DrawImage", "_o_l_e_d__driver_8c.html#a82cf850633a96e9ac5f93cad1ec95f1c", null ],
+    [ "OLED_DrawPixel", "_o_l_e_d__driver_8c.html#ae9dcc597e2cec0126b69ad37fcb71e7c", null ],
+    [ "OLED_DrawScreen", "_o_l_e_d__driver_8c.html#a86efef2d56bf857ca2e1d81e6d7edd30", null ],
+    [ "OLED_DrawText", "_o_l_e_d__driver_8c.html#a480437f7f6860c37a7f4d07211ade492", null ],
+    [ "OLED_FillScreen", "_o_l_e_d__driver_8c.html#a0a537a4d58ce029a397135b34aa46704", null ],
+    [ "OLED_GetImageDimensions", "_o_l_e_d__driver_8c.html#a21e0992b2e6f5e4f2eb5450d47159291", null ],
+    [ "OLED_GetTextWidth", "_o_l_e_d__driver_8c.html#a500ebe191745d793d830fdc2c2b1de8b", null ],
+    [ "OLED_Init", "_o_l_e_d__driver_8c.html#a77083bf8e017c756572859b6312b2e02", null ],
+    [ "OLED_SendCmd", "_o_l_e_d__driver_8c.html#ae45cc0266df7b2ee8a2ae6f2ed0fdcbf", null ],
+    [ "OLED_SendData", "_o_l_e_d__driver_8c.html#a171d1a167ecc3ebe5fc666d323c7f3ef", null ],
+    [ "OLED_SetDynamicArea", "_o_l_e_d__driver_8c.html#a7f45f45d8c7efe9671b095c801a5aea5", null ],
+    [ "OLED_SetFont", "_o_l_e_d__driver_8c.html#aecad56c2d1bb17cee78f39f239722806", null ],
+    [ "OLED_SetTextProperties", "_o_l_e_d__driver_8c.html#a25c2687618615170fa47bcb344fbaeb7", null ],
+    [ "OLED_Swap", "_o_l_e_d__driver_8c.html#aac9b33aafeca77943e56ac7a49e3139f", null ]
+];

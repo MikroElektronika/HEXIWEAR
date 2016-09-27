@@ -1,0 +1,36 @@
+var group___c_a_u___peripheral___access___layer =
+[
+    [ "CAU - Register accessor macros", "group___c_a_u___register___accessor___macros.html", "group___c_a_u___register___accessor___macros" ],
+    [ "CAU Register Masks", "group___c_a_u___register___masks.html", "group___c_a_u___register___masks" ],
+    [ "CAU_Type", "struct_c_a_u___type.html", [
+      [ "ADR_CA", "struct_c_a_u___type.html#ad9e6fee1d464bff01720f5046668dcbe", null ],
+      [ "ADR_CAA", "struct_c_a_u___type.html#ac5a11025c0def52c0d510c9c13cc7949", null ],
+      [ "ADR_CASR", "struct_c_a_u___type.html#ace1485e8e1bd2ec5d472bb4af7d242c4", null ],
+      [ "AESC_CA", "struct_c_a_u___type.html#a60b80b49379fda975189d7bf4c42ce21", null ],
+      [ "AESC_CAA", "struct_c_a_u___type.html#afe2517a5ce47c934e22ff5f0e2fbf6a8", null ],
+      [ "AESC_CASR", "struct_c_a_u___type.html#a8c6be876475ac547c6abcea715cb2bc6", null ],
+      [ "AESIC_CA", "struct_c_a_u___type.html#af11df2d83212a787620fbd995c05a354", null ],
+      [ "AESIC_CAA", "struct_c_a_u___type.html#ac3ab3c104b8e5125d1968d655f046dc6", null ],
+      [ "AESIC_CASR", "struct_c_a_u___type.html#a9fd9367f363d483b8b093c7ec5d43537", null ],
+      [ "DIRECT", "struct_c_a_u___type.html#ab99e7ef896673ae1a7f5443b5219a639", null ],
+      [ "LDR_CA", "struct_c_a_u___type.html#a171a8d0ac011a8c3d7be509cf71e269f", null ],
+      [ "LDR_CAA", "struct_c_a_u___type.html#a4ed721a08f4487b46525e8014880e48a", null ],
+      [ "LDR_CASR", "struct_c_a_u___type.html#ad80730fc61ca2c55b4f30b0b96f8f497", null ],
+      [ "RADR_CA", "struct_c_a_u___type.html#ad26a262a250ca6056b5718136883b1de", null ],
+      [ "RADR_CAA", "struct_c_a_u___type.html#a540d27a6ffbecc85ba1c68dd023ce27f", null ],
+      [ "RADR_CASR", "struct_c_a_u___type.html#af8ba9097649bc7890f0b1cf93fc9548a", null ],
+      [ "ROTL_CA", "struct_c_a_u___type.html#acc24f87ff0a8f6d9853545577730d0fa", null ],
+      [ "ROTL_CAA", "struct_c_a_u___type.html#a068b622c2eb3fcfe7160c03cb8623ea4", null ],
+      [ "ROTL_CASR", "struct_c_a_u___type.html#a38c25ff544443843267d08dc292bb9a3", null ],
+      [ "STR_CA", "struct_c_a_u___type.html#aa2826c9fa444c54875b64e3b25b1e1b3", null ],
+      [ "STR_CAA", "struct_c_a_u___type.html#a72320359f6a82e0083f25af7bdb09659", null ],
+      [ "STR_CASR", "struct_c_a_u___type.html#a475b305a546c5aaae9a05fd9cb448815", null ],
+      [ "XOR_CA", "struct_c_a_u___type.html#a7a63a5157991203e570edcd6536de5fc", null ],
+      [ "XOR_CAA", "struct_c_a_u___type.html#ad7fe03764336da7e3a8ff7b4e0fd217a", null ],
+      [ "XOR_CASR", "struct_c_a_u___type.html#af9f78dbcf81a0ed3afb44e959c77b1bc", null ]
+    ] ],
+    [ "CAU", "group___c_a_u___peripheral___access___layer.html#ga0e3e4bb9b7bb5ef30b07e8925c56b950", null ],
+    [ "CAU_BASE", "group___c_a_u___peripheral___access___layer.html#ga4bae7acee3c09ef910c11c3536bbbbc1", null ],
+    [ "CAU_BASE_ADDRS", "group___c_a_u___peripheral___access___layer.html#ga93a57ce0e99e2ff0985950f9452b5777", null ],
+    [ "CAU_BASE_PTRS", "group___c_a_u___peripheral___access___layer.html#gaadc82a2eed7dcf40fa9a17abe0f2ff6e", null ]
+];

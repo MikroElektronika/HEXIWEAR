@@ -1,0 +1,28 @@
+var _f_x_o_s__driver_8h =
+[
+    [ "acc_fmtDef2Byte", "_f_x_o_s__driver_8h.html#a34fad2031d128736313d4c8b4cc6a187", null ],
+    [ "acc_fmtDef2Float", "_f_x_o_s__driver_8h.html#a4643801349ee88b0865e25b84e2ed7ca", null ],
+    [ "acc_fmtDef2Me", "_f_x_o_s__driver_8h.html#a86b19c6d6f37a002e5586d495bd58fde", null ],
+    [ "acc_fmtMe2Def", "_f_x_o_s__driver_8h.html#ae0ce3d6e61d493d519587eea6d5d7a15", null ],
+    [ "FXOS_CalibrateAcc", "_f_x_o_s__driver_8h.html#a601db20337d0bd2f294b8e110c4715f8", null ],
+    [ "FXOS_CalibrateMag", "_f_x_o_s__driver_8h.html#a9330629a9b8f1a881e89ea77473ddc6b", null ],
+    [ "FXOS_Callback", "_f_x_o_s__driver_8h.html#a4e7074792eb31e84dbcfc2bc91d5e6f4", null ],
+    [ "FXOS_CheckForTap", "_f_x_o_s__driver_8h.html#acc3ac458bbdfb1d4df3d237f8b9dfab8", null ],
+    [ "FXOS_ConfigureTapEvent", "_f_x_o_s__driver_8h.html#a47f150c60f00fe55321dab035b9ae578", null ],
+    [ "FXOS_Deinit", "_f_x_o_s__driver_8h.html#a026134c039af7061f1216ff313d90016", null ],
+    [ "FXOS_DisableTap", "_f_x_o_s__driver_8h.html#afeb73781fd49943cc50cbc32bd26bcf0", null ],
+    [ "FXOS_EnableTap", "_f_x_o_s__driver_8h.html#a02ef54628fdfb94a8013a267e400ae98", null ],
+    [ "FXOS_GotoStandby", "_f_x_o_s__driver_8h.html#af4c1e429ee1d4d7dc9071d307a72b605", null ],
+    [ "FXOS_Init", "_f_x_o_s__driver_8h.html#a76a0246ff28d3453f46536e339edec85", null ],
+    [ "FXOS_IsTapEnabled", "_f_x_o_s__driver_8h.html#a49c70f72aa55738135e2eca257d2fe22", null ],
+    [ "FXOS_ReadRawData", "_f_x_o_s__driver_8h.html#aca7bcfecacd33fc9f8cda424fa62476e", null ],
+    [ "FXOS_ReadRawTemp", "_f_x_o_s__driver_8h.html#a7101d1d7dbded3e9b604e42e70e40956", null ],
+    [ "FXOS_ReadStatus", "_f_x_o_s__driver_8h.html#ac6a152da10a3c855bf4197acade99e6c", null ],
+    [ "FXOS_RecoverI2C", "_f_x_o_s__driver_8h.html#a119c02e2fa960966eebca438f96725b9", null ],
+    [ "FXOS_SetActive", "_f_x_o_s__driver_8h.html#a21d1adecd97dfa1d55bcfce1c7bb150a", null ],
+    [ "FXOS_SoftReset", "_f_x_o_s__driver_8h.html#a298cc05fc2b10d3f90a726ad9e7d5028", null ],
+    [ "FXOS_TapHandler", "_f_x_o_s__driver_8h.html#a35576d21bc7527fe8c666f86aa6d3edd", null ],
+    [ "mag_fmtDef2Byte", "_f_x_o_s__driver_8h.html#a7552fca8db6bf545a50f2d9cc2b44c20", null ],
+    [ "mag_fmtDef2Float", "_f_x_o_s__driver_8h.html#af1af0af213f799b04417b0d1aabef31e", null ],
+    [ "mag_fmtDef2Me", "_f_x_o_s__driver_8h.html#a03c5758a91cba0799b61236a00db1fcf", null ]
+];

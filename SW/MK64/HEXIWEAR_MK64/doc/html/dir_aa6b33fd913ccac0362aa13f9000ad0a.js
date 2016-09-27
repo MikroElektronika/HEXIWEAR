@@ -1,0 +1,28 @@
+var dir_aa6b33fd913ccac0362aa13f9000ad0a =
+[
+    [ "arm_max_f32.c", "arm__max__f32_8c_source.html", null ],
+    [ "arm_max_q15.c", "arm__max__q15_8c_source.html", null ],
+    [ "arm_max_q31.c", "arm__max__q31_8c_source.html", null ],
+    [ "arm_max_q7.c", "arm__max__q7_8c_source.html", null ],
+    [ "arm_mean_f32.c", "arm__mean__f32_8c_source.html", null ],
+    [ "arm_mean_q15.c", "arm__mean__q15_8c_source.html", null ],
+    [ "arm_mean_q31.c", "arm__mean__q31_8c_source.html", null ],
+    [ "arm_mean_q7.c", "arm__mean__q7_8c_source.html", null ],
+    [ "arm_min_f32.c", "arm__min__f32_8c_source.html", null ],
+    [ "arm_min_q15.c", "arm__min__q15_8c_source.html", null ],
+    [ "arm_min_q31.c", "arm__min__q31_8c_source.html", null ],
+    [ "arm_min_q7.c", "arm__min__q7_8c_source.html", null ],
+    [ "arm_power_f32.c", "arm__power__f32_8c_source.html", null ],
+    [ "arm_power_q15.c", "arm__power__q15_8c_source.html", null ],
+    [ "arm_power_q31.c", "arm__power__q31_8c_source.html", null ],
+    [ "arm_power_q7.c", "arm__power__q7_8c_source.html", null ],
+    [ "arm_rms_f32.c", "arm__rms__f32_8c_source.html", null ],
+    [ "arm_rms_q15.c", "arm__rms__q15_8c_source.html", null ],
+    [ "arm_rms_q31.c", "arm__rms__q31_8c_source.html", null ],
+    [ "arm_std_f32.c", "arm__std__f32_8c_source.html", null ],
+    [ "arm_std_q15.c", "arm__std__q15_8c_source.html", null ],
+    [ "arm_std_q31.c", "arm__std__q31_8c_source.html", null ],
+    [ "arm_var_f32.c", "arm__var__f32_8c_source.html", null ],
+    [ "arm_var_q15.c", "arm__var__q15_8c_source.html", null ],
+    [ "arm_var_q31.c", "arm__var__q31_8c_source.html", null ]
+];

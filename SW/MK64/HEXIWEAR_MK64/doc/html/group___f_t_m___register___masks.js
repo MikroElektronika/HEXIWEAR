@@ -1,0 +1,28 @@
+var group___f_t_m___register___masks =
+[
+    [ "FTM_CnSC_DMA_MASK", "group___f_t_m___register___masks.html#gab38e53cd8f53bb325b849510374280f8", null ],
+    [ "FTM_CNT_COUNT_MASK", "group___f_t_m___register___masks.html#ga7a984be18d311688f8a369a43f9145b6", null ],
+    [ "FTM_CNTIN_INIT_MASK", "group___f_t_m___register___masks.html#ga5181f522d645ce312209c2258a1a06d0", null ],
+    [ "FTM_CnV_VAL_MASK", "group___f_t_m___register___masks.html#gaebf50ac59c7cc0b853a2a90b117ac395", null ],
+    [ "FTM_COMBINE_COMBINE0_MASK", "group___f_t_m___register___masks.html#gaf48cb997d418c07e063179fa8459c75a", null ],
+    [ "FTM_CONF_NUMTOF_MASK", "group___f_t_m___register___masks.html#gae8e95c8cac97f0cf6cec2edd277aaca3", null ],
+    [ "FTM_DEADTIME_DTVAL_MASK", "group___f_t_m___register___masks.html#ga8fdaa69c3721ec4a328fadcc00d4f4df", null ],
+    [ "FTM_EXTTRIG_CH2TRIG_MASK", "group___f_t_m___register___masks.html#ga156b1af5902f975c8d6b667e77ce11da", null ],
+    [ "FTM_FILTER_CH0FVAL_MASK", "group___f_t_m___register___masks.html#ga021b2ed3cc7b79cda874ff49fbd0dd5a", null ],
+    [ "FTM_FLTCTRL_FAULT0EN_MASK", "group___f_t_m___register___masks.html#ga55aa390cdac6997c93f7385ab41047ce", null ],
+    [ "FTM_FLTPOL_FLT0POL_MASK", "group___f_t_m___register___masks.html#gac9a93adce89d23693d4895ea49c95fb0", null ],
+    [ "FTM_FMS_FAULTF0_MASK", "group___f_t_m___register___masks.html#ga1699b8f872eda59831fad7c95580651a", null ],
+    [ "FTM_INVCTRL_INV0EN_MASK", "group___f_t_m___register___masks.html#ga29b0b3d76d82f4c673556bd71b97ee9d", null ],
+    [ "FTM_MOD_MOD_MASK", "group___f_t_m___register___masks.html#gae815072c26d186e4ad07654080c7cb97", null ],
+    [ "FTM_MODE_FTMEN_MASK", "group___f_t_m___register___masks.html#ga3142bc5c6261a7c04c95844ef35edd5b", null ],
+    [ "FTM_OUTINIT_CH0OI_MASK", "group___f_t_m___register___masks.html#ga25049f81cfbb792f293e74d623d1a945", null ],
+    [ "FTM_OUTMASK_CH0OM_MASK", "group___f_t_m___register___masks.html#gae1ed080952e4ddf3947066d5d97b7920", null ],
+    [ "FTM_POL_POL0_MASK", "group___f_t_m___register___masks.html#ga7ab70d13d9e83b5ae2beb7f5ba35dec3", null ],
+    [ "FTM_PWMLOAD_CH0SEL_MASK", "group___f_t_m___register___masks.html#ga3aed163f12371474717169636b2d9620", null ],
+    [ "FTM_QDCTRL_QUADEN_MASK", "group___f_t_m___register___masks.html#ga130e81d72e324d2e47e6613071606c4c", null ],
+    [ "FTM_SC_PS_MASK", "group___f_t_m___register___masks.html#ga6d12f2131f28899f9d18b8e7fe12349f", null ],
+    [ "FTM_STATUS_CH0F_MASK", "group___f_t_m___register___masks.html#ga9ba703f87542e033b6c311c061ea9187", null ],
+    [ "FTM_SWOCTRL_CH0OC_MASK", "group___f_t_m___register___masks.html#ga1d6ba2b311aaea0d8857a2eff1a79f9b", null ],
+    [ "FTM_SYNC_CNTMIN_MASK", "group___f_t_m___register___masks.html#gaee5f107bf44191de4f5e747d4764e3ed", null ],
+    [ "FTM_SYNCONF_HWTRIGMODE_MASK", "group___f_t_m___register___masks.html#ga60729d222bbb0fe4e36011bd682f4f82", null ]
+];

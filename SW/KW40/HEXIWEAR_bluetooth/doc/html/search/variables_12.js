@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['tail',['tail',['../struct_msg_queue.html#ace756213e1bd262b8d63eaf28e6249c9',1,'MsgQueue']]],
+  ['time_5fcounter',['time_counter',['../structft__kernel.html#a11d1d528f115306b0e6bd33ade9c5d49',1,'ft_kernel']]],
+  ['time_5fperiod',['time_period',['../structft__system.html#a35a134618ab48e99b75313d653dd5542',1,'ft_system']]],
+  ['time_5fstamp',['time_stamp',['../structft__electrode__status.html#ab42b0f83e39af1af41a8bf2bd652dd89',1,'ft_electrode_status']]],
+  ['time_5fstart',['time_start',['../struct_semaphore.html#aa5bb2181679e9a54bd05e67d49f62426',1,'Semaphore::time_start()'],['../struct_mutex.html#aa5bb2181679e9a54bd05e67d49f62426',1,'Mutex::time_start()'],['../struct_event.html#aa5bb2181679e9a54bd05e67d49f62426',1,'Event::time_start()']]],
+  ['timeout',['timeout',['../struct_semaphore.html#ab5627d8d8b095c198e2523c44ca380ac',1,'Semaphore::timeout()'],['../struct_mutex.html#ab5627d8d8b095c198e2523c44ca380ac',1,'Mutex::timeout()'],['../struct_event.html#ab5627d8d8b095c198e2523c44ca380ac',1,'Event::timeout()']]],
+  ['timer_5fget_5fcounter',['timer_get_counter',['../structft__module__gpio__user__interface.html#afc31fa14206b91afd74eff53586976a1',1,'ft_module_gpio_user_interface::timer_get_counter()'],['../structft__module__gpioint__user__interface.html#afc31fa14206b91afd74eff53586976a1',1,'ft_module_gpioint_user_interface::timer_get_counter()']]],
+  ['timer_5fget_5foverrun',['timer_get_overrun',['../structft__module__gpio__user__interface.html#a72ef72ef360fe7a45645d4ad147a203c',1,'ft_module_gpio_user_interface']]],
+  ['timer_5freset_5fcounter',['timer_reset_counter',['../structft__module__gpio__user__interface.html#ac7da43d29e60046f0c3d33c27e251465',1,'ft_module_gpio_user_interface::timer_reset_counter()'],['../structft__module__gpioint__user__interface.html#ac7da43d29e60046f0c3d33c27e251465',1,'ft_module_gpioint_user_interface::timer_reset_counter()']]],
+  ['tmphostinterface_5fpacket',['tmpHostInterface_packet',['../host__mcu__interface__rx_8c.html#a41eb55a0b03f1d7da9d153172a199cd7',1,'host_mcu_interface_rx.c']]],
+  ['totalblockchunks',['totalBlockChunks',['../structotap_client_app_data__tag.html#acec06685fdb6f7ed6b07de150c333e0c',1,'otapClientAppData_tag']]],
+  ['totalblocksize',['totalBlockSize',['../structotap_client_app_data__tag.html#a254a97c3125c33ae4b10935e5563209a',1,'otapClientAppData_tag']]],
+  ['totalimagefilesize',['totalImageFileSize',['../otap__interface_8h.html#a7395fc3f7185b63ae24ec27049ceac5f',1,'otap_interface.h']]],
+  ['touch_5freset_5fcounter',['touch_reset_counter',['../structft__keydetector__afid__data.html#aba9230c180ff4707729cbc69c77aa1b9',1,'ft_keydetector_afid_data']]],
+  ['touch_5fthreshold',['touch_threshold',['../structft__keydetector__afid__data.html#a89b7713c63cdd3243ccefa936de1e073',1,'ft_keydetector_afid_data::touch_threshold()'],['../structft__module__tsi__noise__data.html#a1555f7d68bf9d95b1f9353df2eb9e08c',1,'ft_module_tsi_noise_data::touch_threshold()']]],
+  ['touch_5ftreshold_5ffall_5frate',['touch_treshold_fall_rate',['../structft__keydetector__afid__asc.html#ab3019acd2688eb5090e488c5ae787adf',1,'ft_keydetector_afid_asc']]],
+  ['tpriority',['tpriority',['../structosa_thread_def__tag.html#a31dd7534063f0b4da781e6e713183986',1,'osaThreadDef_tag']]],
+  ['transfermethod',['transferMethod',['../structotap_client_app_data__tag.html#a3e60428a048612f6d09b2459893a6a49',1,'otapClientAppData_tag::transferMethod()'],['../otap__interface_8h.html#a765ad605538cb2dcdaf611fd1497087b',1,'transferMethod():&#160;otap_interface.h']]],
+  ['trigger',['trigger',['../structft__module__interface.html#a3c7d7903c0ce5ad42e82c9da360ab162',1,'ft_module_interface']]],
+  ['tsi',['tsi',['../unionft__module__params.html#a0390cbdcbf47b24cac201926238e6b77',1,'ft_module_params::tsi()'],['../unionft__module__special__data.html#a3ae4777a6b2b8af76d6eb39400cd4bd6',1,'ft_module_special_data::tsi()']]],
+  ['tsi_5fnoise',['tsi_noise',['../group__ftapi__private.html#ga144d98a51fef0a8521c596ea528fb2fc',1,'ft_electrode_special_data']]],
+  ['tsi_5fstate',['tsi_state',['../structft__module__tsi__data.html#af72dd71697ef784c3043b1fc28bb9d72',1,'ft_module_tsi_data']]],
+  ['txpowerlevel_5fdbm',['txPowerLevel_dBm',['../structgap_connection_event__tag.html#a4570d9a2e797f7668dc864ed928509d2',1,'gapConnectionEvent_tag']]],
+  ['type',['type',['../structhost_interface__packet__t.html#a332bd3967f245221178833a71c8dbab1',1,'hostInterface_packet_t::type()'],['../structgap_scanning_parameters__tag.html#aeaffc3584299a573d937bc055b2ba384',1,'gapScanningParameters_tag::type()']]]
+];

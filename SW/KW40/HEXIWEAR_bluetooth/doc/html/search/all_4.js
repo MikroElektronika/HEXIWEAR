@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['data',['data',['../structft__control__data.html#a4236aca1f1fe0803c73ebe176a6889c8',1,'ft_control_data::data()'],['../structhost_interface__packet__t.html#a3efb8dc1e44639dfc80d4b634cf52c4f',1,'hostInterface_packet_t::data()'],['../structgap_scanned_device__tag.html#abe222f6d3581e7920dcad5306cc906a8',1,'gapScannedDevice_tag::data()']]],
+  ['datalen',['dataLen',['../otap__interface_8h.html#ac67e8c57ed1a79895c9afd41a561ec73',1,'otap_interface.h']]],
+  ['datalength',['dataLength',['../structgap_scanned_device__tag.html#a1ba388ee46e00444f79b0e822feac102',1,'gapScannedDevice_tag']]],
+  ['deadband_5fcnt',['deadband_cnt',['../structft__keydetector__safa.html#a8ef0451685b9a7d7d4c68936211da0d2',1,'ft_keydetector_safa::deadband_cnt()'],['../structft__keydetector__safa__data.html#aa4ffe9953d588cb9eb9773400f600cf1',1,'ft_keydetector_safa_data::deadband_cnt()']]],
+  ['defaultisr',['DefaultISR',['../group__os__abstraction__bm.html#ga4fcbeb17b7f10e57e297bf6b12a07e7e',1,'DefaultISR(void):&#160;app.c'],['../group__os__abstraction__bm.html#ga4fcbeb17b7f10e57e297bf6b12a07e7e',1,'DefaultISR(void):&#160;app.c'],['../group__os__abstraction__free__rtos.html#ga4fcbeb17b7f10e57e297bf6b12a07e7e',1,'DefaultISR(void):&#160;app.c'],['../group__os__abstraction__ucosii.html#ga4fcbeb17b7f10e57e297bf6b12a07e7e',1,'DefaultISR(void):&#160;app.c'],['../group__os__abstraction__ucosiii.html#ga4fcbeb17b7f10e57e297bf6b12a07e7e',1,'DefaultISR(void):&#160;app.c']]],
+  ['deviceid_5ft',['deviceId_t',['../group___b_l_e.html#ga79037cf180936e7aa4ef278d2164b4d5',1,'ble_general.h']]],
+  ['devicestate_5fotapcompleted',['deviceState_otapCompleted',['../app_8h.html#a664ffcd7ba0e7e06764993c9d21bce80a66ae99eba4aff9b5a20181159da673fd',1,'app.h']]],
+  ['devicestate_5fotapfailed',['deviceState_otapFailed',['../app_8h.html#a664ffcd7ba0e7e06764993c9d21bce80a15c1f230ce4c2bc1da6ff1a093a79ec4',1,'app.h']]],
+  ['devicestate_5fotapstartedkw40',['deviceState_otapStartedKW40',['../app_8h.html#a664ffcd7ba0e7e06764993c9d21bce80aac97104c999a976d16a871748a30e084',1,'app.h']]],
+  ['devicestate_5fotapstartedmk64',['deviceState_otapStartedMK64',['../app_8h.html#a664ffcd7ba0e7e06764993c9d21bce80a0545b864087cc4c0023cf122ebded439',1,'app.h']]],
+  ['devicestate_5ft',['deviceState_t',['../app_8h.html#a664ffcd7ba0e7e06764993c9d21bce80',1,'app.h']]],
+  ['devicestate_5fwatch',['deviceState_watch',['../app_8h.html#a664ffcd7ba0e7e06764993c9d21bce80a8e85dd4103a687a9eca81685c2d45226',1,'app.h']]],
+  ['directedaddress',['directedAddress',['../structgap_advertising_parameters__tag.html#a216f88d8d5c66a4eefcc8a0bd66fbe5e',1,'gapAdvertisingParameters_tag']]],
+  ['directedaddresstype',['directedAddressType',['../structgap_advertising_parameters__tag.html#aac49652154d1fb64d679f9fb77d4cab3',1,'gapAdvertisingParameters_tag']]],
+  ['disconnectedevent',['disconnectedEvent',['../structgap_connection_event__tag.html#a6f2f54fd32b17eeebf59b9914cb7b1d0',1,'gapConnectionEvent_tag']]],
+  ['divider',['divider',['../structft__electrode.html#a69b787541e43a8cfea7991dc50926b7b',1,'ft_electrode']]]
+];
