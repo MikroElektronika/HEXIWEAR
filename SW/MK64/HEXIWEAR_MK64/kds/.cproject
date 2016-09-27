@@ -357,7 +357,7 @@
 			<resource resourceType="PROJECT" workspacePath="/FRDM-K64F_Demo"/>
 		</configuration>
 		<configuration configurationName="debug">
-			<resource resourceType="PROJECT" workspacePath="/FRDM-K64F_Test"/>
+			<resource resourceType="PROJECT" workspacePath="/HEXIWEAR_MK64"/>
 		</configuration>
 		<configuration configurationName="release">
 			<resource resourceType="PROJECT" workspacePath="/FRDM-K64F_Test"/>
