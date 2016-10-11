@@ -16,3 +16,4 @@ void watchSet_DestroyTasks( void* param );
 
 // screens
 extern guiScreen_t watchSetScreen;
+extern guiScreen_t watchSetScreen_mainScreen;

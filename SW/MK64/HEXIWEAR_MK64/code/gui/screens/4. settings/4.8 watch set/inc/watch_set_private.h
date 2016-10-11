@@ -9,3 +9,5 @@
 // extern const uint8_t
 //  watch_set_screen_bmp[ OLED_GRAM_SIZE+6 ];
 
+extern guiLabel_t gui_hour_label;
+extern guiLabel_t gui_minute_label;
