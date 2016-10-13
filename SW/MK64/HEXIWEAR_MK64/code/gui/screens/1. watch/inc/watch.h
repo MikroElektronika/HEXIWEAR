@@ -67,3 +67,4 @@ void watch_CreateLinkStateUpdateEvent(void);
 void watch_SetBatteryEvent();
 void watch_SetNotification();
 bool watch_IsBatteryCharging();
+

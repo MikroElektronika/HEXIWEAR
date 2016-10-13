@@ -49,14 +49,14 @@ guiLabel_t gui_hour_label =
 {
     .dynamicArea =
     {
-        .width  = 15,
-        .height = 15,
-		.xCrd   = 4,
-		.yCrd   = 10
+		.xCrd   = 20,
+		.yCrd   = 38,
+		.width  = 32,
+		.height = 32
     },
     .textProperties =
     {
-        .font       = guiFont_Tahoma_8_Regular,
+        .font       = guiFont_Tahoma_16_Regular,
         .fontColor  = GUI_COLOR_WHITE,
         .alignParam = OLED_TEXT_ALIGN_LEFT,
         .background = NULL
@@ -65,22 +65,102 @@ guiLabel_t gui_hour_label =
     .captionLength = 3
 };
 
+guiLabel_t gui_time_colon_label =
+{
+    .dynamicArea =
+    {
+		.xCrd   = 50,
+		.yCrd   = 36,
+		.width  = 5,
+		.height = 32
+    },
+    .textProperties =
+    {
+        .font       = guiFont_Tahoma_16_Regular,
+        .fontColor  = GUI_COLOR_WHITE,
+        .alignParam = OLED_TEXT_ALIGN_LEFT,
+        .background = NULL
+    },
+    .caption = NULL,
+    .captionLength = 2
+};
+
 guiLabel_t gui_minute_label =
 {
     .dynamicArea =
     {
-        .width  = 15,
-        .height = 15,
-		.xCrd   = 20,
-		.yCrd   = 10
+		.xCrd   = 55,
+		.yCrd   = 38,
+		.width  = 35,
+		.height = 32
     },
     .textProperties =
     {
-        .font       = guiFont_Tahoma_8_Regular,
+        .font       = guiFont_Tahoma_16_Regular,
         .fontColor  = GUI_COLOR_WHITE,
         .alignParam = OLED_TEXT_ALIGN_LEFT,
         .background = NULL
     },
     .caption = NULL,
     .captionLength = 3
+};
+
+guiLabel_t gui_year_label =
+{
+	.dynamicArea =
+	{
+		.xCrd   = 12,
+		.yCrd   = 23,
+		.width  = 35,
+		.height = 15
+	},
+	.textProperties =
+	{
+		.font       = guiFont_Tahoma_8_Regular,
+		.fontColor  = GUI_COLOR_WHITE,
+		.alignParam = OLED_TEXT_ALIGN_LEFT,
+		.background = NULL
+	},
+	.caption = NULL,
+	.captionLength = 6 // year dot terminator
+};
+
+guiLabel_t gui_month_label =
+{
+	.dynamicArea =
+	{
+		.xCrd   = 47,
+		.yCrd   = 23,
+		.width  = 22,
+		.height = 15
+	},
+	.textProperties =
+	{
+		.font       = guiFont_Tahoma_8_Regular,
+		.fontColor  = GUI_COLOR_WHITE,
+		.alignParam = OLED_TEXT_ALIGN_LEFT,
+		.background = NULL
+	},
+	.caption = NULL,
+	.captionLength = 4
+};
+
+guiLabel_t gui_day_label =
+{
+	.dynamicArea =
+	{
+		.xCrd   = 72,
+		.yCrd   = 23,
+		.width  = 21,
+		.height = 15
+	},
+	.textProperties =
+	{
+		.font       = guiFont_Tahoma_8_Regular,
+		.fontColor  = GUI_COLOR_WHITE,
+		.alignParam = OLED_TEXT_ALIGN_LEFT,
+		.background = NULL
+	},
+	.caption = NULL,
+	.captionLength = 4
 };
