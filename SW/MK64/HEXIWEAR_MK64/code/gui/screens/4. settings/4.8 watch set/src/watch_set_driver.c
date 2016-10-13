@@ -5,37 +5,41 @@
 
 #define SETTING_SEGMENT_COUNT 2
 
-task_handler_t watchSet_taskHandler;
-hostInterface_packet_t watchSet_dataPacket;
-rtc_datetime_t time_toSet;
-int8_t segmentSelected;
-void watchSet_appTask(task_param_t param);
+static task_handler_t watchSet_taskHandler;
+static hostInterface_packet_t watchSet_dataPacket;
+static rtc_datetime_t time_toSet;
+static int8_t segmentSelected;
+static void watchSet_appTask(task_param_t param);
 
-guiLabel_t settingSegment[SETTING_SEGMENT_COUNT];
+static guiLabel_t* settingSegment[SETTING_SEGMENT_COUNT];
 
-void updateSelectedSegmentColors()
+static void updateSelectedSegmentColors()
 {
-	settingSegment[0].textProperties.fontColor = ((0 == segmentSelected) ? GUI_COLOR_YELLOW : GUI_COLOR_WHITE);
-	settingSegment[1].textProperties.fontColor = ((1 == segmentSelected) ? GUI_COLOR_YELLOW : GUI_COLOR_WHITE);
+	settingSegment[0]->textProperties.fontColor = ((0 == segmentSelected) ? GUI_COLOR_YELLOW : GUI_COLOR_WHITE);
+	settingSegment[1]->textProperties.fontColor = ((1 == segmentSelected) ? GUI_COLOR_YELLOW : GUI_COLOR_WHITE);
+}
+
+static void registerNavigationKeys() {
+	GuiDriver_RegisterForNavigation(GUI_NAVIGATION_UP);
+	GuiDriver_RegisterForNavigation(GUI_NAVIGATION_DOWN);
+	GuiDriver_RegisterForNavigation(GUI_NAVIGATION_RIGHT);
 }
 
 void watchSet_Init( void* param )
 {
-	settingSegment[0] = gui_hour_label;
-	settingSegment[1] = gui_minute_label;
+	settingSegment[0] = &gui_hour_label;
+	settingSegment[1] = &gui_minute_label;
 
-	GuiDriver_RegisterForNavigation(GUI_NAVIGATION_UP);
-	GuiDriver_RegisterForNavigation(GUI_NAVIGATION_DOWN);
-	GuiDriver_RegisterForNavigation(GUI_NAVIGATION_RIGHT);
-
-	GuiDriver_LabelCreate(&gui_hour_label);
-	GuiDriver_LabelCreate(&gui_minute_label);
+	registerNavigationKeys();
 
 	RTC_GetCurrentTime(&time_toSet);
 	time_toSet.second = 0;
 
 	segmentSelected = 0;
 	updateSelectedSegmentColors();
+
+	GuiDriver_LabelCreate(&gui_hour_label);
+	GuiDriver_LabelCreate(&gui_minute_label);
 
 	snprintf( (char*)gui_hour_label.caption, 3, "%02d", time_toSet.hour);
 	GuiDriver_LabelAddToScr(&gui_hour_label);
@@ -76,9 +80,8 @@ void watchSet_DestroyTasks( void* param )
 	GuiDriver_UnregisterFromNavigation( GUI_NAVIGATION_RIGHT );
 }
 
-void watchSet_appTask(task_param_t param)
+static void watchSet_appTask(task_param_t param)
 {
-
 	while (true) {
 		gui_status_t clickStatus = GuiDriver_QueueMsgGet( &watchSet_dataPacket , OSA_WAIT_FOREVER );
 
@@ -88,10 +91,11 @@ void watchSet_appTask(task_param_t param)
 			{
 				case packetType_pressUp:
 				{
-
 					segmentSelected++;
 					segmentSelected %= 2;
 					updateSelectedSegmentColors();
+					GuiDriver_LabelDraw(&gui_hour_label);
+					GuiDriver_LabelDraw(&gui_minute_label);
 					haptic_Vibrate();
 					break;
 				}
@@ -104,14 +108,16 @@ void watchSet_appTask(task_param_t param)
 						{
 							time_toSet.hour++;
 							time_toSet.hour %= 24;
-							GuiDriver_LabelAddToScr(&gui_hour_label);
+							snprintf( (char*)gui_hour_label.caption, 3, "%02d", time_toSet.hour);
+							GuiDriver_LabelDraw(&gui_hour_label);
 							break;
 						}
 						case 1: // minute
 						{
 							time_toSet.minute++;
 							time_toSet.minute %= 60;
-							GuiDriver_LabelAddToScr(&gui_minute_label);
+							snprintf( (char*)gui_minute_label.caption, 3, "%02d", time_toSet.minute);
+							GuiDriver_LabelDraw(&gui_minute_label);
 							break;
 						}
 					}
