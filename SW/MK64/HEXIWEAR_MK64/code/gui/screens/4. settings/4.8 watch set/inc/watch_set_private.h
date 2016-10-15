@@ -8,6 +8,8 @@
 // Resources
 // extern const uint8_t
 //  watch_set_screen_bmp[ OLED_GRAM_SIZE+6 ];
+extern const uint8_t main_screen_bmp[18438];
+extern const uint8_t setting_screen_bmp[18438];
 
 extern guiLabel_t gui_year_label;
 extern guiLabel_t gui_month_label;

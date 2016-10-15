@@ -21,7 +21,7 @@ guiScreen_t watchSetScreen =
           .right  = &watchSetScreen_mainScreen
   },
 
-  .image = NULL,
+  .image = main_screen_bmp,
 
   .initFunction        = NULL,
   .createTaskFunction  = NULL,
@@ -38,7 +38,7 @@ guiScreen_t watchSetScreen_mainScreen =
 		.right  = NULL
 	},
 
-	.image = NULL,
+	.image = setting_screen_bmp,
 
 	.initFunction        = watchSet_Init,
 	.createTaskFunction  = watchSet_CreateTasks,
@@ -69,7 +69,7 @@ guiLabel_t gui_time_colon_label =
 {
     .dynamicArea =
     {
-		.xCrd   = 50,
+		.xCrd   = 47,
 		.yCrd   = 36,
 		.width  = 5,
 		.height = 32

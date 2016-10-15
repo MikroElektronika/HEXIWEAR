@@ -101,7 +101,7 @@ static void correctLeapDay()
 {
 	if (time_toSet.day > getDaysInMonth(time_toSet))
 	{
-		time_toSet.day = 1;
+		time_toSet.day = getDaysInMonth(time_toSet);
 		snprintf( (char*)gui_day_label.caption, 4, "%02d.", time_toSet.day);
 		GuiDriver_LabelDraw(&gui_day_label);
 	}
