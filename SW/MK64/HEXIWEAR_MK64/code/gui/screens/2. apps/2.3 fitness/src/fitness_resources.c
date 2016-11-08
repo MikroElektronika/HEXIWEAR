@@ -38,7 +38,7 @@
 #include "fitness_private.h"
 
 const uint8_t
-    fitness_screen_bmp[18438] =
+fitness_screen_bmp[18438] =
     {
         0x00,0x10,
         0x60,0x00,

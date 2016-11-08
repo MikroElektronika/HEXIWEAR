@@ -49,7 +49,7 @@ guiScreen_t watchScreen =
           .up     = NULL,
           .down   = NULL,
           .left   = NULL,
-          .right  = &appsScreen,
+          .right  = &LEDs_Screen,
   },
 
   .image = NULL,
