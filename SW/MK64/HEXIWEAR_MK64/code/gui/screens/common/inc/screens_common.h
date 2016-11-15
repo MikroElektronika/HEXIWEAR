@@ -51,6 +51,7 @@
 #include "gui_motionControl.h"
 #include "flashlight.h"
 #include "LEDs.h"
+#include "control.h"
 
 #include "bootloader.h"
 #include "bluetooth.h"

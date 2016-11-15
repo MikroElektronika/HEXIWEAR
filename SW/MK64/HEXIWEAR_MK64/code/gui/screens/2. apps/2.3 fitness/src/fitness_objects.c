@@ -50,7 +50,7 @@ guiScreen_t
 	{
 		.navigation =
 		{
-			.up     = &gui_motionControl_coverScreen,
+			.up     = &flashlightScreen,
 			.down   = &gui_weatherStation_coverScreen,
 			.left   = &appsScreen,
 			.right  = &pedometerScreen

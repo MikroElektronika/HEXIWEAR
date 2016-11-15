@@ -56,7 +56,7 @@
    .createTaskFunction  = flashlight_CreateTasks,
    .destroyTaskFunction = flashlight_DestroyTasks
  };
-
+/*
  guiImage_t
      flashlight_icon =
      {
@@ -68,3 +68,4 @@
 
          .img = flashlight_off_bmp
      };
+*/

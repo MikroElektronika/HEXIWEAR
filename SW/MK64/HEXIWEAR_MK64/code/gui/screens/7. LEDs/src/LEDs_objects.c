@@ -17,7 +17,7 @@ guiScreen_t LEDs_Screen =
 			.up 	= &gui_sensorTag_screen,
 			.down	= &appsScreen,
 			.left	= &watchScreen,
-	        .right	= NULL
+	        .right	= &control_Screen
 	},
 
 	.image = LEDs_bmp,

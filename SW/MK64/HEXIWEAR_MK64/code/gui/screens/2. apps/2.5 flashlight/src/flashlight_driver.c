@@ -41,8 +41,8 @@
 #include "haptic.h"
 #include "GPIO.h"
 
-#define SetFlashOFF() isFlashlightOn = false; flashlight_icon.img = flashlight_off_bmp; FLASH_SetOFF()
-#define SetFlashON()  isFlashlightOn = true;  flashlight_icon.img = flashlight_on_bmp;  FLASH_SetON()
+#define SetFlashOFF() isFlashlightOn = false; /*flashlight_icon.img = flashlight_off_bmp; */ FLASH_SetOFF()
+#define SetFlashON()  isFlashlightOn = true;  /*flashlight_icon.img = flashlight_on_bmp; */ FLASH_SetON()
 
 /** intern functions declarations */
 
@@ -64,7 +64,7 @@ static hostInterface_packet_t
  */
 void flashlight_Init( void* param )
 {
-    GuiDriver_ImageAddToScr( &flashlight_icon );
+    //GuiDriver_ImageAddToScr( &flashlight_icon );
     GuiDriver_RegisterForNavigation( GUI_NAVIGATION_RIGHT );
 }
 
@@ -128,13 +128,13 @@ static void flashlight_ToggleTask( task_param_t param )
                 case true:
                 {
                     SetFlashOFF();
-                    GuiDriver_ImageDraw( &flashlight_icon );
+                    //GuiDriver_ImageDraw( &flashlight_icon );
                     break;
                 }
                 case false:
                 {
                     SetFlashON();
-                    GuiDriver_ImageDraw( &flashlight_icon );
+                    //GuiDriver_ImageDraw( &flashlight_icon );
                     break;
                 }
             }

@@ -92,6 +92,8 @@ extern const gpio_output_pin_user_config_t DEBUG_cfg[];
 extern const gpio_output_pin_user_config_t RGB_cfg[];
 /*! @brief Configuration structure 6 for output pins */
 extern const gpio_output_pin_user_config_t KW40_GPIO_cfg[];
+//Edit by me
+extern const gpio_output_pin_user_config_t LEDs_cfg[];
 
 /*! @brief Pin names */
 enum _GPIO_pinNames{
@@ -114,7 +116,9 @@ enum _GPIO_pinNames{
   GREEN_LED = GPIO_MAKE_PIN(GPIOD_IDX, 0U),
   BLUE_LED = GPIO_MAKE_PIN(GPIOC_IDX, 9U),
   KW40_GPIO = GPIO_MAKE_PIN(GPIOE_IDX, 26U),
-  KW40_WU   = GPIO_MAKE_PIN(GPIOD_IDX, 14U)
+  KW40_WU   = GPIO_MAKE_PIN(GPIOD_IDX, 14U),
+  LED1 = GPIO_MAKE_PIN(GPIOA_IDX, 13U),				//Edit by Patrick
+  LED2 = GPIO_MAKE_PIN(GPIOA_IDX, 14U),				//Edit by Patrick
 };
 
 

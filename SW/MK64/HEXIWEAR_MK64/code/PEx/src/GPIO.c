@@ -251,6 +251,27 @@ const gpio_output_pin_user_config_t KW40_GPIO_cfg[] = {
   }
 };
 
+// Edit by Patrick
+const gpio_output_pin_user_config_t LEDs_cfg[] = {
+  {
+    .pinName = LED1,
+    .config.outputLogic = 0,
+    .config.slewRate = kPortSlowSlewRate,
+    .config.isOpenDrainEnabled = false,
+    .config.driveStrength = kPortLowDriveStrength,
+  },
+  {
+      .pinName = LED2,
+      .config.outputLogic = 0,
+      .config.slewRate = kPortSlowSlewRate,
+      .config.isOpenDrainEnabled = false,
+      .config.driveStrength = kPortLowDriveStrength,
+  },
+  {
+    .pinName = GPIO_PINS_OUT_OF_RANGE,
+  }
+};
+
 
 
  /** END GPIO. */

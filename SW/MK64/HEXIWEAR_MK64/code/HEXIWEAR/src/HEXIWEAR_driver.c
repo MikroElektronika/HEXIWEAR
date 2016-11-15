@@ -90,6 +90,7 @@ void HEXIWEAR_startup( task_param_t param )
   GPIO_DRV_Init( NULL, VIBRO_cfg );
   GPIO_DRV_Init( NULL, RGB_cfg );
   GPIO_DRV_Init( NULL, KW40_GPIO_cfg );
+  GPIO_DRV_Init( NULL, LEDs_cfg );			//Edit by me
 
 
   /** input GPIO configuration */
