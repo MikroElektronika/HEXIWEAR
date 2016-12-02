@@ -4,7 +4,7 @@
 
 ---
 
-[Hexywear official website](http://www.hexiwear.com/)
+[Hexiwear official website](http://www.hexiwear.com/)
 
 ---
 
