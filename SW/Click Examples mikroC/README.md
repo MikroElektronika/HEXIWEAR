@@ -1,1 +1,5 @@
-![Hexiclicks](http://cdn-docs.mikroe.com/images/thumb/7/7b/Hexiwear_Docking_Station_click_boards.jpg/400px-Hexiwear_Docking_Station_click_boards.jpg)
+![Hexiclicks](hexiwear_docking_station.jpg)
+
+The Hexiwear docking station is an expansion board that has three sockets for 
+click boards. There are more than 250 to choose from, and you can see them all 
+at the [MikroElektronika website](http://www.mikroe.com/click/). 
