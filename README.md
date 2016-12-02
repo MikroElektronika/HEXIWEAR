@@ -1,5 +1,3 @@
-# HEXIWEAR
-
 ![Hexiwear](https://i.ytimg.com/vi/ouVRboD-2Ds/maxresdefault.jpg)
 
 ---
