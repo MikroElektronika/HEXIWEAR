@@ -1,6 +1,6 @@
 # HEXIWEAR
 
-![Hexiwear](http://cdn.hexiwear.com/wp-content/uploads/20160627101657/docking_station_click_new1.jpg)
+![Hexiwear](https://i.ytimg.com/vi/ouVRboD-2Ds/maxresdefault.jpg)
 
 ---
 
