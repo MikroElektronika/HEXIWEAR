@@ -117,8 +117,8 @@ enum _GPIO_pinNames{
   BLUE_LED = GPIO_MAKE_PIN(GPIOC_IDX, 9U),
   KW40_GPIO = GPIO_MAKE_PIN(GPIOE_IDX, 26U),
   KW40_WU   = GPIO_MAKE_PIN(GPIOD_IDX, 14U),
-  LED1 = GPIO_MAKE_PIN(GPIOA_IDX, 13U),				//Edit by Patrick
-  LED2 = GPIO_MAKE_PIN(GPIOA_IDX, 14U),				//Edit by Patrick
+  LED1 = GPIO_MAKE_PIN(GPIOE_IDX, 4U),				//Edit by Patrick
+  LED2 = GPIO_MAKE_PIN(GPIOB_IDX, 19U),				//Edit by Patrick
 };
 
 
