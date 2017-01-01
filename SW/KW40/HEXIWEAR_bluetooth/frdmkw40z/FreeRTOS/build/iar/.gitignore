@@ -1,0 +1,5 @@
+/debug/
+/settings/
+*.custom_argvars
+*.dep
+*.ewt
