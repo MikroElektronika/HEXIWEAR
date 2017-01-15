@@ -164,7 +164,11 @@ gui_status_t GuiDriver_Init()
     watch_SendGetLinkStateReq();
     nofTrials++;
   }
+#if 0
   while( watch_WaitForLinkStateUpdate(100) != kStatus_OSA_Success && nofTrials<MAX_NOF_TRIALS);
+#else
+  while( watch_WaitForLinkStateUpdate(1000) != kStatus_OSA_Success);
+#endif
 
   // Read active button group
   nofTrials = 0;
