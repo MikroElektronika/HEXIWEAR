@@ -19,7 +19,6 @@ makefile
 *.gz
 *.iso
 *.jar
-*.rar
 *.tar
 *.zip
 
@@ -38,5 +37,3 @@ makefile
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-*.html

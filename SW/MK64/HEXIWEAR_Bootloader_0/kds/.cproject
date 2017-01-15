@@ -4,7 +4,7 @@
 		<cconfiguration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1792027861">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1792027861" moduleId="org.eclipse.cdt.core.settings" name="debug">
 				<macros>
-					<stringMacro name="PROJECT_KSDK_PATH" type="VALUE_TEXT" value="D:/Marko/Freescale/KSDK_1.2.0"/>
+					<stringMacro name="PROJECT_KSDK_PATH" type="VALUE_TEXT" value="c:\Freescale\KSDK_1.2.0"/>
 				</macros>
 				<externalSettings/>
 				<extensions>
@@ -73,51 +73,23 @@
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.1397207158" name="Cross ARM C Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.336878990" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/osa/inc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/utilities/inc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/CMSIS/Include"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/devices"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/devices/MK64F12/include"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/devices/MK64F12/startup"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/hal/inc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/inc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/system/inc"/>
 									<listOptionValue builtIn="false" value="../../"/>
 									<listOptionValue builtIn="false" value="../../board"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/osa/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/utilities/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/CMSIS/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/devices/MK64F12/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/devices/MK64F12/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/hal/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/platform/system/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/cfg&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/error/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/drivers/intern_flash/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/drivers/FLASH/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/drivers/DMA/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/drivers/CPU/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/drivers/OS/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/drivers/SPI/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/boot/inc&quot;"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/adc16"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/cmp"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/crc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/dac"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/dspi"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/edma"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/enet"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/ewm"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/flexbus"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/flexcan"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/ftm"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/gpio"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/i2c"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/lptmr"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/mpu"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/pdb"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/pit"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/rnga"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/rtc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/sai"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/sdhc"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/uart"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/vref"/>
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/platform/drivers/src/wdog"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.933718024" name="Language standard" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.gnu99" valueType="enumerated"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.869311397" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -144,7 +116,7 @@
 									<listOptionValue builtIn="false" value="nosys"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.otherobjs.3524946900" name="Other objects" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.otherobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="${PROJECT_KSDK_PATH}/lib/ksdk_platform_lib/kds/K64F12/debug/libksdk_platform.a"/>
+									<listOptionValue builtIn="false" value="&quot;${PROJECT_KSDK_PATH}/lib/ksdk_platform_lib/kds/K64F12/debug/libksdk_platform.a&quot;"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.nostart.6031988652" name="Do not use standard start files (-nostartfiles)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.nostart" value="false" valueType="boolean"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.nodeflibs.1607275937" name="Do not use default libraries (-nodefaultlibs)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.nodeflibs" value="false" valueType="boolean"/>
@@ -163,7 +135,7 @@
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver.717958418" name="Cross ARM GNU Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver"/>
 							<tool command="${cross_prefix}${cross_objcopy}${cross_suffix}" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT}" id="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash.1498748442" name="Cross ARM GNU Create Flash Image" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.396105459" name="Output file format (-O)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice" value="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.srec" valueType="enumerated"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.396105459" name="Output file format (-O)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice" value="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.ihex" valueType="enumerated"/>
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting.1921141825" name="Cross ARM GNU Create Listing" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.1147761851" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" value="true" valueType="boolean"/>
@@ -372,4 +344,5 @@
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

@@ -1,0 +1,70 @@
+{
+    "_comment": "This is an image configuration file, it is used for creating the image file header.",
+    "headerSize": 58,
+    "header":
+    [
+        {
+            "index": 1,
+            "name": "fileIdentifier",
+            "size": 4,
+            "value": "0x0B1EF11E"
+        },
+        {
+            "index": 2,
+            "name": "headerVersion",
+            "size": 2,
+            "value": "0x0100"
+        },
+        {
+            "_comment": "The length of the header with all it's elements. This must be checked.",
+            "index": 3,
+            "name": "headerLength",
+            "size": 2,
+            "value": "58"
+        },
+        {
+            "index": 4,
+            "name": "fieldControl",
+            "size": 2,
+            "value": "0x0000"
+        },
+        {
+            "index": 5,
+            "name": "companyId",
+            "size": 2,
+            "value": "0x01FF"
+        },
+        {
+            "_comment": "The image id must be unique for each image on an OTAP Server. The server will assign an image ID.",
+            "index": 6,
+            "name": "imageId",
+            "size": 2,
+            "value": "0x0002"
+        },
+        {
+            "_comment": "The image version must completely identify the target hardware and software.",
+            "index": 7,
+            "name": "imageVersion",
+            "size": 8,
+            "value": "0x0111111141000006"
+        },
+        {
+            "_comment": "If the size of the value text is larger than the object zie attribute then it will be truncated.",
+            "index": 8,
+            "name": "headerString",
+            "size": 32,
+            "value": "FSL BLE OTAP Demo Image File"
+        },
+        {
+            "_comment": "The server will determine the value of this attribute based on the binary image size + header size + sub-elements sizes.",
+            "index": 9,
+            "name": "totalImageFileSize",
+            "size": 4,
+            "value": "0x00000000"
+        }
+    ],
+    "sectorBitmapSize": 32,
+    "sectorBitmap": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+    "imageFileCrcSize": 2,
+    "imageFileCrcInitialValue": 0
+}

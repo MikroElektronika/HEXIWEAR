@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['randsize',['randSize',['../structgap_long_term_key_request_event__tag.html#ac1baa0cdf3642f08ec3ca2a22b2b5820',1,'gapLongTermKeyRequestEvent_tag']]],
+  ['range',['range',['../structft__control__arotary.html#a9edcde0584b2ab6c4a7b49eaec49d237',1,'ft_control_arotary::range()'],['../structft__control__aslider.html#a9edcde0584b2ab6c4a7b49eaec49d237',1,'ft_control_aslider::range()'],['../structft__control__arotary__temp__data.html#a6ff688cf56eb219d40c858d2115ef1ff',1,'ft_control_arotary_temp_data::range()'],['../structft__control__aslider__temp__data.html#a6ff688cf56eb219d40c858d2115ef1ff',1,'ft_control_aslider_temp_data::range()']]],
+  ['rate',['rate',['../structft__filter__dctracker.html#a788e7e096258bec32986d7b2c00adebb',1,'ft_filter_dctracker']]],
+  ['raw_5fsignal',['raw_signal',['../group__ftapi__private.html#gaa16169903ae6bbb25f752e20fbc933b8',1,'ft_electrode_data']]],
+  ['reason',['reason',['../structgap_disconnected_event__tag.html#a1101ab6060b918ecbc0fbcf9db07ffe0',1,'gapDisconnectedEvent_tag']]],
+  ['recalibrate',['recalibrate',['../structft__module__interface.html#a5bf55ca695bddbd998feb1990e455995',1,'ft_module_interface']]],
+  ['recovery_5fcnt',['recovery_cnt',['../structft__keydetector__safa__data.html#a0bf91c050b04c49944a5d059ab72ce16',1,'ft_keydetector_safa_data']]],
+  ['rejectreason',['rejectReason',['../structgap_authentication_rejected_event__tag.html#ad84213732c28c6d6bdf79991492388f7',1,'gapAuthenticationRejectedEvent_tag']]],
+  ['release_5freset_5fcounter',['release_reset_counter',['../structft__keydetector__afid__data.html#a6f235dde52d959a69d05dcfcb70f9c5f',1,'ft_keydetector_afid_data']]],
+  ['repeat_5ftime',['repeat_time',['../structft__control__keypad__data.html#a41710ffb92716758b98e10cc8b6aac8f',1,'ft_control_keypad_data']]],
+  ['requestedkeys',['requestedKeys',['../structgap_key_exchange_request_event__tag.html#af85e784ea4f07a2b973d2381a5087d10',1,'gapKeyExchangeRequestEvent_tag']]],
+  ['requestedltksize',['requestedLtkSize',['../structgap_key_exchange_request_event__tag.html#ad22345aced99f3e383c43bb3203d0ba5',1,'gapKeyExchangeRequestEvent_tag']]],
+  ['requirements',['requirements',['../structgap_service_security_requirements__tag.html#adb3a10e75a8853aa4d928dd62de7607f',1,'gapServiceSecurityRequirements_tag']]],
+  ['reserved',['reserved',['../structble_advertising_channel_map__tag.html#acb7bc06bed6f6408d719334fc41698c7',1,'bleAdvertisingChannelMap_tag']]],
+  ['resets_5ffor_5ftouch',['resets_for_touch',['../structft__keydetector__afid__asc.html#a2695b677dea7f163c7205c86778d4d0b',1,'ft_keydetector_afid_asc']]],
+  ['responderkeydistribution',['responderKeyDistribution',['../group___b_l_e_security_manager_protocol.html#ga95c9f0fc04096fb1b7f5944fa14afdd0',1,'smp_packets.h']]],
+  ['rom',['rom',['../structft__control__data.html#acc589285f7c62dfa46026fb4f75b58a9',1,'ft_control_data::rom()'],['../group__ftapi__private.html#gaa9dc967c05ece8270aa63e1090a90a7d',1,'ft_electrode_data::rom()'],['../structft__module__data.html#ab76bcf2526b3364d8b9a3e01b426b18a',1,'ft_module_data::rom()'],['../structft__kernel.html#a52ca084b3f029f51aa1e22b3e1b1bb69',1,'ft_kernel::rom()']]],
+  ['rotary',['rotary',['../unionft__control__special__data.html#aee1812bd7a4704ef35922fdf35ea4e1b',1,'ft_control_special_data']]],
+  ['rssi',['rssi',['../structgap_scanned_device__tag.html#a3b962e67ba74725bd60ca3c29f785abe',1,'gapScannedDevice_tag']]],
+  ['rssi_5fdbm',['rssi_dBm',['../structgap_connection_event__tag.html#a3f2666ca321c83aca07aca146752efff',1,'gapConnectionEvent_tag']]]
+];
