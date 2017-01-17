@@ -2111,6 +2111,9 @@ BaseType_t xSwitchRequired = pdFALSE;
 #endif  /** configUSE_APPLICATION_TASK_TAG */
 /*-----------------------------------------------------------*/
 
+#ifdef __GNUC__ /* << EST */
+__attribute__((used)) /* using C++ compiler, vTaskSwitchContext() might be removed even with -O0? */
+#endif
 void vTaskSwitchContext( void )
 {
         if( uxSchedulerSuspended != ( UBaseType_t ) pdFALSE )

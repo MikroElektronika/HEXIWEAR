@@ -175,8 +175,9 @@ oled_status_t OLED_Init(
     NVIC_SetPriority( HEXIWEAR_OLED_DMA_TX_IRQn, HEXIWEAR_OLED_DMA_TX_IRQ_PRIO );
 
 	  // create mutex for using the spi comm
-    osa_status_t
-        spiStatus = OSA_MutexCreate( &spiAccessMutex );
+   // osa_status_t
+    //    spiStatus =
+            (void)OSA_MutexCreate( &spiAccessMutex );
 
     /** power sequence */
 
@@ -392,11 +393,11 @@ oled_status_t OLED_SendCmd(
     txSize = 1,
     txBuf[4];
 
-  genericSpiHandle_t
-    spiProtocol = self.protocol;
+//  genericSpiHandle_t
+//    spiProtocol = self.protocol;
 
-  dspi_status_t
-    status;
+//  dspi_status_t
+//    status;
 
   memcpy( (void*)txBuf, (void*)&cmd, txSize );
 
