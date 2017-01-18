@@ -49,7 +49,7 @@ guiScreen_t appsScreen =
 {
   .navigation =
   {
-          .up     = &gui_sensorTag_screen,
+          .up     = &LEDs_Screen,
           .down   = &notifScreen,
 //          .down   = &settingsScreen,
           .left   = &watchScreen,

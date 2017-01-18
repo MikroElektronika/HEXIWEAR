@@ -121,6 +121,8 @@ gui_status_t GuiDriver_QueueMsgGet(
 
 gui_status_t GuiDriver_Init()
 {
+  #define MAX_NOF_TRIALS  3 /* << EST */
+  int nofTrials; /* << EST */
 
   // create mutex for the access to handling the buttons
   OSA_MutexCreate( &buttonHandlerAccess );
@@ -145,7 +147,7 @@ gui_status_t GuiDriver_Init()
   watch_CreateLinkStateUpdateEvent();
 
   oled_status_t
-    oledStatus = OLED_Init( &oledModule, &oledSettings );
+  oledStatus = OLED_Init( &oledModule, &oledSettings );
 
   if ( OLED_STATUS_SUCCESS != oledStatus )
   {
@@ -156,35 +158,47 @@ gui_status_t GuiDriver_Init()
   OSA_TimeDelay(750);
 
   // Read link state
+  nofTrials = 0;
   do
   {
     watch_SendGetLinkStateReq();
+    nofTrials++;
   }
-  while( watch_WaitForLinkStateUpdate(100) != kStatus_OSA_Success );
+#if 0
+  while( watch_WaitForLinkStateUpdate(100) != kStatus_OSA_Success && nofTrials<MAX_NOF_TRIALS);
+#else
+  while( watch_WaitForLinkStateUpdate(1000) != kStatus_OSA_Success);
+#endif
 
   // Read active button group
+  nofTrials = 0;
   buttonsGroup_CreateActiveUpdateEvent();
   do
   {
     buttonsGroup_SendGetActiveReq();
+    nofTrials++;
   }
-  while( buttonsGroup_WaitForActiveUpdate(100) != kStatus_OSA_Success );
+  while( buttonsGroup_WaitForActiveUpdate(100) != kStatus_OSA_Success && nofTrials<MAX_NOF_TRIALS);
 
   // Read advertise mode
+  nofTrials = 0;
   bluetooth_CreateAdvModeUpdateEvent();
   do
   {
 	  bluetooth_SendGetAdvModeReq();
+    nofTrials++;
   }
-  while( bluetooth_WaitForAdvModeUpdate(100) != kStatus_OSA_Success );
+  while( bluetooth_WaitForAdvModeUpdate(100) != kStatus_OSA_Success && nofTrials<MAX_NOF_TRIALS);
 
   // exchange version numbers with KW40
+  nofTrials = 0;
   HEXIWEAR_CreateVersionEvent();
   do
   {
 	  HEXIWEAR_SendVersionReq();
+    nofTrials++;
   }
-  while( HEXIWEAR_WaitForVersionUpdate(100) != kStatus_OSA_Success );
+  while( HEXIWEAR_WaitForVersionUpdate(100) != kStatus_OSA_Success && nofTrials<MAX_NOF_TRIALS);
 
   GuiDriver_Navigation( GUI_NAVIGATION_WATCH, NULL );
 

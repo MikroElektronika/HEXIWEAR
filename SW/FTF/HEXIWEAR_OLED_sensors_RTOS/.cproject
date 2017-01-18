@@ -4,7 +4,7 @@
 		<cconfiguration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.851399053">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.851399053" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<macros>
-					<stringMacro name="PROJECT_KSDK_PATH" type="VALUE_TEXT" value="d:\Marko\Freescale\KSDK_1.2.0"/>
+					<stringMacro name="PROJECT_KSDK_PATH" type="VALUE_TEXT" value="c:\Freescale\KSDK_1.2.0"/>
 				</macros>
 				<externalSettings/>
 				<extensions>
@@ -77,7 +77,6 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MK64F12/startup&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code/SDK/platform/devices/MK64F12/startup&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/apps/common/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/usb&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/rtc/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/apps/pedometer/inc&quot;"/>
@@ -108,12 +107,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.1 weatherStation/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.2 motionControl/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/2.3.2 heart_rate/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/2.3.1 gui_pedometer/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.3 fitness/2.3.2 gui_heartRate/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.4 compass/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.5 flashlight/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/2. apps/2.6 light/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/3. gui_notifications/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/4. settings/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/gui/screens/4. settings/4.1 bluetooth/inc&quot;"/>
@@ -209,7 +205,7 @@
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver.1012241793" name="Cross ARM GNU Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver"/>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash.1260653064" name="Cross ARM GNU Create Flash Image" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.965783426" name="Output file format (-O)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice" value="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.binary" valueType="enumerated"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.965783426" name="Output file format (-O)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice" value="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.srec" valueType="enumerated"/>
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting.140452127" name="Cross ARM GNU Create Listing" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.1680047216" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" value="true" valueType="boolean"/>
@@ -219,7 +215,7 @@
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide.41867746" name="Wide lines (--wide|-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide" value="true" valueType="boolean"/>
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize.2116001627" name="Cross ARM GNU Print Size" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.933984720" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format" value="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.sysv" valueType="enumerated"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.933984720" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format" value="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.berkeley" valueType="enumerated"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.totals.160791669" name="Show totals" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.totals" value="true" valueType="boolean"/>
 							</tool>
 						</toolChain>

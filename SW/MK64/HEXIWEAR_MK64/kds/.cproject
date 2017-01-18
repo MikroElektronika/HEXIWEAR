@@ -70,6 +70,7 @@
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.1397207158" name="Cross ARM C Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.336878990" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/7. LEDs/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/code}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/apps/pedometer/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/apps/pedometer/Keynetik/inc&quot;"/>
@@ -133,6 +134,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/sensors/TSL/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/sensors/MAXIM/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/timers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/gui/screens/7. LEDs/7.1 control/inc&quot;"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.933718024" name="Language standard" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.gnu99" valueType="enumerated"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.869311397" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -168,7 +170,7 @@
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.strip.1021177932" name="Omit all symbol information (-s)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.strip" value="false" valueType="boolean"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.other.7241614120" name="Other linker flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.other" value="-specs=nosys.specs -specs=nano.specs" valueType="string"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.paths.2115264876" name="Library search path (-L)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="${ProjDirPath}/../code/apps/pedometer/Keynetik/bin"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../code/apps/pedometer/Keynetik/bin&quot;"/>
 								</option>
 								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.input.1168552163" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -200,6 +202,7 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"/>
 		</cconfiguration>
 		<cconfiguration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.1939339834">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.1939339834" moduleId="org.eclipse.cdt.core.settings" name="release">
@@ -357,7 +360,7 @@
 			<resource resourceType="PROJECT" workspacePath="/FRDM-K64F_Demo"/>
 		</configuration>
 		<configuration configurationName="debug">
-			<resource resourceType="PROJECT" workspacePath="/FRDM-K64F_Test"/>
+			<resource resourceType="PROJECT" workspacePath="/HEXIWEAR_MK64"/>
 		</configuration>
 		<configuration configurationName="release">
 			<resource resourceType="PROJECT" workspacePath="/FRDM-K64F_Test"/>
