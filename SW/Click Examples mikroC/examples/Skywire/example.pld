@@ -1,0 +1,2 @@
+LOG(x) = UART3_Write_Text(x)
+LOGCH(x) = UART3_Write(x)
