@@ -1,0 +1,26 @@
+/**
+ * \mainpage HEXIWEAR introduction
+ * Hexiwear is a small, sleek, low-power device packed with sensors and wireless capabilities, being able to connect both to devices nearby and remote cloud servers.
+ *
+ * \image html 12-hexiwear-single.jpg
+ *
+ * Developed in collaboration with NXP Semiconductors, Hexiwear is aimed at developers who need low power, but versatile hardware,
+ * compatible with Android and iOS apps and with cloud connectivity.
+ *
+ * This firmware is designed for NXP Kinetis K64 MCU (ARM® Cortex®-M4, 120 MHz, 1M Flash, 256K SRAM), which is the main MCU in HEXIWEAR.
+ *
+ * NXP MK64 is optimized for applications requiring large memory densities and low-power processing efficiency.
+ *
+ * MK64 is responsible for the majority of HEXIWEAR tasks:
+ * displaying data and navigating menus,
+ * navigating sensor data to apps and to other devices via KW40
+ * applications making use of sensor data,
+ * tracking battery status,
+ * haptic feedback, etc.
+ *
+ * General information about HEXIWEAR can be found at the address:
+ * http://docs.mikroe.com/Hexiwear
+ *
+ * Github's HEXIWEAR public repository is located at the address:
+ * https://github.com/mikroe/HEXIWEAR
+ */
