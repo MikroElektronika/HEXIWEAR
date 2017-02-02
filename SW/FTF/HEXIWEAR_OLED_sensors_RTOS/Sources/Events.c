@@ -49,18 +49,6 @@ void LLWU_IRQHandler(void)
   /* Write your code here. For example clear LLWU wake up flags ... */
 }
 
-/*! NFS_I2C IRQ handler */
-void I2C0_IRQHandler(void)
-{
-  I2C_DRV_IRQHandler(FSL_NFS_I2C);
-}
-
-/*! FS_I2C IRQ handler */
-void I2C1_IRQHandler(void)
-{
-  I2C_DRV_IRQHandler(FSL_FS_I2C);
-}
-
 /*! FLASH_SPI IRQ handler */
 void SPI1_IRQHandler(void)
 {
@@ -185,10 +173,12 @@ void PIT0_IRQHandler(void)
 //  TimerCallback();
 }
 
+extern void NXPNCI_IRQHandler (void);
+
 void PORTB_IRQHandler(void)
 {
   PORT_HAL_ClearPortIntFlag(PORTB_BASE_PTR);
-  /* Write your code here ... */
+  NXPNCI_IRQHandler();
 }
 
 void test_uart_RxCallback(uint32_t instance, void * uartState)

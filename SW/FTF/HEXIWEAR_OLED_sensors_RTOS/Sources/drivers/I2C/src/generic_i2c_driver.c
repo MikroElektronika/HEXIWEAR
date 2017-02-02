@@ -9,6 +9,7 @@
 
 #include "FS_I2C.h"
 #include "NFS_I2C.h"
+#include "pin_mux.h"
 
 #include "error.h"
 
@@ -17,10 +18,30 @@ static bool
 	initModules[ I2C_NUM_MAX ] = { false, false, false };
 
 static mutex_t
-	I2C_mutex;
+	I2C_mutex = NULL;
 
 /** private API */
 static statusI2C_t I2C_Reset( genericI2cHandle_t* self );
+
+static void I2C_HandleAlternate_IN(genericI2cHandle_t* self)
+{
+	if((self->alternate == true) && (self->instance == I2C0_IDX))
+	{
+		deinit_i2c_pins(I2C0_IDX);
+		PORT_HAL_SetMuxMode( PORTD, 8UL, kPortMuxAlt2 );
+		PORT_HAL_SetMuxMode( PORTD, 9UL, kPortMuxAlt2 );
+	}
+}
+
+static void I2C_HandleAlternate_OUT(genericI2cHandle_t* self)
+{
+	if((self->alternate == true) && (self->instance == I2C0_IDX))
+	{
+		PORT_HAL_SetMuxMode( PORTD, 8UL, kPortPinDisabled );
+	    PORT_HAL_SetMuxMode( PORTD, 9UL, kPortPinDisabled );
+		init_i2c_pins(I2C0_IDX);
+	}
+}
 
 /**
  * initialize I2C
@@ -35,7 +56,10 @@ statusI2C_t I2C_Init(
 						  uint16_t baudrate_kbps
                     )
 {
-  OSA_MutexCreate( &I2C_mutex );
+  if(I2C_mutex == NULL) OSA_MutexCreate( &I2C_mutex );
+
+  OSA_MutexLock( &I2C_mutex, OSA_WAIT_FOREVER );
+
   if ( true == initModules[ self->instance ] )
   {
     // set timeout again and baud-rate values
@@ -68,6 +92,8 @@ statusI2C_t I2C_Init(
   self->device.address       = devAddr;
   self->device.baudRate_kbps = baudrate_kbps;
   I2C_DRV_MasterSetBaudRate ( self->instance, &(self->device) );
+
+  OSA_MutexUnlock( &I2C_mutex );
 
   return STATUS_I2C_SUCCESS;
 }
@@ -398,4 +424,71 @@ statusI2C_t I2C_Recover( genericI2cHandle_t* self )
     	catch( CATCH_I2C );
     	return STATUS_I2C_ERROR;
     }
+}
+
+statusI2C_t I2C_Send(genericI2cHandle_t* self, uint8_t *pCmd,  uint16_t CmdLen, uint8_t *pSnd,  uint16_t SndLen)
+{
+	statusI2C_t i2cstatus = STATUS_I2C_SUCCESS;
+	i2c_status_t status;
+
+	OSA_MutexLock( &I2C_mutex, OSA_WAIT_FOREVER );
+
+	I2C_HandleAlternate_IN(self);
+
+	status = I2C_DRV_MasterSendDataBlocking(self->instance,
+			&(self->device),
+			pCmd,
+			CmdLen,
+			pSnd,
+			SndLen,
+			self->timeout);
+
+	if ( kStatus_I2C_Success != status )
+	{
+		catch( CATCH_I2C );
+		i2cstatus = STATUS_I2C_ERROR;
+	}
+	else
+	{
+		i2cstatus = STATUS_I2C_SUCCESS;
+	}
+
+	I2C_HandleAlternate_OUT(self);
+
+	OSA_MutexUnlock( &I2C_mutex );
+
+    return i2cstatus;
+}
+
+statusI2C_t I2C_Receive (genericI2cHandle_t* self, uint8_t *pRcv, uint16_t RcvLen)
+{
+    statusI2C_t i2cstatus = STATUS_I2C_SUCCESS;
+    i2c_status_t status;
+
+    OSA_MutexLock( &I2C_mutex, OSA_WAIT_FOREVER );
+
+	I2C_HandleAlternate_IN(self);
+
+	status = I2C_DRV_MasterReceiveDataBlocking(self->instance,
+                                               &(self->device),
+                                               NULL,
+                                               0,
+                                               pRcv,
+                                               RcvLen,
+                                               self->timeout);
+    if ( kStatus_I2C_Success != status )
+    {
+      catch( CATCH_I2C );
+      i2cstatus = STATUS_I2C_ERROR;
+    }
+    else
+    {
+      i2cstatus = STATUS_I2C_SUCCESS;
+    }
+
+	I2C_HandleAlternate_OUT(self);
+
+	OSA_MutexUnlock( &I2C_mutex );
+
+    return i2cstatus;
 }

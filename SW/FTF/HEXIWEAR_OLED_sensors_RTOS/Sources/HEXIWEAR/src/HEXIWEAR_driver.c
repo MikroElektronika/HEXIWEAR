@@ -36,6 +36,8 @@
 
 #include "notifications_driver.h"
 
+#include "nfc_task.h"
+
 static packet_pushTarget_t*
   HEXIWEAR_currentBackupList = NULL;
 
@@ -115,7 +117,6 @@ void HEXIWEAR_startup( task_param_t param )
   /** set charging battery interrupt */
   PORT_HAL_SetPinIntMode( PORTC, 12, kPortIntEitherEdge );
   NVIC_SetPriority( PORTC_IRQn, HEXIWEAR_CHG_IRQ_PRIO );
-  INT_SYS_EnableIRQ( PORTC_IRQn );
 
   // status |= Run_USB_Task();
 
@@ -133,6 +134,9 @@ void HEXIWEAR_startup( task_param_t param )
 
   // make battery readings regular
   sensor_SetPacketTargets( PACKET_BAT, sensor_GetPacketTargets( PACKET_BAT) | PACKET_PUSH_POWER_MGMT, true );
+
+  /** enable nfc task **/
+  nfc_task_init();
 
   volatile uint32_t
   	  foo = CLOCK_SYS_GetSystemClockFreq();

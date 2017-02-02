@@ -209,6 +209,7 @@ i2c_status_t I2C_DRV_SlaveReceiveDataBlocking(uint32_t instance,
         i2cSlaveState->rxSize = rxSize;
         i2cSlaveState->isRxBusy = true;
         i2cSlaveState->isRxBlocking = true;
+        i2cSlaveState->status = kStatus_I2C_Success;
 
         /* If IAAS event already comes, read dummy to release the bus.*/
         if(I2C_HAL_GetStatusFlag(g_i2cBase[instance], kI2CAddressAsSlave))
@@ -216,6 +217,7 @@ i2c_status_t I2C_DRV_SlaveReceiveDataBlocking(uint32_t instance,
             /* Switch to RX mode.*/
             I2C_HAL_SetDirMode(g_i2cBase[instance], kI2CReceive);
             I2C_HAL_ReadByte(g_i2cBase[instance]);
+            I2C_HAL_ClearInt(g_i2cBase[instance]);
         }
 
         I2C_HAL_SetIntCmd(g_i2cBase[instance], true);
@@ -236,6 +238,7 @@ i2c_status_t I2C_DRV_SlaveReceiveDataBlocking(uint32_t instance,
         if (syncStatus != kStatus_OSA_Success)
         {
             I2C_HAL_SetIntCmd(g_i2cBase[instance], false);
+            i2cSlaveState->isRxBusy = false;
             i2cSlaveState->status = kStatus_I2C_Timeout;
         }
 
@@ -278,6 +281,7 @@ i2c_status_t I2C_DRV_SlaveReceiveData(uint32_t instance,
         i2cSlaveState->rxBuff = rxBuff;
         i2cSlaveState->rxSize = rxSize;
         i2cSlaveState->isRxBusy = true;
+        i2cSlaveState->status = kStatus_I2C_Success;
 
         /* If IAAS event already comes, read dummy to release the bus.*/
         if(I2C_HAL_GetStatusFlag(g_i2cBase[instance], kI2CAddressAsSlave))
@@ -330,6 +334,7 @@ i2c_status_t I2C_DRV_SlaveSendDataBlocking(uint32_t instance,
         i2cSlaveState->txSize = txSize;
         i2cSlaveState->isTxBusy = true;
         i2cSlaveState->isTxBlocking = true;
+        i2cSlaveState->status = kStatus_I2C_Success;
 
         I2C_HAL_SetIntCmd(g_i2cBase[instance], true);
 
@@ -346,6 +351,7 @@ i2c_status_t I2C_DRV_SlaveSendDataBlocking(uint32_t instance,
         if (syncStatus != kStatus_OSA_Success)
         {
             I2C_HAL_SetIntCmd(g_i2cBase[instance], false);
+            i2cSlaveState->isTxBusy = false;			
             i2cSlaveState->status = kStatus_I2C_Timeout;
         }
 
@@ -389,6 +395,7 @@ i2c_status_t I2C_DRV_SlaveSendData(uint32_t instance,
         i2cSlaveState->txBuff = txBuff;
         i2cSlaveState->txSize = txSize;
         i2cSlaveState->isTxBusy = true;
+        i2cSlaveState->status = kStatus_I2C_Success;
 
         I2C_HAL_SetIntCmd(g_i2cBase[instance], true);
 
@@ -560,7 +567,6 @@ void I2C_DRV_SlaveIRQHandler(uint32_t instance)
     I2C_Type * base = g_i2cBase[instance];
     uint8_t  i2cData  = 0x00;
     bool     doTransmit = false;
-    bool     wasArbLost = I2C_HAL_GetStatusFlag(base, kI2CArbitrationLost);
     bool     addressed = I2C_HAL_GetStatusFlag(base, kI2CAddressAsSlave);
     bool     stopIntEnabled = false;
 
@@ -626,30 +632,14 @@ void I2C_DRV_SlaveIRQHandler(uint32_t instance)
         {
             OSA_EventSet(&i2cSlaveState->irqEvent, kI2CSlaveStopDetect);
         }
-
-        i2cSlaveState->status = kStatus_I2C_Idle;
-
+        i2cSlaveState->isRxBusy = false;
+        i2cSlaveState->isTxBusy = false;
         return;
     }
 #endif
 
     /* Clear I2C IRQ.*/
     I2C_HAL_ClearInt(base);
-
-    if (wasArbLost)
-    {
-        I2C_HAL_ClearArbitrationLost(base);
-        if (!addressed)
-        {
-            i2cSlaveState->status = kStatus_I2C_AribtrationLost;
-            if(!i2cSlaveState->slaveListening)
-            {
-                /* Disable I2C interrupt in the peripheral.*/
-                I2C_HAL_SetIntCmd(base, false);
-            }
-            return;
-        }
-    }
 
     /*--------------- Handle Address ------------------*/
     /* Addressed only happens when receiving address. */

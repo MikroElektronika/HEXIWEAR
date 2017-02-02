@@ -67,17 +67,24 @@ void I2C_DRV_IRQHandler(uint32_t instance)
 {
     assert(instance < I2C_INSTANCE_COUNT);
     I2C_Type * base = g_i2cBase[instance];
-
-    if (I2C_HAL_IsMaster(base))
+    if(I2C_HAL_GetStatusFlag(base, kI2CArbitrationLost))
     {
         /* Master mode.*/
         I2C_DRV_MasterIRQHandler(instance);
     }
-    else
-    {
-        /* Slave mode.*/
-        I2C_DRV_SlaveIRQHandler(instance);
-    }
+	else
+	{
+	    if (I2C_HAL_IsMaster(base))
+	    {
+	        /* Master mode.*/
+	        I2C_DRV_MasterIRQHandler(instance);
+	    }
+	    else
+	    {
+	        /* Slave mode.*/
+	        I2C_DRV_SlaveIRQHandler(instance);
+	    }
+	}
 }
 
 #endif /* FSL_FEATURE_SOC_I2C_COUNT */

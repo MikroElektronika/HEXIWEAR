@@ -271,6 +271,31 @@ const gpio_output_pin_user_config_t REL_GPIO_cfg[] = {
   }
 };
       
+const gpio_input_pin_user_config_t nfcInPins[] = {
+  {
+    .pinName = kGpioNfcIrq,
+    .config.isPullEnable = true,
+    .config.pullSelect = kPortPullDown,
+    .config.isPassiveFilterEnabled = false,
+	.config.interrupt = kPortIntRisingEdge
+  },
+  {
+    .pinName = GPIO_PINS_OUT_OF_RANGE,
+  }
+};
+
+const gpio_output_pin_user_config_t nfcOutPins[] = {
+  {
+    .pinName = kGpioNfcVen,
+    .config.outputLogic = 1,
+    .config.slewRate = kPortSlowSlewRate,
+    .config.isOpenDrainEnabled = false,
+    .config.driveStrength = kPortLowDriveStrength,
+  },
+  {
+    .pinName = GPIO_PINS_OUT_OF_RANGE,
+  }
+};
 
 
 /* END GPIO. */

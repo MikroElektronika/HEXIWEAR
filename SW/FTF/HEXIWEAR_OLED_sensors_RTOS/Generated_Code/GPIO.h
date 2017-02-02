@@ -95,6 +95,8 @@ extern const gpio_output_pin_user_config_t KW40_GPIO_cfg[];
 /*! @brief Configuration structure 7 for output pins */
 extern const gpio_output_pin_user_config_t REL_GPIO_cfg[];
 
+extern const gpio_input_pin_user_config_t nfcInPins[];
+extern const gpio_output_pin_user_config_t nfcOutPins[];
 
 /*! @brief Pin names */
 enum _GPIO_pinNames{
@@ -120,7 +122,10 @@ enum _GPIO_pinNames{
   KW40_WU   = GPIO_MAKE_PIN(GPIOD_IDX, 14U),
 
   REL1 = GPIO_MAKE_PIN(GPIOA_IDX, 10U),
-  REL2 = GPIO_MAKE_PIN(GPIOC_IDX, 4U)
+  REL2 = GPIO_MAKE_PIN(GPIOC_IDX, 4U),
+
+  kGpioNfcIrq   = GPIO_MAKE_PIN(GPIOB_IDX, 13U),
+  kGpioNfcVen   = GPIO_MAKE_PIN(GPIOB_IDX, 11U)
 };
 
   

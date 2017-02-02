@@ -64,6 +64,8 @@ typedef enum
   GUI_NAVIGATION_STANDBY      = 0x1 << 6,
   GUI_NAVIGATION_SPLASH       = 0x1 << 7,
 
+  GUI_NAVIGATION_DIRECT       = 0x1 << 8,
+
 } guiNavigationDir_t;
 
 /**

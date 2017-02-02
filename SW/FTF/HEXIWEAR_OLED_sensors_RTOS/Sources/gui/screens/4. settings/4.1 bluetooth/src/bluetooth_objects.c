@@ -12,7 +12,7 @@ guiScreen_t bluetoothScreen =
 {
   .navigation =
   {
-          .up     = &resetScreen,
+          .up     = &nfc_click_Screen,
           .down   = &bootloaderCoverScreen,
           .left   = &settingsScreen,
           .right  = NULL

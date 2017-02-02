@@ -84,4 +84,7 @@ statusI2C_t I2C_ModifyReg (
  */
 statusI2C_t I2C_Recover( genericI2cHandle_t* self );
 
+statusI2C_t I2C_Send(genericI2cHandle_t* self, uint8_t *pCmd,  uint16_t CmdLen, uint8_t *pSnd,  uint16_t SndLen);
+statusI2C_t I2C_Receive (genericI2cHandle_t* self, uint8_t *pRcv, uint16_t RcvLen);
+
 #endif
