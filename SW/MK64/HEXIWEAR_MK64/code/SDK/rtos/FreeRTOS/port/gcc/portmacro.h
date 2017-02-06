@@ -277,7 +277,8 @@ void vPortYieldHandler(void);
  /** Prototypes for interrupt service handlers */
 #if configPEX_KINETIS_SDK  /** the SDK expects different interrupt handler names */
   void SVC_Handler(void);  /** SVC interrupt handler */
-  void PendSV_Handler(void);  /** PendSV interrupt handler */
+  void PendSV_Handler(void) __attribute__ ((naked, used));
+  //void PendSV_Handler(void);  /** PendSV interrupt handler */
   void SysTick_Handler(void);  /** Systick interrupt handler */
 #else
   void vPortSVCHandler(void);  /** SVC interrupt handler */
