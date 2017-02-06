@@ -40,11 +40,11 @@
 #include "gui_driver.h"
 
 // Resources
-extern const uint8_t battery_0_bmp[ 588 + 6 ];
-extern const uint8_t battery_1_bmp[ 588 + 6 ];
-extern const uint8_t battery_2_bmp[ 588 + 6 ];
-extern const uint8_t battery_3_bmp[ 588 + 6 ];
-extern const uint8_t battery_4_bmp[ 588 + 6 ];
+extern const uint8_t battery_0_bmp[];
+extern const uint8_t battery_1_bmp[];
+extern const uint8_t battery_2_bmp[];
+extern const uint8_t battery_3_bmp[];
+extern const uint8_t battery_4_bmp[];
 extern const uint8_t battery_5_bmp[ 588 + 6 ];
 extern const uint8_t watch_sms_bmp[370];
 extern const uint8_t watch_sms_gray_bmp[370];
@@ -56,7 +56,7 @@ extern const uint8_t watch_bluetooth_logo_white_bmp[1206];
 extern const uint8_t watch_bluetooth_logo_blue_bmp[1206];
 //extern const uint8_t celsius_bmp[204];
 extern const uint8_t celsius_bmp[500];
-extern const uint8_t battery_charge_bmp[1110];
+extern const uint8_t battery_charge_bmp[];
 
 // Objects
 extern guiImage_t watch_imgBattery;
