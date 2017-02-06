@@ -903,7 +903,7 @@ __asm void vPortPendSVHandler(void) {
 /*-----------------------------------------------------------*/
 #if (configCOMPILER==configCOMPILER_ARM_GCC)
 #if configPEX_KINETIS_SDK  /** the SDK expects different interrupt handler names */
-__attribute__ ((naked)) void PendSV_Handler(void) {
+__attribute__ ((naked, used)) void PendSV_Handler(void) {
 #else
 __attribute__ ((naked)) void vPortPendSVHandler(void) {
 #endif
