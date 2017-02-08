@@ -181,4 +181,6 @@ osa_status_t HostInterface_EventConfirmPacketClear(void);
 osa_status_t HostInterface_EventSendOkPacketSet(void);
 osa_status_t HostInterface_EventSendOkPacketWait(void);
 
+void HostInterface_SetWakingTouch(void);
+
 void HostInterface_SetWakingTouch();
