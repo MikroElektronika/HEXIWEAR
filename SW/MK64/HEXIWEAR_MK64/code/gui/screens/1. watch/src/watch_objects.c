@@ -49,7 +49,7 @@ guiScreen_t watchScreen =
           .up     = NULL,
           .down   = NULL,
           .left   = NULL,
-          .right  = &LEDs_Screen,
+          .right  = &MultipleChoiceScreen,
   },
 
   .image = NULL,

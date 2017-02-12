@@ -6,6 +6,9 @@
  */
 
 
+#include "platform_config.h"
+
+#if PL_CONFIG_HAS_LED_GUI
 #include "gui_driver.h"
 #include "control.h"
 #include "control_private.h"
@@ -86,26 +89,4 @@ static void control_LED1ToggleTask(task_param_t param)
 	}
 }
 
-
-
-
-/**
- * initialize control GUI
- * @param param optional parameter
-
-void bluetooth_Init( void *param )
-{
-	if(bluetoothCurrentAdvMode == bluetooth_advMode_enable)
-	{
-		bluetooth_icon.img = bluetooth_icon_blue_bmp;
-	}
-	else
-	{
-		bluetooth_icon.img = bluetooth_icon_white_bmp;
-	}
-
-	GuiDriver_ImageAddToScr(&bluetooth_icon);
-
-	GuiDriver_RegisterForNavigation( GUI_NAVIGATION_RIGHT );
-}
-*/
+#endif /* PL_CONFIG_HAS_LED_GUI */

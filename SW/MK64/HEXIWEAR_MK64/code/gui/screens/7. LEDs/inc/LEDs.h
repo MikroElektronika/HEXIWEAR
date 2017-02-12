@@ -16,6 +16,5 @@
 
 #include "gui_driver.h"
 
-extern guiScreen_t
-	LEDs_Screen;
+extern guiScreen_t	LEDs_Screen;
 

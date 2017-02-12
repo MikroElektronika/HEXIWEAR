@@ -5,6 +5,9 @@
  *      Author: Patrick
  */
 
+#include "platform_config.h"
+
+#if PL_CONFIG_HAS_LED_GUI
 #include "Control_private.h"
 
 
@@ -1166,3 +1169,4 @@ const uint8_t control_bmp[18438] = {
 		0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
 		};
 
+#endif /* PL_CONFIG_HAS_LED_GUI */

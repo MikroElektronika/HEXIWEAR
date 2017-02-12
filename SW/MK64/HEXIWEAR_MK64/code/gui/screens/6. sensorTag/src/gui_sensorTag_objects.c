@@ -45,7 +45,7 @@ guiScreen_t
         .navigation =
         {
             .up     = &settingsScreen,
-            .down   = &LEDs_Screen,
+            .down   = &MultipleChoiceScreen,
             .left   = &watchScreen,
             .right  = NULL
         },

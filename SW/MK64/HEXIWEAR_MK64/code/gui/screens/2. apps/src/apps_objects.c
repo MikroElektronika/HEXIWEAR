@@ -49,7 +49,7 @@ guiScreen_t appsScreen =
 {
   .navigation =
   {
-          .up     = &LEDs_Screen,
+          .up     = &MultipleChoiceScreen,
           .down   = &notifScreen,
 //          .down   = &settingsScreen,
           .left   = &watchScreen,
