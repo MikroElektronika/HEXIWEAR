@@ -1619,12 +1619,8 @@
 #define __BOARD_H__
 
 #include <stdint.h>
-#include "GPIO.h"
 #include "pin_mux.h"
 
-#define NXPNCI_I2C_INSTANCE 		0
-#define NXPNCI_I2C_BAUDRATE 		(400)
-#define NXPNCI_I2C_ADDR_7BIT 		(0x28)
 
 #if defined(__cplusplus)
 extern "C" {

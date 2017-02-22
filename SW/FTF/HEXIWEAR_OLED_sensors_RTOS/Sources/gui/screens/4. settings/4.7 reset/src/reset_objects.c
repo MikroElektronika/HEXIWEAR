@@ -7,7 +7,7 @@ guiScreen_t resetScreen =
   .navigation =
   {
           .up     = &aboutScreen,
-          .down   = &nfc_click_Screen,
+          .down   = &bluetoothScreen,
           .left   = &settingsScreen,
           .right  = NULL
   },

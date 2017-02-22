@@ -1462,7 +1462,6 @@ static void sensor_GetData( task_param_t param )
 
 void sensor_InitAcc()
 {
-#if defined( SENSOR_FXOS_PRESENT )
 	fxos_status_t
 		fxosStatus = FXOS_Init( &fxosModule, &fxosSettings );
 
@@ -1478,7 +1477,6 @@ void sensor_InitAcc()
 		  FXOS_firstTime = false;
 	  }
 	}
-#endif
 }
 /**
  * initialize sensors' modules

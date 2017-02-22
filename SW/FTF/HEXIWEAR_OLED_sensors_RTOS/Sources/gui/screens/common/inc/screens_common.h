@@ -25,7 +25,6 @@
 #include "about.h"
 #include "info.h"
 #include "reset.h"
-#include "nfc_click.h"
 
 #include "relay_click.h"
 

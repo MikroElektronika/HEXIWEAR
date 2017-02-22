@@ -19,10 +19,10 @@ typedef struct
         i2c_device_t device;   // I2C device setting
   i2c_master_state_t state;    // I2C internal state space
             uint32_t timeout;  // I2C timeout
+
   /**
    * specific I2C information can go below this
    */
-            bool alternate; // I2C alternate pining
 
 } genericI2cHandle_t;
 

@@ -394,12 +394,6 @@ gui_status_t GuiDriver_Navigation(guiNavigationDir_t navigationDir, void *param)
 				  break;
 		  }
 
-		  case GUI_NAVIGATION_DIRECT: {
-				  ptrNewScreen = (guiScreen_t*) param;
-				  transition = OLED_TRANSITION_NONE;
-				  break;
-		  }
-
 		  default : {
 				  return GUI_STATUS_ERROR;
 		  }

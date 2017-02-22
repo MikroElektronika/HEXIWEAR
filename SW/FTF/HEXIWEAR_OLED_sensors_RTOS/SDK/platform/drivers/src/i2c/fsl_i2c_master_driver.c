@@ -367,20 +367,7 @@ void I2C_DRV_MasterIRQHandler(uint32_t instance)
 
     /* Get current master transfer direction */
     i2c_direction_t direction = I2C_HAL_GetDirMode(base);
-    bool     wasArbLost = I2C_HAL_GetStatusFlag(base, kI2CArbitrationLost);
-    if (wasArbLost)
-    {
-        I2C_HAL_ClearArbitrationLost(base);
-        master->status = kStatus_I2C_AribtrationLost;
-        /* Disable I2C interrupt in the peripheral.*/
-        I2C_HAL_SetIntCmd(base, false);
-		if (master->isBlocking)
-		{
-			OSA_SemaPost(&master->irqSync);
-		}
 
-        return;
-    }
     /* Exit immediately if there is no transfer in progress OR not in master mode */
     if ((!I2C_HAL_GetStatusFlag(base, kI2CBusBusy)) ||
         (!I2C_HAL_IsMaster(base)))
@@ -645,7 +632,7 @@ static i2c_status_t I2C_DRV_MasterSend(uint32_t instance,
     /* Return if current instance is used */
     if (!master->i2cIdle)
     {
-        return kStatus_I2C_Busy;
+        return master->status = kStatus_I2C_Busy;
     }
 
     /* Need to assign a pre-defined timeout value for sending address and cmd */
@@ -690,21 +677,7 @@ static i2c_status_t I2C_DRV_MasterSend(uint32_t instance,
         if (isBlocking)
         {
             /* Wait for the transfer to finish.*/
-            if(I2C_DRV_MasterWait(instance, timeout_ms) == kStatus_I2C_Timeout)
-            {
-               /* Disable interrupt. */
-               I2C_HAL_SetIntCmd(base, false);
-
-               if (I2C_HAL_GetStatusFlag(base, kI2CBusBusy))
-               {
-                 /* Generate stop signal. */
-                 I2C_HAL_SendStop(base);
-               }
-
-               /* Indicate I2C bus is idle. */
-               master->i2cIdle = true;                
-            }
-
+            I2C_DRV_MasterWait(instance, timeout_ms);
         }
     }
     else if (master->status == kStatus_I2C_Timeout)
@@ -751,7 +724,7 @@ static i2c_status_t I2C_DRV_MasterReceive(uint32_t instance,
     /* Return if current instance is used */
     if (!master->i2cIdle)
     {
-        return kStatus_I2C_Busy;
+        return master->status = kStatus_I2C_Busy;
     }
 
     /* Need to assign a pre-defined timeout value for sending address and cmd */
@@ -805,21 +778,7 @@ static i2c_status_t I2C_DRV_MasterReceive(uint32_t instance,
         if (isBlocking)
         {
             /* Wait for the transfer to finish.*/
-            if(I2C_DRV_MasterWait(instance, timeout_ms) == kStatus_I2C_Timeout)
-            {
-               /* Disable interrupt. */
-               I2C_HAL_SetIntCmd(base, false);
-
-               if (I2C_HAL_GetStatusFlag(base, kI2CBusBusy))
-               {
-                 /* Generate stop signal. */
-                 I2C_HAL_SendStop(base);
-               }
-
-               /* Indicate I2C bus is idle. */
-               master->i2cIdle = true;                
-            }
-
+            I2C_DRV_MasterWait(instance, timeout_ms);
         }
     }
     else if (master->status == kStatus_I2C_Timeout)
