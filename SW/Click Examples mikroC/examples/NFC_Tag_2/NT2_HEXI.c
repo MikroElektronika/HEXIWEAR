@@ -172,7 +172,7 @@ uint8_t ndef_rec[] = { 0x03,        // NDEF Message
 void main()
 {
     system_init();
-    nfctag2_init( 0x04 );
+    nfctag2_init( 0x55 );
 
     //test_read_common();
     //test_write_common();
