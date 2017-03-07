@@ -42,7 +42,7 @@
 #define MAXIM_I2C_ADDRESS         ( 0x57 )
 #define MAXIM_I2C_BAUDRATE        ( I2C_BAUDRATE )
 #define MAXIM_BYTES_PER_ADC_VALUE ( 3 )
-#define MAXIM_FIFO_DEPTH          ( 32 )
+#define MAXIM_FIFO_DEPTH          ( 128 )
 
 
 #define MAXIM_NEW_SAMPLE_CHUNK    ( 256 )
