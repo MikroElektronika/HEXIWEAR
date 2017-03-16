@@ -1,0 +1,2 @@
+LOG(x, y, z) = OLED_WriteText(x, y, z)
+BOX(a, b, c, d, e) = OLED_DrawBox(a, b, c, d, e)
