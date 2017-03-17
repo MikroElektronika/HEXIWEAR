@@ -6,10 +6,13 @@
 * Notes                 :
 *
 *                          - Place WiFi ESP click board on mikroBUS slot 1
+*                          - Place Air Quality 2 click board on mikroBUS slot 2
 *                          - This example demonstrates the functionality of
-*                            WiFi ESP as a server
+*                            WiFi ESP as a server and displays air quality
 *                          - Log is being sent by pressing left and right button
 *                            which consequently changes LED state
+*                          - If LED is changes state to active, 
+*                            Air Quality is read
 *                          - Include example.pld
 /******************************************************************************
 * Includes
@@ -17,6 +20,7 @@
 #include "OLED_driver.h"
 #include "OLED_resources.h"
 #include "UART_Messaging.h"
+#include "air_quality_2_click.h"
 #include <stdbool.h>
 /******************************************************************************
 * Module Preprocessor Constants
@@ -60,15 +64,28 @@ char is_receiving_data = 0;
 char LED_switching = 0;
 int cntr = 0;
 
+static iaq_info_t info;
+static char str_buffer[16];
+
+static iaq_status_t iaq_status;
+
 // Change following information to match your network settings
 unsigned char *SSID = "MikroE Public";
 unsigned char *password = "mikroe.guest";
 char txt1[] = "<a href=\"https://www.mikroe.com/\">MikroElektronika</a>";
 char txt2[] = "<h1 style=\"color:red;\">WiFi ESP click board / HEXIWEAR </h1>";
 char txt3[] = "<h1>Server example</h1";
-char txt4[] = "<p> RED LED is ";
+char txt4[] = "<p><b> RED LED is ";
+char txt5[] = "<p><b>";
+char img1[] = "<img src=\"https://cdn1-shop.mikroe.com/img/p/click/wireless";
+char img2[] = "-connectivity/wifi-esp/wifi-esp-thickbox_default-1.jpg\" ";
+char img3[]= "alt=\"Observe air quality\">";
 bool LED_change = false;
-char txt_state[9] = "OFF</p>";
+bool measure_start = false;
+bool update_f = false;
+bool sending = false;
+char txt_state[ 12 ] = "OFF</b></p>";
+char txt_quality[ 300 ] = { 0 };
 char data_[ 500 ] = { 0 };
 /******************************************************************************
 * Function Prototypes
@@ -77,9 +94,12 @@ extern void WiFI_Configure();
 char Get_Response( void );
 static void WiFi_Init( void );
 static void sending_data( void );
+static void air_quality_2_update_server( void );
 static void WiFi_Send( void );
 static void button_left( void );
 static void button_right( void );
+static void status_to_str(iaq_status_t status, char* str);
+static void air_quality_2_measure();
 static void system_init( void );
 /******************************************************************************
 * Function Definitions
@@ -148,43 +168,85 @@ void sending_data( void )
    UART2_Write_Text( data_ );
 }
 
+void air_quality_2_update_server()
+{
+  update_f = false;
+  measure_start = false;
+  sending = true;
+  air_quality_2_measure();
+  length += strlen( txt4 );
+  length += strlen( txt_state );
+  Rtrim( txt_quality );
+  length += strlen( txt_quality );
+
+  strcat( data_, txt4 );
+  strcat( data_, txt_state );
+  strcat( data_, txt_quality );
+
+  IntToStr( length, txt_val );
+  Ltrim( txt_val );
+  Rtrim( data_ );
+
+  sending_data();
+
+  strcpy(data_, "");
+  strcpy(txt_quality, "");
+  length = 0;
+  sending = false;
+}
+
 static void WiFi_Send()
 {
-    if( !LED_switching ) {
-
+    if( !LED_switching )
+    {
     length += strlen( txt1 );
     length += strlen( txt2 );
-    length += strlen( txt4 );
-    length += strlen( txt_state );
-    
+    length += strlen( img1 );
+    length += strlen( img2 );
+    length += strlen( img3 );
+
     IntToStr( length, txt_val );
     Ltrim( txt_val );
 
     strcat( data_, txt1 );
     strcat( data_, txt2 );
-    strcat( data_, txt4 );
-    strcat( data_, txt_state );
+    strcat( data_, img1 );
+    strcat( data_, img2 );
+    strcat( data_, img3 );
+
     Rtrim( data_ );
 
     sending_data();
     }
     else
     {
-       length += strlen( txt4 );
-       length += strlen( txt_state );
-       strcat( data_, txt4 );
-       strcat( data_, txt_state );
+       if ( !measure_start )
+       {
+         length += strlen( txt4 );
+         length += strlen( txt_state );
+         strcat( data_, txt4 );
+         strcat( data_, txt_state );
 
-       IntToStr( length, txt_val );
-       Ltrim( txt_val );
-       Rtrim( data_ );
+         IntToStr( length, txt_val );
+         Ltrim( txt_val );
+         Rtrim( data_ );
 
-       sending_data();
+         sending_data();
+       }
+       else
+       {
+        if ( !sending )
+        {
+         update_f = true;
+        }
+       }
     }
 
-    strcpy(data_, "");
+    if ( !update_f )
+    {
+     strcpy(data_, "");
+    }
     length = 0;
-
     Delay_ms(100);
 }
 
@@ -195,11 +257,14 @@ static void WiFi_Send()
        Delay_ms( 50 );
        PTB_PDOR.B9 = 0;
        HEXI_RED_LED = 0;
-       if ( !strcmp( txt_state, "OFF</p>" ))
+
+       if ( !strcmp( txt_state, "OFF</b></p>" ))
        {
-          strncpy( txt_state, "ON</p>", 8 );
+          strncpy( txt_state, "ON </b></p>", 12 );
+          measure_start = true;
           WiFi_Send();
         }
+
   }
 
   // On button right pressed
@@ -209,12 +274,64 @@ static void WiFi_Send()
        Delay_ms( 50 );
        PTB_PDOR.B9 = 0;
        HEXI_RED_LED = 1;
-        if ( !strcmp( txt_state, "ON</p>" ))
+       measure_start = false;
+        if ( !strcmp( txt_state, "ON </b></p>" ))
           {
-            strncpy( txt_state, "OFF</p>", 8 );
+            strncpy( txt_state, "OFF</b></p>", 12 );
             WiFi_Send();
           }
+
   }
+
+static void status_to_str(iaq_status_t status, char* str)
+{
+    switch (status)
+    {
+    case IAQ_OK:
+        strcpy(str, "OK");
+        break;
+    case IAQ_BUSY:
+        strcpy(str, "BUSY");
+        break;
+    case IAQ_ERROR:
+        strcpy(str, "ERROR");
+        break;
+    case IAQ_RUNIN:
+        strcpy(str, "RUNIN");
+        break;
+    default:
+        strcpy(str, "UNKNOWN");
+        break;
+    }
+}
+
+static void air_quality_2_measure()
+{
+  // Read measurements.
+  iaq_status = air_quality_2_click_info(&info);
+
+  strcat( txt_quality, txt5 );
+  strcat( txt_quality, "STATUS: ");
+  status_to_str(iaq_status, str_buffer);
+  strcat( txt_quality,str_buffer);
+  strcat( txt_quality," | ");
+
+  strcat( txt_quality,"CO2: ");
+  LongToStr(info.co2_eq, str_buffer);
+  strcat( txt_quality,Ltrim(str_buffer));
+  strcat( txt_quality," ppm | ");
+
+  strcat( txt_quality,"TVOC: ");
+  LongToStr(info.tvoc_eq, str_buffer);
+  strcat( txt_quality,Ltrim(str_buffer));
+  strcat( txt_quality," ppb | ");
+
+  strcat( txt_quality,"Resistance: ");
+  LongToStr(info.resistance, str_buffer);
+  strcat( txt_quality,Ltrim(str_buffer));
+  strcat( txt_quality," Ohm ");
+  strcat( txt_quality,"</i></p>");
+}
 
 static void system_init()
 {
@@ -223,13 +340,13 @@ static void system_init()
   GPIO_Digital_Output( &PTC_PDOR, _GPIO_PINMASK_4 );
   GPIO_Digital_Output( &PTC_PDOR, _GPIO_PINMASK_8 );
   GPIO_Digital_Output( &PTB_PDOR, _GPIO_PINMASK_9 ); // Vibration PIN
-  
+
   // HEXIWEAR VIBRATION PIN
   PTB_PDOR = 0;
 
   // HEXIWEAR RED LED
   HEXI_RED_LED = 1;
-  
+
   // Initialize variables
   length = 0;
   state = 0;
@@ -241,6 +358,9 @@ static void system_init()
   // UART Initialization
   UART2_Init_Advanced( 115200, _UART_8_BIT_DATA, _UART_NOPARITY,
                        _UART_ONE_STOPBIT, &_GPIO_Module_UART2_PD3_2 );
+  Delay_ms( 100 );
+
+  I2C0_Init_Advanced( 100000, &_GPIO_Module_I2C0_PD8_9 );
   Delay_ms( 100 );
 
   // UART Interrupt enabling
@@ -256,18 +376,20 @@ static void system_init()
   OLED_SetFont( guiFont_Exo_2_Condensed10x16_Regular, OLED_COLOR_WHITE, 0 );
   LOG( "WiFi ESP ", 24, 0 );
   OLED_SetFont( guiFont_Tahoma_7_Regular, OLED_COLOR_WHITE, 0 );
-  
+
   // Init UART messaging
   hexiwear_uart_messaging_init();
+
+  air_quality_2_click_init();
   }
 
   void main( void )
   {
     system_init();
-    
+
     hexiwear_uart_messaging_callback(PT_PRESS_LEFT, button_left);
     hexiwear_uart_messaging_callback(PT_PRESS_RIGHT, button_right);
-    
+
     // Initialize WiFI module
     WiFi_Init();
 
@@ -278,7 +400,7 @@ static void system_init()
     i = 0;
     OLED_SetFont( guiFont_Tahoma_7_Regular, OLED_COLOR_WHITE, 0 );
     LOG("Connect to STAIP", 5, 85);
-    
+
     // Waiting for multiple connections to Server STAIP
     Delay_ms( WAIT_TIME_FOR_CONN * 1000);
 
@@ -289,15 +411,19 @@ static void system_init()
     LOG("Connect to STAIP!", 5, 85);
     OLED_SetFont( guiFont_Tahoma_7_Regular, OLED_COLOR_RED, 0 );
     LOG("Use Buttons for Log", 5, 85);
-    
+
     LED_switching = 1;
 
       while( 1 )
       {
         hexiwear_uart_messaging_process();// Registering button pressing actions
+        if( update_f )
+          {
+           air_quality_2_update_server();
+          }
       }
   }
-  
+
 void WIFI_ESP_RX_ISR() iv IVT_INT_UART2_RX_TX ics ICS_AUTO
 {
     char s1 = UART2_S1;
@@ -611,7 +737,7 @@ void WIFI_ESP_RX_ISR() iv IVT_INT_UART2_RX_TX ics ICS_AUTO
 
   }
 }
-  
+
 /******************************************************************************
 * End Of All Functions
 *******************************************************************************/
