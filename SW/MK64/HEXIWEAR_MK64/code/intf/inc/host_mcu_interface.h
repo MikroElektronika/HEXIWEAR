@@ -39,7 +39,7 @@
 
 #include "fsl_os_abstraction.h"
 #include "KW40_UART.h"
-#include "hexiwear_info.h"
+#include "HEXIWEAR_info.h"
 
 /** packet constants */
 
