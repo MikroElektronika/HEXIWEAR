@@ -123,7 +123,7 @@ guiImage_t watch_imgBluetoothLogo =
 };
 
 /** temperature unit GUI object */
-guiImage_t watch_imgTempUnit =
+guiImage_t watch_imgTempUnitCelsius =
 {
 	.dynamicArea =
 	{
@@ -132,6 +132,18 @@ guiImage_t watch_imgTempUnit =
 	},
 
 	.img = celsius_bmp
+};
+
+/** temperature unit GUI object */
+guiImage_t watch_imgTempUnitFahrenheit =
+{
+	.dynamicArea =
+	{
+		.xCrd = 17,
+		.yCrd = 81,
+	},
+
+	.img = fahrenheit_bmp
 };
 
 /** time GUI object */

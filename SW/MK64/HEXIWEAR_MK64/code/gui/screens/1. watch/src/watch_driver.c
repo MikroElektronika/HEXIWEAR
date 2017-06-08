@@ -287,7 +287,12 @@ void watch_Init( void *param )
   GuiDriver_ImageAddToScr( &watch_imgSms);
 
   // Add temp unit to screen
-  GuiDriver_ImageAddToScr(&watch_imgTempUnit);
+  if (TEMP_IN_F)
+  {
+	  GuiDriver_ImageAddToScr(&watch_imgTempUnitFahrenheit);
+  }
+  else
+	  GuiDriver_ImageAddToScr(&watch_imgTempUnitCelsius);
 
   if(watch_linkState == linkState_connected)
   {
@@ -485,6 +490,10 @@ static void watch_GetPacketsTask(task_param_t param)
 
       case packetType_temperature:
       {
+    	if(TEMP_IN_F)
+    	{
+    		sensorValue = (sensorValue*1.8)+3200;
+    	}
         currTemp = sensorValue / 100;
         snprintf( (char*)watch_labelTemp.caption, 4, "%d", currTemp);
         // TODO: Degree ascii code is 176. Check if we want to increase font to 255 chars, so we can display such char

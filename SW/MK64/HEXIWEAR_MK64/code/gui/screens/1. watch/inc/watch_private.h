@@ -56,6 +56,7 @@ extern const uint8_t watch_bluetooth_logo_white_bmp[1206];
 extern const uint8_t watch_bluetooth_logo_blue_bmp[1206];
 //extern const uint8_t celsius_bmp[204];
 extern const uint8_t celsius_bmp[500];
+extern const uint8_t fahrenheit_bmp[500];
 extern const uint8_t battery_charge_bmp[1110];
 
 // Objects
@@ -64,7 +65,8 @@ extern guiImage_t watch_imgSms;
 extern guiImage_t watch_imgMail;
 extern guiImage_t watch_imgCall;
 extern guiImage_t watch_imgBluetoothLogo;
-extern guiImage_t watch_imgTempUnit;
+extern guiImage_t watch_imgTempUnitCelsius;
+extern guiImage_t watch_imgTempUnitFahrenheit;
 
 extern guiLabel_t watch_labelTime;
 extern guiLabel_t watch_labelDate;
