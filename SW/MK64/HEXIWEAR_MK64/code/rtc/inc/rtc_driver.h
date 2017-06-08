@@ -84,6 +84,13 @@ _rtc_status_t RTC_GetCurrentTime( rtc_datetime_t* timeToReturn );
  */
 _rtc_status_t RTC_UpdateCurrentTime (uint32_t timestamp);
 
+
+/**
+ * set new RTC date-time from structure
+ * @return status flag
+ */
+_rtc_status_t RTC_SetCurrentTime( rtc_datetime_t timestamp );
+
 /**
  * interrupt callback
  */

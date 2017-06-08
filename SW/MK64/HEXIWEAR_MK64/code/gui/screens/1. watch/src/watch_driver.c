@@ -59,7 +59,6 @@ static void watch_GuiUpdateTask(task_param_t param);
 
 static void watch_UpdateBatteryLevel(uint8_t level);
 
-static uint32_t leap (uint32_t year);
 static uint32_t zeller (uint32_t year, uint32_t month, uint32_t day);
 static uint32_t dow (uint32_t year, uint32_t month, uint32_t day);
 static const char * watch_GetDayOfweek(rtc_datetime_t *time);
@@ -70,6 +69,13 @@ task_handler_t watch_timeUpdate_handler;
 task_handler_t watch_getPackets_handler;
 task_handler_t watch_guiUpdate_handler;
 task_handler_t watch_notifListen_handler;
+
+//static const char dayOfWeekStr[7][10] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+const char dayOfWeekStr[7][4] = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+
+const char monthsOfYearStr[12][4] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+const uint8_t daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 /** private memory declarations */
 
@@ -108,11 +114,6 @@ static hostInterface_packet_t watch_dataPacket =
 };
 
 static uint8_t batteryLevel;
-
-//static const char dayOfWeekStr[7][10] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-static const char dayOfWeekStr[7][4] = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
-
-static const char monthsOfYearStr[12][4] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Dec"};
 
 /**
  * create the event for the watch screen

@@ -202,6 +202,19 @@ _rtc_status_t RTC_UpdateCurrentTime( uint32_t timestamp )
   return RTC_STATUS_SUCCESS;
 }
 
+_rtc_status_t RTC_SetCurrentTime( rtc_datetime_t timestamp )
+{
+  RTC_DRV_SetDatetime( FSL_CLOCK, &timestamp );
+
+  memcpy( (void *) &currentTime, (void*) &timestamp, sizeof(rtc_datetime_t) );
+  OSA_EventSet( &alarm_event, (event_flags_t)dateUpdate_eventFlag | timeUpdate_eventFlag);
+
+  RTC_DRV_GetDatetime( FSL_CLOCK, &timestamp );
+  RTC_TriggerAlarm( &timestamp, updateInterval );
+
+  return RTC_STATUS_SUCCESS;
+}
+
 /**
  * RTC interrupt handler callback
  */

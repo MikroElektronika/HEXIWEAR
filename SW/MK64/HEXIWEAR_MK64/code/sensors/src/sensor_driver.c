@@ -536,7 +536,7 @@ static void sensor_FormatData(
    * register formatting functions
    * determine data length
    */
-
+  dataLen = TypeMember_SCALAR;
   switch ( dataType )
   {
     /**

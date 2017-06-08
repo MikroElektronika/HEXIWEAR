@@ -61,6 +61,7 @@
 #include "about.h"
 #include "info.h"
 #include "reset.h"
+#include "watch_set.h"
 
 #include "power.h"
 

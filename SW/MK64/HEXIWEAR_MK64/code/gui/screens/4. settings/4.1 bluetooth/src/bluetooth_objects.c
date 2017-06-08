@@ -45,7 +45,7 @@ guiScreen_t bluetoothScreen =
 {
   .navigation =
   {
-          .up     = &resetScreen,
+          .up     = &watchSetScreen,
           .down   = &bootloaderCoverScreen,
           .left   = &settingsScreen,
           .right  = NULL
