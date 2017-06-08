@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "keynetik_info.h"
-#include "keynetik_defs.h"
+#include "Keynetik_info.h"
+#include "Keynetik_defs.h"
 
 /**
 * Initialize the Keynetik library.
