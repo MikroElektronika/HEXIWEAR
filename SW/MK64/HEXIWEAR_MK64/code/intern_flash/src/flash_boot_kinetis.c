@@ -34,7 +34,7 @@
 
 
 /** include */
-#include "FLASH_boot_kinetis.h"
+#include "flash_boot_kinetis.h"
 #include "MK64F12.h"
 #include "MK64F12_cfg.h"
 #include "fsl_os_abstraction.h"
