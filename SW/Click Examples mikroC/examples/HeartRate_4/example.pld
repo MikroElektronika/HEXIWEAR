@@ -1,0 +1,3 @@
+LOG_OLED(x, y, z) = OLED_WriteText(x, y, z)
+LOG_UART(x) = UART3_Write_Text(x)
+BOX(a, b, c, d, e) = OLED_DrawBox(a, b, c, d, e)
