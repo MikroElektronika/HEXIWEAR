@@ -1,0 +1,24 @@
+// File: HEXIWEAR_defs.c
+
+// Definitions of some commonly used variables in the HEXIWEAR module.
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+ 
+#include "HEXIWEAR_defs.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// Global variable definitions.                                               //
+////////////////////////////////////////////////////////////////////////////////
+ 
+task_handler_t hexiwear_startup_handler;
+
+hexiwear_version_t hexiwear_kw40version =
+{
+    0, // .ver_patchNumber
+    0, // .ver_minorNumber
+    0  // .ver_majorNumber
+};
+
+hexiwear_hw_rev_t hexiwear_hwRev;

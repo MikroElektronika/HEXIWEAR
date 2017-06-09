@@ -1,0 +1,21 @@
+// File: googleApp_private.h
+
+// Declarations of resources used in the googleApp gui module.
+
+#ifndef _googleApp_private_h_
+#define _googleApp_private_h_
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+#include "gui_driver.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// Global variable declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+extern const uint8_t googleApp_screen_bmp[ OLED_GRAM_SIZE+6 ];
+extern const uint8_t googleAppQrCode_screen_bmp[OLED_GRAM_SIZE+6 ];
+
+#endif

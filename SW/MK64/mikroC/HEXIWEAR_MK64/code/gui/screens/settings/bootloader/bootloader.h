@@ -1,0 +1,52 @@
+// File: bootloader.h
+
+// Declarations of main functionalities in the bootloader gui module.
+
+#ifndef _bootloader_h_
+#define _bootloader_h_
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+#include "OSA.h"
+#include "gui_driver.h"
+#include "HEXIWEAR_driver.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// Macro definitions.                                                         //
+////////////////////////////////////////////////////////////////////////////////
+
+#define BOOTLOADER_QUEUE_SIZE ( 1 )
+#define BOOTLOADER_STACK_SIZE ( 0x400 )
+#define BOOTLOADER_PRIO       ( HEXIWEAR_GUI_PRIO )
+
+////////////////////////////////////////////////////////////////////////////////
+// Type definitions.                                                          //
+////////////////////////////////////////////////////////////////////////////////
+
+typedef enum
+{
+    BOOTLOADER_STATUS_SUCCESS,
+    BOOTLOADER_STATUS_ERROR
+
+} bootloader_status_t;
+
+////////////////////////////////////////////////////////////////////////////////
+// Global variable declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+extern guiScreen_t bootloaderCoverScreen;
+
+////////////////////////////////////////////////////////////////////////////////
+// Global function declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+void bootloader_Init( task_param_t param );
+void bootloader_CreateTasks( task_param_t param );
+void bootloader_DestroyTasks( task_param_t param );
+
+// Puts the packet into the designated bootloader's queue.
+bootloader_status_t boootloader_QueueMsgPut( hostInterface_packet_t* packet );
+
+#endif
