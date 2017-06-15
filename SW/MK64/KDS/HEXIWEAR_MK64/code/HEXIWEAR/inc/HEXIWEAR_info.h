@@ -47,7 +47,7 @@
 #define HEXIWEAR_FLAGS ( (hexiwear_flags_t*)HEXIWEAR_STATE_FLAGS_ADDRESS )
 
 /** HEXIWEAR firmware version */
-#define HEXIWEAR_VERSION_PATCH ( 2 )
+#define HEXIWEAR_VERSION_PATCH ( 3 )
 #define HEXIWEAR_VERSION_MINOR ( 0 )
 #define HEXIWEAR_VERSION_MAJOR ( 1 )
 
