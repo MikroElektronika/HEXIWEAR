@@ -1,0 +1,27 @@
+// File: heartRate_types.h
+
+// Some commonly used types in the heart rate module.
+
+#ifndef _heartRate_types_h_
+#define _heartRate_types_h_
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+#include <stdint.h>
+#include <stdbool.h>
+
+////////////////////////////////////////////////////////////////////////////////
+// Type definitions.                                                          //
+////////////////////////////////////////////////////////////////////////////////
+
+// HR global status enum
+typedef enum
+{
+    HEART_RATE_STATUS_SUCCESS,
+    HEART_RATE_STATUS_ERROR
+
+} heartRate_status_t;
+
+#endif

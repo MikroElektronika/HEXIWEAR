@@ -1,0 +1,32 @@
+// File: gui_sensorTag_private.h
+
+// Declarations of resources in the sensor tag gui module.
+
+#ifndef _gui_sensorTag_private_h_
+#define _gui_sensorTag_private_h_
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+#include <stdint.h>
+#include "gui_driver.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// Macro definitions.                                                         //
+////////////////////////////////////////////////////////////////////////////////
+
+#define GUI_SENSOR_TAG_STACK_SIZE ( 0x400 )
+#define GUI_SENSOR_TAG_PRIO ( HEXIWEAR_GUI_PRIO )
+
+////////////////////////////////////////////////////////////////////////////////
+// Global variable declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+extern const uint8_t gui_sensorTag_blank_bmp[18438];
+extern const uint8_t gui_sensorTag_off_bmp[4806];
+extern const uint8_t gui_sensorTag_on_bmp[4806];
+
+extern guiImage_t gui_sensorTag_icon;
+
+#endif

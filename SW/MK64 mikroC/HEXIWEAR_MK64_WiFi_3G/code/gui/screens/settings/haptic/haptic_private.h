@@ -1,0 +1,33 @@
+// File: haptic_private.h
+
+// Declarations of resources used in the haptic gui module.
+
+#ifndef _haptic_private_h_
+#define _haptic_private_h_
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+#include "gui_driver.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// Global variable declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+// Resources
+extern const uint8_t haptic_icon_white_bmp[ 4806 ];
+extern const uint8_t haptic_icon_blue_bmp[ 4806 ];
+extern const uint8_t haptic_screen_bmp[ OLED_GRAM_SIZE + 6 ];
+
+extern guiImage_t haptic_icon;
+
+////////////////////////////////////////////////////////////////////////////////
+// Global function declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+void haptic_Init( void *param );
+void haptic_CreateTasks( void *param );
+void haptic_DestroyTasks( void *param );
+
+#endif

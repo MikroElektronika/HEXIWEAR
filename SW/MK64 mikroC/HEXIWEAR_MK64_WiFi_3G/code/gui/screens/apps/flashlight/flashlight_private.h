@@ -1,0 +1,33 @@
+// File: flashlight_private.h
+
+// Declarations of resources used in the flashlight gui module.
+
+#ifndef _flashlight_private_h_
+#define _flashlight_private_h_
+
+////////////////////////////////////////////////////////////////////////////////
+// Header file inclusions.                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+#include <stdint.h>
+#include "gui_driver.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// Macro definitions.                                                         //
+////////////////////////////////////////////////////////////////////////////////
+
+#define FLASHLIGHT_STACK_SIZE ( 0x400 )
+#define FLASHLIGHT_PRIO       ( HEXIWEAR_APP_PRIO )
+
+////////////////////////////////////////////////////////////////////////////////
+// Global variable declarations.                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+extern guiImage_t flashlight_icon;
+
+extern const uint8_t flashlight_screen_bmp[18438];
+extern const uint8_t flashlight_off_bmp[4806];
+extern const uint8_t flashlight_on_bmp[4806];
+
+
+#endif
