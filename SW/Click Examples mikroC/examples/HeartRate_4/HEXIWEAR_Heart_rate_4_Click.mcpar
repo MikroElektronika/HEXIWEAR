@@ -16,51 +16,25 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=6
 File0=HEXIWEAR_Heart_rate_4_Click.c
 File1=heartrate4_hal.c
 File2=heartrate4_hw.c
 File3=OLED_driver.c
 File4=OLED_resources.c
 File5=UART_Messaging.c
+Count=6
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=14
-File0=heartrate4_hal.c
-File1=heartrate4_hw.c
-File2=OLED_driver.c
-File3=OLED_resources.c
-File4=UART_Messaging.c
-File5=heartrate4_hal.h
-File6=heartrate4_hw.h
-File7=OLED_driver.h
-File8=OLED_info.h
-File9=OLED_resources.h
-File10=OLED_types.h
-File11=UART_Messaging.h
-File12=example.pld
-File13=HEXIWEAR_Heart_rate_4_Click.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=4
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=D:\Stefan Popovic\Projekti\Click_Heart_rate_4_MAX30101\example\HEXIWEAR\
-Path2=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-[HEADER_PATH]
-Count=1
-Path0=D:\Stefan Popovic\Projekti\Click_Heart_rate_4_MAX30101\example\HEXIWEAR\
 [HEADERS]
-Count=7
 File0=heartrate4_hal.h
 File1=heartrate4_hw.h
 File2=OLED_driver.h
@@ -68,11 +42,11 @@ File3=OLED_info.h
 File4=OLED_resources.h
 File5=OLED_types.h
 File6=UART_Messaging.h
-[PLDS]
-Count=1
-File0=example.pld
-[Useses]
 Count=7
+[PLDS]
+File0=example.pld
+Count=1
+[Useses]
 File0=I2C
 File1=C_Stdlib
 File2=C_Type
@@ -80,11 +54,9 @@ File3=Conversions
 File4=C_String
 File5=UART
 File6=SPI
+Count=7
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Node2=Project Level Defines
-Count=3
+Count=0
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

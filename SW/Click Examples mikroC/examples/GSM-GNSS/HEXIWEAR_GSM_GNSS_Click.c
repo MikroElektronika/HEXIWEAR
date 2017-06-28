@@ -72,7 +72,7 @@
 
 // Enter phone number.
 static const char phone_number[10] = ___ENTER_YOUR_PHONE_NUMBER_HERE___;
-_
+
 
 static const char* gui_msg[MSG_COUNT][5] = {
     {"I need your", "help.", "\r"},

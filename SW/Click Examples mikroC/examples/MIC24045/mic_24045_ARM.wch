@@ -1,9 +1,0 @@
-<WCH v="2">
-  <item n="FARG_hal_read_buffer" r="1" s="False" e="True" i="1686">
-    <item n="" r="0" s="False" e="False" i="0"/>
-  </item>
-  <item n="hal_read_ptr_L0" r="1" s="False" e="True" i="1683">
-    <item n="" r="0" s="False" e="False" i="0"/>
-  </item>
-  <item n="mic_24045_read_vout__value_L0" r="0" s="True" e="True" i="1671"/>
-</WCH>

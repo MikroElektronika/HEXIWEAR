@@ -16,46 +16,31 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=2
 File0=click_2x5W_AMP_HEXIWEAR.c
-File1=..\..\library\src\click_2x5w_amp.c
+File1=.\library\click_2x5w_amp.c
+Count=2
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=2
-File0=click_2x5W_AMP_HEXIWEAR.c
-File1=..\..\library\src\click_2x5w_amp.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=5
-Path0=C:\Users\branislav.marton\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\branislav.marton\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-Path2=D:\Projects\Click_2x5W_AMP_TDA7491LP\example\HEXIWEAR\
-Path3=C:\Users\branislav.marton\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path4=D:\Projects\Click_2x5W_AMP_TDA7491LP\library\src\
-[HEADER_PATH]
-Count=1
-Path0=D:\Projects\Click_2x5W_AMP_TDA7491LP\library\include\
 [HEADERS]
+File0=.\library\click_2x5w_amp.h
 Count=1
-File0=..\..\library\include\click_2x5w_amp.h
 [PLDS]
 Count=0
 [Useses]
-Count=1
 File0=Button
+Count=1
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Count=2
+0=click_2x5W_AMP_HEXIWEAR.mcpar
+Count=1
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

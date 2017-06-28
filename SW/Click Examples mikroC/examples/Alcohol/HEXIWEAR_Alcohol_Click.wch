@@ -1,7 +1,0 @@
-<WCH v="2">
-  <item n="_adc_rd" r="0" s="False" e="True" i="3784"/>
-  <item n="_ratio" r="3" s="True" e="True" i="3782"/>
-  <item n="_ppm" r="3" s="True" e="True" i="3781"/>
-  <item n="_value_old" r="3" s="True" e="True" i="3783"/>
-  <item n="FARG_DisplayAlcoholValue_value" r="0" s="False" e="True" i="3788"/>
-</WCH>

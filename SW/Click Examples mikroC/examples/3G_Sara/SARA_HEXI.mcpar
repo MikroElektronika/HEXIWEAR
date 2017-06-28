@@ -16,46 +16,27 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=2
-File0=at_engine\at_engine.c
+File0=.\at_engine\at_engine.c
 File1=SARA_HEXIWEAR.c
+Count=2
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=4
-File0=example.pld
-File1=at_engine\at_engine.h
-File2=at_engine\at_engine.c
-File3=SARA_HEXIWEAR.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=7
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path2=E:\Skywire\
-Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-Path4=E:\Skywire\at_engine\
-Path5=E:\Skywire\
-Path6=E:\Skywire\
-[HEADER_PATH]
-Count=1
-Path0=E:\Skywire\at_engine\
 [HEADERS]
+File0=.\at_engine\at_engine.h
 Count=1
-File0=at_engine\at_engine.h
 [PLDS]
-Count=1
 File0=example.pld
+Count=1
 [Useses]
-Count=7
 File0=UART
 File1=C_Stdlib
 File2=C_Type
@@ -63,10 +44,10 @@ File3=C_String
 File4=Button
 File5=I2C
 File6=Conversions
+Count=7
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Project Level Defines
-Count=2
+0=SARA_HEXI.mcpar
+Count=1
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

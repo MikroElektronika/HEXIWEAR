@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=ADAC_Click_ARM_KIN.c
+Value=library\__ADAC_Driver.h
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -16,56 +16,41 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=2
 File0=ADAC_Click_ARM_KIN.c
-File1=..\..\..\library\__ADAC_Driver.c
+File1=.\library\__ADAC_Driver.c
+Count=2
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=3
-File0=ADAC_Click_ARM_KIN.c
-File1=..\..\..\library\__ADAC_Driver.c
-File2=..\..\..\library\__ADAC_Driver.h
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=5
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-Path2=D:\!  Projects May\ADAC click\SW\example\c\ARM_KIN\
-Path3=D:\!  Projects May\ADAC click\SW\library\
-Path4=D:\!  Projects May\ADAC click\SW\example\c\ARM_KIN\
-[HEADER_PATH]
-Count=1
-Path0=D:\!  Projects May\ADAC click\SW\library\
 [HEADERS]
+File0=.\library\__ADAC_Driver.h
 Count=1
-File0=..\..\..\library\__ADAC_Driver.h
 [PLDS]
 Count=0
 [Useses]
-Count=4
 File0=I2C
 File1=Conversions
 File2=C_String
 File3=UART
+Count=4
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
+0=ADAC_Click_ARM_KIN.mcpar
+1=Sources
 Count=2
 [PROGRAMMER_OPTIONS]
-Value=
+Value=JTAG
 [PROGRAMMER_TYPE]
-Value=
+Value=mE
 [DEBUGGER_TYPE]
-Value=
+Value=default
 [AT_DEBUG_STARTUP]
 LOAD_BIN_TO_RAM=0
 START_EXEC_FROM_ADDR=0

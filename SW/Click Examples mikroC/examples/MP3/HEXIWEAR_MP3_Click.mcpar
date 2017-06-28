@@ -16,72 +16,55 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=5
 File0=HEXIWEAR_MP3_Click.c
 File1=MP3_driver.c
-File2=common\src\common_screen_objects.c
-File3=OLED\src\OLED_driver.c
-File4=OLED\src\OLED_resources.c
+File2=.\common\src\common_screen_objects.c
+File3=.\OLED\src\OLED_driver.c
+File4=.\OLED\src\OLED_resources.c
+Count=5
 [BINARIES]
 Count=0
 [IMAGES]
 Count=1
-File0=MP3_click.jpg
 ActiveImageIndex=0
-[OPENED_FILES]
-Count=1
-File0=HEXIWEAR_MP3_Click.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=10
-Path0=D:\Program Files\NXP\mikroC PRO for ARM\Defs\
-Path1=D:\Program Files\NXP\mikroC PRO for ARM\Uses\
-Path2=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\
-Path3=D:\Program Files\NXP\mikroC PRO for ARM\Uses\Freescale M4\
-Path4=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\1. Biblioteke\OLED\src\
-Path5=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\2. Primeri\common\src\
-Path6=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\OLED\src\
-Path7=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\common\src\
-Path8=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\common\inc\
-Path9=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\OLED\inc\
-[HEADER_PATH]
-Count=3
-Path0=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\
-Path1=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\common\inc\
-Path2=D:\Uros\!!KONACNI PRIMERI\HEXIWEAR_MP3_Click\example\ARM\OLED\inc\
 [HEADERS]
-Count=8
 File0=MP3_Test.h
 File1=resources.h
-File2=common\inc\common_screen_objects.h
+File2=.\common\inc\common_screen_objects.h
 File3=MP3_driver.h
-File4=OLED\inc\OLED_driver.h
-File5=OLED\inc\OLED_info.h
-File6=OLED\inc\OLED_resources.h
-File7=OLED\inc\OLED_types.h
+File4=.\OLED\inc\OLED_driver.h
+File5=.\OLED\inc\OLED_info.h
+File6=.\OLED\inc\OLED_resources.h
+File7=.\OLED\inc\OLED_types.h
+Count=8
 [PLDS]
 Count=0
 [Useses]
-Count=10
 File0=SPI
-File1=TFT
-File2=GPIO
-File3=Mmc
-File4=Mmc_FAT16
-File5=C_Type
-File6=C_String
-File7=Mmc_Fat16_Config
-File8=Conversions
-File9=SDHC
+File1=GPIO
+File2=Mmc
+File3=Mmc_FAT16
+File4=C_Type
+File5=C_String
+File6=Mmc_Fat16_Config
+File7=Conversions
+File8=SDHC
+Count=9
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Count=2
+0=HEXIWEAR_MP3_Click.mcpar
+1=Sources
+4=common
+5=src
+7=OLED
+8=src
+30=Output Files
+Count=7
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

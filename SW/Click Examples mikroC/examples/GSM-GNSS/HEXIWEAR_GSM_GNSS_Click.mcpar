@@ -16,73 +16,39 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=12
 File0=HEXIWEAR_GSM_GNSS_Click.c
 File1=gsm_gnss_click.c
 File2=hexiwear_gsm_gnss_gui.c
 File3=resources.c
-File4=gsm4\library\src\gsm4_at_engine.c
-File5=gsm4\library\src\gsm4_at_parser.c
-File6=gsm4\library\src\gsm4_dev_adapter.c
-File7=gsm4\library\src\gsm4_dev_hal.c
-File8=gsm4\library\src\gsm4_dev_timer.c
-File9=OLED\src\OLED_driver.c
-File10=OLED\src\OLED_resources.c
-File11=UART Messaging\src\hexiwear_uart_messaging.c
+File4=.\gsm4\library\src\gsm4_at_engine.c
+File5=.\gsm4\library\src\gsm4_at_parser.c
+File6=.\gsm4\library\src\gsm4_dev_adapter.c
+File7=.\gsm4\library\src\gsm4_dev_hal.c
+File8=.\gsm4\library\src\gsm4_dev_timer.c
+File9=.\OLED\src\OLED_driver.c
+File10=.\OLED\src\OLED_resources.c
+File11=.\UART Messaging\src\hexiwear_uart_messaging.c
+Count=12
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=14
-File0=HEXIWEAR_GSM_GNSS_Click.c
-File1=gsm_gnss_click.h
-File2=gsm4\library\src\gsm4_at_engine.c
-File3=gsm4\library\src\gsm4_at_parser.c
-File4=gsm4\library\src\gsm4_dev_adapter.c
-File5=gsm4\library\src\gsm4_dev_hal.c
-File6=gsm4\library\src\gsm4_dev_timer.c
-File7=OLED\src\OLED_driver.c
-File8=OLED\src\OLED_resources.c
-File9=UART Messaging\src\hexiwear_uart_messaging.c
-File10=def.pld
-File11=hexiwear_gsm_gnss_gui.c
-File12=gsm_gnss_click.c
-File13=log.h
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=8
-Path0=C:\Users\branislav.marton\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\branislav.marton\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path2=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\
-Path3=C:\Users\branislav.marton\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-Path4=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\
-Path5=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\gsm4\library\src\
-Path6=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\OLED\src\
-Path7=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\UART Messaging\src\
-[HEADER_PATH]
-Count=5
-Path0=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\
-Path1=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\
-Path2=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\gsm4\library\include\
-Path3=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\OLED\include\
-Path4=D:\Projects\HEXIWEAR_GSM_GNSS_Click\example\HEXIWEAR\UART Messaging\include\
 [HEADERS]
-Count=3
 File0=gsm_gnss_click.h
 File1=hexiwear_gsm_gnss_gui.h
 File2=log.h
+Count=3
 [PLDS]
-Count=1
 File0=def.pld
+Count=1
 [Useses]
-Count=10
 File0=C_Math
 File1=C_Stdlib
 File2=C_String
@@ -93,10 +59,11 @@ File6=Sprintl
 File7=UART
 File8=SPI
 File9=Conversions
+Count=10
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Node2=Project Level Defines
+0=HEXIWEAR_GSM_GNSS_Click.mcpar
+1=Sources
+21=Header Files
 Count=3
 [PROGRAMMER_OPTIONS]
 Value=SWD

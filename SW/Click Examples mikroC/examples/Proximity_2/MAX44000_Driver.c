@@ -6,15 +6,15 @@ void MAX44000_WriteRegister(char wrAddr, char wrData) {
   tmp_data[0] = wrAddr;
   tmp_data[1] = wrData;
   I2C_Start();
-  I2C_Write(MAX44000_I2C_Adr,tmp_data,2,_I2C_END_MODE_STOP);
+  I2C_Write(MAX44000_I2C_Adr,tmp_data,2,END_MODE_STOP);
 }
 
 //--------------- Reads data from device - single location
 char MAX44000_ReadRegister(char rAddr) {
   tmp_data[0] = rAddr;
   I2C_Start();              // issue I2C start signal
-  I2C_Write(MAX44000_I2C_Adr,tmp_data,1,_I2C_END_MODE_RESTART);
-  I2C_Read (MAX44000_I2C_Adr,tmp_data,1,_I2C_END_MODE_STOP);
+  I2C_Write(MAX44000_I2C_Adr,tmp_data,1,END_MODE_RESTART);
+  I2C_Read (MAX44000_I2C_Adr,tmp_data,1,END_MODE_STOP);
   return tmp_data[0];
 }
 

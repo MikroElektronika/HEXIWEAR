@@ -12,63 +12,42 @@ Value=0
 [USE_HEAP]
 Value=0
 [HEAP_SIZE]
-Value=0
+Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=4
 File0=HEXIWEAR_Camera_Click.c
 File1=common_screen_objects.c
 File2=OLED_driver.c
 File3=OLED_resources.c
+Count=4
 [BINARIES]
 Count=0
 [IMAGES]
-Count=1
-File0=Camera_Click.jpg
-ActiveImageIndex=0
-[OPENED_FILES]
-Count=7
-File0=HEXIWEAR_Camera_Click.c
-File1=OLED_driver.c
-File2=OLED_driver.h
-File3=OLED_types.h
-File4=OLED_info.h
-File5=OLED_resources.c
-File6=OLED_resources.h
+Count=0
+ActiveImageIndex=-1
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=4
-Path0=D:\work\mikroC PRO for ARM\Defs\
-Path1=D:\work\mikroC PRO for ARM\Uses\
-Path2=D:\Marko\tasks\freescale\svn\Hexiwear\MK64\5. Click Demos\1. mikroC\2. Primeri\HEXIWEAR_Camera_Click\example\ARM\
-Path3=D:\work\mikroC PRO for ARM\Uses\NXP M4\
-[HEADER_PATH]
-Count=1
-Path0=D:\Marko\tasks\freescale\svn\Hexiwear\MK64\5. Click Demos\1. mikroC\2. Primeri\HEXIWEAR_Camera_Click\example\ARM\
 [HEADERS]
-Count=5
 File0=common_screen_objects.h
 File1=OLED_driver.h
 File2=OLED_info.h
 File3=OLED_resources.h
 File4=OLED_types.h
+Count=5
 [PLDS]
 Count=0
 [Useses]
-Count=3
 File0=TFT_Fonts
 File1=Mmc_FAT16_Defs
 File2=Spi
+Count=3
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Count=2
+Count=0
 [PROGRAMMER_OPTIONS]
 Value=JTAG
 [PROGRAMMER_TYPE]

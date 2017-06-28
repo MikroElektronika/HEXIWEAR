@@ -25,6 +25,7 @@
 #include "OLED_driver.h"
 #include "OLED_resources.h"
 #include "UART_Messaging.h"
+#include "mic_24045_click.h"
 #include <stdint.h>
 /******************************************************************************
 * Module Preprocessor Constants

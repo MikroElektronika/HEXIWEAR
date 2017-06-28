@@ -16,7 +16,6 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=7
 File0=HEXIWEAR_Smoke_Click.c
 File1=common_screen_objects.c
 File2=hal_smoke.c
@@ -24,46 +23,19 @@ File3=OLED_driver.c
 File4=OLED_resources.c
 File5=smoke.c
 File6=UART_Messaging.c
+Count=7
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=15
-File0=HEXIWEAR_Smoke_Click.c
-File1=common_screen_objects.h
-File2=hal_smoke.h
-File3=OLED_driver.h
-File4=OLED_info.h
-File5=OLED_resources.h
-File6=OLED_types.h
-File7=UART_Messaging.h
-File8=common_screen_objects.c
-File9=hal_smoke.c
-File10=OLED_driver.c
-File11=OLED_resources.c
-File12=smoke.c
-File13=UART_Messaging.c
-File14=example.pld
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=5
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path2=D:\Stefan Popovic\Projekti\Click_Smoke_MAX30105\example\HEXIWEAR\
-Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-Path4=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\Click_AC_Current\Uses\
-[HEADER_PATH]
-Count=1
-Path0=D:\Stefan Popovic\Projekti\Click_Smoke_MAX30105\example\HEXIWEAR\
 [HEADERS]
-Count=8
 File0=common_screen_objects.h
 File1=hal_smoke.h
 File2=OLED_driver.h
@@ -72,20 +44,19 @@ File4=OLED_resources.h
 File5=OLED_types.h
 File6=smoke.h
 File7=UART_Messaging.h
+Count=8
 [PLDS]
-Count=1
 File0=example.pld
+Count=1
 [Useses]
-Count=5
 File0=I2C
 File1=Conversions
 File2=C_String
 File3=SPI
 File4=UART
+Count=5
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Project Level Defines
-Count=2
+Count=0
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

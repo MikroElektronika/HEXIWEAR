@@ -92,7 +92,7 @@ void ir_gesture_i2c_hal_write( uint8_t address, uint8_t const *buff , uint16_t c
     memcpy( &temp_buff[1], temp_ptr, count );
 
     start_i2c_p();
-    write_i2c_p( _i2c_hw_address, temp_buff, count + 1, _I2C_END_MODE_STOP );
+    write_i2c_p( _i2c_hw_address, temp_buff, count + 1, END_MODE_STOP );
 }
 
 void ir_gesture_i2c_hal_read( uint8_t address, uint8_t const *buffer, uint16_t count )
@@ -100,6 +100,6 @@ void ir_gesture_i2c_hal_read( uint8_t address, uint8_t const *buffer, uint16_t c
    uint8_t *ptr = ( uint8_t *)buffer;
 
     start_i2c_p();
-    write_i2c_p( _i2c_hw_address, &address, 1, _I2C_END_MODE_RESTART );
-    read_i2c_p( _i2c_hw_address, ptr, count, _I2C_END_MODE_STOP );
+    write_i2c_p( _i2c_hw_address, &address, 1, END_MODE_RESTART );
+    read_i2c_p( _i2c_hw_address, ptr, count, END_MODE_STOP );
 }

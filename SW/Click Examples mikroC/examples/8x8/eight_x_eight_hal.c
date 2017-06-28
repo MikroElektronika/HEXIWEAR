@@ -36,7 +36,7 @@
 *******************************************************************************/
 
 static void         ( *write_spi_p )            ( unsigned int data_out );
-static unsigned long( *read_spi_p )             ( unsigned int buffer );
+static unsigned ( *read_spi_p )             ( unsigned int buffer );
 
 extern sfr sbit LED_EIGHT_CS;
 

@@ -5,9 +5,9 @@
  * Author       Branislav M.
  *
  * Test configuration KINETIS :
- *  MCU           :	MK64
- *  Dev. Board    :	HEXIWEAR
- *  SW            :	mikroC PRO for ARM vARM_COMPLIER_VER
+ *  MCU           :        MK64
+ *  Dev. Board    :        HEXIWEAR
+ *  SW            :        mikroC PRO for ARM v5.1.0
  *
  * Description :
  * The example is simple master/slave communication. The Master uses input pin 

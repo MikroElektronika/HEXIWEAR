@@ -26,27 +26,12 @@ Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=1
-File0=src\OLED_test.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=6
-Path0=D:\Share\nxp\mikroC PRO for ARM\Defs\
-Path1=D:\Share\nxp\mikroC PRO for ARM\Uses\Freescale M4\
-Path2=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\1. Biblioteke\OLED\test\
-Path3=D:\Share\nxp\mikroC PRO for ARM\Uses\
-Path4=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\1. Biblioteke\OLED\test\src\
-Path5=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\1. Biblioteke\OLED\src\
-[HEADER_PATH]
-Count=2
-Path0=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\1. Biblioteke\OLED\inc\
-Path1=D:\!!!SVN\Hexiwear\MK64\5. Click Demos\1. mikroC\1. Biblioteke\OLED\test\inc\
 [HEADERS]
 Count=5
 File0=inc\test_resources.h

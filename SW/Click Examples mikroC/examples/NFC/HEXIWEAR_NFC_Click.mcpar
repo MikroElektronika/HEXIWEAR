@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=1
 [ACTIVE_TAB]
-Value=nfc_hal.c
+Value=HEXIWEAR_NFC_Click.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -16,7 +16,6 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=14
 File0=nfc_hal.c
 File1=nfc.c
 File2=P2P_NDEF.c
@@ -31,44 +30,19 @@ File10=common_screen_objects.c
 File11=OLED_driver.c
 File12=OLED_resources.c
 File13=resources.c
+Count=14
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=14
-File0=nfc_hal.c
-File1=HEXIWEAR_NFC_Click.c
-File2=nfc.c
-File3=nfc.h
-File4=common_screen_objects.c
-File5=OLED_driver.c
-File6=OLED_resources.c
-File7=OLED_driver.h
-File8=OLED_info.h
-File9=OLED_resources.h
-File10=OLED_types.h
-File11=resources.c
-File12=resources.h
-File13=RW_NDEF_T2T.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=10
-Path0=C:\C4W\mikroC PRO for ARM\Defs\
-Path1=C:\C4W\mikroC PRO for ARM\Uses\NXP M4\
-Path2=C:\C4W\mikroC PRO for ARM\Uses\
-Path3=\\VBOXSVR\storage\git\MikroE\HEXIWEAR\SW\Click Examples mikroC\2.Examples\HEXIWEAR_NFC_Click\example\ARM\
-[HEADER_PATH]
-Count=2
-Path1=\\VBOXSVR\storage\git\MikroE\HEXIWEAR\SW\Click Examples mikroC\2.Examples\HEXIWEAR_NFC_Click\example\ARM\
 [HEADERS]
-Count=14
 File0=nfc_hal.h
 File1=nfc.h
 File2=P2P_NDEF.h
@@ -83,21 +57,22 @@ File10=OLED_info.h
 File11=OLED_resources.h
 File12=OLED_types.h
 File13=resources.h
+Count=14
 [PLDS]
-Count=1
 File0=Project_Defines.pld
+Count=1
 [Useses]
-Count=6
 File0=I2C
 File1=C_String
 File2=Sprinti
 File3=C_Type
 File4=Conversions
 File5=SPI
+Count=6
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Node2=Project Level Defines
+0=HEXIWEAR_NFC_Click.mcpar
+1=Sources
+16=Header Files
 Count=3
 [PROGRAMMER_OPTIONS]
 Value=SWD

@@ -1,6 +1,6 @@
 [DEVICE]
 Name=MK64FN1M0XXX12
-Clock=16000000
+Clock=120000000
 [MEMORY_MODEL]
 Value=0
 [BUILD_TYPE]
@@ -16,66 +16,46 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=5
 File0=HEXIWEAR_Brushless_Click.c
 File1=common_screen_objects.c
 File2=OLED_driver.c
 File3=OLED_resources.c
 File4=UART_Messaging.c
+Count=5
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=11
-File0=HEXIWEAR_Brushless_Click.c
-File1=common_screen_objects.h
-File2=OLED_driver.h
-File3=OLED_info.h
-File4=OLED_resources.h
-File5=OLED_types.h
-File6=UART_Messaging.h
-File7=common_screen_objects.c
-File8=OLED_driver.c
-File9=OLED_resources.c
-File10=UART_Messaging.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=4
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path2=D:\Stefan Popovic\Projekti\HEXIWEAR_Brushless_Click\example\ARM\
-Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-[HEADER_PATH]
-Count=1
-Path0=D:\Stefan Popovic\Projekti\HEXIWEAR_Brushless_Click\example\ARM\
 [HEADERS]
-Count=6
 File0=common_screen_objects.h
 File1=OLED_driver.h
 File2=OLED_info.h
 File3=OLED_resources.h
 File4=OLED_types.h
 File5=UART_Messaging.h
+Count=6
 [PLDS]
 Count=0
 [Useses]
-Count=6
 File0=ADC
 File1=Conversions
 File2=C_String
 File3=PWM
 File4=UART
 File5=SPI
+Count=6
 [EXPANDED_NODES]
-Node0=Sources
-Count=1
+0=HEXIWEAR_Brushless_Click.mcpar
+1=Sources
+7=Header Files
+Count=3
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

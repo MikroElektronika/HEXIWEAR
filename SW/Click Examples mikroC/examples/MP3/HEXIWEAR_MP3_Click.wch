@@ -1,6 +1,0 @@
-<WCH v="2">
-  <item n="PORTA_ISFR" r="0" s="False" e="True" i="1030"/>
-  <item n="PORTB_ISFR" r="1" s="False" e="True" i="1065"/>
-  <item n="PTA_PDIR" r="1" s="False" e="False" i="1679"/>
-  <item n="PORTA_ISFR" r="0" s="False" e="True" i="1030"/>
-</WCH>

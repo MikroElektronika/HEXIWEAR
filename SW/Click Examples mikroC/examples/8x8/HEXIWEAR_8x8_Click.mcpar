@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=HEXIWEAR_8x8_Click.c
+Value=eight_x_eight_hal.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -16,41 +16,24 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=5
 File0=eight_x_eight_hal.c
 File1=eight_x_eight_hw.c
 File2=HEXIWEAR_8x8_Click.c
 File3=OLED_driver.c
 File4=OLED_resources.c
+Count=5
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=5
-File0=HEXIWEAR_8x8_Click.c
-File1=OLED_driver.c
-File2=OLED_resources.c
-File3=OLED_resources.h
-File4=eight_x_eight_hw.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=4
-Path0=D:\work\mikroC PRO for ARM\Defs\
-Path1=D:\work\mikroC PRO for ARM\Uses\NXP M4\
-Path2=D:\work\mikroC PRO for ARM\Uses\
-Path3=D:\Marko\tasks\freescale\svn\Hexiwear\MK64\5. Click Demos\1. mikroC\2. Primeri\HEXIWEAR_8x8_Click\example\ARM\
-[HEADER_PATH]
-Count=1
-Path0=D:\Marko\tasks\freescale\svn\Hexiwear\MK64\5. Click Demos\1. mikroC\2. Primeri\HEXIWEAR_8x8_Click\example\ARM\
 [HEADERS]
-Count=7
 File0=eight_x_eight_font.h
 File1=eight_x_eight_hal.h
 File2=eight_x_eight_hw.h
@@ -58,18 +41,20 @@ File3=OLED_driver.h
 File4=OLED_info.h
 File5=OLED_resources.h
 File6=OLED_types.h
+Count=7
 [PLDS]
 Count=0
 [Useses]
-Count=4
 File0=UART
 File1=C_String
 File2=SPI
 File3=I2C
+Count=4
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Header Files
-Count=2
+0=HEXIWEAR_8x8_Click.mcpar
+1=Sources
+7=Header Files
+Count=3
 [PROGRAMMER_OPTIONS]
 Value=SWD
 [PROGRAMMER_TYPE]

@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=NT2_HEXI.c
+Value=library\src\nfc_tag2.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -16,49 +16,36 @@ Value=2000
 [EEPROM_DEFINITION]
 Value=
 [FILES]
-Count=1
 File0=NT2_HEXI.c
+File1=.\library\src\nfc_tag2.c
+File2=.\library\src\nfc_tag2_hal.c
+Count=3
 [BINARIES]
 Count=0
 [IMAGES]
 Count=0
 ActiveImageIndex=-1
-[OPENED_FILES]
-Count=2
-File0=NT2_HEXI.c
-File1=example.pld
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
 Count=0
 [OTHER_FILES]
 Count=0
-[SEARCH_PATH]
-Count=6
-Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\
-Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\
-Path2=E:\git\ClickLab\NFC_Tag2_click\example\HEXI\
-Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\NXP M4\
-Path4=E:\git\ClickLab\NFC_Tag2_click\library\src\
-Path5=E:\git\ClickLab\NFC_Tag2_click\library\include\
-[HEADER_PATH]
-Count=1
-Path0=E:\git\ClickLab\NFC_Tag2_click\library\include\
 [HEADERS]
-Count=0
+File0=.\library\include\nfc_tag2.h
+File1=.\library\include\nfc_tag2_hal.h
+Count=2
 [PLDS]
-Count=1
 File0=example.pld
+Count=1
 [Useses]
-Count=4
 File0=UART
 File1=I2C
 File2=C_String
 File3=Conversions
+Count=4
 [EXPANDED_NODES]
-Node0=Sources
-Node1=Project Level Defines
-Count=2
+Count=0
 [PROGRAMMER_OPTIONS]
 Value=JTAG
 [PROGRAMMER_TYPE]
