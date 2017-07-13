@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=library\7x5font.h
+Value=Click_S7X10G_KINETIS.c
 [USE_EEPROM]
 Value=0
 [USE_HEAP]

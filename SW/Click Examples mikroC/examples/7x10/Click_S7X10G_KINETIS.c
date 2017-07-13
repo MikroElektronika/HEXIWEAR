@@ -7,7 +7,7 @@ Example for 7x10 G Click
 Test configuration STM32 :
 
     MCU              : MK64FN1M0XXX12
-    Dev. Board       : EasyMx PRO v7 for ARM
+    Dev. Board       : EasyMx PRO v7 for STM32 ARM
     ARM Compiler ver : v.5.1.0
 
 Description :
