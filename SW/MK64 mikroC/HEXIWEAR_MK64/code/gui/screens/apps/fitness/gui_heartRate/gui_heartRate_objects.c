@@ -18,7 +18,7 @@ guiScreen_t heartRateScreen =
 {
     &flashlightScreen,               // .navigation.up
     &gui_weatherStation_coverScreen, // .navigation.down
-    &fitnessScreen,                  // .navigation.left
+    &appsScreen,                     // .navigation.left
     NULL,                            // .navigation.right
 
     heartRate_screen_bmp,            // .image
