@@ -1,0 +1,68 @@
+module __GPIO_mikrobus
+
+include __mikrobus_STM32
+include __mikrobus_TIVA
+include __mikrobus_MSP
+include __mikrobus_KINETIS
+include __mikrobus_CEC
+
+const AN_PIN         as byte = 0
+const RST_PIN        as byte = 1
+const CS_PIN         as byte = 2
+const PWM_PIN        as byte = 3
+const INT_PIN        as byte = 4
+
+const GPIO_INPUT     as byte = 0
+const GPIO_OUTPUT    as byte = 1
+
+sub procedure MIKROBUS_GPIO_DIRECTION( dim bus as byte, dim position as byte, dim direction as byte)
+
+implements
+
+sub procedure MIKROBUS_GPIO_DIRECTION(dim bus as byte, dim position as byte, dim direction as byte)
+    if (direction = GPIO_OUTPUT) then
+#IFDEF __STM32__ THEN
+        GPIO_Digital_Output( __MIKROBUS_GPIO[bus][position].port, 
+                             __MIKROBUS_GPIO[bus][position].pin )
+#ENDIF
+#IFDEF __TIVA__ THEN
+        GPIO_Digital_Output( __MIKROBUS_GPIO[bus][position].port, 
+                             __MIKROBUS_GPIO[bus][position].pin )
+#ENDIF
+{$IFDEF __KINETIS__ THEN
+        GPIO_Digital_Output( __MIKROBUS_GPIO[bus][direction][position].port, 
+                             __MIKROBUS_GPIO[bus][direction][position].pin )
+#ENDIF
+{$IFDEF __MCHP__ THEN
+        GPIO_Digital_Output( __MIKROBUS_GPIO[bus][position].port, 
+                             __MIKROBUS_GPIO[bus][position].pin )
+#ENDIF
+#IFDEF __MSP__ THEN
+        GPIO_Digital_Output( __MIKROBUS_GPIO[bus][direction][position].port, 
+                             __MIKROBUS_GPIO[bus][direction][position].pin )
+#ENDIF
+    end if
+    if (direction = GPIO_INPUT) then
+{$IFDEF __STM32__ THEN
+        GPIO_Digital_Input( __MIKROBUS_GPIO[bus][position].port, 
+                            __MIKROBUS_GPIO[bus][position].pin )
+#ENDIF
+{$IFDEF __TIVA__ THEN
+        GPIO_Digital_Input( __MIKROBUS_GPIO[bus][position].port, 
+                            __MIKROBUS_GPIO[bus][position].pin )
+#ENDIF
+{$IFDEF __KINETIS__ THEN
+        GPIO_Digital_Input( __MIKROBUS_GPIO[bus][direction][position].port, 
+                            __MIKROBUS_GPIO[bus][direction][position].pin )
+#ENDIF
+{$IFDEF __MCHP__ THEN
+        GPIO_Digital_Input( __MIKROBUS_GPIO[bus][position].port, 
+                            __MIKROBUS_GPIO[bus][position].pin )
+#ENDIF
+#IFDEF __MSP__ THEN
+        GPIO_Digital_Output( __MIKROBUS_GPIO[bus][direction][position].port, 
+                             __MIKROBUS_GPIO[bus][direction][position].pin )
+#ENDIF
+    end if
+end sub
+end.

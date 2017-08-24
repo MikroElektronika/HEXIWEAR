@@ -1,0 +1,7 @@
+{$IFNDEF SYSTEM_MAPPED}
+{$DEFINE SYSTEM_MAPPED}
+
+const
+MIKROBUS1   : byte = 0;
+MIKROBUS2   : byte = 1;
+

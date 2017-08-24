@@ -1,0 +1,500 @@
+module __mikrobus_STM32
+include mikrobus_config
+
+'--------------------------------------------------------- EASY MX PRO V7 STM32
+#IFDEF EASY_MX_PRO_V7_STM32 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    ),
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin[2][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_2 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_13 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_10 )
+    ),
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_5 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_3 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_14 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_11 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B4
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B4
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOC_IDR.B2
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOC_ODR.B2
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOD_IDR.B13
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOD_ODR.B13
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOA_IDR.B0
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOA_ODR.B0
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOD_IDR.B10
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOD_ODR.B10
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIOA_IDR.B5
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B5
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIOC_IDR.B3
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIOC_ODR.B3
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIOD_IDR.B14
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIOD_ODR.B14
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIOA_IDR.B0
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIOA_ODR.B0
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIOD_IDR.B11
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIOD_ODR.B11
+#ENDIF
+'------------------------------------------------------------- STM32 M4 CLICKER
+#IFDEF  STM32_M4_CLICKER THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 1 ] = (
+    ( 
+        @SPI2_Init_Advanced, 
+        @SPI2_Write, 
+        @SPI2_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI2_PB13_14_15 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin[1][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOB_BASE, _GPIO_PINMASK_5 ),
+        ( @GPIOB_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOB_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOB_BASE, _GPIO_PINMASK_1 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B0
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B0
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOB_IDR.B5
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOB_ODR.B5
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOB_IDR.B12
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOB_ODR.B12
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOB_IDR.B0
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOB_ODR.B0
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOB_IDR.B1
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOB_ODR.B1
+#ENDIF
+'------------------------------------------------------------- CLICKER 2 STM32
+#IFDEF  CLICKER_2_STM32 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    ),
+    ( 
+        @SPI2_Init_Advanced, 
+        @SPI2_Write, 
+        @SPI2_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED, 
+        @_GPIO_MODULE_SPIB_PC13_14_15 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [2][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_2 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_7 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_8 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_9 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_10 )
+    ),
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_3 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_13 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_11 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_14 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B2
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B2
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOE_IDR.B7
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOE_ODR.B7
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOE_IDR.B8
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOE_ODR.B8
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOE_IDR.B9
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOE_ODR.B9
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOE_IDR.B10
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B10
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIOA_IDR.B3
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B3
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIOE_IDR.B13
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIOE_ODR.B13
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIOE_IDR.B11
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIOE_ODR.B11
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B12
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B12
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIOE_IDR.B14
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B14
+#ENDIF
+'---------------------------------------------------------- MIKROMEDIA STM32 M3
+#IFDEF MIKROMEDIA_STM32_M3 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    ),
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [2][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_1 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_2 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_7 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_1 )
+    ),
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_5 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_8 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_8 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_2 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B4
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B4
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOD_IDR.B1
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOD_ODR.B1
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOD_IDR.B2
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOD_ODR.B2
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOA_IDR.B7
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOA_ODR.B7
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOC_IDR.B1
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOC_ODR.B1
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIOA_IDR.B5
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B5
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIOD_IDR.B4
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIOD_ODR.B4
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIOD_IDR.B8
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIOD_ODR.B8
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIOA_IDR.B8
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIOA_ODR.B8
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIOC_IDR.B2
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIOC_ODR.B2
+#ENDIF
+'---------------------------------------------------------- MIKROMEDIA STM32 M4
+#IFDEF MIKROMEDIA_STM32_M4 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    ),
+    ( 
+        @SPI3_Init_Advanced, 
+        @SPI3_Write, 
+        @SPI3_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED, 
+        @_GPIO_MODULE_SPI3_PC10_11_12 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [2][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_1 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_2 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_7 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_1 )
+    ),
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_5 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_8 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_8 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_2 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B4
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B4
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOD_IDR.B1
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOD_ODR.B1
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOD_IDR.B2
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOD_ODR.B2
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOA_IDR.B7
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOA_ODR.B7
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOC_IDR.B1
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOC_ODR.B1
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIOA_IDR.B5
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B5
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIOD_IDR.B4
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIOD_ODR.B4
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIOD_IDR.B8
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIOD_ODR.B8
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIOA_IDR.B8
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIOA_ODR.B8
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIOC_IDR.B2
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIOC_ODR.B2
+#ENDIF
+'-------------------------------------------------------- MIKROMEDIA PLUS STM32
+#IFDEF MIKROMEDIA_PLUS_STM32 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    ),
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    ),
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS3_SPI_CONFIG, 
+        __MIKROBUS3_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    ),
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS4_SPI_CONFIG, 
+        __MIKROBUS4_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [4][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_2 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_3 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_0 )
+    ),
+    (
+        ( @GPIOB_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_13 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_13 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_1 )
+    ),
+    (
+        ( @GPIOB_BASE, _GPIO_PINMASK_1 ),
+        ( @GPIOB_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_15 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_14 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_2 )
+    ),
+    (
+        ( @GPIOC_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_5 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_6 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_15 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_3 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B4
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B4
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOC_IDR.B2
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOC_ODR.B2
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOC_IDR.B3
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOC_ODR.B3
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B12
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B12
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOE_IDR.B0
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B0
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIOB_IDR.B0
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIOB_ODR.B0
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIOE_IDR.B4
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIOE_ODR.B4
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIOC_IDR.B13
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIOC_ODR.B13
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B13
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B13
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIOE_IDR.B1
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B1
+MIKROBUS3_PIN_AN_INPUT          as sbit at GPIOB_IDR.B1
+MIKROBUS3_PIN_AN_OUTPUT         as sbit at GPIOB_ODR.B1
+MIKROBUS3_PIN_RST_INPUT         as sbit at GPIOB_IDR.B12
+MIKROBUS3_PIN_RST_OUTPUT        as sbit at GPIOB_ODR.B12
+MIKROBUS3_PIN_CS_INPUT          as sbit at GPIOA_IDR.B15
+MIKROBUS3_PIN_CS_OUTPUT         as sbit at GPIOA_ODR.B15
+MIKROBUS3_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B14
+MIKROBUS3_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B14
+MIKROBUS3_PIN_INT_INPUT         as sbit at GPIOE_IDR.B2
+MIKROBUS3_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B2
+MIKROBUS4_PIN_AN_INPUT          as sbit at GPIOC_IDR.B0
+MIKROBUS4_PIN_AN_OUTPUT         as sbit at GPIOC_ODR.B0
+MIKROBUS4_PIN_RST_INPUT         as sbit at GPIOE_IDR.B5
+MIKROBUS4_PIN_RST_OUTPUT        as sbit at GPIOE_ODR.B5
+MIKROBUS4_PIN_CS_INPUT          as sbit at GPIOE_IDR.B6
+MIKROBUS4_PIN_CS_OUTPUT         as sbit at GPIOE_ODR.B6
+MIKROBUS4_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B15
+MIKROBUS4_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B15
+MIKROBUS4_PIN_INT_INPUT         as sbit at GPIOE_IDR.B3
+MIKROBUS4_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B3
+#ENDIF
+'------------------------------------------------------ MIKROMEDIA PLUS STM32F7
+#IFDEF  MIKROMEDIA_PLUS_STM32F7 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    ),
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    ),
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS3_SPI_CONFIG, 
+        __MIKROBUS3_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    ),
+    ( 
+        @SPI1_Init_Advanced, 
+        @SPI1_Write, 
+        @SPI1_Read, 
+        __MIKROBUS4_SPI_CONFIG, 
+        __MIKROBUS4_SPI_SPEED, 
+        @_GPIO_MODULE_SPI1_PA56_PB5 
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [4][5] = (
+    (
+        ( @GPIOA_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_2 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_3 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_0 )
+    ),
+    (
+        ( @GPIOB_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_4 ),
+        ( @GPIOC_BASE, _GPIO_PINMASK_13 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_13 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_1 )
+    ),
+    (
+        ( @GPIOB_BASE, _GPIO_PINMASK_1 ),
+        ( @GPIOB_BASE, _GPIO_PINMASK_12 ),
+        ( @GPIOA_BASE, _GPIO_PINMASK_15 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_14 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_2 )
+    ),
+    (
+        ( @GPIOC_BASE, _GPIO_PINMASK_0 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_5 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_6 ),
+        ( @GPIOD_BASE, _GPIO_PINMASK_15 ),
+        ( @GPIOE_BASE, _GPIO_PINMASK_3 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIOA_IDR.B4
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIOA_ODR.B4
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIOC_IDR.B2
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIOC_ODR.B2
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIOC_IDR.B3
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIOC_ODR.B3
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B12
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B12
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIOE_IDR.B0
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B0
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIOB_IDR.B0
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIOB_ODR.B0
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIOE_IDR.B4
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIOE_ODR.B4
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIOC_IDR.B13
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIOC_ODR.B13
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B13
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B13
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIOE_IDR.B1
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B1
+MIKROBUS3_PIN_AN_INPUT          as sbit at GPIOB_IDR.B1
+MIKROBUS3_PIN_AN_OUTPUT         as sbit at GPIOB_ODR.B1
+MIKROBUS3_PIN_RST_INPUT         as sbit at GPIOB_IDR.B12
+MIKROBUS3_PIN_RST_OUTPUT        as sbit at GPIOB_ODR.B12
+MIKROBUS3_PIN_CS_INPUT          as sbit at GPIOA_IDR.B15
+MIKROBUS3_PIN_CS_OUTPUT         as sbit at GPIOA_ODR.B15
+MIKROBUS3_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B14
+MIKROBUS3_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B14
+MIKROBUS3_PIN_INT_INPUT         as sbit at GPIOE_IDR.B2
+MIKROBUS3_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B2
+MIKROBUS4_PIN_AN_INPUT          as sbit at GPIOC_IDR.B0
+MIKROBUS4_PIN_AN_OUTPUT         as sbit at GPIOC_ODR.B0
+MIKROBUS4_PIN_RST_INPUT         as sbit at GPIOE_IDR.B5
+MIKROBUS4_PIN_RST_OUTPUT        as sbit at GPIOE_ODR.B5
+MIKROBUS4_PIN_CS_INPUT          as sbit at GPIOE_IDR.B6
+MIKROBUS4_PIN_CS_OUTPUT         as sbit at GPIOE_ODR.B6
+MIKROBUS4_PIN_PWM_INPUT         as sbit at GPIOD_IDR.B15
+MIKROBUS4_PIN_PWM_OUTPUT        as sbit at GPIOD_ODR.B15
+MIKROBUS4_PIN_INT_INPUT         as sbit at GPIOE_IDR.B3
+MIKROBUS4_PIN_INT_OUTPUT        as sbit at GPIOE_ODR.B3
+#ENDIF
+
+end.

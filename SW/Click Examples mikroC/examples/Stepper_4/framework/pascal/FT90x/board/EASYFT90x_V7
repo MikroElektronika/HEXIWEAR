@@ -1,0 +1,7 @@
+const
+MIKROBUS1   : byte = 0;
+MIKROBUS2   : byte = 1;
+
+{$IFDEF FT900}
+{$I EASYFT90x_FT900}
+{$ENDIF}

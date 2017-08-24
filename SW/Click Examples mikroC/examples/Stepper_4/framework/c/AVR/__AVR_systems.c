@@ -1,0 +1,1 @@
+#include "AVR/boards/EASYAVR_ATMEGA32.c"

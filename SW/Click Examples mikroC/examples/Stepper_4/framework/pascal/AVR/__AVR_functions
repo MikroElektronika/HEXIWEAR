@@ -1,0 +1,21 @@
+{$IFDEF __SPI_CLICK}
+procedure MIKROBUS_SPIdriverInit( spiObj: T_MIKROBUS_spiObj; fpInit :^T_SPI_initializer; config :^dword );
+begin
+    spiObj.pInit^( (byte)config[0], (byte)config[1], (byte)config[2] );
+    fpInit^( spiObj.pWrite, spiObj.pRead );
+end;
+{$ENDIF}
+{$IFDEF __I2C_CLICK}
+procedure MIKROBUS_I2CdriverInit( i2cObj: T_MIKROBUS_i2cObj; fpInit :^T_I2C_initializer; config :^dword );
+begin
+    i2cObj.pInit^( config[0] );
+    fpInit^( i2cObj.pStart, i2cObj.pStop, i2cObj.pRestart, i2cObj.pWrite, i2cObj.pRead );
+end;
+{$ENDIF}
+{$IFDEF __UART_CLICK}
+procedure MIKROBUS_UARTdriverInit( uartObj: T_MIKROBUS_uartObj; fpInit :^T_UART_initializer; config :^dword );
+begin
+    uartObj.pInit^( config[0], (byte)config[1], (byte)config[2] );
+    fpInit^( uartObj.pWrite, uartObj.pRead, uartObj.pReady );
+end;
+{$ENDIF}

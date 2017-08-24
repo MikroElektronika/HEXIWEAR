@@ -1,0 +1,79 @@
+{$IFDEF EASY_MX_PRO_V7_STM32}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF STM32_M4_CLICKER}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF CLICKER_2_STM32}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF MIKROMEDIA_STM32_M3}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF MIKROMEDIA_STM32_M4}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF MIKROMEDIA_PLUS_STM32}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF MIKROMEDIA_PLUS_STM32F7}
+{$I __STM32_systems}
+{$ENDIF}
+
+{$IFDEF CEC1302_CLICKER}
+{$I __CEC_systems}
+{$ENDIF}
+
+{$IFDEF CEC1702_CLICKER}
+{$I __CEC_systems}
+{$ENDIF}
+
+{$IFDEF CLICKER_2_CEC1302}
+{$I __CEC_systems}
+{$ENDIF}
+
+{$IFDEF  CLICKER_2_CEC1702}
+{$I __CEC_systems}
+{$ENDIF}
+
+{$IFDEF MSP432_CLICKER}
+{$I __MSP_systems}
+{$ENDIF}
+
+{$IFDEF CLICKER_2_MSP432}
+{$I __MSP_systems}
+{$ENDIF}
+
+{$IFDEF HEXIWEAR_DOCKING}
+{$I __KINETIS_systems}
+{$ENDIF}
+
+{$IFDEF HEXIWEAR_BATYERY_PACK}
+{$I __KINETIS_systems}
+{$ENDIF}
+
+{$IFDEF CLICKER_2_KINETIS}
+{$I __KINETIS_systems}
+{$ENDIF}
+
+{$IFDEF KINETIS_CLICKER}
+{$I __KINETIS_systems}
+{$ENDIF}
+
+{$IFDEF MIKROMEDIA_TIVA}
+{$I __TIVA_systems}
+{$ENDIF}
+
+{$IFDEF MIKROMEDIA_5_TIVA}
+{$I __TIVA_systems}
+{$ENDIF}
+
+{$IFDEF EASY_MX_PRO_V7_TIVA}
+{$I __TIVA_systems}
+{$ENDIF}

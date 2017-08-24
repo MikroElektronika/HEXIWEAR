@@ -1,0 +1,13 @@
+module __GPIO_mikrobus
+
+include __GPIO_mikrobus
+include __SPI_mikrobus
+include __UART_mikrobus
+include __I2C_mikrobus
+
+
+
+implements
+
+
+end.

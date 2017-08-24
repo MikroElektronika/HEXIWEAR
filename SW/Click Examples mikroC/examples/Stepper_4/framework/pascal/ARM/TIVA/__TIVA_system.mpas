@@ -1,0 +1,203 @@
+unit __KINETIS_system;
+uses __KINETIS_system_gpio, __KINETIS_common;
+
+//------------------------------------------------------------------------------
+//                                                                        TYPES
+//------------------------------------------------------------------------------
+
+const
+MIKROBUS1       : byte = 0;
+MIKROBUS2       : byte = 1;
+MIKROBUS3       : byte = 2;
+MIKROBUS4       : byte = 3;
+
+const
+AN_PIN          : byte = 0;
+RST_PIN         : byte = 1;
+CS_PIN          : byte = 2;
+PWM_PIN         : byte = 3;
+INT_PIN         : byte = 4;
+
+const
+SPI_MODE_0      : byte = 0;
+SPI_MODE_1      : byte = 1;
+SPI_MODE_2      : byte = 2;
+SPI_MODE_3      : byte = 3;
+
+//----------------------------------------------------------------------------------------------------------------- SPI
+
+type T_SPI_init     = procedure( psc : dword; config : dword; module : ^const code Module_Struct );
+type T_SPI_writer   = procedure( x : word );
+type T_SPI_reader   = function( x : word ) : word;
+
+//----------------------------------------------------------------------------------------------------------------- I2C
+
+type T_I2C_init     = procedure(clk: dword; module : ^const code Module_Struct);
+type T_I2C_starter  = function() : word;
+type T_I2C_writer   = function(slave :byte; buffer :^byte; count :dword; mode :dword) : word;
+type T_I2C_reader   = procedure(slave :byte; buffer :^byte; count :dword; mode :dword);
+
+//---------------------------------------------------------------------------------------------------------------- UART
+
+type T_UART_init    = procedure(baud_rate :dword; data_bits :word; parity :word; stop_bits :word; high_low :word; module :^const Module_Struct);
+type T_UART_writer  = procedure(data_ : word);
+type T_UART_reader  = function() : word;
+type T_UART_ready   = function() : word;
+
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                            FUNCTIONS
+//----------------------------------------------------------------------------------------------------------------------
+
+function __MIKROBUS_checkBUS( bus : byte ) : byte;
+procedure MIKROBUS_GPIOdirection( MIKROBUS :byte; position :byte; direction :byte );
+function MIKROBUS_SPIdriverInit( MIKROBUS: byte; mode: byte; fpInit :^T_SPI_driverInit ) : byte;
+function MIKROBUS_I2CdriverInit( MIKROBUS: byte; slave: byte; fpInit :^T_I2C_driverInit ) : byte;
+function MIKROBUS_UARTdriverInit( MIKROBUS: byte; fpInit :^T_UART_driverInit ) : byte;
+
+implementation
+//---------------------------------------------------------------------------------------------------------------------- 
+//                                                                                                                                                                                                                             SYSTEM
+//----------------------------------------------------------------------------------------------------------------------
+
+function __MIKROBUS_checkBUS( bus : byte ) : byte;
+var
+err : byte;
+begin
+    err := 0;
+    if( bus >= __MIKROBUSES ) then
+    begin
+        err := 1
+    end;
+result := err;
+end;
+
+//---------------------------------------------------------------------------------------------------------------------- 
+//                                                                                                                                                                                                                                   GPIO
+//----------------------------------------------------------------------------------------------------------------------
+
+procedure MIKROBUS_GPIOdirection( MIKROBUS :byte; position :byte; direction :byte);
+begin
+    __GPIO_DIR( __MIKROBUS_GPIO[ MIKROBUS ][ position ].port, __MIKROBUS_GPIO[ MIKROBUS ][ position ].pin, direction );
+end;
+
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                                                                                                                                                         SPI
+//----------------------------------------------------------------------------------------------------------------------
+
+function MIKROBUS_SPIdriverInit( MIKROBUS: byte; mode :byte; fpInit :^T_SPI_driverInit ) : byte;
+begin
+    result := __MIKROBUS_checkBUS( MIKROBUS );
+    if( result > 0 ) then
+    begin
+        exit;
+    end;
+    if( MIKROBUS = MIKROBUS1 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - SPI MIKROBUS1
+
+
+        end;
+    if( MIKROBUS = MIKROBUS2 ) then
+        begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - SPI MIKROBUS2
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS3 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - SPI MIKROBUS3
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS4 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - SPI MIKROBUS4
+
+
+
+    end;
+end;
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                                                                                                                                                         I2C
+//----------------------------------------------------------------------------------------------------------------------
+
+function MIKROBUS_I2CdriverInit( MIKROBUS: byte; slave: byte; fpInit :^T_I2C_driverInit ) : byte;
+begin
+    result := __MIKROBUS_checkBUS( MIKROBUS );
+    if( result > 0 ) then
+    begin
+        exit;
+    end;
+    if( MIKROBUS = MIKROBUS1 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - I2C MIKROBUS1
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS2 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - I2C MIKROBUS2
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS3 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - I2C MIKROBUS3
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS4 ) then
+    begin
+// --------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - I2C MIKROBUS4
+
+
+
+    end;
+end;
+
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                                                                                                                                                   UART
+//----------------------------------------------------------------------------------------------------------------------
+
+function MIKROBUS_UARTdriverInit( MIKROBUS: byte; fpInit :^T_UART_driverInit ) :byte;
+begin
+    result := __MIKROBUS_checkBUS( MIKROBUS );
+    if( result > 0 ) then
+    begin
+        exit;
+    end;
+    if( MIKROBUS = MIKROBUS1 ) then
+    begin
+//---------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - UART MIKROBUS1
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS2 ) then
+    begin
+//---------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - UART MIKROBUS1
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS3 ) then
+    begin
+//---------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - UART MIKROBUS3
+
+
+
+    end;
+    if( MIKROBUS = MIKROBUS4 ) then
+    begin
+//---------------------------------------------------------------------------------------------------------------------- < ADD NEW SYSTEM - UART MIKROBUS4
+
+
+
+    end;
+end;
+end.

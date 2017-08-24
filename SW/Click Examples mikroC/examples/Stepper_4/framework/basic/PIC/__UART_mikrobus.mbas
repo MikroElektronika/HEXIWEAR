@@ -1,0 +1,10 @@
+module __UART_mikrobus
+
+include __mikrobus_PIC18
+include __mikrobus_PIC18_ENH
+
+
+implements
+
+
+end.

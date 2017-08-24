@@ -1,0 +1,97 @@
+module __mikrobus_MSP
+include mikrobus_config
+
+'--------------------------------------------------------------- MSP432 CLICKER
+#IFDEF MSP432_CLICKER THEN
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [1][2][5] = (
+    (
+        (
+            ( @DIO_P6IN, _GPIO_PINMASK_0 ),
+        	( @DIO_P5IN, _GPIO_PINMASK_6 ),
+        	( @DIO_P5IN, _GPIO_PINMASK_0 ),
+        	( @DIO_P2IN, _GPIO_PINMASK_7 ),
+        	( @DIO_P2IN, _GPIO_PINMASK_4 )
+        ),
+        (
+            ( @DIO_P6OUT, _GPIO_PINMASK_0 ),
+        	( @DIO_P5OUT, _GPIO_PINMASK_6 ),
+        	( @DIO_P5OUT, _GPIO_PINMASK_0 ),
+        	( @DIO_P2OUT, _GPIO_PINMASK_7 ),
+        	( @DIO_P2OUT, _GPIO_PINMASK_4 )
+        )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at DIO_P6IN.B0
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at DIO_P6OUT.B0
+MIKROBUS1_PIN_RST_INPUT         as sbit at DIO_P5IN.B6
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at DIO_P5OUT.B6
+MIKROBUS1_PIN_CS_INPUT          as sbit at DIO_P5IN.B0
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at DIO_P5OUT.B0
+MIKROBUS1_PIN_PWM_INPUT         as sbit at DIO_P2IN.B7
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at DIO_P2OUT.B7
+MIKROBUS1_PIN_INT_INPUT         as sbit at DIO_P2IN.B4
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at DIO_P2OUT.B4
+#ENDIF
+'---------------------------------------------------------------- CLICKER 2 MSP
+#IFDEF CLICKER_2_MSP432 THEN
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [2][2][5] = (
+    (
+        (
+            ( @DIO_P6IN, _GPIO_PINMASK_0 ),
+        	( @DIO_P5IN, _GPIO_PINMASK_6 ),
+        	( @DIO_P5IN, _GPIO_PINMASK_0 ),
+        	( @DIO_P2IN, _GPIO_PINMASK_7 ),
+        	( @DIO_P2IN, _GPIO_PINMASK_4 )
+        ),
+        (
+            ( @DIO_P6OUT, _GPIO_PINMASK_0 ),
+        	( @DIO_P5OUT, _GPIO_PINMASK_6 ),
+        	( @DIO_P5OUT, _GPIO_PINMASK_0 ),
+        	( @DIO_P2OUT, _GPIO_PINMASK_7 ),
+        	( @DIO_P2OUT, _GPIO_PINMASK_4 )
+        )
+    ),
+    (
+        (
+            ( @DIO_P6IN, _GPIO_PINMASK_3 ),
+        	( @DIO_P5IN, _GPIO_PINMASK_7 ),
+        	( @DIO_P5IN, _GPIO_PINMASK_2 ),
+        	( @DIO_P2IN, _GPIO_PINMASK_6 ),
+        	( @DIO_P2IN, _GPIO_PINMASK_6 )
+        ),
+        (
+            ( @DIO_P4OUT, _GPIO_PINMASK_3 ),
+        	( @DIO_P6OUT, _GPIO_PINMASK_7 ),
+        	( @DIO_P5OUT, _GPIO_PINMASK_2 ),
+        	( @DIO_P2OUT, _GPIO_PINMASK_6 ),
+        	( @DIO_P6OUT, _GPIO_PINMASK_0 )
+        )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at DIO_P6IN.B0
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at DIO_P6OUT.B0
+MIKROBUS1_PIN_RST_INPUT         as sbit at DIO_P5IN.B6
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at DIO_P5OUT.B6
+MIKROBUS1_PIN_CS_INPUT          as sbit at DIO_P5IN.B0
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at DIO_P5OUT.B0
+MIKROBUS1_PIN_PWM_INPUT         as sbit at DIO_P2IN.B7
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at DIO_P2OUT.B7
+MIKROBUS1_PIN_INT_INPUT         as sbit at DIO_P2IN.B4
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at DIO_P2OUT.B4
+MIKROBUS2_PIN_AN_INPUT          as sbit at DIO_P4IN.B3
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at DIO_P4OUT.B3
+MIKROBUS2_PIN_RST_INPUT         as sbit at DIO_P6IN.B7
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at DIO_P6OUT.B7
+MIKROBUS2_PIN_CS_INPUT          as sbit at DIO_P5IN.B2
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at DIO_P5OUT.B2
+MIKROBUS2_PIN_PWM_INPUT         as sbit at DIO_P2IN.B6
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at DIO_P2OUT.B6
+MIKROBUS2_PIN_INT_INPUT         as sbit at DIO_P6IN.B6
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at DIO_P6OUT.B6
+#ENDIF
+
+end.

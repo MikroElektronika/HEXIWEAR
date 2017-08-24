@@ -1,0 +1,13 @@
+module __UART_mikrobus
+
+include __mikrobus_STM32
+include __mikrobus_TIVA
+include __mikrobus_MSP
+include __mikrobus_KINETIS
+include __mikrobus_CEC
+
+
+implements
+
+
+end.

@@ -1,0 +1,215 @@
+module __mikrobus_KINETIS
+include mikrobus_config
+
+'----------------------------------------------------- HEXIWEAR DOCKING STATION
+#IFDEF  HEXIWEAR_DOCKING THEN
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [3][2][5] = (
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_2 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_11 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_4 ),
+        	( @PTA_PDIR, _GPIO_PINMASK_10 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_13 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_2 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_11 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_4 ),
+        	( @PTA_PDOR, _GPIO_PINMASK_10 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_13 )
+        )
+    ),
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_10 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTA_PDIR, _GPIO_PINMASK_11 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_8 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_10 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTA_PDOR, _GPIO_PINMASK_11 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_8 )
+        )
+    ),
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_6 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_10 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_2 ),
+        	( @PTA_PDIR, _GPIO_PINMASK_4 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_7 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_6 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_10 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_2 ),
+        	( @PTA_PDOR, _GPIO_PINMASK_4 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_7 )
+        )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at PTB_PDIR.B2
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B2
+MIKROBUS1_PIN_RST_INPUT         as sbit at PTB_PDIR.B11
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B11
+MIKROBUS1_PIN_CS_INPUT          as sbit at PTC_PDIR.B4
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at PTC_PDOR.B4
+MIKROBUS1_PIN_PWM_INPUT         as sbit at PTA_PDIR.B10
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at PTA_PDOR.B10
+MIKROBUS1_PIN_INT_INPUT         as sbit at PTB_PDIR.B13
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at PTB_PDOR.B13
+MIKROBUS2_PIN_AN_INPUT          as sbit at PTB_PDIR.B3
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B3
+MIKROBUS2_PIN_RST_INPUT         as sbit at PTB_PDIR.B19
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B19
+MIKROBUS2_PIN_CS_INPUT          as sbit at PTC_PDIR.B3
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at PTC_PDOR.B3
+MIKROBUS2_PIN_PWM_INPUT         as sbit at PTA_PDIR.B11
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at PTA_PDOR.B11
+MIKROBUS2_PIN_INT_INPUT         as sbit at PTB_PDIR.B8
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at PTB_PDOR.B8
+MIKROBUS3_PIN_AN_INPUT          as sbit at PTB_PDIR.B6
+MIKROBUS3_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B6
+MIKROBUS3_PIN_RST_INPUT         as sbit at PTB_PDIR.B10
+MIKROBUS3_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B10
+MIKROBUS3_PIN_CS_INPUT          as sbit at PTC_PDIR.B2
+MIKROBUS3_PIN_CS_OUTPUT         as sbit at PTC_PDOR.B2
+MIKROBUS3_PIN_PWM_INPUT         as sbit at PTA_PDIR.B4
+MIKROBUS3_PIN_PWM_OUTPUT        as sbit at PTA_PDOR.B4
+MIKROBUS3_PIN_INT_INPUT         as sbit at PTB_PDIR.B7
+MIKROBUS3_PIN_INT_OUTPUT        as sbit at PTB_PDOR.B7
+#ENDIF
+'-------------------------------------------------------- HEXIWEAR BATTERY PACK
+#IFDEF HEXIWEAR_BATTERY_PACK THEN
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [1][2][5] = (
+    (
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_2 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_11 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_4),
+        	( @PTA_PDOR, _GPIO_PINMASK_10 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_13 )
+        ),
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_2 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_11 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_4 ),
+        	( @PTA_PDIR, _GPIO_PINMASK_10 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_13 )
+        ),
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at PTB_PDIR.B2
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B2
+MIKROBUS1_PIN_RST_INPUT         as sbit at PTB_PDIR.B11
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B11
+MIKROBUS1_PIN_CS_INPUT          as sbit at PTC_PDIR.B4
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at PTC_PDOR.B4
+MIKROBUS1_PIN_PWM_INPUT         as sbit at PTA_PDIR.B10
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at PTA_PDOR.B10
+MIKROBUS1_PIN_INT_INPUT         as sbit at PTB_PDIR.B13
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at PTB_PDOR.B13
+#ENDIF
+'-------------------------------------------------------------- KINETIS CLICKER
+#IFDEF KINETIS_CLICKER THEN
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [1][2][5] = (
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_2 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_4 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_1 ),
+        	( @PTD_PDIR, _GPIO_PINMASK_0 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_2 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_4 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_1 ),
+        	( @PTD_PDOR, _GPIO_PINMASK_0 )
+        )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at PTB_PDIR.B2
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B2
+MIKROBUS1_PIN_RST_INPUT         as sbit at PTB_PDIR.B3
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B3
+MIKROBUS1_PIN_CS_INPUT          as sbit at PTC_PDIR.B4
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at PTC_PDOR.B4
+MIKROBUS1_PIN_PWM_INPUT         as sbit at PTC_PDIR.B1
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at PTC_PDOR.B1
+MIKROBUS1_PIN_INT_INPUT         as sbit at PTD_PDIR.B0
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at PTD_PDOR.B0
+#ENDIF
+'------------------------------------------------------------ CLICKER 2 KINETIS
+#IFDEF CLICKER_2_KINETIS THEN
+__MIKROBUS_GPIO as T_MIKROBUS_pin [2][2][5] = (
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_1 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTA_PDIR, _GPIO_PINMASK_4 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_0 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_1 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTA_PDOR, _GPIO_PINMASK_4 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_0 )
+        )
+    ),
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_1 ),
+        	( @PTD_PDIR, _GPIO_PINMASK_3 ),
+        	( @PTC_PDIR, _GPIO_PINMASK_4 ),
+        	( @PTB_PDIR, _GPIO_PINMASK_0 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_1 ),
+        	( @PTD_PDOR, _GPIO_PINMASK_3 ),
+        	( @PTC_PDOR, _GPIO_PINMASK_4 ),
+        	( @PTB_PDOR, _GPIO_PINMASK_0 )
+        )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at PTB_PDIR.B2
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B2
+MIKROBUS1_PIN_RST_INPUT         as sbit at PTB_PDIR.B11
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B11
+MIKROBUS1_PIN_CS_INPUT          as sbit at PTC_PDIR.B4
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at PTC_PDOR.B4
+MIKROBUS1_PIN_PWM_INPUT         as sbit at PTA_PDIR.B10
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at PTA_PDOR.B10
+MIKROBUS1_PIN_INT_INPUT         as sbit at PTB_PDIR.B13
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at PTB_PDOR.B13
+MIKROBUS2_PIN_AN_INPUT          as sbit at PTB_PDIR.B3
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at PTB_PDOR.B3
+MIKROBUS2_PIN_RST_INPUT         as sbit at PTB_PDIR.B19
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at PTB_PDOR.B19
+MIKROBUS2_PIN_CS_INPUT          as sbit at PTD_PDIR.B4
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at PTD_PDOR.B4
+MIKROBUS2_PIN_PWM_INPUT         as sbit at PTC_PDIR.B2
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at PTC_PDOR.B2
+MIKROBUS2_PIN_INT_INPUT         as sbit at PTB_PDIR.B8
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at PTB_PDOR.B8
+#ENDIF
+
+end.

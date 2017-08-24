@@ -1,0 +1,28 @@
+const 
+GPIO_INPUT          : byte = 1;
+GPIO_OUTPUT         : byte = 0;
+
+//----------------------------------------------------------------------------------------------------------------- SPI
+
+type T_SPI_init         = procedure(master_mode, data_mode, clock_divider, slave_select, data_sample, clock_idle, edge: word);
+type T_SPI_write        = procedure(data_out : dword);
+type T_SPI_read         = function(buffer: dword): dword;
+
+//----------------------------------------------------------------------------------------------------------------- I2C
+
+type T_I2C_init         = procedure(scl : longint);
+type T_I2C_start        = function() : word;
+type T_I2C_stop         = procedure();
+type T_I2C_restart      = function() : word;
+type T_I2C_write        = function(data_ : byte) : word;
+type T_I2C_read         = function(ack : word) : byte;
+
+//---------------------------------------------------------------------------------------------------------------- UART
+
+type T_UART_init        = procedure(baud_rate: dword);
+type T_UART_write       = procedure(data_ : word);
+type T_UART_read        = function() : word;
+type T_UART_ready       = function() : word;
+
+
+type Module_Struct 		= int;

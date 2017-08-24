@@ -1,0 +1,162 @@
+{$IFNDEF SYSTEM_MAPPED}
+{$DEFINE SYSTEM_MAPPED}
+
+{$IFDEF __SPI_CLICK}
+const
+MIKROBUS1_SPI : T_MIKROBUS_spiObj = 
+(
+    @SPI3_Init_Advanced,
+    @SPI3_Write,
+    @SPI3_Read
+);
+MIKROBUS2_SPI : T_MIKROBUS_spiObj = 
+(
+    @SPI3_Init_Advanced,
+    @SPI3_Write,
+    @SPI3_Read
+);
+MIKROBUS3_SPI : T_MIKROBUS_spiObj = 
+(
+    @SPI3_Init_Advanced,
+    @SPI3_Write,
+    @SPI3_Read
+);
+{$ENDIF}
+{$IFDEF __I2C_CLICK}
+const
+MIKROBUS1_I2C : T_MIKROBUS_i2cObj =
+(
+    @I2C2_Init,
+    @I2C2_Start,
+    @I2C2_Stop,
+    @I2C2_Restart,
+    @I2C2_Write,
+    @I2C2_Read
+);
+MIKROBUS2_I2C : T_MIKROBUS_i2cObj =
+(
+    @I2C2_Init,
+    @I2C2_Start,
+    @I2C2_Stop,
+    @I2C2_Restart,
+    @I2C2_Write,
+    @I2C2_Read
+);
+MIKROBUS3_I2C : T_MIKROBUS_i2cObj =
+(
+    @I2C2_Init,
+    @I2C2_Start,
+    @I2C2_Stop,
+    @I2C2_Restart,
+    @I2C2_Write,
+    @I2C2_Read
+);
+{$ENDIF}
+{$IFDEF __UART_CLICK}
+const
+MIKROBUS1_UART : T_MIKROBUS_uartObj =
+(
+    @UART2_Init,
+    @UART2_Write,
+    @UART2_Read,
+    @UART2_Data_Ready
+);
+MIKROBUS2_UART : T_MIKROBUS_uartObj =
+(
+    @UART5_Init,
+    @UART5_Write,
+    @UART5_Read,
+    @UART5_Data_Ready
+);
+MIKROBUS3_UART : T_MIKROBUS_uartObj =
+(
+    @UART5_Init,
+    @UART5_Write,
+    @UART5_Read,
+    @UART5_Data_Ready
+);
+{$ENDIF}
+
+var
+MIKROBUS1_PIN_AN_INPUT          : sbit at RA0_bit;
+MIKROBUS1_PIN_AN_OUTPUT         : sbit at LATA0_bit;
+MIKROBUS1_PIN_RST_INPUT         : sbit at RC0_bit;
+MIKROBUS1_PIN_RST_OUTPUT        : sbit at LATC0_bit;
+MIKROBUS1_PIN_CS_INPUT          : sbit at RE0_bit;
+MIKROBUS1_PIN_CS_OUTPUT         : sbit at LATE0_bit;
+MIKROBUS1_PIN_PWM_INPUT         : sbit at RC1_bit;
+MIKROBUS1_PIN_PWM_OUTPUT        : sbit at LATC1_bit;
+MIKROBUS1_PIN_INT_INPUT         : sbit at RB0_bit;
+MIKROBUS1_PIN_INT_OUTPUT        : sbit at LATB0_bit;
+
+MIKROBUS2_PIN_AN_INPUT          : sbit at RA1_bit;
+MIKROBUS2_PIN_AN_OUTPUT         : sbit at LATA1_bit;
+MIKROBUS2_PIN_RST_INPUT         : sbit at RA4_bit;
+MIKROBUS2_PIN_RST_OUTPUT        : sbit at LATA4_bit;
+MIKROBUS2_PIN_CS_INPUT          : sbit at RE1_bit;
+MIKROBUS2_PIN_CS_OUTPUT         : sbit at LATE1_bit;
+MIKROBUS2_PIN_PWM_INPUT         : sbit at RC2_bit;
+MIKROBUS2_PIN_PWM_OUTPUT        : sbit at LATC2_bit;
+MIKROBUS2_PIN_INT_INPUT         : sbit at RB1_bit;
+MIKROBUS2_PIN_INT_OUTPUT        : sbit at LATB1_bit;
+
+MIKROBUS3_PIN_AN_INPUT          : sbit at RA2_bit;
+MIKROBUS3_PIN_AN_OUTPUT         : sbit at LATA2_bit;
+MIKROBUS3_PIN_RST_INPUT         : sbit at RE3_bit;
+MIKROBUS3_PIN_RST_OUTPUT        : sbit at LATE3_bit;
+MIKROBUS3_PIN_CS_INPUT          : sbit at RE2_bit;
+MIKROBUS3_PIN_CS_OUTPUT         : sbit at LATE2_bit;
+MIKROBUS3_PIN_PWM_INPUT         : sbit at RG0_bit;
+MIKROBUS3_PIN_PWM_OUTPUT        : sbit at LATG0_bit;
+MIKROBUS3_PIN_INT_INPUT         : sbit at RB2_bit;
+MIKROBUS3_PIN_INT_OUTPUT        : sbit at LATB2_bit;
+
+implementation
+function MIKROBUS_GPIOdirection( MIKROBUS :byte; pos :byte; dir :byte) : byte;
+begin 
+    result := 0;
+    if( dir = GPIO_INPUT ) then
+    begin
+    case MIKROBUS of
+        MIKROBUS1 :
+        begin 
+            case pos of       
+            AN_PIN :                    TRISA0_bit = dir;
+            RST_PIN :                   TRISC0_bit = dir;
+            CS_PIN :                    TRISE0_bit = dir;
+            PWM_PIN :                   TRISC1_bit = dir;
+            INT_PIN :                   TRISB0_bit = dir;
+            else
+                result := 1;
+            end;
+        end;
+        MIKROBUS2 :
+        begin 
+            case position of 
+            AN_PIN :                    TRISA1_bit = dir;
+            RST_PIN :                   TRISA4_bit = dir;
+            CS_PIN :                    TRISE1_bit = dir;
+            PWM_PIN :                   TRISC2_bit = dir;
+            INT_PIN :                   TRISB1_bit = dir;
+            else        
+                result := 1;
+            end;
+        end;
+        MIKROBUS3 :
+        begin 
+            case position of 
+            AN_PIN :                    TRISA2_bit = dir;
+            RST_PIN :                   TRISE3_bit = dir;
+            CS_PIN :                    TRISE2_bit = dir;
+            PWM_PIN :                   TRISG0_bit = dir;
+            INT_PIN :                   TRISB2_bit = dir;
+            else        
+                result := 1;
+            end;
+        end;
+    else
+        result := 1;
+        end;
+    end;
+end;
+{$ENDIF}

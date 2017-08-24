@@ -1,0 +1,7 @@
+const
+MIKROBUS1   : byte = 0;
+MIKROBUS2   : byte = 1;
+
+{$IFDEF P18F45K22}
+{$I EASYPIC_P18F45K22}
+{$ENDIF}

@@ -1,0 +1,8 @@
+module __UART_mikrobus
+
+include __mikrobus_FT900
+
+implements
+
+
+end.

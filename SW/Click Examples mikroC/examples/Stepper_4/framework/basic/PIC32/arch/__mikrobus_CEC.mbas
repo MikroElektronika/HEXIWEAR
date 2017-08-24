@@ -1,0 +1,200 @@
+module __mikrobus_CEC
+include mikrobus_config
+
+'-------------------------------------------------------------- CLICKER CEC1302 
+#IFDEF CEC1302_CLICKER THEN
+
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 1 ] = (
+    ( 
+        @SPI0_Init_Advanced, 
+        @SPI0_Write, 
+        @SPI0_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [1][5] = (
+    (
+        ( @GPIO_PORT_050_057, _GPIO_PINMASK_6 ),
+        ( @GPIO_PORT_020_027, _GPIO_PINMASK_7 ),
+        ( @GPIO_PORT_140_147, _GPIO_PINMASK_6 ),
+        ( @GPIO_PORT_130_137, _GPIO_PINMASK_3 ),
+        ( @GPIO_PORT_150_157, _GPIO_PINMASK_1 )
+    )
+)
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIO_INPUT_050_057.B6
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_050_057.B6
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIO_INPUT_020_027.B7
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_020_027.B7
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIO_INPUT_140_147.B6
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_140_147.B6
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIO_INPUT_130_137.B3
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_130_137.B3
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIO_INPUT_150_157.B1
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_150_157.B1
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIO_INPUT_000_007.B3
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_000_007.B3
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIO_INPUT_000_007.B19
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_000_007.B19
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIO_INPUT_000_007.B4
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_000_007.B4
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIO_INPUT_000_007.B2
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_000_007.B2
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIO_INPUT_000_007.B8
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_000_007.B8
+#ENDIF
+'-------------------------------------------------------------- CLICKER CEC1702 
+#IFDEF CEC1702_CLICKER THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 1 ] = (
+    ( 
+        @SPI0_Init_Advanced, 
+        @SPI0_Write, 
+        @SPI0_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [1][5] = (
+    (
+        ( @GPIO_PORT_200_207, _GPIO_PINMASK_0 ),
+        ( @GPIO_PORT_120_127, _GPIO_PINMASK_1 ),
+        ( @GPIO_PORT_000_007, _GPIO_PINMASK_3 ),
+        ( @GPIO_PORT_000_007, _GPIO_PINMASK_1 ),
+        ( @GPIO_PORT_120_127, _GPIO_PINMASK_7 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIO_INPUT_200_207.B0
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_200_207.B0
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIO_INPUT_120_127.B1
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_120_127.B1
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIO_INPUT_000_007.B3
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_000_007.B3
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIO_INPUT_000_007.B1
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_000_007.B1
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIO_INPUT_120_127.B7
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_120_127.B7
+#ENDIF
+'------------------------------------------------------------ CLICKER 2 CEC1302 
+#IFDEF CLICKER_2_CEC1302 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI0_Init_Advanced, 
+        @SPI0_Write, 
+        @SPI0_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED
+    ),
+    ( 
+        @SPI0_Init_Advanced, 
+        @SPI0_Write, 
+        @SPI0_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [2][5] = (
+    (
+        ( @GPIO_PORT_050_057, _GPIO_PINMASK_6 ),
+        ( @GPIO_PORT_020_027, _GPIO_PINMASK_7 ),
+        ( @GPIO_PORT_140_147, _GPIO_PINMASK_6 ),
+        ( @GPIO_PORT_130_137, _GPIO_PINMASK_3 ),
+        ( @GPIO_PORT_150_157, _GPIO_PINMASK_1 )
+    ),
+    (
+        ( @GPIO_PORT_050_057, _GPIO_PINMASK_7 ),
+        ( @GPIO_PORT_020_027, _GPIO_PINMASK_6 ),
+        ( @GPIO_PORT_040_047, _GPIO_PINMASK_5 ),
+        ( @GPIO_PORT_130_137, _GPIO_PINMASK_6 ),
+        ( @GPIO_PORT_010_017, _GPIO_PINMASK_1 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIO_INPUT_050_057.B6
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_050_057.B6
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIO_INPUT_020_027.B7
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_020_027.B7
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIO_INPUT_140_147.B6
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_140_147.B6
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIO_INPUT_130_137.B3
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_130_137.B3
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIO_INPUT_150_157.B1
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_150_157.B1
+MIKROBUS2_PIN_AN_INPUT          as sbit at GPIO_INPUT_050_057.B7
+MIKROBUS2_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_050_057.B7
+MIKROBUS2_PIN_RST_INPUT         as sbit at GPIO_INPUT_200_207.B6
+MIKROBUS2_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_200_207.B6
+MIKROBUS2_PIN_CS_INPUT          as sbit at GPIO_INPUT_040_047.B5
+MIKROBUS2_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_040_047.B5
+MIKROBUS2_PIN_PWM_INPUT         as sbit at GPIO_INPUT_130_137.B6
+MIKROBUS2_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_130_137.B6
+MIKROBUS2_PIN_INT_INPUT         as sbit at GPIO_INPUT_010_017.B1
+MIKROBUS2_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_010_017.B1
+#ENDIF
+'------------------------------------------------------------ CLICKER 2 CEC1702 
+#IFDEF CLICKER_2_CEC1702 THEN
+const __MIKROBUS_SPI as T_MIKROBUS_spi[ 2 ] = (
+    ( 
+        @SPI0_Init_Advanced, 
+        @SPI0_Write, 
+        @SPI0_Read, 
+        __MIKROBUS1_SPI_CONFIG, 
+        __MIKROBUS1_SPI_SPEED
+    ),
+    ( 
+        @SPI0_Init_Advanced, 
+        @SPI0_Write, 
+        @SPI0_Read, 
+        __MIKROBUS2_SPI_CONFIG, 
+        __MIKROBUS2_SPI_SPEED
+    )
+)
+
+const __MIKROBUS_GPIO as T_MIKROBUS_pin [2][5] = (
+    (
+        ( @GPIO_PORT_200_207, _GPIO_PINMASK_0 ),
+        ( @GPIO_PORT_040_047, _GPIO_PINMASK_5 ),
+        ( @GPIO_PORT_000_007, _GPIO_PINMASK_3 ),
+        ( @GPIO_PORT_130_137, _GPIO_PINMASK_4 ),
+        ( @GPIO_PORT_120_127, _GPIO_PINMASK_7 )
+    ),
+    (
+        ( @GPIO_PORT_200_207, _GPIO_PINMASK_1 ),
+        ( @GPIO_PORT_040_047, _GPIO_PINMASK_7 ),
+        ( @GPIO_PORT_160_167, _GPIO_PINMASK_5 ),
+        ( @GPIO_PORT_000_007, _GPIO_PINMASK_2 ),
+        ( @GPIO_PORT_040_047, _GPIO_PINMASK_6 )
+    )
+);
+
+dim
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIO_INPUT_200_207.B0
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_200_207.B0
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIO_INPUT_040_047.B5
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_040_047.B5
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIO_INPUT_000_007.B3
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_000_007.B3
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIO_INPUT_130_137.B4
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_130_137.B4
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIO_INPUT_120_127.B7
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_120_127.B7
+MIKROBUS1_PIN_AN_INPUT          as sbit at GPIO_INPUT_200_207.B1
+MIKROBUS1_PIN_AN_OUTPUT         as sbit at GPIO_OUTPUT_200_207.B1
+MIKROBUS1_PIN_RST_INPUT         as sbit at GPIO_INPUT_040_047.B7
+MIKROBUS1_PIN_RST_OUTPUT        as sbit at GPIO_OUTPUT_040_047.B7
+MIKROBUS1_PIN_CS_INPUT          as sbit at GPIO_INPUT_160_167.B5
+MIKROBUS1_PIN_CS_OUTPUT         as sbit at GPIO_OUTPUT_160_167.B5
+MIKROBUS1_PIN_PWM_INPUT         as sbit at GPIO_INPUT_000_007.B2
+MIKROBUS1_PIN_PWM_OUTPUT        as sbit at GPIO_OUTPUT_000_007.B2
+MIKROBUS1_PIN_INT_INPUT         as sbit at GPIO_INPUT_040_047.B6
+MIKROBUS1_PIN_INT_OUTPUT        as sbit at GPIO_OUTPUT_040_047.B6
+#ENDIF
+
+end.

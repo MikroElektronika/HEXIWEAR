@@ -1,0 +1,1 @@
+#include "ARM/STM32/boards/EASYMX_STM32F107VC.c"

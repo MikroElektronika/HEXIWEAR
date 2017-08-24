@@ -1,0 +1,109 @@
+unit __TIVA_config;
+
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                            SPI MODES
+//----------------------------------------------------------------------------------------------------------------------
+
+const 
+__MIKROBUSES_MAX : byte = 4;
+
+{$IFDEF __SPI_CLICK}
+const
+__SPI_MODE : array [ __MIKROBUSES_MAX ] of word = (
+    _SPI_CLK_IDLE_LOW or _SPI_FIRST_CLK_EDGE_TRANSITION,
+    _SPI_CLK_IDLE_LOW or _SPI_SECOND_CLK_EDGE_TRANSITION,
+    _SPI_CLK_IDLE_HIGH or _SPI_FIRST_CLK_EDGE_TRANSITION,
+    _SPI_CLK_IDLE_HIGH or _SPI_SECOND_CLK_EDGE_TRANSITION
+);
+{$ENDIF}
+
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                        EXTERN CONFIG
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------- I2C
+
+{$IFDEF __I2C_CLICK}{$IFDEF EXTERN_I2C_CLK}
+const
+I2C_FQ : array[ ___MIKROBUSES ] of dword; extern;
+{$ENDIF}{$ENDIF}
+
+//----------------------------------------------------------------------------------------------------------------- SPI
+
+{$IFDEF __SPI_CLICK}{$IFDEF EXTERN_SPI_CLK}
+const
+SPI_FQ : array [ __MIKROBUSES ] of dword; extern;
+{$ENDIF}{$ENDIF}
+{$IFDEF __SPI_CLICK}{$IFDEF EXTERN_SPI_CONFIG}
+const
+SPI_CONFIGURATION : array[ __MIKROBUSES ] of array[ 2 ] of word; extern;
+{$ENDIF}{$ENDIF}
+
+//---------------------------------------------------------------------------------------------------------------- UART
+
+{$IFDEF __UART_CLICK}{$IFDEF EXTERN_UART_FQ}
+const 
+UART_FQ : array[ ___MIKROBUSES ] of dword; extern;
+{$ENDIF}{$ENDIF}
+{$IFDEF __UART_CLICK}{$IFDEF EXTERN_UART_CONFIG}
+const
+UART_CONFIGURATION : array[ ___MIKROBUSES ] of array[4] of word; extern;
+{$ENDIF}{$ENDIF}
+
+//----------------------------------------------------------------------------------------------------------------------
+//                                                                                                       DEFAULT CONFIG
+//----------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------- I2C
+
+{$IFDEF __I2C_CLICK}{$IFNDEF EXTERN_I2C_CLK}
+const
+I2C_FQ : array[ __MIKROBUSES_MAX ] of dword = (
+    100000,
+    100000,
+    100000,
+    100000
+);
+{$ENDIF}{$ENDIF}
+//----------------------------------------------------------------------------------------------------------------- SPI
+
+{$IFDEF __SPI_CLICK}{$IFNDEF EXTERN_SPI_CLK}
+const
+SPI_FQ : array [ __MIKROBUSES_MAX ] of dword = (
+    1000000,
+    1000000,
+    1000000,
+    1000000
+);
+{$ENDIF}{$ENDIF}
+{$IFDEF __SPI_CLICK}{$IFNDEF EXTERN_SPI_CONFIG}
+const
+SPI_CONFIGURATION : array[ __MIKROBUSES_MAX ] of array[ 2 ] of word = (
+    ( _SPI_MASTER, _SPI_8_BIT ),                                                                        // MIKROBUS 1
+    ( _SPI_MASTER, _SPI_8_BIT ),                                                                        // MIKROBUS 2
+    ( _SPI_MASTER, _SPI_8_BIT ),                                                                        // MIKROBUS 3
+    ( _SPI_MASTER, _SPI_8_BIT )                                                                         // MIKROBUS 4
+);
+{$ENDIF}{$ENDIF}
+
+//---------------------------------------------------------------------------------------------------------------- UART
+
+{$IFDEF __UART_CLICK}{$IFNDEF EXTERN_UART_FQ}
+const 
+UART_FQ : array[ __MIKROBUSES_MAX ] of dword = (
+    9600,
+    9600,
+    9600,
+    9600
+);
+{$ENDIF}{$ENDIF}
+{$IFDEF __UART_CLICK}{$IFNDEF EXTERN_UART_CONFIG}
+const
+UART_CONFIGURATION : array[ __MIKROBUSES_MAX ] of array[4] of word = (
+    ( _UART_8_BIT_DATA, _UART_NOPARITY, _UART_ONE_STOPBIT, _UART_HIGH_SPEED ),
+    ( _UART_8_BIT_DATA, _UART_NOPARITY, _UART_ONE_STOPBIT, _UART_HIGH_SPEED ),
+    ( _UART_8_BIT_DATA, _UART_NOPARITY, _UART_ONE_STOPBIT, _UART_HIGH_SPEED ),
+    ( _UART_8_BIT_DATA, _UART_NOPARITY, _UART_ONE_STOPBIT, _UART_HIGH_SPEED )
+);
+{$ENDIF}{$ENDIF}
+implementation
+end.

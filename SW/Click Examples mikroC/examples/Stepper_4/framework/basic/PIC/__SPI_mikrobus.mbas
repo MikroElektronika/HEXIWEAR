@@ -1,0 +1,24 @@
+module __SPI_mikrobus
+
+include __mikrobus_PIC18
+include __mikrobus_PIC18_ENH
+
+sub procedure MIKROBUS_SPI_INIT(dim bus as byte, dim mode as byte)
+
+implements
+
+sub procedure MIKROBUS_SPI_INIT(dim bus as byte, dim mode as byte)
+#IFDEF __STM32__ THEN
+    __MIKROBUS_SPI[bus].init^( __MIKROBUS_SPI[bus].speed, __MIKROBUS_SPI[bus].config or mode, __MIKROBUS_SPI[bus].module_ )
+#ENDIF
+end sub
+
+sub function MIKROBUS_SPI_WR(dim bus as byte) as ^T_SPI_writer
+    result = __MIKROBUS_SPI[bus].writer
+end sub
+
+sub function MIKROBUS_SPI_RD(dim bus as byte) as ^T_SPI_reader
+    result = __MIKROBUS_SPI[bus].reader
+end sub
+
+end.

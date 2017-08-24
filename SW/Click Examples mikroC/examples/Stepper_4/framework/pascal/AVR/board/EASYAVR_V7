@@ -1,0 +1,8 @@
+const
+MIKROBUS1   : byte = 0;
+MIKROBUS2   : byte = 1;
+MIKROBUS3	: byte = 2;
+
+{$IFDEF ATMEGA32}
+{$I EASYAVR_ATMEGA32}
+{$ENDIF}

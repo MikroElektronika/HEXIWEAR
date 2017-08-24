@@ -1,0 +1,25 @@
+module __mikrobus_types
+
+structure T_MIKROBUS_pin
+    dim port as ^longword
+    dim pin as longword
+end structure
+
+structure T_MIKROBUS_spi
+    dim init     as ^T_SPI_init
+    dim writer   as ^T_SPI_writer
+    dim reader   as ^T_SPI_reader
+    dim config   as longword
+    dim speed    as byte
+    dim module_  as ^const code Module_Struct
+end structure
+
+structure T_MIKROBUS_i2c
+	
+end structure
+
+structure T_MIKROBUS_uart
+	
+end structure
+
+end.

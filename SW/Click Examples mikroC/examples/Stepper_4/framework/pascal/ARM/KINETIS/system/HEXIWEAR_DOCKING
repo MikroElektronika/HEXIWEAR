@@ -1,0 +1,144 @@
+{$IFNDEF SYSTEM_MAPPED}
+{$DEFINE SYSTEM_MAPPED}
+
+const
+__MIKROBUSES : byte = 3;
+
+const
+__MIKROBUS_GPIO : array [ __MIKROBUSES ] of array[ 2 ] of array [ 5 ] of T_MIKROBUS_pin = (
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_2 ),
+            ( @PTB_PDIR, _GPIO_PINMASK_11 ),
+            ( @PTC_PDIR, _GPIO_PINMASK_4 ),
+            ( @PTA_PDIR, _GPIO_PINMASK_10 ),
+            ( @PTB_PDIR, _GPIO_PINMASK_13 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_2 ),
+            ( @PTB_PDOR, _GPIO_PINMASK_11 ),
+            ( @PTC_PDOR, _GPIO_PINMASK_4 ),
+            ( @PTA_PDOR, _GPIO_PINMASK_10 ),
+            ( @PTB_PDOR, _GPIO_PINMASK_13 )
+        )
+    ),
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_3 ),
+            ( @PTB_PDIR, _GPIO_PINMASK_10 ),
+            ( @PTC_PDIR, _GPIO_PINMASK_3 ),
+            ( @PTA_PDIR, _GPIO_PINMASK_11 ),
+            ( @PTB_PDIR, _GPIO_PINMASK_8 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_3 ),
+            ( @PTB_PDOR, _GPIO_PINMASK_10 ),
+            ( @PTC_PDOR, _GPIO_PINMASK_3 ),
+            ( @PTA_PDOR, _GPIO_PINMASK_11 ),
+            ( @PTB_PDOR, _GPIO_PINMASK_8 )
+        )
+    ),
+    (
+        (
+            ( @PTB_PDIR, _GPIO_PINMASK_6 ),
+            ( @PTB_PDIR, _GPIO_PINMASK_10 ),
+            ( @PTC_PDIR, _GPIO_PINMASK_2 ),
+            ( @PTA_PDIR, _GPIO_PINMASK_4 ),
+            ( @PTB_PDIR, _GPIO_PINMASK_7 )
+        ),
+        (
+            ( @PTB_PDOR, _GPIO_PINMASK_6 ),
+            ( @PTB_PDOR, _GPIO_PINMASK_10 ),
+            ( @PTC_PDOR, _GPIO_PINMASK_2 ),
+            ( @PTA_PDOR, _GPIO_PINMASK_4 ),
+            ( @PTB_PDOR, _GPIO_PINMASK_7 )
+        )
+    )
+);
+
+var
+MIKROBUS1_PIN_AN_INPUT          : sbit at PTB_PDIR.B2;
+MIKROBUS1_PIN_AN_OUTPUT         : sbit at PTB_PDOR.B2;
+MIKROBUS1_PIN_RST_INPUT         : sbit at PTB_PDIR.B11;
+MIKROBUS1_PIN_RST_OUTPUT        : sbit at PTB_PDOR.B11;
+MIKROBUS1_PIN_CS_INPUT          : sbit at PTC_PDIR.B4;
+MIKROBUS1_PIN_CS_OUTPUT         : sbit at PTC_PDOR.B4;
+MIKROBUS1_PIN_PWM_INPUT         : sbit at PTA_PDIR.B10;
+MIKROBUS1_PIN_PWM_OUTPUT        : sbit at PTA_PDOR.B10;
+MIKROBUS1_PIN_INT_INPUT         : sbit at PTB_PDIR.B13;
+MIKROBUS1_PIN_INT_OUTPUT        : sbit at PTB_PDOR.B13;
+MIKROBUS2_PIN_AN_INPUT          : sbit at PTB_PDIR.B3;
+MIKROBUS2_PIN_AN_OUTPUT         : sbit at PTB_PDOR.B3;
+MIKROBUS2_PIN_RST_INPUT         : sbit at PTB_PDIR.B19;
+MIKROBUS2_PIN_RST_OUTPUT        : sbit at PTB_PDOR.B19;
+MIKROBUS2_PIN_CS_INPUT          : sbit at PTC_PDIR.B3;
+MIKROBUS2_PIN_CS_OUTPUT         : sbit at PTC_PDOR.B3;
+MIKROBUS2_PIN_PWM_INPUT         : sbit at PTA_PDIR.B11;
+MIKROBUS2_PIN_PWM_OUTPUT        : sbit at PTA_PDOR.B11;
+MIKROBUS2_PIN_INT_INPUT         : sbit at PTB_PDIR.B8;
+MIKROBUS2_PIN_INT_OUTPUT        : sbit at PTB_PDOR.B8;
+MIKROBUS3_PIN_AN_INPUT          : sbit at PTB_PDIR.B6;
+MIKROBUS3_PIN_AN_OUTPUT         : sbit at PTB_PDOR.B6;
+MIKROBUS3_PIN_RST_INPUT         : sbit at PTB_PDIR.B10;
+MIKROBUS3_PIN_RST_OUTPUT        : sbit at PTB_PDOR.B10;
+MIKROBUS3_PIN_CS_INPUT          : sbit at PTC_PDIR.B2;
+MIKROBUS3_PIN_CS_OUTPUT         : sbit at PTC_PDOR.B2;
+MIKROBUS3_PIN_PWM_INPUT         : sbit at PTA_PDIR.B4;
+MIKROBUS3_PIN_PWM_OUTPUT        : sbit at PTA_PDOR.B4;
+MIKROBUS3_PIN_INT_INPUT         : sbit at PTB_PDIR.B7;
+MIKROBUS3_PIN_INT_OUTPUT        : sbit at PTB_PDOR.B7;
+
+implementation
+procedure MIKROBUS_GPIOdirection( MIKROBUS :byte; position :byte; direction :byte);
+begin
+    if ((direction = GPIO_OUTPUT)) then
+    begin
+        GPIO_Digital_Output( __MIKROBUS_GPIO[ MIKROBUS ][ position ][ direction ].port, __MIKROBUS_GPIO[ MIKROBUS ][ position ][ direction ].pin );
+    end;
+    if ((direction = GPIO_INPUT)) then
+    begin
+        GPIO_Digital_Input( __MIKROBUS_GPIO[ MIKROBUS ][ position ][ direction ].port, __MIKROBUS_GPIO[ MIKROBUS ][ position ][ direction ].pin );
+    end;
+end;
+{$IFDEF __SPI_CLICK}
+function MIKROBUS_SPIdriverInit( MIKROBUS: byte; mode :byte; fpInit :^T_SPI_driverInit ) : byte;
+begin
+    case MIKROBUS of 
+        MIKROBUS1 :
+        begin
+            SPI0_Init_Advanced( SPI_FQ[ MIKROBUS ], __SPI_CONF[ MIKROBUS ] or __SPI_MODE[mode], @_GPIO_Module_SPI0_PC5_7_6);
+            fpInit^( @SPI0_Write, @SPI0_Read );     
+        end;
+        else
+            result := 1;
+        end;
+    end;
+end;
+{$ENDIF}
+{$IFDEF __I2C_CLICK}
+function MIKROBUS_I2CdriverInit( MIKROBUS: byte; slave: byte; fpInit :^T_I2C_driverInit ) : byte;
+begin
+    case MIKROBUS of 
+        MIKROBUS1 :
+        begin
+               
+        else
+            result := 1;
+        end;
+    end;
+end;
+{$ENDIF}
+{$IFDEF __UART_CLICK}
+function MIKROBUS_UARTdriverInit( MIKROBUS: byte; fpInit :^T_UART_driverInit ) :byte;
+begin
+    case MIKROBUS of 
+        MIKROBUS1 :
+        begin
+            UART2_Init_Advaced( UART_BAUD[ MIKROBUS ], UART_CONFIG[ MIKROBUS ][ 0 ], UART_CONFIG[ MIKROBUS ][ 1 ], UART_CONFIG[ MIKROBUS ][ 2 ], @_GPIO_Module_UART2_PD3_2 );
+            fpInit^( @UART2_Write, @UART2_Read, @UART2_Data_Ready ); 
+        else
+            result := 1;
+        end;
+    end;
+end;
+{$ENDIF}
