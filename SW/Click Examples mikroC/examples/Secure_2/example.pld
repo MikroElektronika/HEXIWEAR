@@ -1,0 +1,3 @@
+data=data_
+LOG(x)=UART_Write_Text(x)
+printf=LOG
