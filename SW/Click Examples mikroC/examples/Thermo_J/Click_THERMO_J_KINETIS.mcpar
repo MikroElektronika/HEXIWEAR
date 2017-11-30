@@ -1,0 +1,16 @@
+[DEVICE]
+Name=MK64FN1M0XXX12
+Clock=120000000
+[BUILD_TYPE]
+Value=0
+[FILES]
+Count=2
+File0=Click_Thermo_J_KINETIS.c
+File1=..\..\..\..\library\__THERMOJ_Driver.c
+[HEADERS]
+Count=1
+File0=..\..\..\..\library\__THERMOJ_Driver.h
+[PLDS]
+Count=1
+File0=Click_Thermo_J.pld
+
